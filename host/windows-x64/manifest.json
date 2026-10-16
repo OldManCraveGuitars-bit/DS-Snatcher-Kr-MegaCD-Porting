@@ -1,0 +1,41 @@
+{
+  "boot": {
+    "file": "boot.dll",
+    "sha256": "85deaa5173f180eba6bcaab67d14658f3f1699b69c89f7e2ab4518dff24b6a02",
+    "restored_sha256": "85deaa5173f180eba6bcaab67d14658f3f1699b69c89f7e2ab4518dff24b6a02",
+    "source_tables": []
+  },
+  "room": {
+    "file": "room.dll",
+    "sha256": "b407043ffffbd265c765967dee1e5a9869a086855838d9a7deb90da683f9af94",
+    "restored_sha256": "b407043ffffbd265c765967dee1e5a9869a086855838d9a7deb90da683f9af94",
+    "source_tables": []
+  },
+  "forecourt": {
+    "file": "forecourt.dll",
+    "sha256": "87f41f4ddebb919840f2fe0cf4cc53303e668f90934f4a17ea2ea72f3ca227d9",
+    "restored_sha256": "b8045ddf996bdeb963db40e498d5fcf94f504cd4160f21e2c063762b94dcc755",
+    "source_tables": [
+      {
+        "name": "sub_music_gain",
+        "source": "SUBCODE.BIN",
+        "source_offset": 35770,
+        "size": 256,
+        "offset": 157920,
+        "sha256": "0ccb8593251da535f26a66de8dc4bcee37085cbf6fe020fb4829ebb988aa1d97"
+      }
+    ]
+  },
+  "score": {
+    "file": "score.dll",
+    "sha256": "8d27810f0b837cb6eb84e70ae0acb7f77979b527b649d4d0be58875247e09b30",
+    "restored_sha256": "8d27810f0b837cb6eb84e70ae0acb7f77979b527b649d4d0be58875247e09b30",
+    "source_tables": []
+  },
+  "startup": {
+    "file": "startup.dll",
+    "sha256": "f8497bc04cb3a8a5c9cc58ec9159f7ddcd3cbb594fe9d989659af9d0ebad2292",
+    "restored_sha256": "f8497bc04cb3a8a5c9cc58ec9159f7ddcd3cbb594fe9d989659af9d0ebad2292",
+    "source_tables": []
+  }
+}

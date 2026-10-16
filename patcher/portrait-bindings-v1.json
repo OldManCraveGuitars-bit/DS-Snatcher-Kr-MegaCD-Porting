@@ -1,0 +1,1452 @@
+{
+  "version": 1,
+  "frames": [
+    {
+      "frame": 0,
+      "file_id": 8,
+      "scene": 8,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        4,
+        0
+      ],
+      "rectangle": [
+        32,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 1,
+      "file_id": 8,
+      "scene": 8,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        6,
+        0
+      ],
+      "rectangle": [
+        32,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 2,
+      "file_id": 8,
+      "scene": 8,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        5,
+        0
+      ],
+      "rectangle": [
+        32,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 3,
+      "file_id": 8,
+      "scene": 8,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        2,
+        5,
+        0
+      ],
+      "rectangle": [
+        32,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 4,
+      "file_id": 8,
+      "scene": 8,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        3,
+        6,
+        0
+      ],
+      "rectangle": [
+        32,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 5,
+      "file_id": 8,
+      "scene": 8,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        2,
+        6,
+        0
+      ],
+      "rectangle": [
+        32,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 6,
+      "file_id": 10,
+      "scene": 5,
+      "actors": [
+        11,
+        12,
+        13
+      ],
+      "poses": [
+        1,
+        4,
+        0
+      ],
+      "rectangle": [
+        168,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 7,
+      "file_id": 10,
+      "scene": 5,
+      "actors": [
+        11,
+        12,
+        13
+      ],
+      "poses": [
+        1,
+        6,
+        0
+      ],
+      "rectangle": [
+        168,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 8,
+      "file_id": 10,
+      "scene": 5,
+      "actors": [
+        11,
+        12,
+        13
+      ],
+      "poses": [
+        1,
+        5,
+        0
+      ],
+      "rectangle": [
+        168,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 9,
+      "file_id": 8,
+      "scene": 8,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        2,
+        4,
+        0
+      ],
+      "rectangle": [
+        32,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 10,
+      "file_id": 8,
+      "scene": 8,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        3,
+        4,
+        0
+      ],
+      "rectangle": [
+        32,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 11,
+      "file_id": 10,
+      "scene": 5,
+      "actors": [
+        11,
+        12,
+        13
+      ],
+      "poses": [
+        2,
+        5,
+        0
+      ],
+      "rectangle": [
+        168,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 12,
+      "file_id": 10,
+      "scene": 5,
+      "actors": [
+        11,
+        12,
+        13
+      ],
+      "poses": [
+        3,
+        4,
+        0
+      ],
+      "rectangle": [
+        168,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 13,
+      "file_id": 10,
+      "scene": 5,
+      "actors": [
+        11,
+        12,
+        13
+      ],
+      "poses": [
+        2,
+        4,
+        0
+      ],
+      "rectangle": [
+        168,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 14,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        4,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 15,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        6,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 16,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        5,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 17,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        2,
+        4,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 18,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        3,
+        6,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 19,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        2,
+        6,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 20,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        3,
+        5,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 21,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        2,
+        5,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 22,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        3,
+        4,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 23,
+      "file_id": 8,
+      "scene": 8,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        3,
+        5,
+        0
+      ],
+      "rectangle": [
+        32,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 24,
+      "file_id": 10,
+      "scene": 5,
+      "actors": [
+        11,
+        12,
+        13
+      ],
+      "poses": [
+        2,
+        6,
+        0
+      ],
+      "rectangle": [
+        168,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 25,
+      "file_id": 10,
+      "scene": 5,
+      "actors": [
+        11,
+        12,
+        13
+      ],
+      "poses": [
+        3,
+        5,
+        0
+      ],
+      "rectangle": [
+        168,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 26,
+      "file_id": 10,
+      "scene": 5,
+      "actors": [
+        11,
+        12,
+        13
+      ],
+      "poses": [
+        3,
+        6,
+        0
+      ],
+      "rectangle": [
+        168,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 27,
+      "file_id": 11,
+      "scene": 14,
+      "actors": [
+        8,
+        9,
+        10
+      ],
+      "poses": [
+        1,
+        6,
+        0
+      ],
+      "rectangle": [
+        168,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 28,
+      "file_id": 11,
+      "scene": 14,
+      "actors": [
+        8,
+        9,
+        10
+      ],
+      "poses": [
+        1,
+        4,
+        0
+      ],
+      "rectangle": [
+        168,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 29,
+      "file_id": 11,
+      "scene": 14,
+      "actors": [
+        8,
+        9,
+        10
+      ],
+      "poses": [
+        1,
+        5,
+        0
+      ],
+      "rectangle": [
+        168,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 30,
+      "file_id": 11,
+      "scene": 14,
+      "actors": [
+        8,
+        9,
+        10
+      ],
+      "poses": [
+        2,
+        4,
+        0
+      ],
+      "rectangle": [
+        168,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 31,
+      "file_id": 11,
+      "scene": 14,
+      "actors": [
+        8,
+        9,
+        10
+      ],
+      "poses": [
+        3,
+        4,
+        0
+      ],
+      "rectangle": [
+        168,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 32,
+      "file_id": 11,
+      "scene": 14,
+      "actors": [
+        8,
+        9,
+        10
+      ],
+      "poses": [
+        2,
+        6,
+        0
+      ],
+      "rectangle": [
+        168,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 33,
+      "file_id": 11,
+      "scene": 14,
+      "actors": [
+        8,
+        9,
+        10
+      ],
+      "poses": [
+        3,
+        6,
+        0
+      ],
+      "rectangle": [
+        168,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 34,
+      "file_id": 11,
+      "scene": 14,
+      "actors": [
+        8,
+        9,
+        10
+      ],
+      "poses": [
+        3,
+        5,
+        0
+      ],
+      "rectangle": [
+        168,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 35,
+      "file_id": 11,
+      "scene": 14,
+      "actors": [
+        8,
+        9,
+        10
+      ],
+      "poses": [
+        2,
+        5,
+        0
+      ],
+      "rectangle": [
+        168,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 36,
+      "file_id": 10,
+      "scene": 25,
+      "actors": [
+        8,
+        9
+      ],
+      "poses": [
+        2,
+        0
+      ],
+      "rectangle": [
+        96,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 37,
+      "file_id": 10,
+      "scene": 25,
+      "actors": [
+        8,
+        9
+      ],
+      "poses": [
+        1,
+        0
+      ],
+      "rectangle": [
+        96,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 38,
+      "file_id": 32,
+      "scene": 6,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        4,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 39,
+      "file_id": 32,
+      "scene": 6,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        4,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 40,
+      "file_id": 32,
+      "scene": 6,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        6,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 41,
+      "file_id": 32,
+      "scene": 6,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        5,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 42,
+      "file_id": 32,
+      "scene": 6,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        2,
+        6,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 43,
+      "file_id": 10,
+      "scene": 29,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        4,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 44,
+      "file_id": 10,
+      "scene": 29,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        6,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 45,
+      "file_id": 10,
+      "scene": 29,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        5,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 46,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        5,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 47,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        6,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 48,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        4,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 49,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        2,
+        6,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 50,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        4,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 51,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        6,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 52,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        5,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 53,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        5,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 54,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        4,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 55,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        6,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 56,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        3,
+        4,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 57,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        2,
+        4,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 58,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        4,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 59,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        6,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 60,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        1,
+        5,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 61,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        3,
+        6,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 62,
+      "file_id": 8,
+      "scene": 3,
+      "actors": [
+        5,
+        6,
+        7
+      ],
+      "poses": [
+        2,
+        4,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 63,
+      "file_id": 25,
+      "scene": 63,
+      "actors": [
+        5
+      ],
+      "poses": [
+        1
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 64,
+      "file_id": 25,
+      "scene": 63,
+      "actors": [
+        5
+      ],
+      "poses": [
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 65,
+      "file_id": 25,
+      "scene": 63,
+      "actors": [
+        5
+      ],
+      "poses": [
+        2
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 66,
+      "file_id": 25,
+      "scene": 41,
+      "actors": [
+        5,
+        6
+      ],
+      "poses": [
+        1,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 67,
+      "file_id": 25,
+      "scene": 41,
+      "actors": [
+        5,
+        6
+      ],
+      "poses": [
+        3,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 68,
+      "file_id": 25,
+      "scene": 41,
+      "actors": [
+        5,
+        6
+      ],
+      "poses": [
+        2,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    },
+    {
+      "frame": 69,
+      "file_id": 25,
+      "scene": 41,
+      "actors": [
+        5,
+        6
+      ],
+      "poses": [
+        1,
+        0
+      ],
+      "rectangle": [
+        24,
+        149,
+        64,
+        64
+      ]
+    }
+  ],
+  "policy": "Original sprite maps and palette commands only. No text renderer or copied screen pixels."
+}

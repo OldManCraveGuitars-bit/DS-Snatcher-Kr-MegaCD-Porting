@@ -1,0 +1,207 @@
+{
+  "retained": 203,
+  "excluded": [
+    {
+      "name": "hq-4b02.bin",
+      "sha256": "2a1046f3e23894f4b12b83ac1c373139e7aef80523b03713d6c3b25c3090638b",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-4c04.bin",
+      "sha256": "e9a7299fc2c42d6fb2d5a4e0ed004d2478351473c28b83cad669a35f813035a2",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-4d00.bin",
+      "sha256": "6538166321787e5c5ea42c060d2212800c7c0a9fc6309b3e1d12d503fb066b22",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-4e01.bin",
+      "sha256": "4cbf627f134cac788e16a2ef7f6a4bd0a4e45c7900f68fe8b2ccc0c886d8a086",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-4f00.bin",
+      "sha256": "6231bfd7533ab1d2fb75995789bcdbd0247d8ba40702f19419fc0ed25b624887",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-4f01.bin",
+      "sha256": "8923e6571cae937dcd09858cb3683c7a16f759b7c52e5cdf55dad474bb3bbd8e",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-4f02.bin",
+      "sha256": "d5c8fb007818b9d2293f146bab07ef7355c1f4cf10946e9dc0cb815e344a37fe",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-4f03.bin",
+      "sha256": "7225d0b99cbf325f60d924ba504412ed34cab293ebfff8b168dfc9572b709ed7",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-4f04.bin",
+      "sha256": "b79d6575d6e857b460a15d1b83d37f51fc8c00aaf8f9efe63f3a32d198efe064",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-5902.bin",
+      "sha256": "2f8095582c57be75379f5030463c5ba65cf946c5023486374a6d9d3c26759e97",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-5905.bin",
+      "sha256": "c74a4e4613b4e8ecdcea0cf5b400d262fc8ec561eafbf8665767d84106431ba9",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-5907.bin",
+      "sha256": "eec6a15954e9ac33e1370aa3baadf4135fcc042932bacc25129512ad3a1d04e7",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-5908.bin",
+      "sha256": "185e873b01e4f9c53c73894a15c9bb5540dc6c0ab86ff7c8850d6522729e6417",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-5909.bin",
+      "sha256": "b31348b3c78dde00fbeaca630622d9d979824f128b69759c73ca787f23876265",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-590a.bin",
+      "sha256": "14119bb819671b15fd0c376140fbd6a945902350a474e22cc91f6562e9857975",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-590b.bin",
+      "sha256": "cafd044c2e6bd9c13f2787650bd1d0cfbbf101f783974871991f3c53b0d8df32",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-590c.bin",
+      "sha256": "52e91e5fef9664ac369f46a55029f5d0ec39dd1f1a758a4ae7b1f1a54bf3e746",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-590d.bin",
+      "sha256": "ef022b2db264f25187720d1781ce2c01a989b6beff74aef4c1cfc6be07b680f3",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-590e.bin",
+      "sha256": "1c623966858e4d112f178097ead06246aedafd5dd963945a2f83f0ef9178b96c",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-6000.bin",
+      "sha256": "c7baee30f1a0aa5513f36bea6c9f7d594e8fe4797a367c4a5ec2746b80ba2ca3",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-6003.bin",
+      "sha256": "b9263f19c028ccab563d6f65de9df0c8e08b12636fed6902e48243b0f3f31a9f",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "hq-6004.bin",
+      "sha256": "b9263f19c028ccab563d6f65de9df0c8e08b12636fed6902e48243b0f3f31a9f",
+      "reason": "Original room/entry renderer owns these scene pictures; legacy static fallback not used by supported routes"
+    },
+    {
+      "name": "native-effect-13-r22.nsmu",
+      "sha256": "6ca70a7f5d5f9c4e33484fefadc01df7995762d206334db96fe0d3e68862b6d2",
+      "reason": "Dead legacy sampled-audio path; entry requires shared_audio, all commands use the live original driver"
+    },
+    {
+      "name": "native-effect-16-r22.nsmu",
+      "sha256": "ed58f4da387631bf8f8bff6603b6c95071802d367b3d03bd6d474c8b7be59727",
+      "reason": "Dead legacy sampled-audio path; entry requires shared_audio, all commands use the live original driver"
+    },
+    {
+      "name": "native-effect-1a-r22.nsmu",
+      "sha256": "7feb2462dc2a8c34af39db32e8cdf8e8421a9b9d7584ecba93f98a7957c6541c",
+      "reason": "Dead legacy sampled-audio path; entry requires shared_audio, all commands use the live original driver"
+    },
+    {
+      "name": "native-effect-2e-r22.nsmu",
+      "sha256": "c5c073671c674d33e0f9f27e90b67c5754ff828060aa86f6c8533aa90a09e21f",
+      "reason": "Dead legacy sampled-audio path; entry requires shared_audio, all commands use the live original driver"
+    },
+    {
+      "name": "native-music-45-r22.nsmu",
+      "sha256": "15386588e4189e69f9187ce28422e9451253acca4691babfddff08b5e77a2641",
+      "reason": "Dead legacy sampled-audio path; entry requires shared_audio, all commands use the live original driver"
+    },
+    {
+      "name": "native-music-4f-r22.nsmu",
+      "sha256": "02656f3352223ecdcf0e1398a02c518c91ae37fb16ab43c1e8281afbfd3fb85c",
+      "reason": "Dead legacy sampled-audio path; entry requires shared_audio, all commands use the live original driver"
+    },
+    {
+      "name": "native-music-61-r22.nsmu",
+      "sha256": "d65524ea85b64ac569f5739cb7377ebb4ed97f2c6808c52427dfcf33e6484d08",
+      "reason": "Dead legacy sampled-audio path; entry requires shared_audio, all commands use the live original driver"
+    },
+    {
+      "name": "native-music-63-drums-r22.nsdm",
+      "sha256": "3033c96b876ac036dba231af37442e16ea61e784b8dff92e3af798136b95cf12",
+      "reason": "Dead legacy sampled-audio path; entry requires shared_audio, all commands use the live original driver"
+    },
+    {
+      "name": "native-music-63-r22.nsmu",
+      "sha256": "d9d1d37b7a5170151f679e6719389541fac0492dc1b8c6b101a9e4f226bfb00f",
+      "reason": "Dead legacy sampled-audio path; entry requires shared_audio, all commands use the live original driver"
+    },
+    {
+      "name": "native-music-69-r22.nsmu",
+      "sha256": "da760502497248b152a06dbb5ca50236a569de3fe6fe2c9503a6fcc160938bc4",
+      "reason": "Dead legacy sampled-audio path; entry requires shared_audio, all commands use the live original driver"
+    },
+    {
+      "name": "portraits-r11.bin",
+      "sha256": "b6960832ffc3a2c249b9f313d7f19000e38ebc3d9e8836b7138dc86010c1d509",
+      "reason": "Replaced by native-portraits-r22.nspr; no current file opener"
+    },
+    {
+      "name": "portraits-r12.bin",
+      "sha256": "332dba813c20362a0b4562e37a2bd00f0ab714c3496ecb079c5a0cb52a9242c3",
+      "reason": "Replaced by native-portraits-r22.nspr; no current file opener"
+    },
+    {
+      "name": "portraits-r13.bin",
+      "sha256": "74b6a007430260f8137521d3538c01cb7b9c630493f3cdbb6a32a6a831fb27a3",
+      "reason": "Replaced by native-portraits-r22.nspr; no current file opener"
+    },
+    {
+      "name": "portraits-r15.bin",
+      "sha256": "2201eca699e809d4514a44fbe17b816307daa6a27bbdd652b39e3d1d10485738",
+      "reason": "Replaced by native-portraits-r22.nspr; no current file opener"
+    },
+    {
+      "name": "portraits-r16.bin",
+      "sha256": "f3000e0b36e3e5cd4e2b8da98fef76c90c198c7e199c0ed3f04698b27f5d970f",
+      "reason": "Replaced by native-portraits-r22.nspr; no current file opener"
+    },
+    {
+      "name": "portraits-r19.bin",
+      "sha256": "4db80d0ee6b4db3f012280b10d229c5e10d71068f3ca4ba499627d0281fb52df",
+      "reason": "Replaced by native-portraits-r22.nspr; no current file opener"
+    },
+    {
+      "name": "portraits-r21.bin",
+      "sha256": "ca1716feea1945ee4576748ec0235a47a24667efdc16e057f0ec0c351cfb2987",
+      "reason": "Replaced by native-portraits-r22.nspr; no current file opener"
+    }
+  ],
+  "conditions": [
+    "Passed new-ROM automatic opening, HQ, shooting practice, both filters, battle, escape and return regressions.",
+    "Native room scenes preserve original animation; omitted legacy portraits are never read.",
+    "Checks cover declared routes only; no full-game or all-branches claim."
+  ],
+  "verified_rom_sha256": "0578ba7b425664ac5726d4e85f934dc9cf943d3bc6a9ab52bb2ce01667f42bd1",
+  "verification": "verification.json"
+}

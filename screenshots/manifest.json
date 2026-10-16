@@ -1,0 +1,50 @@
+[
+  {
+    "file": "reception.png",
+    "source_run": "demo-public-opening-v1",
+    "rom_sha256": "0578ba7b425664ac5726d4e85f934dc9cf943d3bc6a9ab52bb2ce01667f42bd1",
+    "sha256": "ca84a33eee0e8edc18e0305f6d8955223b8cbf719681b41f52a0f9722b4547c0",
+    "size": [
+      256,
+      384
+    ],
+    "emulator_capture": true,
+    "edited": false
+  },
+  {
+    "file": "chief-office.png",
+    "source_run": "demo-public-return-v1",
+    "rom_sha256": "0578ba7b425664ac5726d4e85f934dc9cf943d3bc6a9ab52bb2ce01667f42bd1",
+    "sha256": "a91ea95fba42f477bad8c4a2769afe47d702ae94ff6db4a90e459e9efb118b54",
+    "size": [
+      256,
+      384
+    ],
+    "emulator_capture": true,
+    "edited": false
+  },
+  {
+    "file": "shooting-practice.png",
+    "source_run": "demo-public-practice-v1",
+    "rom_sha256": "0578ba7b425664ac5726d4e85f934dc9cf943d3bc6a9ab52bb2ce01667f42bd1",
+    "sha256": "dff4e565920f79bb1c97ce61dbe63d9339d0584d79e15fff1b85c88f66c698d1",
+    "size": [
+      256,
+      384
+    ],
+    "emulator_capture": true,
+    "edited": false
+  },
+  {
+    "file": "factory-battle.png",
+    "source_run": "demo-public-return-v1",
+    "rom_sha256": "0578ba7b425664ac5726d4e85f934dc9cf943d3bc6a9ab52bb2ce01667f42bd1",
+    "sha256": "aacdb400ce51f21786d4661c131b3cca06455b387bddce01a341e3193f793bc2",
+    "size": [
+      256,
+      384
+    ],
+    "emulator_capture": true,
+    "edited": false
+  }
+]

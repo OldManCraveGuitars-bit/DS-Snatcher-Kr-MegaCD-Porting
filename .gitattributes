@@ -1,0 +1,5 @@
+* text=auto
+*.png binary
+*.dll binary
+*.zlib binary
+*.cmd text eol=crlf
