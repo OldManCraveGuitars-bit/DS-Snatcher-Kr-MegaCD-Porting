@@ -16,7 +16,23 @@
 2. 지원 **Sega CD USA BIOS**와 **PC 저장 위치** 선택.
 3. **NDS 만들기** → 완료 후 결과 폴더의 `snatcher_ds.nds`를 SD 카드로 복사.
 
-한글 0.81은 자동 적용됩니다. 이미 한글패치한 ROM을 넣지 마세요. 기존 `snatcher_ds` 저장 폴더를 백업하세요. [지원 BIOS·패치 방법](https://github.com/OldManCraveGuitars-bit/DS-Snatcher-Kr-MegaCD-Porting/blob/v0.81/docs/PATCHING_KO.md)
+한글 0.81은 자동 적용됩니다. 이미 한글패치한 ROM을 넣지 마세요. 기존 `snatcher_ds` 저장 폴더를 백업하세요. [지원 BIOS·패치 방법](https://github.com/OldManCraveGuitars-bit/DS-Snatcher-Kr-MegaCD-Porting/blob/main/docs/PATCHING_KO.md)
+
+## 입력 원본 ROM · BIOS 해시
+
+**북미판 원본 ROM — `Snatcher (USA).bin` (단일 BIN 기준, 625,192,176바이트)**
+
+```text
+SHA-256: 8d6f4dba8d9ce59991be9f65635047adc3b0f37ea2358f8c48b251883c9e55b6
+```
+
+**지원 Sega CD USA BIOS — `us_scd2_9306.bin` (131,072바이트)**
+
+```text
+SHA-256: b1c2036b79467514eaaa69c76e5ba83801621e821059caa53cb921a0b21e3af4
+```
+
+위 값은 **패처에 넣을 원본 파일**의 해시입니다. 패처에서는 연결된 **CUE**를 선택하세요. 여러 BIN 트랙으로 나뉜 원본은 각 파일의 해시가 위 단일 BIN 해시와 다르며 직접 비교할 수 없습니다. 첨부된 `INPUT-SHA256-v0.81.txt`에서도 확인할 수 있습니다.
 
 ## 변경과 확인 범위
 

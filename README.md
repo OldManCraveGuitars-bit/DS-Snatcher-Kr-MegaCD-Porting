@@ -18,6 +18,22 @@ Nintendo DS의 두 화면에 맞춰 상단에 장면 그림, 하단에 한국어
 
 본인이 보유한 **수정되지 않은 북미판 CUE와 모든 BIN 트랙**, **지원 Sega CD USA BIOS**가 필요합니다. 게임 원본·BIOS·완성 NDS는 배포하지 않습니다.
 
+## 입력 원본 ROM · BIOS 해시
+
+**북미판 원본 ROM — `Snatcher (USA).bin` (단일 BIN 기준, 625,192,176바이트)**
+
+```text
+SHA-256: 8d6f4dba8d9ce59991be9f65635047adc3b0f37ea2358f8c48b251883c9e55b6
+```
+
+**지원 Sega CD USA BIOS — `us_scd2_9306.bin` (131,072바이트)**
+
+```text
+SHA-256: b1c2036b79467514eaaa69c76e5ba83801621e821059caa53cb921a0b21e3af4
+```
+
+위 값은 **패처에 넣을 원본 파일**의 해시입니다. 패처의 ROM 선택란에서는 연결된 **CUE**를 선택하세요. 여러 BIN 트랙으로 나뉜 원본은 각 파일의 해시가 위 단일 BIN 해시와 다르며 직접 비교할 수 없습니다. [원본 해시 텍스트](INPUT-SHA256-v0.81.txt)
+
 ## 패치 방법
 
 1. Windows 10/11 64비트 PC에서 EXE를 실행합니다.

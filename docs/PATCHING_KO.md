@@ -22,7 +22,30 @@ Mega-CD판 SNATCHER 한글패치 0.81을 기반으로 제작한 DS 이식의 전
   SHA-256: b1c2036b79467514eaaa69c76e5ba83801621e821059caa53cb921a0b21e3af4
 • Windows 임시 폴더가 있는 드라이브에 약 300MB, 결과 저장 드라이브에 2GB 이상 여유 공간
 
-만드는 방법
+## 입력 원본 ROM · BIOS 해시
+
+**북미판 원본 ROM — `Snatcher (USA).bin` (단일 BIN 기준, 625,192,176바이트)**
+
+```text
+SHA-256: 8d6f4dba8d9ce59991be9f65635047adc3b0f37ea2358f8c48b251883c9e55b6
+```
+
+**지원 Sega CD USA BIOS — `us_scd2_9306.bin` (131,072바이트)**
+
+```text
+SHA-256: b1c2036b79467514eaaa69c76e5ba83801621e821059caa53cb921a0b21e3af4
+```
+
+위 값은 **패처에 넣을 원본 파일**의 해시입니다. 패처의 ROM 선택란에서는 연결된 **CUE**를 선택하세요. 여러 BIN 트랙으로 나뉜 원본은 각 파일의 해시가 위 단일 BIN 해시와 다르며 직접 비교할 수 없습니다.
+
+Windows PowerShell에서 파일을 확인하려면 다음 명령의 경로를 자신의 파일 위치로 바꾸세요.
+
+```powershell
+Get-FileHash -LiteralPath 'D:\Original\Snatcher (USA).bin' -Algorithm SHA256
+Get-FileHash -LiteralPath 'D:\BIOS\us_scd2_9306.bin' -Algorithm SHA256
+```
+
+## 만드는 방법
 
 1. Snatcher-DS-v0.81-Patcher.exe를 실행합니다.
 2. [원본 ROM (.cue)] 옆의 [찾아보기]로 원본 CUE를 선택합니다.
