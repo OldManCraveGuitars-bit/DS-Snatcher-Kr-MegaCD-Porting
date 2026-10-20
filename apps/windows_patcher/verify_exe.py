@@ -15,7 +15,7 @@ from tkinter import filedialog, messagebox
 import patcher_app as app
 
 ROOT = Path(__file__).resolve().parents[2]
-WORK = ROOT/'work/exe-patcher-v1'
+WORK = ROOT/'work/exe-patcher-v0811'
 TEST = WORK/'검증 한글 공백 경로'
 SOURCE = Path('C:/CODEX/roms/Snatcher_USA/Snatcher (USA).cue')
 BIOS = Path('C:/CODEX/bios/us_scd2_9306.bin')
@@ -36,9 +36,7 @@ def run():
     TEST.mkdir(exist_ok=False)
     shutil.copyfile(WORK/'dist/Snatcher-DS-Patcher.exe', EXE)
     checks = []
-    protected = [SOURCE, SOURCE.with_suffix('.bin'), BIOS, app.payload_root()/'package-files.json',
-                 ROOT/'work/releases/Snatcher-DS-source-kit-v26-ko081.zip',
-                 ROOT/'work/releases/DS-Snatcher-Kr-MegaCD-Porting-v0.1Demo-Patcher.zip']
+    protected = [SOURCE, SOURCE.with_suffix('.bin'), BIOS, app.payload_root()/'package-files.json']
     before = {str(p): app.sha(p) for p in protected}
     result = {'passed': False, 'exe_sha256': app.sha(EXE), 'checks': checks,
               'frozen_worker': True, 'gui_callback_test': True, 'desktop_click_test': False,
@@ -143,13 +141,13 @@ def run():
             assert str(ui.start_button['state']) == 'normal'
             assert (ui.output/'patcher.log').is_file()
             assert not ui_errors, ui_errors
-            checks.append('All 1230 assets and NDS exactly match verified v26')
+            checks.append('All 1230 assets and NDS exactly match the marker-only v0.811 reference')
             checks.append('GUI stays responsive; progress, success, log and folder states pass')
             result.update(passed=True, conversion=final, gui_updates=updates,
                           output=str(ui.output), job=str(ui.job), ui_errors=ui_errors)
         after = {str(p): app.sha(p) for p in protected}
         assert before == after
-        checks.append('ROM, BIOS, sealed kit and public Demo hashes unchanged')
+        checks.append('ROM, BIOS and source kit manifest hashes unchanged')
         result['original_after'] = after
     finally:
         root.destroy()
@@ -159,7 +157,7 @@ def run():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--work', default='exe-patcher-v1')
+    parser.add_argument('--work', default='exe-patcher-v0811')
     args = parser.parse_args()
     assert args.work.replace('-', '').isalnum()
     WORK = ROOT/'work'/args.work

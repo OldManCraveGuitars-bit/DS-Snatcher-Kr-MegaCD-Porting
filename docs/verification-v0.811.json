@@ -1,0 +1,134 @@
+{
+  "release": "v0.811",
+  "prerelease": true,
+  "full_test_version": true,
+  "verified_at_kst": "2026-10-21T01:52:20.712104+09:00",
+  "based_on": "MegaCD-Snatcher-Kr Korean patch 0.81",
+  "nds_sha256": "ba2169d26592b0b3bbb151f581f746faa0feb18a9102f6dbe5ad4cbba98e3fbc",
+  "exe_sha256": "a49e7a81d8578253d7ad94058597df1c9e55400aebcae708331ec0e89856ab67",
+  "actual_exe_conversion_verified": true,
+  "resource_files": 1230,
+  "conversion_seconds": 552.18,
+  "exe_checks": [
+    "Actual frozen EXE loads Tcl/Tk and constructs complete GUI without Python PATH",
+    "GUI file selectors populate ROM/BIOS/destination",
+    "GUI rejects missing input before creating output",
+    "EXE rejects bad BIOS",
+    "EXE rejects existing output",
+    "EXE rejects source directory output",
+    "EXE rejects missing BIN",
+    "Existing files retained",
+    "GUI cancel terminates actual EXE worker; no final NDS; retry enabled",
+    "All 1230 assets and NDS exactly match the marker-only v0.811 reference",
+    "GUI stays responsive; progress, success, log and folder states pass",
+    "ROM, BIOS and source kit manifest hashes unchanged"
+  ],
+  "inputs_unchanged": true,
+  "gui_callback_test": true,
+  "desktop_click_test": false,
+  "exe_evidence_sha256": "c6d4440a1bc4b69f0c49869e2edd8a438ae120a00f1b6dcc0a015dbd1fdaa9ec",
+  "nds_difference_from_v081": {
+    "changed_bytes": 8,
+    "offset": 1585776,
+    "before_hex": "ffffffffffffffff",
+    "after_ascii": "NitroFS!",
+    "prior_nds_sha256": "c12edfe3d9fa218d7256a7e43a4d831d40c92ba15985fdf40762c3f8202735f4",
+    "complete_file_comparison": true,
+    "executable_and_resource_bytes_unchanged": true
+  },
+  "assembler_boundary_regression": {
+    "passed": true,
+    "file_counts": [
+      1,
+      63,
+      64,
+      65,
+      1230
+    ],
+    "checks": [
+      "FAT size and file ranges",
+      "NitroFS marker before banner",
+      "512-byte aligned FAT does not overlap banner",
+      "Header CRC"
+    ]
+  },
+  "startup_tests": [
+    {
+      "passed": true,
+      "core": {
+        "name": "melonDS",
+        "version": "0.9.3 66b5d26",
+        "sha256": "d3de8902d79d0afe9e3e34941cae7e5893a20e2751ccf4b0769289cd3b3925c5"
+      },
+      "frames": 28603,
+      "elapsed_seconds": 117.76,
+      "main_ram_bytes": 4194304,
+      "fresh_profile": true,
+      "title_reached": true,
+      "reception_reached": true,
+      "both_openings_completed_without_skip": true,
+      "actual_frozen_exe_output": true,
+      "memory_injection": false,
+      "savestate": false,
+      "report_sha256": "6c7eba4bc795eeed762c5e5d965796e2871c957b99d29285d30793b5519a94bb",
+      "screenshot": "docs/compatibility-v0.811/melonds-reception.png",
+      "screenshot_sha256": "483dc1522157157d776dcff2db37e2112810e29cc4dbdb6b831ecc3766232468"
+    },
+    {
+      "passed": true,
+      "core": {
+        "name": "DeSmuME",
+        "version": "git 95b4d79",
+        "sha256": "20445e10410c2723c74beec81498994ae78a071affb0735bd7f403e6a17884ea"
+      },
+      "frames": 28630,
+      "elapsed_seconds": 216.14,
+      "main_ram_bytes": 4194304,
+      "fresh_profile": true,
+      "title_reached": true,
+      "reception_reached": true,
+      "both_openings_completed_without_skip": true,
+      "actual_frozen_exe_output": true,
+      "memory_injection": false,
+      "savestate": false,
+      "report_sha256": "ccee5202fced3f0bdcd86b0aae402e129ce804b8d02ed90f17b16177cbb7ecf0",
+      "screenshot": "docs/compatibility-v0.811/desmume-reception.png",
+      "screenshot_sha256": "96d0ec0cae52e48e20c51dab9258148272cf7509bd84995789e966af7990d09c"
+    }
+  ],
+  "legacy_melonds_storage_tests": [
+    {
+      "phase": "save",
+      "test_completed": true,
+      "operation_succeeded": false,
+      "frames": 2361,
+      "notice": "SD 카드를 읽을 수 없습니다",
+      "marker_only_probe_used": true,
+      "identical_to_new_nds_sha256": "ba2169d26592b0b3bbb151f581f746faa0feb18a9102f6dbe5ad4cbba98e3fbc",
+      "memory_injection": false,
+      "savestate": false,
+      "report_sha256": "6071011ca454fc207c1d49acffd564e4a93f29619e06174a0a8fa6b78e181c04"
+    },
+    {
+      "phase": "cold-load",
+      "test_completed": true,
+      "operation_succeeded": false,
+      "frames": 1637,
+      "notice": "SD 카드를 읽을 수 없습니다",
+      "marker_only_probe_used": true,
+      "identical_to_new_nds_sha256": "ba2169d26592b0b3bbb151f581f746faa0feb18a9102f6dbe5ad4cbba98e3fbc",
+      "memory_injection": false,
+      "savestate": false,
+      "report_sha256": "1a5e4ab33f8c4880b6acf34eaf6e86deab7d8b2f9fc9df19d33bf3251554d83f"
+    }
+  ],
+  "legacy_melonds_in_game_save_load_supported": false,
+  "historical_full_route_evidence": "verification-v0.81.json",
+  "full_route_retested_for_v0811": false,
+  "all_branches_verified": false,
+  "physical_r4_test": false,
+  "standalone_melonds_test": false,
+  "android_apk_test": false,
+  "sound_stutter_fully_resolved": false,
+  "screenshot_manifest": "screenshots/manifest.json"
+}

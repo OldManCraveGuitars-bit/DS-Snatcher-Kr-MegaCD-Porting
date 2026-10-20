@@ -1,4 +1,4 @@
-"""Offline Windows GUI around the immutable, verified v26 converter."""
+"""Offline Windows GUI for the v0.811 NitroFS compatibility patcher."""
 from pathlib import Path
 from contextlib import redirect_stdout, redirect_stderr
 from datetime import datetime
@@ -18,9 +18,9 @@ import time
 import traceback
 
 sys.dont_write_bytecode = True
-APP_VERSION = '1.0 / 한국어 0.81'
-MANIFEST_SHA = 'f93199929e5ecb3985d7f6cb11d58c0174aad5ded38a1f7e2138c2a666c5ec5d'
-NDS_SHA = 'c12edfe3d9fa218d7256a7e43a4d831d40c92ba15985fdf40762c3f8202735f4'
+APP_VERSION = '0.811 / 한국어 0.81'
+MANIFEST_SHA = 'e5727679c68e6d25a0df2b0ae9d593488462dc191c3a926586d782a11599262c'
+NDS_SHA = 'ba2169d26592b0b3bbb151f581f746faa0feb18a9102f6dbe5ad4cbba98e3fbc'
 BIOS_SHA = 'b1c2036b79467514eaaa69c76e5ba83801621e821059caa53cb921a0b21e3af4'
 
 
@@ -34,7 +34,7 @@ def payload_root():
     if getattr(sys, 'frozen', False):
         return bundle_root() / 'payload'
     project = Path(__file__).resolve().parents[2]
-    return project / 'work/r22-resources/release-owned-final-source-candidate-v26/패처 폴더'
+    return project / 'source-kit'
 
 
 def sha(path):
@@ -206,7 +206,7 @@ class PatcherApp:
         self.process = self.job = self.output = None
         self.closing = False
         self.offset = 0
-        root.title('SNATCHER DS 패처 · 한국어 0.81')
+        root.title('SNATCHER DS 패처 v0.811 · 한국어 0.81')
         root.geometry('800x650')
         root.minsize(740, 620)
         root.option_add('*Font', ('맑은 고딕', 10))
@@ -221,7 +221,7 @@ class PatcherApp:
         base.columnconfigure(0, weight=1)
         base.rowconfigure(8, weight=1)
         ttk.Label(base, text='SNATCHER DS', style='Title.TLabel').grid(row=0, column=0, sticky='w')
-        ttk.Label(base, text='원본 ROM + BIOS → 한국어 NDS  |  EXE 패처 1.0',
+        ttk.Label(base, text='원본 ROM + BIOS → 한국어 NDS  |  EXE 패처 v0.811',
                   style='Sub.TLabel').grid(row=1, column=0, sticky='w', pady=(2, 18))
         form = ttk.Frame(base)
         form.grid(row=2, column=0, sticky='ew')

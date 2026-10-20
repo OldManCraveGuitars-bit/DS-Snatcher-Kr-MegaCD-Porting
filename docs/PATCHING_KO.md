@@ -1,16 +1,16 @@
-# v0.81 EXE 패치 방법
+# v0.811 EXE 패치 방법
 
-**v0.81은 전체 테스트용 버전입니다. 완성판이 아니며, 버그·일부 구간의 진행 불가·사운드 끊김이 남아 있을 수 있습니다.**
+**v0.811은 전체 테스트용 버전입니다. 완성판이 아니며, 버그·일부 구간의 진행 불가·사운드 끊김이 남아 있을 수 있습니다.**
 
 **이 프로젝트는 [Mega-CD판 SNATCHER 한글패치](https://github.com/OldManCraveGuitars-bit/MegaCD-Snatcher-Kr)를 기반으로 제작한 Nintendo DS용 비공식 이식입니다. 한국어 대사와 보이스 자막은 해당 한글패치 0.81 자료를 반영했습니다.**
 
-SNATCHER DS v0.81 · 전체 테스트용 EXE 패처
+SNATCHER DS v0.811 · 전체 테스트용 EXE 패처
 
 Windows 10/11 64비트용입니다. Python이나 개발 도구를 설치하지 않아도 됩니다.
 변환은 사용자의 컴퓨터에서 이루어지며 ROM과 BIOS를 서버로 보내지 않습니다.
 Mega-CD판 SNATCHER 한글패치 0.81을 기반으로 제작한 DS 이식의 전체 테스트용 배포입니다.
 완성판이 아니며 버그, 일부 구간 진행 불가, 사운드 끊김이 남아 있을 수 있습니다.
-기존 v0.1Demo와 별도 릴리스입니다. EXE 내부 도구 표기는 1.0 / 한국어 0.81입니다.
+기존 v0.1Demo와 별도 릴리스입니다. EXE 내부 도구 표기는 0.811 / 한국어 0.81입니다.
 
 준비할 파일
 
@@ -47,7 +47,7 @@ Get-FileHash -LiteralPath 'D:\BIOS\us_scd2_9306.bin' -Algorithm SHA256
 
 ## 만드는 방법
 
-1. Snatcher-DS-v0.81-Patcher.exe를 실행합니다.
+1. Snatcher-DS-v0.811-Patcher.exe를 실행합니다.
 2. [원본 ROM (.cue)] 옆의 [찾아보기]로 원본 CUE를 선택합니다.
 3. [Sega CD BIOS]에서 위 지원 BIOS를 선택합니다.
 4. [저장 위치]에서 PC의 별도 NTFS 폴더를 선택합니다.
@@ -87,3 +87,8 @@ EXE에는 변환에 필요한 Python, NumPy, Pillow, Unicorn 및 고지문이 �
 ZIP의 runtime-licenses 폴더에 실행 환경 라이선스를 동봉합니다.
 ZIP의 source 폴더에는 GUI 소스와 기존 원본 미포함 변환기 소스 키트가 들어 있습니다.
 변환기와 플레이어 소스의 라이선스·재빌드 방법은 소스 키트의 안내를 참고하세요.
+
+
+v0.811 호환성 안내
+
+구형 RetroArch melonDS와 DeSmuME의 오프닝 리소스 읽기 문제를 보완했습니다. 구형 melonDS의 게임 내 저장·불러오기는 홈브루 SD 미지원으로 사용할 수 없습니다. melonDS DS의 홈브루 SD 기능과 구별하세요. R4 실기, melonDS 독립 실행판, Android APK의 이번 수정본 동작은 아직 별도 검증이 필요합니다. 기존 저장 폴더는 유지하고 NDS만 새로 만드세요.

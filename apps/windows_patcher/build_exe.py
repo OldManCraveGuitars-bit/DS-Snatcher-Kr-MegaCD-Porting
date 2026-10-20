@@ -1,4 +1,4 @@
-"""Build a standalone EXE without altering the sealed converter package."""
+"""Build a standalone EXE from this checkout's hash-verified source kit."""
 from pathlib import Path
 import hashlib
 import importlib.metadata as metadata
@@ -11,9 +11,8 @@ import argparse
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
-WORK = ROOT/'work/exe-patcher-v1'
-PACKAGE = ROOT/'work/r22-resources/release-owned-final-source-candidate-v26/패처 폴더'
-RELEASE = ROOT/'work/releases/Snatcher-DS-EXE-Patcher-v1'
+WORK = ROOT/'work/exe-patcher-v0811'
+PACKAGE = ROOT/'source-kit'
 PACKAGER = ROOT/'work/exe-patcher-bootloader/pyinstaller-6.22.3'
 
 
@@ -89,7 +88,7 @@ def build():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--work', default='exe-patcher-v1')
+    parser.add_argument('--work', default='exe-patcher-v0811')
     parser.add_argument('--pyinstaller-source', type=Path, default=PACKAGER)
     args = parser.parse_args()
     if not args.work.replace('-', '').isalnum():

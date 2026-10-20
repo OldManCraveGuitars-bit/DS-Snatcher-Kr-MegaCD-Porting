@@ -99,7 +99,10 @@ class ReleaseWriter:
 
         fnt_at = allocate(len(fnt))
         fat = bytearray(8*len(names))
-        fat_at = allocate(len(fat))
+        # libnds checks this marker when mounting NitroFS directly from the
+        # cartridge (without a loader-provided SD file path). Reserve its bytes
+        # even when the FAT ends exactly on a 512-byte boundary.
+        fat_at = allocate(len(fat) + 8)
         banner_at = allocate(len(banner))
         for i, name in enumerate(names):
             size = expected[name]['bytes']
@@ -133,7 +136,8 @@ class ReleaseWriter:
                 take = min(left, len(padding))
                 self.file.write(padding[:take])
                 left -= take
-            for position, data in ((0, prefix), (fnt_at, fnt), (fat_at, fat), (banner_at, banner)):
+            for position, data in ((0, prefix), (fnt_at, fnt), (fat_at, fat),
+                                   (fat_at + len(fat), b'NitroFS!'), (banner_at, banner)):
                 self.file.seek(position)
                 self.file.write(data)
             for position, data in executable_writes:

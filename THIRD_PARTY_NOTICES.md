@@ -6,10 +6,10 @@
 
 원본 게임 그림·음성·음악·BIOS·완성 NDS를 패처에 넣지 않습니다. 사용자가 지정한 원본으로 생성합니다. 소개용 실제 스크린샷에 프로젝트 코드의 라이선스를 적용하지 않습니다.
 
-- 플레이어·변환기 출처: [source-kit/SOURCE-ORIGINS_KO.txt](source-kit/SOURCE-ORIGINS_KO.txt), [PROVENANCE.json](source-kit/PROVENANCE.json).
+- 플레이어·변환기 출처: [source-kit/SOURCE-ORIGINS_KO.txt](https://github.com/OldManCraveGuitars-bit/DS-Snatcher-Kr-MegaCD-Porting/blob/v0.811/source-kit/SOURCE-ORIGINS_KO.txt), [PROVENANCE.json](https://github.com/OldManCraveGuitars-bit/DS-Snatcher-Kr-MegaCD-Porting/blob/v0.811/source-kit/PROVENANCE.json).
 - PicoDrive/MAME 계열 YM2612, Genesis Plus GX/Musashi, Nuked-OPN2, floooh/chips, BlocksDS/libnds, Maxmod 등은 소스 키트의 각 `third_party/`와 `licenses/` 고지를 따릅니다. 비상업적 조건·소스 제공·수정/재링크 권한 등 해당 조건을 유지합니다.
 - Galmuri 글꼴은 동봉된 SIL Open Font License를 따릅니다.
 - EXE에 포함한 Python/Tcl/Tk, NumPy, Pillow, Unicorn, PyInstaller의 고지는 [runtime-licenses/](runtime-licenses/)에 있습니다.
-- 새 GUI 래퍼는 [MIT License](apps/windows_patcher/LICENSE.txt)이며 다른 구성 요소의 라이선스를 대체하지 않습니다.
+- 새 GUI 래퍼는 [MIT License](https://github.com/OldManCraveGuitars-bit/DS-Snatcher-Kr-MegaCD-Porting/blob/v0.811/apps/windows_patcher/LICENSE.txt)이며 다른 구성 요소의 라이선스를 대체하지 않습니다.
 
 배포 ZIP에는 대응 GUI·변환기·플레이어 소스와 PyInstaller 런처 소스가 포함됩니다. [재빌드 안내](docs/BUILDING.md)
