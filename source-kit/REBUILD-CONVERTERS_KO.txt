@@ -1,0 +1,17 @@
+PC 변환 DLL 소스 재빌드 — 개발자용 선택 절차
+
+일반 NDS 생성에는 컴파일러가 필요하지 않습니다. Patch-development.cmd를 사용하세요.
+다음 절차는 동봉한 PC 변환 소스와 사용자의 원본만으로 다섯 Windows DLL을 재빌드합니다.
+64비트 Windows용 GCC와 requirements.txt의 Python 패키지가 필요합니다.
+
+py -3 -X utf8 -B patcher/rebuild_converter_helpers.py --source "D:/Original/Snatcher (USA).cue" --bios "D:/BIOS/bios_CD_U.bin" --output "D:/Snatcher-Converter-Rebuild" --gcc "C:/mingw64/bin/gcc.exe"
+
+출력은 기존 파일과 겹치지 않는 새 폴더를 지정합니다. 원본·BIOS·패처 폴더 내부는 거부합니다.
+필요한 음량표는 원본에서 읽고 검사한 뒤 새 빌드 폴더의 소스에만 복원합니다.
+원본 패처의 #error 자리표시자를 수정하거나 값이 0인 표로 대체하지 마세요.
+다섯 DLL이 생성한 해당 리소스들을 기존 SHA-256·크기와 대조하고, 실패하면 기록을 남깁니다.
+완성된 host/windows-x64 폴더에는 외부 코드 고지가 포함되며, 원본 음량표는 다시 비워져 있습니다.
+재빌드 원본·중간 파일에는 사용자의 원본에서 얻은 데이터가 있으므로 별도로 보관하세요.
+동봉 소스와 각 구성 요소의 고지는 converter/third_party 및 licenses에 있습니다.
+이 절차는 PC 변환 DLL 검증이며, 게임 전체 진행·실기 검증을 대신하지 않습니다.
+공개된 1회성 v0.1Demo는 업데이트하지 않습니다.

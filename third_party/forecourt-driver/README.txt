@@ -1,1 +1,0 @@
-Original source interpreter derived from Genesis Plus GX Musashi; compact static dispatch retains the verified4C handlers. Source IP/FMWR bytes are user-owned inputs. This private integration does not establish the full original Main/Sub IRQ context.

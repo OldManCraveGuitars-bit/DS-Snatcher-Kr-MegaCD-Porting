@@ -1,0 +1,43 @@
+{
+  "release": "v0.81",
+  "prerelease": true,
+  "full_test_version": true,
+  "based_on": "MegaCD-Snatcher-Kr Korean patch 0.81",
+  "nds_sha256": "c12edfe3d9fa218d7256a7e43a4d831d40c92ba15985fdf40762c3f8202735f4",
+  "exe_sha256": "314b963646fb94d5a8969c30dd1251b3951df96d2960247c6bc708bbc324dcba",
+  "resource_files": 1230,
+  "actual_exe_conversion_verified": true,
+  "exe_checks": [
+    "Actual frozen EXE loads Tcl/Tk and constructs complete GUI without Python PATH",
+    "GUI file selectors populate ROM/BIOS/destination",
+    "GUI rejects missing input before creating output",
+    "EXE rejects bad BIOS",
+    "EXE rejects existing output",
+    "EXE rejects source directory output",
+    "EXE rejects missing BIN",
+    "Existing files retained",
+    "GUI cancel terminates actual EXE worker; no final NDS; retry enabled",
+    "All 1230 assets and NDS exactly match verified v26",
+    "GUI stays responsive; progress, success, log and folder states pass",
+    "ROM, BIOS, sealed kit and public Demo hashes unchanged"
+  ],
+  "conversion_seconds": 556.46,
+  "same_nds_route_legs": 34,
+  "route_display_frames": 1006240,
+  "main_act1_to_act3_credits_verified": true,
+  "cold_clear_and_act_select_verified": true,
+  "verified_slots": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "all_branches_verified": false,
+  "physical_console_validation_for_final_package": false,
+  "sound_stutter_fully_resolved": false,
+  "desktop_click_test": false,
+  "screenshot_manifest": "screenshots/manifest.json",
+  "exe_evidence_sha256": "cf6bee6dd4d76b1b5a45e43d9dff6b70ea29ad33a96bfec250170e38c32165e2",
+  "route_evidence_sha256": "b0186003e06042047225e79ba58a42e225cdfa2f6ed3cce50fdbfb7c0bb3da59"
+}

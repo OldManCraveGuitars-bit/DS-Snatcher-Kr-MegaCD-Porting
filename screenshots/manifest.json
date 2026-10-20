@@ -1,50 +1,72 @@
 [
   {
+    "file": "title.png",
+    "caption": "SNATCHER DS 로고 / 시작 화면",
+    "sha256": "5cd299b1c4e757b8c52aabcf6e011e4a10d2e4a759341d0180f2f03a81fe4551",
+    "rom_sha256": "c12edfe3d9fa218d7256a7e43a4d831d40c92ba15985fdf40762c3f8202735f4",
+    "resolution": [
+      256,
+      384
+    ],
+    "edited": false,
+    "emulator": "melonDS DS",
+    "physical_console": false,
+    "evidence_sha256": "7d8eaf6f376f834f06b550c71e356767d15f99ccc4fe3f701f258b3b9aa70323"
+  },
+  {
     "file": "reception.png",
-    "source_run": "demo-public-opening-v1",
-    "rom_sha256": "0578ba7b425664ac5726d4e85f934dc9cf943d3bc6a9ab52bb2ce01667f42bd1",
-    "sha256": "ca84a33eee0e8edc18e0305f6d8955223b8cbf719681b41f52a0f9722b4547c0",
-    "size": [
+    "caption": "접수처와 터치 선택지",
+    "sha256": "6cd6074e6d986f88fc68c5461f0498093e51dcf33f9dba2564e8958ec79ef70e",
+    "rom_sha256": "c12edfe3d9fa218d7256a7e43a4d831d40c92ba15985fdf40762c3f8202735f4",
+    "resolution": [
       256,
       384
     ],
-    "emulator_capture": true,
-    "edited": false
+    "edited": false,
+    "emulator": "melonDS DS",
+    "physical_console": false,
+    "evidence_sha256": "cb13a26399c2cc30263e02437282aefec7a8e57317e8aed2be261eafc5c1dfb2"
   },
   {
-    "file": "chief-office.png",
-    "source_run": "demo-public-return-v1",
-    "rom_sha256": "0578ba7b425664ac5726d4e85f934dc9cf943d3bc6a9ab52bb2ce01667f42bd1",
-    "sha256": "a91ea95fba42f477bad8c4a2769afe47d702ae94ff6db4a90e459e9efb118b54",
-    "size": [
+    "file": "voice.png",
+    "caption": "길리언·메탈기어 보이스 대화",
+    "sha256": "fca2ab4576a068196147c0270692f8103ece20af4c4db34c43bd933a12464df2",
+    "rom_sha256": "c12edfe3d9fa218d7256a7e43a4d831d40c92ba15985fdf40762c3f8202735f4",
+    "resolution": [
       256,
       384
     ],
-    "emulator_capture": true,
-    "edited": false
+    "edited": false,
+    "emulator": "melonDS DS",
+    "physical_console": false,
+    "evidence_sha256": "779b9ae9576484dc5ca2f6732467c8894abe155b11f88537c3a78c88c3bdd13d"
   },
   {
-    "file": "shooting-practice.png",
-    "source_run": "demo-public-practice-v1",
-    "rom_sha256": "0578ba7b425664ac5726d4e85f934dc9cf943d3bc6a9ab52bb2ce01667f42bd1",
-    "sha256": "dff4e565920f79bb1c97ce61dbe63d9339d0584d79e15fff1b85c88f66c698d1",
-    "size": [
+    "file": "keyboard.png",
+    "caption": "하단 터치 자판",
+    "sha256": "0da916fca8080d35e159fc36d3d05e5c20e15488a919e2df7b63b5c28f43f029",
+    "rom_sha256": "c12edfe3d9fa218d7256a7e43a4d831d40c92ba15985fdf40762c3f8202735f4",
+    "resolution": [
       256,
       384
     ],
-    "emulator_capture": true,
-    "edited": false
+    "edited": false,
+    "emulator": "melonDS DS",
+    "physical_console": false,
+    "evidence_sha256": "400430a70b23af805970cc93a38848a9298976de05a9a4e895cd8d8d011c5324"
   },
   {
-    "file": "factory-battle.png",
-    "source_run": "demo-public-return-v1",
-    "rom_sha256": "0578ba7b425664ac5726d4e85f934dc9cf943d3bc6a9ab52bb2ce01667f42bd1",
-    "sha256": "aacdb400ce51f21786d4661c131b3cca06455b387bddce01a341e3193f793bc2",
-    "size": [
+    "file": "plato.png",
+    "caption": "플라토 거리",
+    "sha256": "c352621abcc6194b6f0d63cc64af6fc157f671df98749747f48a609fd201e656",
+    "rom_sha256": "c12edfe3d9fa218d7256a7e43a4d831d40c92ba15985fdf40762c3f8202735f4",
+    "resolution": [
       256,
       384
     ],
-    "emulator_capture": true,
-    "edited": false
+    "edited": false,
+    "emulator": "melonDS DS",
+    "physical_console": false,
+    "evidence_sha256": "30a754a8d99e8a61e9e0f22d1871b8753adbf27c1293ddb791b9c2d2db3218e8"
   }
 ]

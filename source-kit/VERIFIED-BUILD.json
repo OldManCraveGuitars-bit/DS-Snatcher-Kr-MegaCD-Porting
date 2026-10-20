@@ -1,0 +1,394 @@
+{
+  "schema_version": 1,
+  "actual_cli_nds_sha256": "c12edfe3d9fa218d7256a7e43a4d831d40c92ba15985fdf40762c3f8202735f4",
+  "raw_source_rebuild_nds_sha256": "31a939399f7ddb7a12772698e2d64a43ca3d3712ff80cdfd9af86ea7d6f6c034",
+  "main_route_new_profile": true,
+  "ordinary_ds_ram_bytes": 4194304,
+  "memory_injection": false,
+  "savestate": false,
+  "distinct_global_slots": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "route_displays": 1006240,
+  "route_status_sha256": "b0186003e06042047225e79ba58a42e225cdfa2f6ed3cce50fdbfb7c0bb3da59",
+  "legs": [
+    {
+      "name": "audio-story-v25-leg01",
+      "report_sha256": "cb13a26399c2cc30263e02437282aefec7a8e57317e8aed2be261eafc5c1dfb2",
+      "frames": 54555,
+      "slots": [
+        1,
+        5
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg02",
+      "report_sha256": "779b9ae9576484dc5ca2f6732467c8894abe155b11f88537c3a78c88c3bdd13d",
+      "frames": 47872,
+      "slots": [
+        4,
+        5,
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg03",
+      "report_sha256": "400430a70b23af805970cc93a38848a9298976de05a9a4e895cd8d8d011c5324",
+      "frames": 25272,
+      "slots": [
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg04",
+      "report_sha256": "916913d233df94c64377d22b6fdc7e577cf8be4f7e48cbbe16d8c7fbb154af18",
+      "frames": 17871,
+      "slots": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg05",
+      "report_sha256": "30a754a8d99e8a61e9e0f22d1871b8753adbf27c1293ddb791b9c2d2db3218e8",
+      "frames": 40313,
+      "slots": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg06",
+      "report_sha256": "84e1da8ec86a8a96bb43876376fa4ec4008c5182bdce3fc8bb2fde82b2e30fce",
+      "frames": 43246,
+      "slots": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg07",
+      "report_sha256": "ee2e539d5e6943a30489701053612fe4bd93a884b2701dc74a48450649ffcc4a",
+      "frames": 37530,
+      "slots": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg08",
+      "report_sha256": "fc527734f2c62c1c625fa16209b454bda8c3df2ac506030803450f934f884735",
+      "frames": 3476,
+      "slots": [
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg09",
+      "report_sha256": "c74c030ef055795912c973195c8ac1d9996f419e91ccf424db8ead68f1040b8a",
+      "frames": 27887,
+      "slots": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg10",
+      "report_sha256": "793edc4aa8eebd4b73d602bbf4144cc7f7f1f72f3f7bd62297cddf23607fb943",
+      "frames": 46559,
+      "slots": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg11",
+      "report_sha256": "72277f26317679db44fe8eed49a321426125e9fc3e507d6470525fc0285d0e88",
+      "frames": 33880,
+      "slots": [
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg12",
+      "report_sha256": "57ab5c8ba6dc0be9e38f93f631ee3d2d6f9c900f4805ee8fa2bf0e1a9aa2560d",
+      "frames": 7833,
+      "slots": [
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg13",
+      "report_sha256": "ace638e309fbe90efadc1d6be8035f6ac86e9f87c19e7c17a2f495e0a8f0bb2e",
+      "frames": 19857,
+      "slots": [
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg14",
+      "report_sha256": "b02095dc94c4993e84c8d973879c0eb93fafc0dfaee60375831b40f72dfc21de",
+      "frames": 23076,
+      "slots": [
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg15",
+      "report_sha256": "1ab43700dd1fb458eaa233701c7f5dbe5af24b43bf8842dc227b4507d528690c",
+      "frames": 12847,
+      "slots": [
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg16",
+      "report_sha256": "1ee4a2baa41f6158a57200bdab0b2fcfb8529719394de9127cc96e546b08cc31",
+      "frames": 21817,
+      "slots": [
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg17",
+      "report_sha256": "146d8c2a9cd62cdeb15b73fe2749b8cc54ad43f8252bc549612fad5e387e124f",
+      "frames": 33312,
+      "slots": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg18",
+      "report_sha256": "017dd8c454e39f0d5834908af391767cc2b6ef7912415199eeabfde6479e7161",
+      "frames": 9076,
+      "slots": [
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg19",
+      "report_sha256": "527c128bd47f9825ad031a8f78b5fcd39d4aae7239e605592d2ba539e393bcfe",
+      "frames": 14466,
+      "slots": [
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg20",
+      "report_sha256": "e1f150aecf78ccb861bdf14496358be78ea4d0753fd24b35f35f4791e5d2279d",
+      "frames": 28515,
+      "slots": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg21",
+      "report_sha256": "4adc4c2631b35426ba4bbedbe2f9f8e9ac77c07843887839a0479dd492af8dfb",
+      "frames": 41872,
+      "slots": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg22",
+      "report_sha256": "b839f1951a4e4cabd7e93d3d0e9de0d34c2b170149081011d95c28971c678f1a",
+      "frames": 42990,
+      "slots": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg23",
+      "report_sha256": "6bb4273c1b6eedece485a1a2515f9c41f4129bd6590b36ebc4fff373911e2843",
+      "frames": 48242,
+      "slots": [
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg24",
+      "report_sha256": "7a75fc8e6ef75fbc73198642ccaf453109de7fe1df6f2ea12fd7b2da21a8d3f1",
+      "frames": 12109,
+      "slots": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg25-r3",
+      "report_sha256": "a0adb68af52307a987ed84b4d94ae407a59726abe674d4d3aeb9a420653bc8dd",
+      "frames": 23964,
+      "slots": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg26-r2",
+      "report_sha256": "5cd8f0d8b9b63437ace42148baa326989755e4dd97df274cbcb0ce86010ba85b",
+      "frames": 28343,
+      "slots": [
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg27-r2",
+      "report_sha256": "fdb98d1e9ef8cd5a94a9c6b157e4aff4163a1e598bdec5472138befb087e7c74",
+      "frames": 11192,
+      "slots": [
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg28-r2",
+      "report_sha256": "10850f55c1ed23243222c16b56da7448ebf7567d64c29393cb375281790c3850",
+      "frames": 27226,
+      "slots": [
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg29-r2",
+      "report_sha256": "16659ca703dfc8f5b42b001d1c89139667489087a2fcbb00aad5c4f4476f88d2",
+      "frames": 23926,
+      "slots": [
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg30-r2",
+      "report_sha256": "f3e6db7aea768f16665c5c208b78b72a9203f79bda6d28b2010a71acabc5a247",
+      "frames": 17422,
+      "slots": [
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg31-r2",
+      "report_sha256": "ec85245dc165611e2991f3becfd64a8e0df83faf1acf965d90f9d4d5ca106fb4",
+      "frames": 20969,
+      "slots": [
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg32-r2",
+      "report_sha256": "89cd5b054896602666ac1d8bf285b17bed441488d4bd7212ef68b99de95f0e67",
+      "frames": 120154,
+      "slots": [
+        2
+      ]
+    },
+    {
+      "name": "audio-story-v25-leg33-r2",
+      "report_sha256": "b5056f50df2869d996331b54657233f3d1b53a1a6bb2fdba830a13e5a00f3eeb",
+      "frames": 37009,
+      "slots": []
+    },
+    {
+      "name": "audio-story-v25-leg34-r2",
+      "report_sha256": "543c4788fabdc226a21421ddb38155647ed18da8aaeadabc021ecbe44d9d4c08",
+      "frames": 1562,
+      "slots": []
+    }
+  ],
+  "original_resource_count": 1230,
+  "observations": {
+    "native_room_publications": 10829,
+    "credits_samples": 1811,
+    "checks": 698
+  },
+  "original_only_conversion_proof_sha256": "608ff739ff6316df8caff61490a14face0e3e82a292a4181f545bffa2fcf2097",
+  "whole_template_and_four_executables_proof_sha256": "bd85978da86a307eec5617624f45c4f94358a8fb129581f509a6643e62beab04",
+  "opening_proof_sha256": "d47b28d28c0687356f33f477c2df573a4a105d817d3269b9381e85d5fedb92b4",
+  "opening_scope": "Natural boot/both openings through gameplay; source-picture membership, not every source frame or original hardware global clock.",
+  "original_dependent_template_spans": 411,
+  "original_dependent_template_unique_bytes_erased": 565344,
+  "source_build_instructions": "REBUILD-PLAYER_KO.txt",
+  "physical_console": false,
+  "known_bugs": true,
+  "all_optional_branches_verified": false,
+  "public_demo_updated": false
+}

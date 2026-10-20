@@ -1,1 +1,0 @@
-/* Expected event identity is selected before opening each source bank. */

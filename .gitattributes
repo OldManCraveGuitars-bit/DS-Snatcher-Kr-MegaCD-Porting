@@ -1,5 +1,7 @@
 * text=auto
+source-kit/** -text
+apps/windows_patcher/** -text
+runtime-licenses/** -text
 *.png binary
 *.dll binary
 *.zlib binary
-*.cmd text eol=crlf

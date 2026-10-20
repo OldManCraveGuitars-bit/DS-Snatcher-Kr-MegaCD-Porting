@@ -1,0 +1,18 @@
+{
+  "commit": "9da7158b83782b861aab9ee38508863b9a85b8b1",
+  "repository": "https://api.github.com/repos/blocksds/maxmod",
+  "files": {
+    "source/ds/common/stream.c": {
+      "sha256": "a1e54c140091697b4db9aae29c31ed9ab61826d337e0597307485a55c107effd",
+      "bytes": 16223
+    },
+    "source/ds/common/stream.h": {
+      "sha256": "8aa99b3db1041a15cb6ca35dd7f1a66ba0e0fe701f874688abf686a1962be281",
+      "bytes": 375
+    },
+    "COPYING": {
+      "sha256": "21afef4375bfc4196ba96200837e60bf99b32afc0e89bae1210e5987b8bdd28a",
+      "bytes": 1953
+    }
+  }
+}

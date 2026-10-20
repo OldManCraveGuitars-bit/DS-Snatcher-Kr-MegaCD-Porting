@@ -1,0 +1,4 @@
+#pragma once
+static const uint16_t UI_FLASHLIGHT_LIGHT[] = {429,574,234,65535};
+static const uint16_t UI_FLASHLIGHT_COMMAND[] = {328,279,0,415,686,65535};
+static const uint16_t UI_FLASHLIGHT_AIM[] = {474,261,0,516,510,548,0,688,650,738,0,584,595,731,420,533,9,65535};

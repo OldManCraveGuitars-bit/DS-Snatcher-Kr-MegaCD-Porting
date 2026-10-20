@@ -1,34 +1,19 @@
-# Source and developer rebuild
+# v0.81 소스와 재빌드
 
-Normal users should follow PATCHING_KO.md. All original artwork, audio, BIOS and two original lookup tables are supplied from the user's disc/BIOS at patch time. The distributed runner and host libraries have those original lookup bytes zeroed; patch metadata records offsets and hashes only.
+일반 사용자는 릴리스의 EXE를 실행하세요. Python·C 컴파일러 설치는 필요하지 않습니다.
 
-## Host conversion helpers
+## 보존된 검증 소스
 
-The Windows x64 libraries were compiled with GCC 16.1.0 (MinGW-w64/UCRT). Sources are included in `player/source`, `patcher/source_score_driver.c`, `tools/native_sega_z80_r22.c`, `tools/native_fm_synth_r22.c`, and the corresponding `third_party` directories. No compiler is bundled. Keep all license notices when modifying or distributing them.
+`source-kit/`는 검증된 v26 변환기/플레이어 소스 620개 파일을 내용 변경 없이 보존합니다. `package-files.json`의 파일 해시가 기준입니다. 이 폴더에 남아 있는 “내부 검증본” 표기는 당시 봉인 기록이며, 공개 배포 상태와 버전 설명은 이 저장소 루트의 v0.81 README와 릴리스 노트를 따릅니다.
 
-```powershell
-py -3 -X utf8 -B patcher/rebuild_helpers.py --source "D:/Original/Snatcher (USA).cue" --bios "D:/BIOS/bios_CD_U.bin" --output "D:/Helper-Build" --gcc "C:/mingw64/bin/gcc.exe"
-```
+소스 패처를 직접 사용할 때는 `source-kit/README_KO.txt`, `requirements.txt`, `Patch-development.cmd`를 따르세요. 원본 CUE/BIN과 BIOS가 필요합니다. 플레이어와 DLL의 원본 의존 자료 복원/재빌드는 `source-kit/REBUILD-PLAYER_KO.txt`, `source-kit/REBUILD-CONVERTERS_KO.txt`, `source-kit/BUILD-TOOLCHAIN.json`에 있습니다.
 
-This builds boot.dll, room.dll, the original-driver converter.dll, score.dll and startup.dll in their respective work directories. It reads original inputs locally. The produced binaries contain locally restored source tables; the distributed binaries are masked versions. `host/windows-x64/manifest.json` lists both identities. This command forces source compilation and does not reuse bundled libraries.
+## EXE GUI
 
-## NDS player
+`apps/windows_patcher/`는 실제 배포 EXE의 GUI·빌드·검증 소스입니다. Python 3.13, NumPy 2.5.1, Pillow 12.3.0, Unicorn 2.1.4, PyInstaller 6.22.3, pefile과 MinGW x64 도구 체인을 사용했습니다.
 
-The runner is the v41 port program with game-resource files removed. `player/source`, `player/arm7`, `player/include`, `player/generated`, and the two Makefiles contain its build sources. Unused legacy bitmap arrays were omitted from office_images.h; none is linked into the runner. Other generated headers contain Korean translation/font data, port UI, and source-command/placement metadata, not original game bitmap or sound samples.
+재현 시 저장소 루트를 작업 루트로 삼고 `source-kit/`를 `work/r22-resources/release-owned-final-source-candidate-v26/패처 폴더/`로 복사하세요. 릴리스 ZIP의 `source/pyinstaller-6.22.3.tar.gz`를 `work/exe-patcher-bootloader/` 아래 풀어 공식 런처를 빌드한 다음 `apps/windows_patcher/README.txt`를 따릅니다. 빌드에 원본 ROM·BIOS는 필요하지 않고, NDS 생성 때 필요합니다.
 
-Install the Wonderful/BlocksDS ARM toolchain and its libnds/Maxmod dependencies. The storage wrapper is pinned to libnds commit `4674cdfed005eb9a3699f4896e5c587ebc8b6a09` and wf-fatfs commit `2b5c26e2a1eb4cdbbcb57070d49a6ebf7b60c7f9`; `player/include/storage_compat/sdk.json` records the checked library hash. The build intentionally rejects an unaudited incompatible storage ABI.
+EXE의 내부 도구 표기는 `1.0 / 한국어 0.81`입니다. 이번 게임 배포 이름은 **v0.81 전체 테스트용**이며, 검증한 EXE 바이트를 다시 빌드하거나 바꾸지 않고 배포합니다.
 
-After running the patcher, copy the 203 resource files listed by `engine/resources.json` from the output resources directory into `player/nitrofiles/` (exclude conversion logs and work subdirectories). Copy the two generated headers from output `build-inputs/` into `player/generated/`.
-
-From the BlocksDS shell inside `player`, run:
-
-```sh
-make -f Makefile.arm7 -j2
-make -j2
-```
-
-The resource manifest is validated before packaging. The included prebuilt runner is checked by hash during normal patching; rebuilding with a different SDK/compiler may change program bytes. A source rebuild is a developer operation, separate from the verified end-user patch command.
-
-## Engine packing
-
-`patcher/assemble_demo.py` assembles the audited ARM9/ARM7 prefix, banner, a flat NitroFS name/allocation table and validated generated resource files. It recalculates the header CRC and ROM length/capacity. `engine/runner.json` describes masked SUBCODE tables restored at patch time. No original disc sectors, converted game audio or game pictures are supplied inside this engine template. Introductory screenshots are separate documentation assets.
+외부 소스·동적 라이브러리·실행 환경의 라이선스는 `source-kit/licenses/`, 각 `third_party/`, `runtime-licenses/`에 보존됩니다. 저장소 전체를 하나의 라이선스로 바꾸지 않습니다. GUI 래퍼의 MIT 고지는 `apps/windows_patcher/LICENSE.txt`입니다.
