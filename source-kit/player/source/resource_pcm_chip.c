@@ -7,6 +7,20 @@ extern uint32_t pcm_channel_group_arm(const uint8_t *,uint32_t,unsigned,unsigned
     int *,unsigned,unsigned,unsigned,unsigned) __attribute__((long_call));
 #endif
 
+/* Rendering is synchronous. Temporarily gate just the eight envelope inputs
+ * outside the scarce ITCM loop, then restore them before returning to a driver,
+ * observer or checkpoint. All wave cursors and loop markers still advance. */
+void resource_pcm_chip_run_masked(resource_pcm_chip *s,int16_t *out,size_t frames,unsigned mask){
+    uint8_t envelope[8];
+    if((mask&255)==255){resource_pcm_chip_run(s,out,frames);return;}
+    for(unsigned i=0;i<8;i++){
+        envelope[i]=s->registers[i][0];
+        if(!(mask&(1u<<i)))s->registers[i][0]=0;
+    }
+    resource_pcm_chip_run(s,out,frames);
+    for(unsigned i=0;i<8;i++)s->registers[i][0]=envelope[i];
+}
+
 void resource_pcm_chip_reset(resource_pcm_chip *s){
     memset(s,0,sizeof(*s));s->off=255;
     for(unsigned i=0;i<8;i++)s->registers[i][1]=255;

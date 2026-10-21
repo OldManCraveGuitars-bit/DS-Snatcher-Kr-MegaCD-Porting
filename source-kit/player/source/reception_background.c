@@ -41,6 +41,23 @@ static bool contact_returning;
 static bool checkpoint_audio_pending;
 static unsigned checkpoint_pcm;
 static resource_background_picture retained_picture;
+/* A requested scene is queued before its pixels are published. Keep the
+ * previous crop until the native plane clear reaches the front buffer;
+ * otherwise an END card's taller crop exposes the preceding portrait/HUD.
+ * Scenes that retain their plane commit when the native queue completes. */
+static unsigned viewport_key,viewport_target,viewport_clear;
+static bool viewport_pending;
+static unsigned published_viewport(void){
+    if(viewport_pending && room && ((source_file<<8)|room->scene)==viewport_target &&
+       (room->video.published_clears!=viewport_clear || (!room->tasks.active && !room->queued))){
+        viewport_key=viewport_target;viewport_pending=false;
+    }
+    return viewport_key;
+}
+static void request_viewport(unsigned key){
+    if(!viewport_pending)viewport_clear=room->video.published_clears;
+    viewport_target=key;viewport_pending=key!=viewport_key;
+}
 void reception_background_invalidate_picture(void){
     resource_background_picture_invalidate(&retained_picture);
 }
@@ -79,7 +96,7 @@ bool reception_background_display_mode(unsigned value){
  * overflow is offscreen data, not a reason to shrink the visible picture. */
 static bool wide_picture(void){
     if(!room)return false;
-    switch((source_file<<8)|room->scene){
+    switch(published_viewport()){
         return true;
     default:return false;
     }
@@ -88,14 +105,15 @@ static bool wide_picture(void){
  * Later Y15 conversations return to the ordinary illustration/face layout. */
 bool reception_background_fullframe(void){return false;}
 static unsigned cinematic_source_y(void){
+    unsigned key=published_viewport(),file=key>>8,scene=key&255;
     if(wide_picture())return 8;
-    if(source_file==0x33 && room->scene<=3)return 16;
-    if(source_file==22)return 28;
-    if(source_file==6 || source_file==21)return 20;
-    if(source_file==4)return 24;
+    if(file==0x33 && scene<=3)return 16;
+    if(file==22)return 28;
+    if(file==6 || file==21)return 20;
+    if(file==4)return 24;
     return 0;
 }
-bool reception_background_terminal(void){return room && source_file==12 && (room->scene==1 || room->scene==2 || room->scene==5);}
+bool reception_background_terminal(void){unsigned key=published_viewport();return room && (key==0x0c01 || key==0x0c02 || key==0x0c05);}
 bool reception_background_supports(unsigned file){return (file>=0x2a && file<=0x33) || file==0x27 || file==0x28 || file==0x25 || file==0x26 || file==4 || (file>=0x12 && file<=0x15) || file==0x23 || file==0x24 || file==0x1f || file==0x1e || file==0x22 || file==0x1d || file==1 || file==17 || file==22 || file==5 || file==6 || file==0x17 || file==0x1c || file==0x1b || file==0x18 || file==0 || (file>=7 && file<=16) || file==0x19 || file==0x1a || file==0x20 || file==0x21 || file==0x29;}
 bool reception_background_supports_scene(unsigned file,unsigned scene){
     /* Original SP07 K1 scenes currently used by the exploration graph.
@@ -124,6 +142,7 @@ static void release_room(void){
     if(room)resource_background_bind(NULL,0);
     free(room);free(bank);free(sub);room=NULL;bank=sub=NULL;ticked=0;source_file=reception_source_scene=reception_draw_frame=0;
     popup_active=contact_returning=checkpoint_audio_pending=false;checkpoint_pcm=0;
+    viewport_key=viewport_target=viewport_clear=0;viewport_pending=false;
 }
 static bool bank_name(unsigned file,char name[16]){
     if(!reception_background_supports(file))return false;
@@ -197,8 +216,10 @@ bool reception_background_scene(unsigned scene){
 bool reception_background_source(unsigned file,unsigned scene){
     reception_background_invalidate_picture();
     if(!reception_background_supports_scene(file,scene))return false;
+    published_viewport();
     if(room && room->contact_valid){
         if(!resource_room_file_scene(room,source_file,file,scene))return false;
+        request_viewport((file<<8)|scene);
         reception_source_scene=(file<<8)|scene;popup_active=false;return true;
     }
     if(room && source_file!=file)release_room();
@@ -221,8 +242,12 @@ bool reception_background_source(unsigned file,unsigned scene){
         }
         room=next_room;
         origin=vblanks;ticked=0;source_file=file;reception_source_epoch++;
+        viewport_key=(file<<8)|scene;viewport_pending=false;
         room_bind_devices();
-    }else if(!resource_room_scene(room,scene))return false;
+    }else{
+        if(!resource_room_scene(room,scene))return false;
+        request_viewport((file<<8)|scene);
+    }
     reception_source_scene=(file<<8)|scene;
     popup_active=false;
     return true;
@@ -242,10 +267,12 @@ bool reception_background_contact_capture(void){
 }
 bool reception_background_contact_return(unsigned *scene_key){
     if(!room || !scene_key || contact_returning || !room->contact_valid || reception_background_busy())return false;
+    published_viewport();
     unsigned key=(unsigned)room->contact.bytes[0]<<8|room->contact.bytes[1];
     if(!reception_background_supports_scene(key>>8,key&255) ||
        !resource_room_contact_return(room,source_file) ||
        !music_player_room_pcm_set_attenuation(room->pcm_suppression))return false;
+    request_viewport(key);
     *scene_key=key;reception_source_scene=key;contact_returning=true;popup_active=false;return true;
 }
 bool reception_background_popup(unsigned picture,unsigned position){
@@ -312,6 +339,7 @@ bool reception_background_rebind(void){
 bool reception_background_adopt_entry(void){
     if(!native_entry_take_initial_room(&room,&bank,&sub))return false;
     source_file=8;reception_source_scene=0x0802;popup_active=false;reception_source_epoch++;
+    viewport_key=reception_source_scene;viewport_pending=false;
     room->current_pcm=music_player_room_pcm_id();
     room->pcm_suppression=music_player_room_pcm_attenuation();
     room->video.scene.resource=bank;room->video.scene.subcode=sub;
@@ -582,16 +610,17 @@ bool reception_background_cinematic(unsigned *x,unsigned *width,unsigned *rows){
      * H09 illustrations and S2 phone/flight shots use the common y8 picture
      * window; the original y149 face actors belong on the lower LCD. */
     if(!room)return false;
-    if(wide_picture() || (source_file==0x33 && room->scene<=3)){
+    unsigned key=published_viewport(),file=key>>8,scene=key&255;
+    if(wide_picture() || (file==0x33 && scene<=3)){
         if(x)*x=0;
         if(width)*width=256;
-        if(rows)*rows=source_file==0x33?176:128;
+        if(rows)*rows=file==0x33?176:128;
         return true;
     }
-    bool report=(source_file==7 && room->scene==14) || (source_file==17 && room->scene==3);
-    bool title=source_file==22 && (room->scene==1 || room->scene==2);
-    bool end=(source_file==6 && room->scene==10) || (source_file==21 && room->scene==5);
-    bool backup=source_file==4 && (room->scene==5 || room->scene==6);
+    bool report=(file==7 && scene==14) || (file==17 && scene==3);
+    bool title=file==22 && (scene==1 || scene==2);
+    bool end=(file==6 && scene==10) || (file==21 && scene==5);
+    bool backup=file==4 && (scene==5 || scene==6);
     if(!report && !title && !end && !backup)return false;
     if(x)*x=report?0:32;
     if(width)*width=report?256:192;

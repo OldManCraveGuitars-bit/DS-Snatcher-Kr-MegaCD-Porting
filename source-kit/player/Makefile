@@ -1,12 +1,13 @@
 NAME := snatcher_nds_resources_r22
-GAME_TITLE := Snatcher KR DS
-GAME_SUBTITLE := Resource renderer r22
+GAME_TITLE := SNATCHER
+GAME_SUBTITLE := Korean V0.9
+GAME_ICON := assets/launcher-icon.gif
 LIBS := -lmm9 -lnds9 -lm
 LIBDIRS := $(BLOCKSDS)/libs/maxmod
 NITROFSDIR := build/runtime-nitrofs-r22
 INCLUDEDIRS := include
 ARM7ELF := build/arm7.elf
-GAME_AUTHOR := Local port project
+GAME_AUTHOR := Mega CD to Nintendo DS
 include $(BLOCKSDS)/sys/default_makefiles/rom_arm9/Makefile
 PYTHON ?= $(if $(SNATCHER_PYTHON),$(SNATCHER_PYTHON),python3)
 # Leave6KiB for the user stack when placing renderer tables in fast memory.

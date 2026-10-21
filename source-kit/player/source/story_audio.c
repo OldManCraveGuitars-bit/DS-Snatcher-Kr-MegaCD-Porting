@@ -67,10 +67,17 @@ static void voice_sink(void *context,unsigned offset,void *input,size_t bytes){
 }
 static unsigned length,divisor;
 static int channel=-1;
+static unsigned applied_voice_volume=~0u;
 static bool running,owned,prepared,native_voice;
 bool story_audio_caption_active;
 unsigned story_audio_voice;
+static unsigned stream_volume(void){
+    unsigned mode=story_audio_voice<2048?voice_source_gain[story_audio_voice][0]:0;
+    bool enabled=(mode==2 || mode==0x82)?settings_voice:settings_effects;
+    return enabled?settings_volume():0;
+}
 void story_audio_end(void){
+    applied_voice_volume=~0u;
     if(running && !native_voice)cpuEndTiming();
     if(native_voice)native_entry_story_voice_release();
     native_voice=false;story_audio_caption_active=false;
@@ -151,10 +158,10 @@ bool story_audio_start(void){
     }
     if(!prepared || !pcm || running)return false;
     if(voice_left){
-        channel=soundPlaySampleChannel(0,voice_left,SoundFormat_16Bit,voice_memory.capacity*2,STORY_VOICE_RATE,settings_volume(),0,true,0);
-        channel_right=soundPlaySampleChannel(1,voice_right,SoundFormat_16Bit,voice_memory.capacity*2,STORY_VOICE_RATE,settings_volume(),127,true,0);
+        channel=soundPlaySampleChannel(0,voice_left,SoundFormat_16Bit,voice_memory.capacity*2,STORY_VOICE_RATE,stream_volume(),0,true,0);
+        channel_right=soundPlaySampleChannel(1,voice_right,SoundFormat_16Bit,voice_memory.capacity*2,STORY_VOICE_RATE,stream_volume(),127,true,0);
         if(channel_right<0){story_audio_end();return false;}
-    }else channel=soundPlaySampleChannel(0,pcm,SoundFormat_8Bit,voice_memory.capacity,STORY_VOICE_RATE,settings_volume(),64,true,0);
+    }else channel=soundPlaySampleChannel(0,pcm,SoundFormat_8Bit,voice_memory.capacity,STORY_VOICE_RATE,stream_volume(),64,true,0);
     if(channel<0){story_audio_end();return false;}
     cpuStartTiming(0);running=voice_live_stream=story_audio_caption_active=true;return true;
 }
@@ -172,6 +179,13 @@ int story_audio_update(void){
         story_audio_caption_active=audible;
         if(result<=0)story_audio_end();
         return result;
+    }
+    /* Also apply a changed master/voice switch to an already running ring. */
+    unsigned volume=stream_volume();
+    if(volume!=applied_voice_volume){
+        if(channel>=0)soundSetVolume(channel,volume);
+        if(channel_right>=0)soundSetVolume(channel_right,volume);
+        applied_voice_volume=volume;
     }
     unsigned ticks=cpuGetTiming();
     bool supplied=resource_voice_stream_update(&voice_stream,ticks/(2*divisor));

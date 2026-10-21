@@ -1,0 +1,95 @@
+{
+  "generated_source_sha256": "2ac7bcc23cdb464b1dde6eef88921045c24117ebb8d62492fdca6a5a5f98701f",
+  "generator": "built-in image_gen",
+  "icon_sha256": "74d664c03f7c673eba9be2654a8e6171c88cb096a0ae2edc6776f4e4459618cf",
+  "size": [
+    32,
+    32
+  ],
+  "palette_entries": 16,
+  "transparent_index": 0,
+  "transparent_pixels": 0,
+  "resampling": "BOX to the hardware grid; no dithering",
+  "palette": [
+    [
+      248,
+      0,
+      248
+    ],
+    [
+      0,
+      8,
+      24
+    ],
+    [
+      0,
+      16,
+      48
+    ],
+    [
+      16,
+      32,
+      56
+    ],
+    [
+      24,
+      48,
+      80
+    ],
+    [
+      40,
+      64,
+      104
+    ],
+    [
+      56,
+      88,
+      128
+    ],
+    [
+      72,
+      112,
+      160
+    ],
+    [
+      96,
+      136,
+      176
+    ],
+    [
+      128,
+      160,
+      192
+    ],
+    [
+      160,
+      184,
+      208
+    ],
+    [
+      200,
+      216,
+      232
+    ],
+    [
+      240,
+      248,
+      248
+    ],
+    [
+      128,
+      0,
+      8
+    ],
+    [
+      216,
+      0,
+      16
+    ],
+    [
+      248,
+      64,
+      64
+    ]
+  ]
+}

@@ -46,8 +46,8 @@ def select_inputs():
     ui = tk.Tk()
     ui.withdraw()
     try:
-        messagebox.showinfo('SNATCHER DS 개발 검증용 패처',
-            '공개 배포 전 검증용 패처입니다. 버그와 미검증 구간이 남아 있습니다.\n'
+        messagebox.showinfo('SNATCHER DS V0.9 전체 테스트용 패처',
+            'V0.9 전체 테스트용 패처입니다. 버그와 미검증 구간이 남아 있습니다.\n'
             '공개된 1회성 v0.1Demo의 업데이트가 아닙니다.\n\n'
             '깨끗한 미국판 원본 CUE와 USA BIOS를 선택해 주세요.')
         source = filedialog.askopenfilename(title='미국판 SNATCHER 원본 CUE', filetypes=[('CUE', '*.cue')])
@@ -105,7 +105,7 @@ def run(argv=None):
         engine_bundle=str(root / 'engine'), verify_only=True))
     if not report['all_resource_identities_match'] or not report['complete_nds_assembly']:
         raise ValueError('Conversion incomplete. See conversion.json; no final NDS was published.')
-    final = dict(report['assembly'], label=manifest['label'], translation='0.81',
+    final = dict(report['assembly'], label=manifest['label'], translation='0.9',
                  known_bugs=True, full_game_verified=False, public_release=False)
     (out / 'patch-result.json').write_text(json.dumps(final, ensure_ascii=False, indent=2), encoding='utf8')
     print('SUCCESS:', out / 'snatcher_ds.nds', flush=True)

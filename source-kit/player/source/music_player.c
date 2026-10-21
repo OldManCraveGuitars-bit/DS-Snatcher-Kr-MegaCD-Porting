@@ -148,7 +148,7 @@ static bool mix_music(int16_t *out,unsigned frames){
     while(frames){
         unsigned n=frames>256?256:frames;
         if(!(music_command==0x4c?resource_fm_render(pcm,n):resource_music_read(&bank,pcm,n))){music_error=3;return false;}
-        for(unsigned i=0;i<n*2;i++){
+        if(settings_bgm)for(unsigned i=0;i<n*2;i++){
             int value=out[i]+pcm[i];out[i]=value>32767?32767:value< -32768?-32768:value;
         }
         out+=n*2;frames-=n;
@@ -174,7 +174,7 @@ static bool mix_cd(void *context,int16_t *out,unsigned frames){
     while(frames){
         unsigned n=frames>256?256:frames;
         if(system_perf_fread(pcm,4,n,cd_file)!=n)return false;
-        for(unsigned i=0;i<n*2;i++){
+        if(settings_bgm)for(unsigned i=0;i<n*2;i++){
             int value=out[i]+pcm[i];out[i]=value>32767?32767:value< -32768?-32768:value;
         }
         out+=n*2;frames-=n;cd_position+=n;
@@ -233,7 +233,7 @@ static mm_word fill_body(mm_word frames,mm_addr destination,mm_stream_formats fo
         while(at<frames){
             unsigned n=frames-at;if(n>128)n=128;
             if(!resource_music_read(&effect_bank,pcm,n)){music_error=4;break;}
-            for(unsigned i=0;i<n*2;i++){
+            if(settings_effects)for(unsigned i=0;i<n*2;i++){
                 int v=out[at*2+i]+pcm[i];out[at*2+i]=v>32767?32767:v< -32768?-32768:v;
             }
             at+=n;

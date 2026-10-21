@@ -1,0 +1,960 @@
+{
+  "release": "v0.9",
+  "prerelease": true,
+  "full_test_version": true,
+  "verified_at_kst": "2026-10-22T03:01:30.631085+09:00",
+  "based_on": "Mega-CD SNATCHER Korean patch V0.9",
+  "nds_sha256": "5e5a3f3d05374b196ac4799597afb81e5dae9d61e655ae6275cc912260cc3f71",
+  "exe_sha256": "a4b784dabdae3ce19cf31fd8b361b6bc53326384a92c390a1827a099ff4bd0bc",
+  "actual_exe_conversion_verified": true,
+  "resource_files": 1230,
+  "conversion_seconds": 449.68,
+  "exe_checks": [
+    "Actual frozen EXE loads Tcl/Tk and constructs complete GUI without Python PATH",
+    "GUI file selectors populate ROM/BIOS/destination",
+    "GUI rejects missing input before creating output",
+    "EXE rejects bad BIOS",
+    "EXE rejects existing output",
+    "EXE rejects source directory output",
+    "EXE rejects missing BIN",
+    "Existing files retained",
+    "GUI cancel terminates actual EXE worker; no final NDS; retry enabled",
+    "All 1230 assets and NDS exactly match the v0.9 release reference",
+    "GUI stays responsive; progress, success, log and folder states pass",
+    "ROM, BIOS and source kit manifest hashes unchanged"
+  ],
+  "inputs_unchanged": true,
+  "gui_callback_test": true,
+  "desktop_click_test": false,
+  "exe_evidence_sha256": "dace17e0855803460b48eca0935c9d9906ca2fa9b5ed051dd64059e41769e190",
+  "startup_tests": [
+    {
+      "passed": true,
+      "core": {
+        "requested": "melonds",
+        "path": "tools/emulator/legacy-melonds-20261021/melonds_libretro.dll",
+        "sha256": "d3de8902d79d0afe9e3e34941cae7e5893a20e2751ccf4b0769289cd3b3925c5",
+        "name": "melonDS",
+        "version": "0.9.3 66b5d26"
+      },
+      "frames": 28606,
+      "elapsed_seconds": 99.97,
+      "main_ram_bytes": 4194304,
+      "fresh_profile": true,
+      "title_reached": true,
+      "reception_reached": true,
+      "both_openings_completed_without_skip": true,
+      "actual_frozen_exe_output": true,
+      "memory_injection": false,
+      "savestate": false,
+      "physical_console": false,
+      "report_sha256": "820dd8790ab2fdeb8a3c637a7cf61d31483388f4332ececb89c79cb2534b1670",
+      "screenshot": "docs/compatibility-v0.9/melonds-reception.png",
+      "screenshot_sha256": "483dc1522157157d776dcff2db37e2112810e29cc4dbdb6b831ecc3766232468"
+    },
+    {
+      "passed": true,
+      "core": {
+        "requested": "desmume",
+        "path": "tools/emulator/desmume_libretro.dll",
+        "sha256": "20445e10410c2723c74beec81498994ae78a071affb0735bd7f403e6a17884ea",
+        "name": "DeSmuME",
+        "version": "git 95b4d79"
+      },
+      "frames": 28629,
+      "elapsed_seconds": 185.89,
+      "main_ram_bytes": 4194304,
+      "fresh_profile": true,
+      "title_reached": true,
+      "reception_reached": true,
+      "both_openings_completed_without_skip": true,
+      "actual_frozen_exe_output": true,
+      "memory_injection": false,
+      "savestate": false,
+      "physical_console": false,
+      "report_sha256": "708acf6e2a38019a2feaaf3f973ecfcbe7b0eb00c696b4d9ff32b66d6bd0ee7c",
+      "screenshot": "docs/compatibility-v0.9/desmume-reception.png",
+      "screenshot_sha256": "96d0ec0cae52e48e20c51dab9258148272cf7509bd84995789e966af7990d09c"
+    }
+  ],
+  "source_and_assembly_audit": {
+    "passed": true,
+    "source_rebuild_byte_identical": true,
+    "private_nds_sha256": "4f68c8b7d436d53d3814cc892272234392c1a76d2b1971d2ed89b6f2901ff21b",
+    "source_rebuild_nds_sha256": "4f68c8b7d436d53d3814cc892272234392c1a76d2b1971d2ed89b6f2901ff21b",
+    "assembled_nds_sha256": "5e5a3f3d05374b196ac4799597afb81e5dae9d61e655ae6275cc912260cc3f71",
+    "resources_identical": 1230,
+    "executable_regions": [
+      {
+        "name": "arm9",
+        "bytes": 1488512,
+        "sha256": "436e0498186b82e42c82860d588a121f6cb852ac9b4899fe8afe43170c2b83a7"
+      },
+      {
+        "name": "arm7",
+        "bytes": 56668,
+        "sha256": "ad91b87946e932653a7dbc76997e915370d496ab1483bf31b4a44dec23dfc51f"
+      },
+      {
+        "name": "arm9i",
+        "bytes": 872,
+        "sha256": "770b55e6c9e0859739cfba8b5c7751753a6efcb36b2642d81693f1977c453d6c"
+      },
+      {
+        "name": "arm7i",
+        "bytes": 7824,
+        "sha256": "9671907c73a180a5b60673154ab1138779574965afef22467ae589cf881000a5"
+      }
+    ],
+    "masked_source_spans": 411,
+    "erased_original_bytes": 565344,
+    "whole_template_source_correspondence": true,
+    "manifest_files": 624,
+    "manifest_sha256": "ef474a3f2cda895c831344ce153b548087bf15c9bf8aaa04820a7d64a66d8d88",
+    "source_file_provenance_checked": true,
+    "original_game_included": false,
+    "bios_included": false,
+    "physical_console": false
+  },
+  "translation": {
+    "passed": true,
+    "version": "v0.9",
+    "rom_sha256": "4f68c8b7d436d53d3814cc892272234392c1a76d2b1971d2ed89b6f2901ff21b",
+    "ordinary_entries": 4,
+    "voice_ids": 22,
+    "voice_pages": 27,
+    "recap_units": 27,
+    "recap_pages": 30,
+    "all_pages_verified": 13075,
+    "changed_archive_pages": 61,
+    "all_other_text_and_clocks_identical": true,
+    "source_program_and_search_identical": true,
+    "fonts_identical": true,
+    "packaged_resources_verified": 1230,
+    "media_delta": [
+      "story-text-r22.stp"
+    ],
+    "generated_delta": [
+      "story_text_archive.h",
+      "text.h"
+    ],
+    "source_writes": 0,
+    "physical_console": false
+  },
+  "launcher": {
+    "passed": true,
+    "rom_sha256": "4f68c8b7d436d53d3814cc892272234392c1a76d2b1971d2ed89b6f2901ff21b",
+    "pre_icon_rom_sha256": "16a4200727c1bdf5ad21c5aa13762df1908bd09fda7ddc960a903488159abc25",
+    "banner_version": 1,
+    "icon_pixels_verified": 1024,
+    "palette_entries": 16,
+    "crc_checks": 1,
+    "title": "SNATCHER\nKorean V0.9\nMega CD to Nintendo DS",
+    "arm9_identical_to_pre_icon_elf": true,
+    "static_banner_relocates_resources": true,
+    "resource_verification": "translation-v09-verified.json",
+    "physical_flashcart_menu": false
+  },
+  "combat_tests": [
+    {
+      "test": "factory-first-lose-candidate-ko09-icon",
+      "passed": true,
+      "report_sha256": "97845a75e284404e6feb6e8cfa140a0985798d2806a980cd6604085f5c9d2217",
+      "rom_sha256": "4f68c8b7d436d53d3814cc892272234392c1a76d2b1971d2ed89b6f2901ff21b",
+      "elf_sha256": "66c6064e53185a2b70d6eca3c614721fc3101092cc19784a3ee0ef9b97b57cfe",
+      "frames": 3327,
+      "stages": {
+        "1": {
+          "health": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "lcd_samples": 672
+        }
+      },
+      "checks": [
+        {
+          "name": "Ordinary DS 4 MiB",
+          "passed": true
+        },
+        {
+          "name": "Requested battle reached",
+          "passed": true
+        },
+        {
+          "name": "Every requested stage observed",
+          "passed": true
+        },
+        {
+          "name": "Visible LCD health stage 1",
+          "passed": true
+        },
+        {
+          "name": "Damage reaches zero health on actual LCD",
+          "passed": true
+        },
+        {
+          "name": "Battle returns through its normal transition",
+          "passed": true
+        },
+        {
+          "name": "Defeat opens original game-over menu",
+          "passed": true
+        },
+        {
+          "name": "Reload and retry restore all six visible health cells",
+          "passed": true
+        }
+      ],
+      "physical_console": false,
+      "memory_injection": false,
+      "savestates": false
+    },
+    {
+      "test": "factory-first-win-candidate-check4",
+      "passed": true,
+      "report_sha256": "e29592b1732680c76dd84a23da72a0e728a9b149e1fbead1caf32857913ddbe2",
+      "rom_sha256": "39e63f1b7509d36ec770baa0ea0a484110fa65ba46a72d52de48ae6ef751abe0",
+      "elf_sha256": "66c6064e53185a2b70d6eca3c614721fc3101092cc19784a3ee0ef9b97b57cfe",
+      "frames": 3868,
+      "stages": {
+        "1": {
+          "health": [
+            0
+          ],
+          "lcd_samples": 1302
+        }
+      },
+      "checks": [
+        {
+          "name": "Ordinary DS 4 MiB",
+          "passed": true
+        },
+        {
+          "name": "Requested battle reached",
+          "passed": true
+        },
+        {
+          "name": "Every requested stage observed",
+          "passed": true
+        },
+        {
+          "name": "Visible LCD health stage 1",
+          "passed": true
+        },
+        {
+          "name": "Original victory stage 1",
+          "passed": true
+        },
+        {
+          "name": "Battle returns through its normal transition",
+          "passed": true
+        }
+      ],
+      "physical_console": false,
+      "memory_injection": false,
+      "savestates": false
+    },
+    {
+      "test": "factory-win-candidate-check4",
+      "passed": true,
+      "report_sha256": "92e7bb028d1532b088dc6c6b1f7c7001749880dd1d16c1f96b872e771c9204a7",
+      "rom_sha256": "39e63f1b7509d36ec770baa0ea0a484110fa65ba46a72d52de48ae6ef751abe0",
+      "elf_sha256": "66c6064e53185a2b70d6eca3c614721fc3101092cc19784a3ee0ef9b97b57cfe",
+      "frames": 3953,
+      "stages": {
+        "1": {
+          "health": [
+            0
+          ],
+          "lcd_samples": 1386
+        }
+      },
+      "checks": [
+        {
+          "name": "Ordinary DS 4 MiB",
+          "passed": true
+        },
+        {
+          "name": "Requested battle reached",
+          "passed": true
+        },
+        {
+          "name": "Every requested stage observed",
+          "passed": true
+        },
+        {
+          "name": "Visible LCD health stage 1",
+          "passed": true
+        },
+        {
+          "name": "Original victory stage 1",
+          "passed": true
+        },
+        {
+          "name": "Battle returns through its normal transition",
+          "passed": true
+        }
+      ],
+      "physical_console": false,
+      "memory_injection": false,
+      "savestates": false
+    },
+    {
+      "test": "freddy-win-candidate-check2",
+      "passed": true,
+      "report_sha256": "a6b3a5f67dff8885d22e6ddf872417383b13d92c7db4295acd5a242fd391f1b1",
+      "rom_sha256": "39e63f1b7509d36ec770baa0ea0a484110fa65ba46a72d52de48ae6ef751abe0",
+      "elf_sha256": "66c6064e53185a2b70d6eca3c614721fc3101092cc19784a3ee0ef9b97b57cfe",
+      "frames": 5337,
+      "stages": {
+        "2": {
+          "health": [
+            0
+          ],
+          "lcd_samples": 297
+        }
+      },
+      "checks": [
+        {
+          "name": "Ordinary DS 4 MiB",
+          "passed": true
+        },
+        {
+          "name": "Requested battle reached",
+          "passed": true
+        },
+        {
+          "name": "Every requested stage observed",
+          "passed": true
+        },
+        {
+          "name": "Visible LCD health stage 2",
+          "passed": true
+        },
+        {
+          "name": "Original victory stage 2",
+          "passed": true
+        },
+        {
+          "name": "Battle returns through its normal transition",
+          "passed": true
+        }
+      ],
+      "physical_console": false,
+      "memory_injection": false,
+      "savestates": false
+    },
+    {
+      "test": "freddy-lose-candidate-retry2",
+      "passed": true,
+      "report_sha256": "3871e0ef09c37b1d297249c9b5b68f876d78174bf7eaf7c8d9cfd501ebc7bc64",
+      "rom_sha256": "39e63f1b7509d36ec770baa0ea0a484110fa65ba46a72d52de48ae6ef751abe0",
+      "elf_sha256": "66c6064e53185a2b70d6eca3c614721fc3101092cc19784a3ee0ef9b97b57cfe",
+      "frames": 6988,
+      "stages": {
+        "2": {
+          "health": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "lcd_samples": 476
+        }
+      },
+      "checks": [
+        {
+          "name": "Ordinary DS 4 MiB",
+          "passed": true
+        },
+        {
+          "name": "Requested battle reached",
+          "passed": true
+        },
+        {
+          "name": "Every requested stage observed",
+          "passed": true
+        },
+        {
+          "name": "Visible LCD health stage 2",
+          "passed": true
+        },
+        {
+          "name": "Damage reaches zero health on actual LCD",
+          "passed": true
+        },
+        {
+          "name": "Battle returns through its normal transition",
+          "passed": true
+        },
+        {
+          "name": "Defeat opens original game-over menu",
+          "passed": true
+        },
+        {
+          "name": "Reload and retry restore all six visible health cells",
+          "passed": true
+        }
+      ],
+      "physical_console": false,
+      "memory_injection": false,
+      "savestates": false
+    },
+    {
+      "test": "ivan-win-candidate-ko09",
+      "passed": true,
+      "report_sha256": "493eb58d7a08c4a35fc747b50a8dc7684fe96307137d9e2b612e45f736997e07",
+      "rom_sha256": "16a4200727c1bdf5ad21c5aa13762df1908bd09fda7ddc960a903488159abc25",
+      "elf_sha256": "66c6064e53185a2b70d6eca3c614721fc3101092cc19784a3ee0ef9b97b57cfe",
+      "frames": 2773,
+      "stages": {
+        "3": {
+          "health": [
+            0
+          ],
+          "lcd_samples": 52
+        }
+      },
+      "checks": [
+        {
+          "name": "Ordinary DS 4 MiB",
+          "passed": true
+        },
+        {
+          "name": "Requested battle reached",
+          "passed": true
+        },
+        {
+          "name": "Every requested stage observed",
+          "passed": true
+        },
+        {
+          "name": "Visible LCD health stage 3",
+          "passed": true
+        },
+        {
+          "name": "Original victory stage 3",
+          "passed": true
+        },
+        {
+          "name": "Battle returns through its normal transition",
+          "passed": true
+        }
+      ],
+      "physical_console": false,
+      "memory_injection": false,
+      "savestates": false
+    },
+    {
+      "test": "finale-win-candidate-ko09-icon",
+      "passed": true,
+      "report_sha256": "61603d3cf16bad01956f12081bc3bf0018b8cee662d5483ebf222dda2867f51a",
+      "rom_sha256": "4f68c8b7d436d53d3814cc892272234392c1a76d2b1971d2ed89b6f2901ff21b",
+      "elf_sha256": "66c6064e53185a2b70d6eca3c614721fc3101092cc19784a3ee0ef9b97b57cfe",
+      "frames": 32532,
+      "stages": {
+        "4": {
+          "health": [
+            0
+          ],
+          "lcd_samples": 108
+        }
+      },
+      "checks": [
+        {
+          "name": "Ordinary DS 4 MiB",
+          "passed": true
+        },
+        {
+          "name": "Requested battle reached",
+          "passed": true
+        },
+        {
+          "name": "Every requested stage observed",
+          "passed": true
+        },
+        {
+          "name": "Visible LCD health stage 4",
+          "passed": true
+        },
+        {
+          "name": "Original victory stage 4",
+          "passed": true
+        },
+        {
+          "name": "Battle returns through its normal transition",
+          "passed": true
+        },
+        {
+          "name": "Original case save choice",
+          "passed": true
+        },
+        {
+          "name": "Completed ACT1 slot retains ACT1 and has blank location",
+          "passed": true
+        },
+        {
+          "name": "No location text on actual clear-save LCD",
+          "passed": true
+        },
+        {
+          "name": "Completed ACT1 save loads its original continuation",
+          "passed": true
+        },
+        {
+          "name": "ACT2 entrance reached",
+          "passed": true
+        },
+        {
+          "name": "All 75 V0.9 recap pages match the actual lower LCD",
+          "passed": true
+        }
+      ],
+      "physical_console": false,
+      "memory_injection": false,
+      "savestates": false
+    },
+    {
+      "test": "queens-win-candidate-check2",
+      "passed": true,
+      "report_sha256": "cf92bd1c37f976e9374e601eab73e62a1d569c5cf86c8ae341170109267a7403",
+      "rom_sha256": "39e63f1b7509d36ec770baa0ea0a484110fa65ba46a72d52de48ae6ef751abe0",
+      "elf_sha256": "66c6064e53185a2b70d6eca3c614721fc3101092cc19784a3ee0ef9b97b57cfe",
+      "frames": 6206,
+      "stages": {
+        "5": {
+          "health": [
+            0
+          ],
+          "lcd_samples": 65
+        },
+        "6": {
+          "health": [
+            0
+          ],
+          "lcd_samples": 120
+        }
+      },
+      "checks": [
+        {
+          "name": "Ordinary DS 4 MiB",
+          "passed": true
+        },
+        {
+          "name": "Requested battle reached",
+          "passed": true
+        },
+        {
+          "name": "Every requested stage observed",
+          "passed": true
+        },
+        {
+          "name": "Visible LCD health stage 5",
+          "passed": true
+        },
+        {
+          "name": "Visible LCD health stage 6",
+          "passed": true
+        },
+        {
+          "name": "Original victory stage 5",
+          "passed": true
+        },
+        {
+          "name": "Original victory stage 6",
+          "passed": true
+        },
+        {
+          "name": "Battle returns through its normal transition",
+          "passed": true
+        }
+      ],
+      "physical_console": false,
+      "memory_injection": false,
+      "savestates": false
+    },
+    {
+      "test": "taxi-win-candidate-check2",
+      "passed": true,
+      "report_sha256": "737017b1ef611abf45ced68a56c5d2a2a1f7fe130d0ad758a8927f73d87b7ed4",
+      "rom_sha256": "39e63f1b7509d36ec770baa0ea0a484110fa65ba46a72d52de48ae6ef751abe0",
+      "elf_sha256": "66c6064e53185a2b70d6eca3c614721fc3101092cc19784a3ee0ef9b97b57cfe",
+      "frames": 4785,
+      "stages": {
+        "7": {
+          "health": [
+            0
+          ],
+          "lcd_samples": 90
+        }
+      },
+      "checks": [
+        {
+          "name": "Ordinary DS 4 MiB",
+          "passed": true
+        },
+        {
+          "name": "Requested battle reached",
+          "passed": true
+        },
+        {
+          "name": "Every requested stage observed",
+          "passed": true
+        },
+        {
+          "name": "Visible LCD health stage 7",
+          "passed": true
+        },
+        {
+          "name": "Original victory stage 7",
+          "passed": true
+        },
+        {
+          "name": "Battle returns through its normal transition",
+          "passed": true
+        }
+      ],
+      "physical_console": false,
+      "memory_injection": false,
+      "savestates": false
+    },
+    {
+      "test": "insectors-win-candidate-check2",
+      "passed": true,
+      "report_sha256": "5315bcc7fef7de595cb81412670b7f42031a1ada57802cc1cb5ad3bf842e5218",
+      "rom_sha256": "39e63f1b7509d36ec770baa0ea0a484110fa65ba46a72d52de48ae6ef751abe0",
+      "elf_sha256": "66c6064e53185a2b70d6eca3c614721fc3101092cc19784a3ee0ef9b97b57cfe",
+      "frames": 8983,
+      "stages": {
+        "8": {
+          "health": [
+            0
+          ],
+          "lcd_samples": 908
+        }
+      },
+      "checks": [
+        {
+          "name": "Ordinary DS 4 MiB",
+          "passed": true
+        },
+        {
+          "name": "Requested battle reached",
+          "passed": true
+        },
+        {
+          "name": "Every requested stage observed",
+          "passed": true
+        },
+        {
+          "name": "Visible LCD health stage 8",
+          "passed": true
+        },
+        {
+          "name": "Original victory stage 8",
+          "passed": true
+        },
+        {
+          "name": "Battle returns through its normal transition",
+          "passed": true
+        }
+      ],
+      "physical_console": false,
+      "memory_injection": false,
+      "savestates": false
+    },
+    {
+      "test": "chief-win-candidate-check2",
+      "passed": true,
+      "report_sha256": "b83c75ca49af0f754566a641e9525585b6b6045af375df586b18b3b571489af5",
+      "rom_sha256": "39e63f1b7509d36ec770baa0ea0a484110fa65ba46a72d52de48ae6ef751abe0",
+      "elf_sha256": "66c6064e53185a2b70d6eca3c614721fc3101092cc19784a3ee0ef9b97b57cfe",
+      "frames": 3910,
+      "stages": {
+        "9": {
+          "health": [
+            0
+          ],
+          "lcd_samples": 72
+        }
+      },
+      "checks": [
+        {
+          "name": "Ordinary DS 4 MiB",
+          "passed": true
+        },
+        {
+          "name": "Requested battle reached",
+          "passed": true
+        },
+        {
+          "name": "Every requested stage observed",
+          "passed": true
+        },
+        {
+          "name": "Visible LCD health stage 9",
+          "passed": true
+        },
+        {
+          "name": "Original victory stage 9",
+          "passed": true
+        },
+        {
+          "name": "Battle returns through its normal transition",
+          "passed": true
+        }
+      ],
+      "physical_console": false,
+      "memory_injection": false,
+      "savestates": false
+    },
+    {
+      "test": "hall-win-candidate-check2",
+      "passed": true,
+      "report_sha256": "6dd933664285a53e15207f2f37b382f3f0d42e4dca16cfb22edb6e0205746caf",
+      "rom_sha256": "39e63f1b7509d36ec770baa0ea0a484110fa65ba46a72d52de48ae6ef751abe0",
+      "elf_sha256": "66c6064e53185a2b70d6eca3c614721fc3101092cc19784a3ee0ef9b97b57cfe",
+      "frames": 19784,
+      "stages": {
+        "10": {
+          "health": [
+            0,
+            1,
+            2
+          ],
+          "lcd_samples": 1340
+        }
+      },
+      "checks": [
+        {
+          "name": "Ordinary DS 4 MiB",
+          "passed": true
+        },
+        {
+          "name": "Requested battle reached",
+          "passed": true
+        },
+        {
+          "name": "Every requested stage observed",
+          "passed": true
+        },
+        {
+          "name": "Visible LCD health stage 10",
+          "passed": true
+        },
+        {
+          "name": "Original victory stage 10",
+          "passed": true
+        },
+        {
+          "name": "Battle returns through its normal transition",
+          "passed": true
+        }
+      ],
+      "physical_console": false,
+      "memory_injection": false,
+      "savestates": false
+    },
+    {
+      "test": "palace-win-candidate-check4",
+      "passed": true,
+      "report_sha256": "0821edb5a0a6fa5b66ac60b678b1b0e24716548d1e26a537f6ccbbff9d80ac0e",
+      "rom_sha256": "39e63f1b7509d36ec770baa0ea0a484110fa65ba46a72d52de48ae6ef751abe0",
+      "elf_sha256": "66c6064e53185a2b70d6eca3c614721fc3101092cc19784a3ee0ef9b97b57cfe",
+      "frames": 119229,
+      "stages": {
+        "12": {
+          "health": [
+            0
+          ],
+          "lcd_samples": 1742
+        },
+        "13": {
+          "health": [
+            0
+          ],
+          "lcd_samples": 1168
+        },
+        "14": {
+          "health": [
+            0
+          ],
+          "lcd_samples": 242
+        }
+      },
+      "checks": [
+        {
+          "name": "Ordinary DS 4 MiB",
+          "passed": true
+        },
+        {
+          "name": "Requested battle reached",
+          "passed": true
+        },
+        {
+          "name": "Every requested stage observed",
+          "passed": true
+        },
+        {
+          "name": "Visible LCD health stage 12",
+          "passed": true
+        },
+        {
+          "name": "Visible LCD health stage 13",
+          "passed": true
+        },
+        {
+          "name": "Original victory stage 12",
+          "passed": true
+        },
+        {
+          "name": "Original victory stage 13",
+          "passed": true
+        },
+        {
+          "name": "Original victory stage 14",
+          "passed": true
+        },
+        {
+          "name": "Battle returns through its normal transition",
+          "passed": true
+        }
+      ],
+      "physical_console": false,
+      "memory_injection": false,
+      "savestates": false
+    },
+    {
+      "test": "practice1-sample-candidate-check4",
+      "passed": true,
+      "report_sha256": "76638376c02a836addf2b21e56ba78fe3f25425a2e41b3626693ea245b9a3e85",
+      "rom_sha256": "39e63f1b7509d36ec770baa0ea0a484110fa65ba46a72d52de48ae6ef751abe0",
+      "elf_sha256": "66c6064e53185a2b70d6eca3c614721fc3101092cc19784a3ee0ef9b97b57cfe",
+      "frames": 1978,
+      "stages": {
+        "0": {
+          "health": [
+            0
+          ],
+          "lcd_samples": 42
+        }
+      },
+      "checks": [
+        {
+          "name": "Ordinary DS 4 MiB",
+          "passed": true
+        },
+        {
+          "name": "Requested battle reached",
+          "passed": true
+        },
+        {
+          "name": "Every requested stage observed",
+          "passed": true
+        }
+      ],
+      "physical_console": false,
+      "memory_injection": false,
+      "savestates": false
+    },
+    {
+      "test": "practice2-sample-candidate-check4",
+      "passed": true,
+      "report_sha256": "4214511164bc942a146153b805984a2ee04e51d26ff3e005636c2566eb4611ce",
+      "rom_sha256": "39e63f1b7509d36ec770baa0ea0a484110fa65ba46a72d52de48ae6ef751abe0",
+      "elf_sha256": "66c6064e53185a2b70d6eca3c614721fc3101092cc19784a3ee0ef9b97b57cfe",
+      "frames": 1878,
+      "stages": {
+        "0": {
+          "health": [
+            0
+          ],
+          "lcd_samples": 44
+        }
+      },
+      "checks": [
+        {
+          "name": "Ordinary DS 4 MiB",
+          "passed": true
+        },
+        {
+          "name": "Requested battle reached",
+          "passed": true
+        },
+        {
+          "name": "Every requested stage observed",
+          "passed": true
+        }
+      ],
+      "physical_console": false,
+      "memory_injection": false,
+      "savestates": false
+    }
+  ],
+  "health_stages_runtime_verified": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    12,
+    13
+  ],
+  "alternate_practice_stage_11": "Source review only; ACT2 fixture took original stage 0 branch.",
+  "act1_end": {
+    "passed": true,
+    "distinct_frames": 73,
+    "nonblack_title_frames": 71,
+    "title_ink_bounds": [
+      93,
+      57,
+      163,
+      133
+    ]
+  },
+  "recap_pages_actual_lcd_verified": 75,
+  "clear_save": {
+    "act1_actual_write_load_and_blank_lcd": true,
+    "act2_rule_host_tested": true,
+    "save_format_unchanged": true,
+    "host_cases": 3842560,
+    "changed_label_cases": 4
+  },
+  "prior_audio_switch_tests": {
+    "rom_sha256": "deddec27ce0aad0b427fc29c4f28d9c72bfa7cbba9ec96a8621d902c54e05dfc",
+    "reports": {
+      "tests/host/result.json": "4dcb6dcaca5e705d1262728ae8833f3a68b1384b61e0cdc4680c6a93129778bf",
+      "tests/reconstruction.json": "85e1ecf53a0b33312f635c97355ec661bebadb8b956d94b2cd43c5a3e07b20f9",
+      "tests/ds/ui2/result.json": "a27aed338b9ee114523108d72732b80bb818dbc9117fb42dd558a78910a7f813",
+      "tests/ds/muted/result.json": "da785a964ec411f4505e8406cf81c20aecc36655027fcfa7a093657a0423c883",
+      "tests/ds/voiced/result.json": "eeb1ae9654ebce9a994870619a2353c47d07ba54e963ecc3f3522a3dacfcefb8"
+    },
+    "physical_console_tested": false,
+    "premixed_cd_tracks_follow": "BGM switch"
+  },
+  "previous_full_route": {
+    "release": "v0.81",
+    "segments": 34,
+    "frames": 1006240,
+    "evidence": "verification-v0.81.json"
+  },
+  "physical_console_tested": false,
+  "full_game_replayed_on_final_v09": false,
+  "all_branches_tested": false,
+  "original_game_included": false,
+  "bios_included": false
+}

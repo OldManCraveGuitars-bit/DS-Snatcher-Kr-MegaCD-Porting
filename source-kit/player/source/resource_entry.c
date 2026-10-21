@@ -1,3 +1,4 @@
+#include "settings.h"
 #include "resource_entry.h"
 #include <string.h>
 #include <stdlib.h>
@@ -199,7 +200,7 @@ static int render(resource_entry_state *s,int16_t *out,unsigned frames,bool idle
         if(s->audio.render){
             if(!s->audio.render(s->audio.context,out,n)){s->error=10;return -1;}
             pcm_status(s);
-        }else resource_pcm_output_render(&s->output,&resource_entry_audio_pcm(s)->chip,out,n);
+        }else resource_pcm_output_render_masked(&s->output,&resource_entry_audio_pcm(s)->chip,out,n,settings_pcm_mask(resource_entry_audio_pcm(s)->ram[0x11]==2 || resource_entry_audio_pcm(s)->ram[0x11]==0x82));
         if(s->cd.mix && !s->cd.mix(s->cd.context,out,n)){s->error=9;return -1;}
         s->samples+=n;out+=n*2;frames-=n;
     }

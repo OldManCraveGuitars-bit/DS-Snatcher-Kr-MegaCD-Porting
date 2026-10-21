@@ -1,5 +1,6 @@
 #include "resource_cdda_stream.h"
 #include "system_perf.h"
+#include "settings.h"
 #include <limits.h>
 #include <string.h>
 
@@ -34,7 +35,7 @@ bool resource_cdda_mix(resource_cdda_stream *s,int16_t *out,unsigned frames,
     while(frames){
         unsigned n=frames>capacity?capacity:frames;
         if(system_perf_fread(scratch,4,n,s->file)!=n){s->failed=true;return false;}
-        for(unsigned i=0;i<n*2;i++){
+        if(settings_bgm)for(unsigned i=0;i<n*2;i++){
             int value=out[i]+scratch[i];
             out[i]=value>32767?32767:value< -32768?-32768:value;
         }

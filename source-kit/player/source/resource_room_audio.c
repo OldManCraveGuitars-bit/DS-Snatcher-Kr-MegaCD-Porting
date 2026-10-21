@@ -1,3 +1,4 @@
+#include "settings.h"
 #include "resource_room_audio.h"
 #include <string.h>
 static uint32_t read32(const uint8_t *p){return p[0]|(uint32_t)p[1]<<8|(uint32_t)p[2]<<16|(uint32_t)p[3]<<24;}
@@ -54,7 +55,7 @@ bool resource_room_audio_render(resource_room_audio *s,int16_t *out,unsigned fra
         }
         unsigned n=s->next_tick-s->samples;if(n>frames)n=frames;
         if(s->drum_commands && n>s->next_drum_tick-s->drum_samples)n=s->next_drum_tick-s->drum_samples;
-        resource_pcm_output_render(&s->output,&s->driver.chip,out,n);
+        resource_pcm_output_render_masked(&s->output,&s->driver.chip,out,n,settings_pcm_mask(s->driver.ram[0x11]==2 || s->driver.ram[0x11]==0x82));
         s->samples+=n;if(s->drum_commands)s->drum_samples+=n;out+=n*2;frames-=n;
     }
     return true;

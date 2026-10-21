@@ -2,6 +2,7 @@
 #include "fm_demand_table.h"
 #endif
 #include "system_perf.h"
+#include "settings.h"
 /* Private original-driver + continuous six-channel YM2612 probe.
 
  * No PCM loop or precomputed register timeline is used by this player.
@@ -304,6 +305,11 @@ static bool forecourt_fm_render_body(int16_t *out,unsigned n){
    extern void YM2612SetOutputDemand_(const unsigned char *);
    YM2612SetOutputDemand_(0);
 #endif
+   unsigned mask=63;
+   if(!settings_bgm || !settings_effects){
+       uint8_t effects;fm_probe_read(0xff7f24,&effects,1);mask=settings_fm_mask(effects);
+   }
+   YM2612SetChannelMask_(mask);
    YM2612UpdateOne_(raw+made*2,take,1,1);
 #ifdef __NDS__
    YM2612SetOutputDemand_(0);

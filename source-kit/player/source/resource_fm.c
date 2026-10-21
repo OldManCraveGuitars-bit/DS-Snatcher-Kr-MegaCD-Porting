@@ -2,6 +2,7 @@
 #include "fm_demand_table.h"
 #endif
 #include "ym2612.h"
+#include "settings.h"
 #include <stdint.h>
 #include <stdbool.h>
 #include <string.h>
@@ -111,6 +112,7 @@ bool probe_render(int16_t *out,unsigned n){
    extern void YM2612SetOutputDemand_(const unsigned char *);
    YM2612SetOutputDemand_(0);
 #endif
+   YM2612SetChannelMask_(settings_bgm?63:0);
    YM2612UpdateOne_(raw+made*2,take,1,1);
 #ifdef __NDS__
    YM2612SetOutputDemand_(0);

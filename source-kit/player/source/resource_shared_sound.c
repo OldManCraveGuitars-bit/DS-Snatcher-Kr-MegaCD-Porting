@@ -1,3 +1,4 @@
+#include "settings.h"
 #include "resource_shared_sound.h"
 #include "resource_live_sound.h"
 #include <string.h>
@@ -74,7 +75,7 @@ static bool render_output(resource_shared_sound *s,int16_t *out,unsigned samples
             }
             if(next<s->samples){s->error=6;return false;}
             unsigned n=next-s->samples>count-done?count-done:(unsigned)(next-s->samples);
-            resource_pcm_output_render(&s->pcm.output,&s->pcm.driver.chip,pcm,n);
+            resource_pcm_output_render_masked(&s->pcm.output,&s->pcm.driver.chip,pcm,n,settings_pcm_mask(s->pcm.driver.ram[0x11]==2 || s->pcm.driver.ram[0x11]==0x82));
             if(hash){
 #ifdef __NDS__
                 extern uint32_t shared_mix_hash_arm(int16_t *,const int16_t *,unsigned,uint32_t);

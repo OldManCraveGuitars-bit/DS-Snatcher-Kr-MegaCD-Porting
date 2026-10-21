@@ -13,6 +13,12 @@ SaveSummary save_summary(const GameCheckpoint *s){
     if(module!=0x5f && module!=0x5e && module!=0x5d && module!=0x5a && module!=0x59 && module!=0x58 && module!=0x57 && module!=0x56 && module!=0x54 && module!=0x53 && module!=0x55 && module!=0x52 && module!=0x51 && module!=0x5c && module!=0x50 && module!=0x4f && module!=0x5b && module!=0x4e && module!=0x4d && module!=0x49 && module!=0x48 && module!=0x47 && module!=0x3c && module!=0x3f && module!=0x40 && module!=0x41 && module!=0x4a && module!=0x42 && module!=0x43 && module!=0x44 && module!=0x45 && module!=0x46)return result;
     result.act=(module==0x5d || module==0x5e || module==0x5f)?3:(module==0x4d || module==0x4e || module==0x4f || module==0x50 || module==0x5b || module==0x5c || module==0x51 || module==0x52 || module==0x55 || module==0x53 || module==0x54 || module==0x56 || module==0x57 || module==0x58 || module==0x59 || module==0x5a)?2:1;
     unsigned scene=hq_scene_under(s->line);
+    /* The shared end-of-ACT save routine uses K1/4 as a temporary backing
+     * scene. It is not the player's location. Derive this from the saved
+     * script too, so existing clear saves need no migration. */
+    if((module==0x49 || module==0x5a) && scene==HQ_SCENE(0x1904)){
+        result.place=SAVE_PLACE_NONE;return result;
+    }
     if(module==0x4e && scene==HQ_SCENE(0x1111))result.place=SAVE_PLACE_CHIEF;
     if((scene&0xff00)==HQ_SCENE(0x1600))result.place=SAVE_PLACE_OPENING;
     if(scene<=1)result.place=SAVE_PLACE_RECEPTION;

@@ -14,7 +14,8 @@ enum {
     SAVE_PLACE_FREDDY,
     SAVE_PLACE_HOSPITAL,
     SAVE_PLACE_QUEENS,
-    SAVE_PLACE_COUNT
+    SAVE_PLACE_COUNT,
+    SAVE_PLACE_NONE=SAVE_PLACE_COUNT
 };
 typedef struct { unsigned act,place; } SaveSummary;
 /* Inspect a validated checkpoint without importing or changing live VM state. */

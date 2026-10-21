@@ -1,31 +1,31 @@
 [
   {
-    "file": "title.png",
-    "caption": "SNATCHER DS 로고 / 시작 화면",
-    "sha256": "5cd299b1c4e757b8c52aabcf6e011e4a10d2e4a759341d0180f2f03a81fe4551",
-    "rom_sha256": "c12edfe3d9fa218d7256a7e43a4d831d40c92ba15985fdf40762c3f8202735f4",
+    "file": "reception.png",
+    "caption": "V0.9 실제 EXE 출력 · 오프닝 1·2 후 접수처",
+    "sha256": "483dc1522157157d776dcff2db37e2112810e29cc4dbdb6b831ecc3766232468",
+    "rom_sha256": "5e5a3f3d05374b196ac4799597afb81e5dae9d61e655ae6275cc912260cc3f71",
     "resolution": [
       256,
       384
     ],
     "edited": false,
-    "emulator": "melonDS DS",
+    "emulator": "melonDS",
     "physical_console": false,
-    "evidence_sha256": "7d8eaf6f376f834f06b550c71e356767d15f99ccc4fe3f701f258b3b9aa70323"
+    "evidence_sha256": "820dd8790ab2fdeb8a3c637a7cf61d31483388f4332ececb89c79cb2534b1670"
   },
   {
-    "file": "reception.png",
-    "caption": "접수처와 터치 선택지",
-    "sha256": "6cd6074e6d986f88fc68c5461f0498093e51dcf33f9dba2564e8958ec79ef70e",
-    "rom_sha256": "c12edfe3d9fa218d7256a7e43a4d831d40c92ba15985fdf40762c3f8202735f4",
+    "file": "title.png",
+    "caption": "V0.9 실제 EXE 출력 · SNATCHER DS 로고",
+    "sha256": "5cd299b1c4e757b8c52aabcf6e011e4a10d2e4a759341d0180f2f03a81fe4551",
+    "rom_sha256": "5e5a3f3d05374b196ac4799597afb81e5dae9d61e655ae6275cc912260cc3f71",
     "resolution": [
       256,
       384
     ],
     "edited": false,
-    "emulator": "melonDS DS",
+    "emulator": "melonDS",
     "physical_console": false,
-    "evidence_sha256": "cb13a26399c2cc30263e02437282aefec7a8e57317e8aed2be261eafc5c1dfb2"
+    "evidence_sha256": "820dd8790ab2fdeb8a3c637a7cf61d31483388f4332ececb89c79cb2534b1670"
   },
   {
     "file": "voice.png",
@@ -68,5 +68,51 @@
     "emulator": "melonDS DS",
     "physical_console": false,
     "evidence_sha256": "30a754a8d99e8a61e9e0f22d1871b8753adbf27c1293ddb791b9c2d2db3218e8"
+  },
+  {
+    "file": "combat-v09.png",
+    "caption": "첫 폐공장 전투 · LIFE와 체력바 한 줄",
+    "sha256": "97a383ca1e443e0092fa9191a7efbb2c3813bc0c6ec40d8005ed289877897498",
+    "rom_sha256": "4f68c8b7d436d53d3814cc892272234392c1a76d2b1971d2ed89b6f2901ff21b",
+    "resolution": [
+      256,
+      384
+    ],
+    "edited": false,
+    "emulator": "melonDS DS",
+    "physical_console": false,
+    "evidence_sha256": "97845a75e284404e6feb6e8cfa140a0985798d2806a980cd6604085f5c9d2217"
+  },
+  {
+    "file": "recap-v09.png",
+    "caption": "ACT2 회상 · V0.9 한글 자막",
+    "sha256": "9dbb7b51cee3aa0c9f8bb91ca73565f87070460ab31f154d9b5b88c3a3360d28",
+    "rom_sha256": "4f68c8b7d436d53d3814cc892272234392c1a76d2b1971d2ed89b6f2901ff21b",
+    "resolution": [
+      256,
+      384
+    ],
+    "edited": false,
+    "emulator": "melonDS DS",
+    "physical_console": false,
+    "evidence_sha256": "61603d3cf16bad01956f12081bc3bf0018b8cee662d5483ebf222dda2867f51a"
+  },
+  {
+    "file": "launcher-v09.png",
+    "caption": "실행 아이콘 · 32×32 원본의 6배 최근접 확대",
+    "sha256": "a1b13a566c23320b18ab0156c0068e22fcebac2918597268eeecb4e95c3f6f03",
+    "resolution": [
+      192,
+      192
+    ],
+    "native_resolution": [
+      32,
+      32
+    ],
+    "generator": "OpenAI built-in image generation; deterministic hardware palette conversion",
+    "prompt": "source-kit/art/launcher/design-prompt.txt",
+    "conversion": "source-kit/art/launcher/conversion.json",
+    "banner_verification_sha256": "1bf065a04ae906f18ea9adb0511a13d8290afec6e9d423b5ebffcc148fd91431",
+    "physical_console": false
   }
 ]

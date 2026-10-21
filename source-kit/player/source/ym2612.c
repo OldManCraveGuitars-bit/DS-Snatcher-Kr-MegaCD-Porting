@@ -2109,6 +2109,15 @@ static int OPNWriteReg(int r, int v)
 /*      YM2612 local section                                                   */
 /*******************************************************************************/
 
+/* User output mask is not emulated chip/checkpoint state. Clearing pan bits
+ * here still computes every operator and all feedback/phase/envelope state,
+ * including the ARM7 worker. Never use the hardware-disabled flag for mute. */
+static unsigned output_pan_mask=4095;
+void YM2612SetChannelMask_(unsigned mask){
+    unsigned pan=0;
+    for(unsigned c=0;c<6;c++)if(mask&(1u<<c))pan|=3u<<(2*c);
+    output_pan_mask=pan;
+}
 /* Generate samples for YM2612 */
 ITCM_CODE int YM2612UpdateOne_(s32 *buffer, int length, int stereo, int is_buf_empty)
 {
@@ -2156,7 +2165,7 @@ ITCM_CODE int YM2612UpdateOne_(s32 *buffer, int length, int stereo, int is_buf_e
 	refresh_fc_eg_chan( &ym2612.CH[4] );
 	refresh_fc_eg_chan( &ym2612.CH[5] );
 
-	pan = ym2612.OPN.pan;
+	pan = ym2612.OPN.pan & output_pan_mask;
 
 	/* mix to 32bit dest */
 	// flags: stereo, ssg_enabled, disabled, _, pan_r, pan_l
@@ -2193,7 +2202,7 @@ void YM2612Init_(int clock, int rate, int flags)
 	/* A new device lifetime must match cold-process initialization. The
 	 * renderer publishes this context even during silent channel blocks;
 	 * leaving it from a previous session leaks its envelope/LFO phase. */
-	memset(&crct, 0, sizeof(crct));fm_output_demand=0;
+	memset(&crct, 0, sizeof(crct));fm_output_demand=0;output_pan_mask=4095;
 	init_tables();
 
 	ym2612.OPN.ST.clock = clock;

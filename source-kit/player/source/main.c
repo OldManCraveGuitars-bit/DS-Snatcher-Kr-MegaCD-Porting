@@ -31,6 +31,7 @@ extern size_t audio_serviced_fread(void *,size_t,size_t,FILE *);
 #include "story_audio.h"
 #include "../generated/contact_audio.h"
 #include "settings.h"
+#include "../generated/audio_options.h"
 #include "reception_background.h"
 #include "save_summary.h"
 #include "hq_scene.h"
@@ -171,6 +172,7 @@ static void story_next(void);
 static void finish_legacy_office(int section);
 static int story_legacy_section;
 static unsigned system_selected,settings_selected;
+static bool settings_general;
 static volatile unsigned start_screen_fade;
 volatile unsigned display_frames;
 static volatile unsigned start_screen_origin;
@@ -480,7 +482,7 @@ static void show_audio_diagnostics(void);
 static void system_action(int choice){
     if(choice==0)open_slots(true,SYSTEM);
     else if(choice==1)open_slots(false,SYSTEM);
-    else if(choice==2){settings_selected=0;mode=SETTINGS_UI;}
+    else if(choice==2){settings_selected=0;settings_general=false;mode=SETTINGS_UI;}
     else if(choice==3)show_audio_diagnostics();
     else resume_game();
 }
@@ -528,13 +530,25 @@ static void slot_action(unsigned index){
     else if(slot_status[index]!=SAVE_OK)notice(storage_message(slot_status[index],0),SLOT_LOAD_UI);
     else begin_screen_transition(2,SLOT_LOAD_UI);
 }
+static void settings_back(void){
+    if(settings_general){settings_general=false;settings_selected=4;}
+    else mode=SYSTEM;
+}
 static void settings_action(unsigned choice){
-    if(choice==0)settings_buttons=!settings_buttons;
-    else if(choice==1)settings_level=(settings_level+1)%5;
-    else if(choice==2)settings_scanlines=!settings_scanlines;
-    else if(choice==3)settings_tv_filter=!settings_tv_filter;
-    else if(choice==4){confirm_action=2;confirm_back=SETTINGS_UI;system_selected=1;mode=CONFIRM;return;}
-    else return;
+    if(choice>4)return;
+    settings_selected=choice;
+    if(choice==4){settings_general=!settings_general;settings_selected=0;return;}
+    if(!settings_general){
+        if(choice==0)settings_bgm=!settings_bgm;
+        else if(choice==1)settings_effects=!settings_effects;
+        else if(choice==2)settings_voice=!settings_voice;
+        else settings_level=(settings_level+1)%5;
+    }else{
+        if(choice==0)settings_buttons=!settings_buttons;
+        else if(choice==1)settings_scanlines=!settings_scanlines;
+        else if(choice==2)settings_tv_filter=!settings_tv_filter;
+        else{confirm_action=2;confirm_back=SETTINGS_UI;system_selected=1;mode=CONFIRM;return;}
+    }
     if(!settings_store())notice(UI_SYS_SAVE_ERROR,SETTINGS_UI);
 }
 static void update_start_screen_fade(void){
@@ -1146,6 +1160,22 @@ static bool draw_gameover_top(void){
     if(counter_entry_fade){unsigned step=counter_entry_fade-1;top_room_fade=(step*step*(96-2*step)+64)>>7;}
     return reception_background_gameover((uint8_t*)top,top_room_palette);
 }
+/* Both combat engines publish the same upper status. The lower LCD remains
+ * the complete touch shooting field. Stages 0/11 are scored practice; stage14
+ * is the final shoot/no-shoot decision, with no player damage controller. */
+static void combat_status_draw(void){
+    theme(top);rect(top,5,24+(frame/8)%12,2,2,C(12,7,2));
+    battle_feedback_draw(top,combat_faces,combat_state.damage);
+    if(story_native_battle_stage==0 || story_native_battle_stage==11 || story_native_battle_stage==14)return;
+    unsigned life=combat_state.damage<6?6-combat_state.damage:0;
+    /* Draw after the crack overlay so every remaining/empty cell is legible. */
+    panel(top,24,144,208,24);
+    text(top,26,150,48,UI_COMBAT_LIFE,C(31,31,31));
+    for(unsigned i=0;i<6;i++){
+        rect(top,78+24*i,151,20,10,i<life?C(5,12,24):C(7,4,4));
+        if(i<life)rect(top,78+24*i,151,20,2,C(12,23,31));
+    }
+}
 static void draw(void) {
     top_room_fade=256;
     /* General UI/render transitions may reuse top for any artwork. Only
@@ -1168,7 +1198,7 @@ static void draw(void) {
         return;
     }
     if(mode==STORY_COMBAT_UI && story_practice_active){
-        if(combat_repaint_top){theme(top);rect(top,5,24+(frame/8)%12,2,2,C(12,7,2));battle_feedback_draw(top,combat_faces,combat_state.damage);}
+        if(combat_repaint_top)combat_status_draw();
         if(combat_repaint_bottom){
             if(!combat_draw_partial)theme(bottom);
             bool changed=false;
@@ -1178,18 +1208,13 @@ static void draw(void) {
         return;
     }
     if(mode==STORY_COMBAT_UI){
-        if(combat_repaint_top){
-            theme(top);rect(top,5,24+(frame/8)%12,2,2,C(12,7,2));
-            battle_feedback_draw(top,combat_faces,combat_state.damage);
-        }
+        if(combat_repaint_top)combat_status_draw();
         if(!combat_repaint_bottom)return;
         if(combat_draw_partial){
             combat_render_rows(bottom,battle_pixels,combat_sprites,combat_rows);
             if(settings_tv_filter)for(unsigned y=0;y<192;y++)if(combat_rows[y].left<combat_rows[y].right)
                 video_filters_copy(bottom+y*256+combat_rows[y].left,bottom+y*256+combat_rows[y].left,combat_rows[y].right-combat_rows[y].left);
         }else{combat_render(bottom,battle_pixels,combat_sprites);if(settings_tv_filter)video_filters_copy(bottom,bottom,256*192);}
-        panel(bottom,2,0,252,17);text(bottom,4,2,48,UI_COMBAT_LIFE,C(31,31,31));
-        for(unsigned i=0;i<6;i++)rect(bottom,58+31*i,4,28,8,i<6-combat_state.damage?C(5,12,24):C(18,3,3));
         if(combat_state.weapon){
             int x=43+85*(combat_aim%3),y=36+60*(combat_aim/3);
             rect(bottom,x-6,y,13,1,C(8,24,27));rect(bottom,x,y-6,1,13,C(8,24,27));
@@ -1281,10 +1306,20 @@ static void draw(void) {
         for(unsigned i=0;i<4;i++){button(30+32*i,labels[i]);if(i==system_selected)rect(bottom,10,35+32*i,2,14,C(8,24,27));}
         if(resume_mode==OPENING)text(bottom,16,160,216,UI_TRAVEL_RESTART,C(8,24,27));
     }else if(mode==SETTINGS_UI){
-        text(bottom,8,5,96,UI_OPTIONS_SETTINGS,C(8,24,27));text(bottom,164,5,84,UI_OFFICE_BACK,C(8,24,27));
+        text(bottom,8,5,144,settings_general?UI_AUDIO_GENERAL_TITLE:UI_AUDIO_TITLE,C(8,24,27));text(bottom,164,5,84,UI_OFFICE_BACK,C(8,24,27));
         const uint16_t *volumes[5]={UI_OPTIONS_VOLUME_0,UI_OPTIONS_VOLUME_25,UI_OPTIONS_VOLUME_50,UI_OPTIONS_VOLUME_75,UI_OPTIONS_VOLUME_100};
-        button(30,settings_buttons?UI_OPTIONS_BUTTONS_ON:UI_OPTIONS_BUTTONS_OFF);button(62,volumes[settings_level]);
-        button(94,settings_scanlines?UI_OPTIONS_SCANLINES_ON:UI_OPTIONS_SCANLINES_OFF);button(126,settings_tv_filter?UI_OPTIONS_TV_ON:UI_OPTIONS_TV_OFF);button(158,UI_OPTIONS_START_SCREEN);rect(bottom,10,35+32*settings_selected,2,14,C(8,24,27));
+        if(settings_general){
+            button(30,settings_buttons?UI_OPTIONS_BUTTONS_ON:UI_OPTIONS_BUTTONS_OFF);
+            button(62,settings_scanlines?UI_OPTIONS_SCANLINES_ON:UI_OPTIONS_SCANLINES_OFF);
+            button(94,settings_tv_filter?UI_OPTIONS_TV_ON:UI_OPTIONS_TV_OFF);
+            button(126,UI_OPTIONS_START_SCREEN);button(158,UI_AUDIO_TITLE);
+        }else{
+            button(30,settings_bgm?UI_AUDIO_BGM_ON:UI_AUDIO_BGM_OFF);
+            button(62,settings_effects?UI_AUDIO_EFFECTS_ON:UI_AUDIO_EFFECTS_OFF);
+            button(94,settings_voice?UI_AUDIO_VOICE_ON:UI_AUDIO_VOICE_OFF);
+            button(126,volumes[settings_level]);button(158,UI_AUDIO_GENERAL_TITLE);
+        }
+        rect(bottom,10,35+32*settings_selected,2,14,C(8,24,27));
     }else if(mode==SLOT_SAVE_UI || mode==SLOT_LOAD_UI){
         text(bottom,8,5,144,mode==SLOT_SAVE_UI?UI_SLOT_SAVE:UI_SLOT_LOAD,C(8,24,27));text(bottom,164,5,84,UI_OFFICE_BACK,C(8,24,27));
         for(unsigned i=0;i<SAVE_SLOT_COUNT;i++){
@@ -1292,7 +1327,8 @@ static void draw(void) {
             text(bottom,20,y+9,66,slot_labels[i],C(28,30,31));
             if(slot_status[i]==SAVE_OK){
                 text(bottom,94,y+9,54,slot_summaries[i].act==1?UI_SLOT_ACT1:slot_summaries[i].act==2?UI_SLOT_ACT2:slot_summaries[i].act==3?UI_SLOT_ACT3:UI_SLOT_ACT_UNKNOWN,C(28,30,31));
-                text(bottom,154,y+9,86,slot_places[slot_summaries[i].place],C(28,30,31));
+                if(slot_summaries[i].place<SAVE_PLACE_COUNT)
+                    text(bottom,154,y+9,86,slot_places[slot_summaries[i].place],C(28,30,31));
             }else text(bottom,100,y+9,140,slot_status[i]==SAVE_MISSING?UI_SLOT_EMPTY:UI_SLOT_INVALID,C(28,30,31));
             if(i==slot_selected)rect(bottom,10,y+7,2,15,C(8,24,27));
         }
@@ -1704,7 +1740,7 @@ int main(void) {
                 else if(mode==STORY_KEYBOARD_UI)keyboard_press(name_keyboard_confirm(story_keyboard_kind()));
                 else if(saveable())open_system();
                 else if(mode==SYSTEM)resume_game();
-                else if(mode==SETTINGS_UI)mode=SYSTEM;
+                else if(mode==SETTINGS_UI)settings_back();
                 else if(mode==SLOT_SAVE_UI || mode==SLOT_LOAD_UI)mode=slot_back;
                 else if(mode==OPENING){if(opening_stage && opening_to_game){opening_end();resume_mode=OPENING;mode=SYSTEM;}else finish_opening(true);}
                 else if(mode==COMBAT)finish_battle();
@@ -1716,7 +1752,7 @@ int main(void) {
                 else if(mode==ACT_SELECT_UI){title_selected=2;mode=TITLE;}
                 else if(mode==OPENING)finish_opening(true);
                 else if(mode==SYSTEM)resume_game();
-                else if(mode==SETTINGS_UI)mode=SYSTEM;
+                else if(mode==SETTINGS_UI)settings_back();
                 else if(mode==NOTICE)mode=notice_return;
                 else if(mode==SLOT_SAVE_UI || mode==SLOT_LOAD_UI)mode=slot_back;
                 else if(mode==CONFIRM)mode=confirm_back;
@@ -1803,7 +1839,7 @@ int main(void) {
             else if(mode==RECEPTION_DIALOG){if(p.py>=166)mode=RECEPTION_ROOT;}
             else if(mode==RECEPTION_ROOT){if(p.px>=8 && p.px<248 && p.py>=30 && p.py<56){office_line=1;mode=RECEPTION_DIALOG;}}
             else if(mode==SYSTEM){if(p.py<24 && p.px>=164)resume_game();else if(p.px>=8 && p.px<248 && p.py>=30 && p.py<150 && (p.py-30)%32<24)system_action((p.py-30)/32);}
-            else if(mode==SETTINGS_UI){if(p.py<24 && p.px>=164)mode=SYSTEM;else if(p.px>=8 && p.px<248 && p.py>=30 && p.py<182 && (p.py-30)%32<24)settings_action((p.py-30)/32);}
+            else if(mode==SETTINGS_UI){if(p.py<24 && p.px>=164)settings_back();else if(p.px>=8 && p.px<248 && p.py>=30 && p.py<182 && (p.py-30)%32<24)settings_action((p.py-30)/32);}
             else if(mode==SLOT_SAVE_UI || mode==SLOT_LOAD_UI){if(p.py<24 && p.px>=164)mode=slot_back;else if(p.px>=8 && p.px<248 && p.py>=28 && p.py<181 && (p.py-28)%31<29)slot_action((p.py-28)/31);}
             else if(mode==NOTICE){if(p.py>=166)mode=notice_return;}
             else if(mode==CONFIRM){
@@ -1894,7 +1930,7 @@ int main(void) {
         if(mode==STORY_MENU_UI && flashlight_aim_ui && flashlight_available()){
             int x=0,y=0;reception_background_flashlight_position(&x,&y);flashlight_key=65536+(x+71)+((y+39)<<8);
         }
-        int visual[32]={mode,0,selected,long_menu,scroll,(int)hits,tx,(mode==STORY_MENU_UI?flashlight_key:ty),flash,(int)office_line,(int)office_page,office_error,voice_page_index,opening_frame,opening_caption,title_selected,(int)portrait_generation,(int)story_generation,(int)story_scene,(int)story_page,story_error,story_selected,story_scroll,(int)system_selected,(int)settings_selected,settings_buttons,(int)settings_level,(int)header_focus,(int)slot_selected,settings_scanlines,settings_tv_filter,story_audio_caption_active};
+        int visual[32]={mode,0,selected,long_menu,scroll,(int)hits,tx,(mode==STORY_MENU_UI?flashlight_key:ty),flash,(int)office_line,(int)office_page,office_error,voice_page_index,opening_frame,opening_caption,title_selected,(int)portrait_generation,(int)story_generation,(int)story_scene,(int)story_page,story_error,story_selected,story_scroll,(int)system_selected,(int)(settings_selected+8*settings_general),settings_buttons,(int)(settings_level|(settings_bgm<<8)|(settings_effects<<9)|(settings_voice<<10)),(int)header_focus,(int)slot_selected,settings_scanlines,settings_tv_filter,story_audio_caption_active};
 #ifdef SNATCHER_ENTRY_PROFILE
         unsigned factory_update_done=profile_factory?cpuGetTiming():0;
 #endif

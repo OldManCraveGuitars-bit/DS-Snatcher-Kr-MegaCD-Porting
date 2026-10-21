@@ -12,5 +12,6 @@ typedef struct {
 void resource_pcm_chip_reset(resource_pcm_chip *chip);
 void resource_pcm_chip_write(resource_pcm_chip *chip,unsigned reg,uint8_t value);
 uint8_t resource_pcm_chip_read(const resource_pcm_chip *chip,unsigned reg);
+void resource_pcm_chip_run_masked(resource_pcm_chip *chip,int16_t *stereo,size_t frames,unsigned mask);
 void resource_pcm_chip_run(resource_pcm_chip *chip,int16_t *stereo,size_t frames);
 #endif

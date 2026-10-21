@@ -89,6 +89,7 @@ static mm_word fill_audio(mm_word length,mm_addr dest,mm_stream_formats format){
 #ifdef SNATCHER_OPENING_PROFILE
     opening_audio_profile[2]+=cpuGetTiming()-profile_begin;
 #endif
+    if(!settings_bgm)memset(dest,0,length*(format==MM_STREAM_8BIT_MONO?1:4));
     return length;
 }
 static void end_entry_display(const uint16_t *last_picture){

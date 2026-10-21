@@ -1,0 +1,3 @@
+a4b784dabdae3ce19cf31fd8b361b6bc53326384a92c390a1827a099ff4bd0bc  Snatcher-DS-v0.9-Patcher.exe
+86c30223f28a0e206bac1a761c35630caf865b9fb34232251e6c618b21e51831  DS-Snatcher-Kr-MegaCD-Porting-v0.9-Patcher.zip
+effb1e18e0bb8c22aabfcce3ea553e17fc125bffca73a285fe90131c7b80169a  INPUT-SHA256-v0.9.txt

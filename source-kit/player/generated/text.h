@@ -20341,7 +20341,7 @@ static const uint16_t ivan_text_331[] = {555,356,0,450,708,65534,415,1141,0,519,
 static const uint16_t ivan_text_332[] = {342,56,0,968,78,22,0,110,154,65534,759,554,738,0,599,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t ivan_text_333[] = {549,9,0,378,228,65534,352,326,505,0,115,552,0,63,447,183,190,9,0,343,56,65534,699,494,137,524,0,560,178,207,9,9,9,65534,392,185,911,605,559,183,190,9,65535};
+static const uint16_t ivan_text_333[] = {549,9,0,378,228,65534,352,326,505,0,115,552,0,63,447,183,190,9,0,343,56,65534,699,494,137,524,0,560,178,207,533,9,9,9,65534,392,185,911,605,559,183,190,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t ivan_text_334[] = {378,228,0,149,386,505,65534,792,0,92,58,0,66,547,0,75,65534,560,178,0,330,492,559,183,190,9,65535};
@@ -20878,7 +20878,7 @@ static const uint16_t freddy_text_98[] = {538,606,558,548,0,60,605,740,447,183,1
 static const uint16_t freddy_text_99[] = {474,336,209,0,501,447,183,190,9,65534,538,606,558,209,0,574,748,0,501,447,183,190,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t freddy_text_100[] = {552,356,209,0,531,645,0,598,552,503,87,9,9,9,65535};
+static const uint16_t freddy_text_100[] = {552,356,209,0,531,645,0,598,552,503,87,533,9,9,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t freddy_text_101[] = {509,117,413,178,0,200,0,734,0,435,0,560,178,0,555,552,65534,501,447,183,190,9,0,474,707,700,281,0,212,474,56,413,65534,587,0,440,178,0,75,0,494,248,447,183,121,22,65535};
@@ -26892,7 +26892,7 @@ static const uint16_t module5c_text_378[] = {119,300,496,7,0,139,0,552,580,65534
 static const uint16_t module5c_text_379[] = {110,269,0,541,116,209,0,137,524,22,65534,190,741,552,159,9,9,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t module5c_text_380[] = {110,70,0,435,404,0,84,392,554,207,7,65534,110,266,183,121,9,9,9,65535};
+static const uint16_t module5c_text_380[] = {110,70,0,435,404,0,84,392,554,207,533,7,65534,110,266,183,121,9,9,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t module5c_text_381[] = {323,681,1,0,191,637,1,65535};
@@ -33645,7 +33645,7 @@ static const uint16_t module5a_text_191[] = {479,77,447,183,190,9,0,605,115,121,
 static const uint16_t module5a_text_192[] = {329,0,365,0,707,555,505,65534,572,569,731,450,77,447,183,121,22,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t module5a_text_193[] = {476,0,215,1,0,643,56,65534,75,558,0,207,552,688,297,0,572,569,734,0,308,674,65534,323,330,300,56,0,386,585,736,183,190,1,65535};
+static const uint16_t module5a_text_193[] = {476,0,215,533,1,0,643,56,65534,75,558,0,207,552,688,297,0,572,569,734,0,308,674,65534,323,330,300,56,0,386,585,736,183,190,1,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t module5a_text_194[] = {117,586,0,207,552,688,297,0,206,494,468,605,0,478,545,326,65534,605,115,0,75,558,548,65534,572,569,734,0,435,0,501,447,183,190,1,65535};
@@ -34947,58 +34947,58 @@ static const uint16_t act2_cd_text_2[] = {339,283,559,183,190,9,65535};
 static const uint16_t act2_cd_text_3[] = {552,580,0,117,282,218,0,516,408,548,0,698,404,731,77,447,183,190,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_4[] = {120,445,551,0,511,256,548,0,357,87,0,222,0,387,547,65535};
+static const uint16_t act2_cd_text_4[] = {120,445,551,0,511,256,548,0,357,87,0,562,159,524,0,323,681,547,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_5[] = {88,353,281,0,35,0,605,100,551,0,364,274,607,0,92,569,545,281,65534,742,740,447,183,190,9,65535};
+static const uint16_t act2_cd_text_5[] = {88,353,281,0,35,0,605,100,551,0,364,274,607,0,92,569,545,281,65534,742,740,605,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t act2_cd_text_6[] = {731,605,308,0,209,623,740,548,0,242,7,0,120,445,547,0,552,346,65534,92,569,505,413,0,173,102,56,7,0,474,183,326,0,336,496,56,505,75,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_7[] = {406,738,197,733,0,227,515,447,183,190,9,65535};
+static const uint16_t act2_cd_text_7[] = {406,738,197,733,0,227,515,159,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t act2_cd_text_8[] = {450,452,505,413,0,825,649,733,0,317,300,657,256,93,0,729,386,65534,722,380,545,281,0,367,554,552,0,444,149,631,0,223,7,0,142,419,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_9[] = {731,137,524,0,509,419,0,731,137,558,548,0,479,474,153,447,183,190,9,65535};
+static const uint16_t act2_cd_text_9[] = {731,137,524,0,509,419,0,731,137,558,548,0,479,474,153,605,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t act2_cd_text_10[] = {249,733,0,120,445,551,0,435,404,0,117,282,552,0,195,118,0,728,281,729,65534,235,444,671,505,413,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_11[] = {444,149,631,505,75,0,81,579,573,554,0,81,735,552,0,560,549,548,65534,479,474,153,447,183,190,9,65535};
+static const uint16_t act2_cd_text_11[] = {444,149,631,505,75,0,81,579,573,554,0,81,735,552,0,560,549,548,65534,479,474,153,159,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_12[] = {120,445,547,0,552,0,491,577,548,0,479,474,153,117,0,242,337,505,65534,406,738,218,0,74,545,281,0,378,559,183,190,9,65535};
+static const uint16_t act2_cd_text_12[] = {120,445,547,0,552,0,491,577,548,0,479,474,153,117,0,242,337,505,65534,406,738,218,0,74,545,281,0,378,552,159,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_13[] = {110,300,87,0,552,0,491,577,547,0,444,149,631,524,0,607,612,65534,554,58,551,0,598,533,733,0,622,552,559,183,190,9,65535};
+static const uint16_t act2_cd_text_13[] = {110,300,87,0,552,0,491,577,547,0,444,149,631,524,0,607,612,65534,554,58,551,0,598,533,733,0,622,552,555,420,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_14[] = {110,231,551,0,554,92,0,729,386,178,0,562,531,415,548,0,80,235,605,65534,335,736,183,190,9,65535};
+static const uint16_t act2_cd_text_14[] = {110,231,551,0,554,92,0,729,386,178,0,562,531,415,548,0,80,235,605,65534,335,731,159,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_15[] = {519,261,0,164,645,217,326,0,842,7,0,602,0,1044,410,589,552,65534,412,120,183,190,9,65535};
+static const uint16_t act2_cd_text_15[] = {519,261,0,164,645,217,326,0,842,7,0,602,0,1044,410,589,552,65534,412,117,605,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t act2_cd_text_16[] = {110,0,242,337,505,0,761,214,734,0,435,0,560,178,0,569,427,524,65534,450,58,547,0,147,552,0,56,569,0,1051,547,0,733,78,537,7,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_17[] = {110,300,87,0,339,283,0,786,545,281,0,671,75,0,580,733,221,183,190,9,65535};
+static const uint16_t act2_cd_text_17[] = {110,300,87,0,339,283,0,786,545,281,0,671,75,0,580,733,217,159,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t act2_cd_text_18[] = {552,0,81,735,548,0,111,379,734,0,409,0,729,386,297,65534,67,358,731,274,326,0,573,494,209,0,17,67,541,547,0,71,302,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_19[] = {74,545,281,0,378,559,183,190,9,65535};
+static const uint16_t act2_cd_text_19[] = {74,545,281,0,378,552,159,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t act2_cd_text_20[] = {237,255,413,0,110,231,551,0,56,569,0,672,0,491,577,547,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_21[] = {605,139,0,17,67,541,58,0,562,531,415,548,0,729,738,0,605,149,490,65534,740,190,178,0,577,552,503,447,183,190,9,65535};
+static const uint16_t act2_cd_text_21[] = {605,139,0,17,67,541,58,0,562,531,415,548,0,729,738,0,605,149,490,65534,740,190,178,0,577,552,503,605,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t act2_cd_text_22[] = {776,9,65535};
@@ -35016,76 +35016,76 @@ static const uint16_t act2_cd_text_25[] = {110,261,413,0,733,78,537,505,209,0,56
 static const uint16_t act2_cd_text_26[] = {552,281,460,0,110,231,552,0,406,474,142,545,274,326,0,356,228,450,65534,730,533,733,0,74,552,0,731,137,0,560,190,178,0,404,453,552,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_27[] = {387,328,738,583,447,183,190,9,65535};
+static const uint16_t act2_cd_text_27[] = {387,328,738,583,159,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_28[] = {842,552,0,412,118,0,554,92,0,729,386,297,0,650,288,734,0,551,288,65534,450,416,559,183,190,9,65535};
+static const uint16_t act2_cd_text_28[] = {842,552,0,412,118,0,554,92,0,729,386,297,0,650,288,734,0,551,288,65534,450,416,555,420,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_29[] = {120,445,547,0,353,281,0,110,0,331,573,545,281,0,468,552,178,65534,377,540,548,0,629,474,150,0,233,736,183,190,9,65535};
+static const uint16_t act2_cd_text_29[] = {120,445,547,0,353,281,0,110,0,331,573,545,281,0,468,552,178,65534,377,540,548,0,629,474,150,0,233,731,159,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t act2_cd_text_30[] = {120,445,552,0,494,235,297,0,584,404,740,178,605,0,479,474,149,274,87,65534,543,0,149,534,339,548,0,387,414,740,87,7,0,364,711,281,0,87,117,297,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_31[] = {358,80,740,447,183,190,9,0,110,261,413,0,110,0,87,117,297,0,707,178,65534,209,450,551,0,544,555,733,0,569,427,7,0,474,535,688,0,747,785,545,281,65535};
+static const uint16_t act2_cd_text_31[] = {358,80,740,605,9,0,110,261,413,0,110,0,87,117,297,0,707,178,65534,209,450,551,0,544,555,733,0,569,427,7,0,474,535,688,0,747,785,545,281,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_32[] = {742,740,447,183,190,9,65535};
+static const uint16_t act2_cd_text_32[] = {742,740,159,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t act2_cd_text_33[] = {110,91,551,0,336,534,435,0,552,404,372,255,0,372,986,552,65534,554,408,623,551,297,0,310,738,0,599,7,0,120,445,552,0,617,202,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_34[] = {142,562,551,0,784,678,593,297,0,308,231,0,435,0,560,503,447,183,190,9,65535};
+static const uint16_t act2_cd_text_34[] = {142,562,551,0,784,678,593,297,0,308,231,0,435,0,560,503,605,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_35[] = {110,0,784,678,593,297,0,584,202,548,0,552,534,738,0,209,450,65534,207,552,688,370,552,444,505,413,0,584,763,740,447,183,190,9,65535};
+static const uint16_t act2_cd_text_35[] = {110,0,784,678,593,281,0,584,202,548,0,696,738,0,209,450,65534,207,552,688,370,552,444,297,0,584,763,740,159,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t act2_cd_text_36[] = {110,0,81,93,0,534,551,562,0,223,7,0,552,356,65534,281,228,300,75,444,524,0,727,273,235,0,185,445,552,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_37[] = {137,527,447,183,190,9,65535};
+static const uint16_t act2_cd_text_37[] = {137,527,605,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t act2_cd_text_38[] = {731,605,308,0,552,356,551,0,729,386,0,408,685,281,0,378,474,0,110,56,65534,444,149,631,555,0,56,181,419,547,0,574,748,0,501,190,87,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_39[] = {708,192,740,447,183,190,9,65535};
+static const uint16_t act2_cd_text_39[] = {708,192,740,159,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_40[] = {1044,410,589,551,0,773,573,552,0,574,748,0,501,503,545,183,121,533,9,65535};
+static const uint16_t act2_cd_text_40[] = {1044,410,589,551,0,773,573,552,0,574,748,0,501,503,545,183,121,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_41[] = {190,308,0,300,669,228,0,444,657,552,297,0,427,605,731,87,65534,560,503,117,505,0,306,491,0,435,404,93,505,0,845,83,447,183,190,9,65535};
+static const uint16_t act2_cd_text_41[] = {190,308,0,300,669,228,0,444,657,552,297,0,427,605,731,87,65534,560,503,117,505,0,306,491,0,435,404,93,505,0,845,83,605,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_42[] = {552,766,0,727,273,235,0,185,445,551,0,610,548,0,435,410,733,0,81,93,65534,562,531,415,0,622,192,580,56,0,199,265,545,281,0,137,527,447,183,190,9,65535};
+static const uint16_t act2_cd_text_42[] = {552,766,0,727,273,235,0,185,445,551,0,610,548,0,435,410,733,0,81,93,65534,562,531,415,0,622,192,580,56,0,199,265,545,281,0,137,527,159,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_43[] = {185,445,551,0,474,149,0,300,404,0,185,445,209,0,444,149,631,281,65534,359,748,583,87,7,0,197,452,552,0,110,160,297,65535};
+static const uint16_t act2_cd_text_43[] = {185,445,551,0,474,149,0,300,404,0,185,445,209,0,444,149,631,281,65534,359,748,583,87,7,0,562,159,56,0,110,160,297,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_44[] = {631,650,740,447,183,190,9,65535};
+static const uint16_t act2_cd_text_44[] = {631,650,740,605,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t act2_cd_text_45[] = {110,300,87,0,120,445,551,0,429,695,0,352,505,413,0,358,80,218,65534,729,386,0,420,718,56,0,300,404,551,0,74,558,548,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_46[] = {759,554,740,447,183,190,9,65535};
+static const uint16_t act2_cd_text_46[] = {759,554,740,159,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_47[] = {727,273,235,0,185,445,209,0,444,149,631,281,0,359,748,582,7,0,110,65534,510,450,0,197,452,552,0,631,650,740,447,183,190,9,65535};
+static const uint16_t act2_cd_text_47[] = {727,273,235,0,185,445,209,0,444,149,631,281,0,359,748,582,7,0,110,65534,510,450,0,562,159,56,0,631,650,740,605,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_48[] = {120,445,551,0,429,505,0,600,494,582,0,560,202,0,317,300,657,256,552,65534,727,273,235,551,0,74,545,281,0,759,554,216,447,183,190,9,65535};
+static const uint16_t act2_cd_text_48[] = {120,445,551,0,429,505,0,600,494,582,0,560,202,0,317,300,657,256,552,65534,727,273,235,551,0,74,545,281,0,759,554,216,159,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t act2_cd_text_49[] = {237,255,413,0,120,445,548,0,594,554,0,562,231,552,0,552,0,222,65534,444,149,631,7,0,727,273,235,524,0,300,404,515,549,548,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t act2_cd_text_50[] = {479,474,153,447,183,190,9,65535};
+static const uint16_t act2_cd_text_50[] = {479,474,153,605,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t act2_cd_text_51[] = {731,605,308,0,337,580,56,0,412,83,494,9,65535};
@@ -36725,7 +36725,7 @@ static const uint16_t contact_voice_text_31[] = {580,0,593,427,524,0,392,235,519
 static const uint16_t contact_voice_text_32[] = {190,450,0,733,365,0,87,306,539,533,9,0,450,228,0,471,9,65534,584,455,731,420,533,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_33[] = {488,300,444,56,0,529,0,572,266,605,22,65534,355,505,0,343,56,0,560,137,22,65535};
+static const uint16_t contact_voice_text_33[] = {488,300,444,56,0,529,0,572,266,592,22,65534,355,505,0,343,56,0,560,137,533,22,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_34[] = {444,149,631,555,605,209,0,333,255,9,65535};
@@ -36968,28 +36968,28 @@ static const uint16_t contact_voice_text_112[] = {222,0,67,0,137,61,183,190,9,65
 static const uint16_t contact_voice_text_113[] = {590,474,9,0,323,681,9,65534,562,9,0,159,0,68,490,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_114[] = {1106,548,0,420,326,0,66,552,0,158,562,7,0,479,77,605,22,65535};
+static const uint16_t contact_voice_text_114[] = {1106,548,0,420,326,0,66,552,0,158,592,7,0,479,77,592,22,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_115[] = {155,336,0,519,261,0,222,326,65534,1107,73,87,0,1108,1108,738,605,183,121,9,65535};
+static const uint16_t contact_voice_text_115[] = {155,336,0,519,261,0,222,326,65534,1107,73,87,0,1108,1108,738,605,183,121,533,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_116[] = {479,77,447,183,190,9,0,595,392,216,447,183,121,22,65534,731,137,7,0,223,7,0,1106,1,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_117[] = {590,474,9,0,329,0,639,0,227,326,65534,224,224,0,245,519,297,0,68,490,9,65535};
+static const uint16_t contact_voice_text_117[] = {590,447,183,190,9,0,329,0,639,0,227,326,65534,224,224,0,245,519,297,0,73,183,190,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_118[] = {245,519,295,326,0,353,281,0,159,0,74,548,0,123,149,7,65534,479,77,605,22,65535};
+static const uint16_t contact_voice_text_118[] = {245,519,295,326,0,353,281,0,197,452,0,74,548,0,123,149,420,533,9,65534,479,77,592,22,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_119[] = {453,435,731,605,0,306,9,65535};
+static const uint16_t contact_voice_text_119[] = {453,435,731,605,0,306,420,533,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_120[] = {595,392,216,447,183,190,9,65534,562,7,0,843,306,231,474,9,0,494,413,0,521,255,524,255,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_121[] = {490,1,0,731,137,0,521,255,520,190,1,65534,572,70,0,149,0,68,490,1,0,552,300,0,524,1,65535};
+static const uint16_t contact_voice_text_121[] = {494,1,0,731,137,0,521,255,519,159,533,1,65534,474,7,0,572,70,0,580,0,68,517,533,1,0,552,300,0,524,533,1,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_122[] = {566,0,568,483,159,9,0,323,681,9,65534,149,0,70,0,494,235,0,560,605,22,65535};
@@ -37001,7 +37001,7 @@ static const uint16_t contact_voice_text_123[] = {519,7,0,552,267,0,555,547,0,22
 static const uint16_t contact_voice_text_124[] = {476,0,215,486,486,1,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_125[] = {336,445,0,337,580,554,605,0,105,115,731,102,9,65535};
+static const uint16_t contact_voice_text_125[] = {336,445,0,337,580,554,605,0,105,115,731,102,533,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_126[] = {149,0,729,562,0,149,1025,9,65534,149,0,729,562,0,494,235,0,560,494,22,65535};
@@ -37184,7 +37184,7 @@ static const uint16_t contact_voice_text_184[] = {199,763,505,413,0,535,449,731,
 static const uint16_t contact_voice_text_185[] = {552,384,533,9,65534,110,154,0,306,491,555,0,401,552,565,474,533,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_186[] = {552,356,0,281,228,300,75,444,178,0,387,328,65534,535,300,56,0,629,202,0,562,56,0,474,183,503,102,9,65535};
+static const uint16_t contact_voice_text_186[] = {552,356,0,281,228,300,75,444,178,0,387,328,65534,535,300,56,0,629,202,0,562,56,0,474,183,503,102,533,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_187[] = {444,149,631,524,0,194,547,0,75,0,388,536,552,503,102,9,65534,552,580,0,142,547,0,70,0,727,273,235,0,185,445,552,490,9,65535};
@@ -37250,7 +37250,7 @@ static const uint16_t contact_voice_text_206[] = {581,569,9,0,579,310,0,608,118,
 static const uint16_t contact_voice_text_207[] = {579,310,0,594,503,117,297,0,353,805,183,190,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_208[] = {569,548,0,594,554,0,70,0,300,404,524,65534,727,273,235,515,202,0,68,102,9,65535};
+static const uint16_t contact_voice_text_208[] = {569,548,0,594,554,0,70,0,300,404,524,65534,727,273,235,515,202,0,68,102,533,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_209[] = {727,273,235,9,9,9,0,313,474,9,65534,110,269,0,167,547,0,494,235,0,560,605,22,65535};
@@ -37373,7 +37373,7 @@ static const uint16_t contact_voice_text_247[] = {552,0,552,346,605,178,0,572,56
 static const uint16_t contact_voice_text_248[] = {427,605,724,0,323,176,551,0,110,261,995,0,323,330,300,65534,328,279,548,0,404,534,731,450,326,0,221,183,190,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_249[] = {384,9,0,572,117,0,255,326,0,56,75,56,0,560,494,9,65535};
+static const uint16_t contact_voice_text_249[] = {378,420,533,9,0,572,117,0,255,326,0,56,75,56,0,560,447,183,190,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_250[] = {342,0,587,0,318,87,0,59,121,22,65535};
@@ -37385,7 +37385,7 @@ static const uint16_t contact_voice_text_251[] = {605,115,547,0,792,562,300,56,0
 static const uint16_t contact_voice_text_252[] = {552,384,533,9,0,552,384,533,9,0,552,384,533,1,65534,562,300,0,145,545,183,0,477,545,420,533,1,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_253[] = {572,0,562,300,56,0,590,77,102,9,0,477,562,9,65535};
+static const uint16_t contact_voice_text_253[] = {572,0,562,300,56,0,590,77,102,533,9,0,477,545,450,592,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_254[] = {562,9,0,429,186,231,9,65534,344,0,228,450,77,494,533,22,65535};
@@ -37463,7 +37463,7 @@ static const uint16_t contact_voice_text_277[] = {342,22,0,808,605,22,65535};
 static const uint16_t contact_voice_text_278[] = {249,0,378,562,1,65534,323,300,0,671,300,444,306,444,1,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_279[] = {56,0,364,278,102,9,65535};
+static const uint16_t contact_voice_text_279[] = {56,0,364,278,102,533,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_280[] = {166,1080,0,555,209,0,474,183,490,9,65534,222,274,539,734,0,552,544,178,0,646,387,731,183,121,9,65535};
@@ -37886,7 +37886,7 @@ static const uint16_t contact_voice_text_418[] = {509,117,0,560,447,183,190,9,65
 static const uint16_t contact_voice_text_419[] = {342,490,22,0,552,75,0,342,605,22,65534,598,101,494,0,66,547,207,9,0,323,681,7,0,365,510,738,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_420[] = {479,77,447,183,190,9,0,494,235,0,378,562,9,9,9,65534,760,562,0,117,282,7,0,639,607,9,65535};
+static const uint16_t contact_voice_text_420[] = {479,77,447,183,190,9,0,494,235,0,381,121,533,9,9,9,65534,760,562,0,117,282,7,0,639,607,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_421[] = {190,549,0,190,418,0,113,562,178,0,330,295,77,447,183,190,9,65534,631,549,0,378,178,0,113,562,231,559,183,190,9,65535};
@@ -37907,13 +37907,13 @@ static const uint16_t contact_voice_text_425[] = {494,869,229,0,173,102,56,551,0
 static const uint16_t contact_voice_text_426[] = {552,0,113,562,231,548,0,738,210,731,326,0,249,0,190,296,65534,444,149,631,297,0,629,474,151,0,435,209,0,560,494,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_427[] = {190,296,0,117,282,547,0,494,248,75,0,218,0,71,121,22,65535};
+static const uint16_t contact_voice_text_427[] = {190,296,0,117,282,547,0,494,248,75,0,218,0,71,121,533,22,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_428[] = {173,102,56,0,509,117,413,0,117,282,548,0,1138,0,650,542,137,0,384,9,65534,535,300,56,0,521,0,71,0,479,483,178,605,209,0,330,295,605,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_429[] = {494,615,605,0,444,149,631,231,552,65534,535,300,56,0,344,0,731,178,605,0,474,178,0,74,0,66,474,9,65535};
+static const uint16_t contact_voice_text_429[] = {494,615,605,0,444,149,631,231,552,65534,535,300,56,0,344,0,731,178,605,0,474,178,0,74,0,66,102,533,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_430[] = {117,282,0,584,57,548,0,378,94,731,77,447,183,190,9,65535};
@@ -38150,7 +38150,7 @@ static const uint16_t contact_voice_text_506[] = {119,300,496,7,0,110,70,0,137,5
 static const uint16_t contact_voice_text_507[] = {552,267,9,0,552,267,9,65534,552,75,0,190,0,342,605,22,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_508[] = {377,540,0,379,209,490,9,65535};
+static const uint16_t contact_voice_text_508[] = {377,540,0,379,209,559,183,190,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_509[] = {66,547,0,379,209,605,308,65534,12,887,0,379,209,178,0,474,183,490,9,65535};
@@ -38180,7 +38180,7 @@ static const uint16_t contact_voice_text_516[] = {119,300,496,9,0,552,346,0,167,
 static const uint16_t contact_voice_text_517[] = {111,209,281,0,584,455,731,456,450,519,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_518[] = {590,474,9,0,222,0,364,702,548,65534,214,450,505,0,175,266,0,378,562,9,65535};
+static const uint16_t contact_voice_text_518[] = {590,447,183,190,9,0,222,0,364,702,548,65534,214,450,505,0,175,266,0,378,450,592,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_519[] = {222,0,364,702,547,0,356,199,715,0,709,156,505,0,560,494,413,65534,756,562,413,178,0,214,450,505,0,173,297,0,435,0,501,494,9,65535};
@@ -38279,7 +38279,7 @@ static const uint16_t contact_voice_text_549[] = {549,7,0,509,117,0,450,452,548,
 static const uint16_t contact_voice_text_550[] = {110,261,9,65534,703,303,501,552,0,167,231,551,0,779,412,562,490,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_551[] = {474,535,688,0,747,785,0,66,547,0,91,505,413,0,143,650,733,0,540,261,65534,554,58,551,0,450,452,548,0,439,117,178,0,91,555,0,68,490,9,65535};
+static const uint16_t contact_voice_text_551[] = {474,535,688,0,747,785,0,66,547,0,91,505,413,0,143,650,733,0,540,261,65534,554,58,551,0,450,452,548,0,439,117,178,0,91,555,0,73,183,190,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_552[] = {474,535,688,0,747,785,548,0,87,296,0,70,65534,42,31,946,56,0,309,552,0,228,137,231,117,0,242,337,552,77,605,9,65535};
@@ -38516,7 +38516,7 @@ static const uint16_t contact_voice_text_628[] = {738,300,56,0,479,474,150,0,75,
 static const uint16_t contact_voice_text_629[] = {110,261,413,0,498,103,548,0,306,593,731,255,178,0,323,450,605,297,65534,142,117,117,281,0,733,0,73,183,190,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_630[] = {567,122,9,0,346,657,56,0,738,300,56,0,101,569,548,65534,629,545,266,0,63,190,87,0,731,605,0,478,483,137,22,65535};
+static const uint16_t contact_voice_text_630[] = {567,122,308,533,9,0,346,657,56,0,738,300,56,0,101,569,548,65534,629,545,266,0,63,190,87,0,731,605,0,478,483,137,533,22,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_631[] = {313,447,183,190,9,0,101,569,505,0,94,733,0,604,68,297,65534,629,87,0,560,503,548,0,73,183,190,9,65535};
@@ -38612,7 +38612,7 @@ static const uint16_t contact_voice_text_660[] = {313,474,9,65534,262,204,93,551
 static const uint16_t contact_voice_text_661[] = {731,605,308,0,319,572,0,509,117,413,0,137,59,65534,360,368,386,688,0,629,474,490,0,738,1,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_662[] = {474,336,74,209,0,476,0,378,509,9,65534,494,248,75,0,731,605,22,65535};
+static const uint16_t contact_voice_text_662[] = {474,336,74,209,0,476,0,378,559,183,190,9,65534,494,248,75,0,731,592,22,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_663[] = {552,75,0,199,636,0,342,605,22,65535};
@@ -38636,13 +38636,13 @@ static const uint16_t contact_voice_text_668[] = {562,531,415,548,0,729,731,326,
 static const uint16_t contact_voice_text_669[] = {212,474,190,185,0,525,373,733,0,696,281,515,548,0,73,183,190,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_670[] = {607,563,0,479,474,1089,494,490,0,740,494,9,65534,209,450,0,574,510,505,0,882,804,0,255,552,155,551,65535};
+static const uint16_t contact_voice_text_670[] = {607,563,0,479,474,1089,494,490,0,740,447,183,190,9,65534,209,450,0,574,510,505,0,882,804,0,255,552,155,551,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_671[] = {518,0,164,415,552,0,1170,748,0,560,545,325,65534,605,115,547,0,364,274,582,0,560,545,183,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_672[] = {444,149,631,56,0,231,675,605,0,478,87,65534,552,214,731,117,505,209,0,590,483,77,102,9,65535};
+static const uint16_t contact_voice_text_672[] = {444,149,631,56,0,231,675,605,0,478,87,65534,552,214,731,117,505,209,0,590,483,77,102,533,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_673[] = {474,1,0,569,0,562,671,0,120,445,552,0,594,547,65535};
@@ -38987,7 +38987,7 @@ static const uint16_t contact_voice_text_785[] = {574,0,69,579,731,605,0,310,474
 static const uint16_t contact_voice_text_786[] = {346,657,1,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_787[] = {494,248,75,0,734,0,68,605,22,65535};
+static const uint16_t contact_voice_text_787[] = {494,248,75,0,731,453,0,73,183,121,22,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_788[] = {552,580,0,568,483,190,7,0,579,661,1,65535};
@@ -39737,10 +39737,10 @@ static const uint16_t contact_voice_text_1035[] = {420,86,0,593,533,0,579,408,54
 static const uint16_t contact_voice_text_1036[] = {731,605,308,0,552,408,738,9,0,81,735,552,0,560,178,0,729,386,281,178,65534,110,267,0,555,548,0,738,149,117,0,494,274,537,0,690,207,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_1037[] = {652,547,0,525,373,733,0,554,92,0,729,386,297,0,67,358,734,65534,512,434,297,0,629,483,190,87,0,740,494,9,65535};
+static const uint16_t contact_voice_text_1037[] = {652,547,0,525,373,733,0,554,92,0,729,386,297,0,67,358,734,65534,512,434,297,0,629,483,190,87,0,740,447,183,190,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_1038[] = {494,614,326,0,552,346,0,308,231,494,0,153,548,605,209,0,333,255,9,65535};
+static const uint16_t contact_voice_text_1038[] = {494,614,326,0,552,346,0,308,231,494,0,153,548,605,209,65534,330,299,183,190,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_1039[] = {330,295,77,447,183,190,9,0,731,605,308,0,509,117,0,560,178,65534,444,149,631,0,435,297,0,378,326,65535};
@@ -40964,7 +40964,7 @@ static const uint16_t contact_voice_text_1444[] = {300,703,0,586,505,75,0,740,20
 static const uint16_t contact_voice_text_1445[] = {300,703,0,586,22,0,474,1,65534,479,483,494,7,0,323,681,9,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
-static const uint16_t contact_voice_text_1446[] = {413,223,266,1,65534,14,387,355,505,0,501,494,1,65535};
+static const uint16_t contact_voice_text_1446[] = {413,222,295,420,533,1,65534,14,387,355,505,0,501,447,183,190,1,65535};
 #endif
 #if 0 /* immutable story-text archive reference */
 static const uint16_t contact_voice_text_1447[] = {87,306,539,9,0,223,0,190,0,87,306,539,9,65534,580,552,346,7,0,56,562,9,65535};

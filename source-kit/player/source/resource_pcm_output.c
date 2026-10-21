@@ -31,7 +31,7 @@ static int32_t pcm_clip(int64_t value){
 #ifdef __NDS__
 __attribute__((section(".itcm"),long_call))
 #endif
-static __attribute__((noinline)) void pcm_output_render_hot(resource_pcm_output *s,resource_pcm_chip *chip,int16_t *out,size_t frames){
+static __attribute__((noinline)) void pcm_output_render_hot(resource_pcm_output *s,resource_pcm_chip *chip,int16_t *out,size_t frames,unsigned mask){
     if((!chip->enabled || chip->off==255) && !s->previous[0] && !s->previous[1] &&
        s->integrator[0]>=0 && s->integrator[0]<32768 && s->integrator[1]>=0 && s->integrator[1]<32768){
         bool quiet=true;
@@ -58,7 +58,7 @@ static __attribute__((noinline)) void pcm_output_render_hot(resource_pcm_output 
     while(frames){
         unsigned count=frames>64?64:(unsigned)frames;
         unsigned clocks=resource_pcm_batch_clocks(s->factor,s->next,count);
-        resource_pcm_chip_run(chip,&raw[0][0],clocks);
+        resource_pcm_chip_run_masked(chip,&raw[0][0],clocks,mask);
 #ifdef __NDS__
         extern unsigned pcm_output_filter_select(resource_pcm_output *,const int16_t *,int16_t *,unsigned,unsigned);
         unsigned cursor=pcm_output_filter_select(s,&raw[0][0],out,count,clocks);
@@ -94,10 +94,12 @@ static __attribute__((noinline)) void pcm_output_render_hot(resource_pcm_output 
  * room/checkpoint ABI and copy every field back before exposing the result. */
 #include "audio_hot_state.h"
 #define pcm_hot_state audio_hot_state.pcm
-void resource_pcm_output_render(resource_pcm_output *s,resource_pcm_chip *chip,int16_t *out,size_t frames){
+void resource_pcm_output_render_masked(resource_pcm_output *s,resource_pcm_chip *chip,int16_t *out,size_t frames,unsigned mask){
  unsigned previous=system_perf_enter(PERF_PCM);
  pcm_hot_state=*s;
- pcm_output_render_hot(&pcm_hot_state,chip,out,frames);
+ pcm_output_render_hot(&pcm_hot_state,chip,out,frames,mask);
  *s=pcm_hot_state;
  system_perf_leave(previous);
 }
+
+void resource_pcm_output_render(resource_pcm_output *s,resource_pcm_chip *chip,int16_t *out,size_t frames){resource_pcm_output_render_masked(s,chip,out,frames,255);}
