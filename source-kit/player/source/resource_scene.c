@@ -56,6 +56,12 @@ bool resource_scene_clear(resource_scene_state *s){
     if(!(*g(s,0x788b)&2))*g(s,0x7887)=1;
     *g(s,0x788b)=0;return true;
 }
+void resource_scene_clear_voice_actors(resource_scene_state *s){
+    /* Original SUB139D4: retire only the type word of actors5..14 on
+     * returning to choices. Their mouth maps may point at tiles which a
+     * subsequent item popup reuses. Room actors16+ remain untouched. */
+    if(s)for(unsigned id=5;id<15;id++)putword(s->actors+id*80,0);
+}
 static bool load_table(resource_scene_state *s,uint32_t table,unsigned scene){
     if(!s || !s->resource)return false;
     const uint8_t *entry=read(s,table+scene*2,2);if(!entry)return false;

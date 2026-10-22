@@ -1,33 +1,5 @@
 [
   {
-    "file": "reception.png",
-    "caption": "V0.9 실제 EXE 출력 · 오프닝 1·2 후 접수처",
-    "sha256": "483dc1522157157d776dcff2db37e2112810e29cc4dbdb6b831ecc3766232468",
-    "rom_sha256": "5e5a3f3d05374b196ac4799597afb81e5dae9d61e655ae6275cc912260cc3f71",
-    "resolution": [
-      256,
-      384
-    ],
-    "edited": false,
-    "emulator": "melonDS",
-    "physical_console": false,
-    "evidence_sha256": "820dd8790ab2fdeb8a3c637a7cf61d31483388f4332ececb89c79cb2534b1670"
-  },
-  {
-    "file": "title.png",
-    "caption": "V0.9 실제 EXE 출력 · SNATCHER DS 로고",
-    "sha256": "5cd299b1c4e757b8c52aabcf6e011e4a10d2e4a759341d0180f2f03a81fe4551",
-    "rom_sha256": "5e5a3f3d05374b196ac4799597afb81e5dae9d61e655ae6275cc912260cc3f71",
-    "resolution": [
-      256,
-      384
-    ],
-    "edited": false,
-    "emulator": "melonDS",
-    "physical_console": false,
-    "evidence_sha256": "820dd8790ab2fdeb8a3c637a7cf61d31483388f4332ececb89c79cb2534b1670"
-  },
-  {
     "file": "voice.png",
     "caption": "길리언·메탈기어 보이스 대화",
     "sha256": "fca2ab4576a068196147c0270692f8103ece20af4c4db34c43bd933a12464df2",
@@ -114,5 +86,61 @@
     "conversion": "source-kit/art/launcher/conversion.json",
     "banner_verification_sha256": "1bf065a04ae906f18ea9adb0511a13d8290afec6e9d423b5ebffcc148fd91431",
     "physical_console": false
+  },
+  {
+    "file": "title.png",
+    "caption": "V0.95 실제 EXE 출력 · SNATCHER DS 로고",
+    "sha256": "5cd299b1c4e757b8c52aabcf6e011e4a10d2e4a759341d0180f2f03a81fe4551",
+    "rom_sha256": "ab119635706b15e28d7848c92d2461dc89f882272e7abff25e476d83a7ada579",
+    "resolution": [
+      256,
+      384
+    ],
+    "edited": false,
+    "emulator": "melonDS",
+    "physical_console": false,
+    "evidence_sha256": "768133c3a6481b52cd38dd67e84f73e4eb4dd50fb44e148f0276bad90842ead6"
+  },
+  {
+    "file": "reception.png",
+    "caption": "V0.95 실제 EXE 출력 · 오프닝 1·2 후 접수처",
+    "sha256": "483dc1522157157d776dcff2db37e2112810e29cc4dbdb6b831ecc3766232468",
+    "rom_sha256": "ab119635706b15e28d7848c92d2461dc89f882272e7abff25e476d83a7ada579",
+    "resolution": [
+      256,
+      384
+    ],
+    "edited": false,
+    "emulator": "melonDS",
+    "physical_console": false,
+    "evidence_sha256": "768133c3a6481b52cd38dd67e84f73e4eb4dd50fb44e148f0276bad90842ead6"
+  },
+  {
+    "file": "act3-v095.png",
+    "caption": "V0.95 · ACT3 도입부 이후 첫 질문",
+    "sha256": "a79541db010070e6843bdd14db471a10e8bf335f51c6fdfcdb98576816bf0eea",
+    "rom_sha256": "257fcb10ff5c1bf7e4e519750cc0ffe4a0ea6b7d2c3a605f8d93fa42eb5aa2c2",
+    "resolution": [
+      256,
+      384
+    ],
+    "edited": false,
+    "emulator": "melonDS DS",
+    "physical_console": false,
+    "evidence_sha256": "f2edc76b8ed3b5de6c04b08e9999f23ede1240fb25a7eaf644037e83402c90e0"
+  },
+  {
+    "file": "caption-v095.png",
+    "caption": "V0.95 · CD12 누락 자막 복구",
+    "sha256": "630897d103831b08abb57d086c03db6570251f283ed06b06c67f881131927539",
+    "rom_sha256": "257fcb10ff5c1bf7e4e519750cc0ffe4a0ea6b7d2c3a605f8d93fa42eb5aa2c2",
+    "resolution": [
+      256,
+      384
+    ],
+    "edited": false,
+    "emulator": "melonDS DS",
+    "physical_console": false,
+    "evidence_sha256": "612556b0828ef56e122e57781002d57d52a5489d0ae8c474ad642c2a8bc63e97"
   }
 ]

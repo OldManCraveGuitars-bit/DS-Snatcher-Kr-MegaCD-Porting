@@ -407,6 +407,9 @@ static void load_checkpoint(int back){
          * still reaches the driver even when its command repeats. */
         if(story_music_request()!=0xffff && story_music_request()!=music_command)
             (void)music_player_command(story_music_request());
+        if(mode==STORY_MENU_UI && !reception_background_menu_return()){
+            notice(UI_SYS_LOAD_ERROR,back);return;
+        }
     }else if(mode==RECEPTION_DIALOG || mode==RECEPTION_ROOT){
         /* The legacy story helper consumes its initial graphics events.
          * Recreate the original counter first so speech owns live actors. */
@@ -496,7 +499,7 @@ static void show_audio_diagnostics(void){
     system_perf_summary(diagnostic_message,sizeof(diagnostic_message));
     audio_trace_write();
     size_t used=strlen(diagnostic_message);
-    if(!audio_trace_write_result)snprintf(diagnostic_message+used,sizeof(diagnostic_message)-used,"LOG SAVED V62\nSEND THIS SCREEN");
+    if(!audio_trace_write_result)snprintf(diagnostic_message+used,sizeof(diagnostic_message)-used,"LOG SAVED V095\nSEND THIS SCREEN");
     else snprintf(diagnostic_message+used,sizeof(diagnostic_message)-used,"LOG FAIL %d\nERRNO %u",audio_trace_write_result,system_perf_write_errno);
     unsigned i=0;
     for(;i+1<sizeof(diagnostic_text)/sizeof(*diagnostic_text) && diagnostic_message[i];i++){
@@ -603,7 +606,10 @@ static void story_dispatch(int event){
         if(event==STORY_INPUT_WAIT){mode=STORY_INPUT_UI;return;}
         if(event==STORY_KEYBOARD){name_keyboard_reset(&name_keyboard);mode=STORY_KEYBOARD_UI;return;}
         if(event==STORY_DIALOG){mode=STORY_DIALOG_UI;return;}
-        if(event==STORY_MENU){story_selected=story_scroll=0;mode=STORY_MENU_UI;return;}
+        if(event==STORY_MENU){
+            if(!reception_background_menu_return())break;
+            story_selected=story_scroll=0;mode=STORY_MENU_UI;return;
+        }
         if(event==STORY_BATTLE){
             /* The preceding PCM task is queued by the original script.
              * Let it finish on normal source ticks before task24 takes
@@ -978,16 +984,19 @@ static const uint16_t *story_page_read(unsigned index){
 static void panel(uint16_t *,int,int,int,int);
 static void outline(uint16_t *,int,int,int,int);
 static bool flashlight_available(void){return story_flashlight_menu() && reception_background_flashlight_active();}
+static void draw_flashlight_cursor(void){
+    int x=0,y=0;reception_background_flashlight_position(&x,&y);
+    x=16+(x+71)*223/139;y=60+(y+39)*119/75;
+    int left=x<22?16:x-6,right=x>233?239:x+6,top=y<66?60:y-6,last=y>173?179:y+6;
+    rect(bottom,left,y,right-left+1,1,C(8,31,27));rect(bottom,x,top,1,last-top+1,C(8,31,27));
+}
 static void draw_flashlight(void){
     text(bottom,8,5,96,UI_FLASHLIGHT_LIGHT,C(8,24,27));
     panel(bottom,104,1,48,22);outline(bottom,104,1,48,22);text(bottom,116,6,24,UI_OPTIONS_MENU,C(31,31,31));
     panel(bottom,160,1,88,22);outline(bottom,160,1,88,22);text(bottom,168,6,76,UI_FLASHLIGHT_COMMAND,C(31,31,31));
     text(bottom,16,30,224,UI_FLASHLIGHT_AIM,C(31,31,31));
     panel(bottom,16,60,224,120);outline(bottom,16,60,224,120);
-    int x=0,y=0;reception_background_flashlight_position(&x,&y);
-    x=16+(x+71)*223/139;y=60+(y+39)*119/75;
-    int left=x<22?16:x-6,right=x>233?239:x+6,top=y<66?60:y-6,last=y>173?179:y+6;
-    rect(bottom,left,y,right-left+1,1,C(8,31,27));rect(bottom,x,top,1,last-top+1,C(8,31,27));
+    draw_flashlight_cursor();
 }
 static void story_layout(void){
     int widths[CHOICE_CAPACITY],full_lines[CHOICE_CAPACITY];
@@ -1278,7 +1287,7 @@ static void draw(void) {
         }
     }
     else if(mode==TITLE){
-        panel(bottom,8,8,240,36);text(bottom,92,20,108,UI_SYS_TITLE,C(28,30,31));
+        panel(bottom,8,8,240,36);
         const uint16_t *labels[3]={UI_SYS_NEW,UI_SYS_CONTINUE,UI_ACT_SELECT};
         for(unsigned i=0;i<title_choices();i++){int y=58+36*i;panel(bottom,8,y,240,30);outline(bottom,8,y,240,30);text(bottom,20,y+9,216,labels[i],C(28,30,31));if(i==title_selected)rect(bottom,10,y+5,2,20,C(8,24,27));}
     }else if(mode==ACT_SELECT_UI){
@@ -1353,7 +1362,7 @@ static void draw(void) {
         if(story_error){
             extern volatile unsigned shared_played_fault,stream_recovery_fault;
             char diagnostic[32];
-            snprintf(diagnostic,sizeof(diagnostic),"V62 A%02X S%X R%X",music_error,shared_played_fault,stream_recovery_fault);
+            snprintf(diagnostic,sizeof(diagnostic),"V095 A%02X S%X R%X",music_error,shared_played_fault,stream_recovery_fault);
             keyboard_text(16,64,diagnostic);
             snprintf(diagnostic,sizeof(diagnostic),"PC%04X OP%02X",story_event_pc,story_event_op);
             keyboard_text(16,82,diagnostic);
@@ -1363,7 +1372,7 @@ static void draw(void) {
         draw_flashlight();
     }else if(mode==STORY_MENU_UI){
         text(bottom,8,5,96,story_module()==0x40?UI_STORY_FACTORY:(story_scene&0xff00)==HQ_SCENE(0x1d00)?slot_places[SAVE_PLACE_QUEENS]:(story_scene&0xff00)==HQ_SCENE(0x0100)?slot_places[SAVE_PLACE_HOSPITAL]:((story_scene&0xff00)==HQ_SCENE(0x0500) || (story_scene&0xff00)==HQ_SCENE(0x0600))?slot_places[SAVE_PLACE_FREDDY]:(story_scene&0xff00)==HQ_SCENE(0x1700)?slot_places[SAVE_PLACE_IVAN]:(story_scene&0xff00)==HQ_SCENE(0x1c00)?slot_places[SAVE_PLACE_APARTMENT]:(story_scene&0xff00)==HQ_SCENE(0x1b00)?slot_places[SAVE_PLACE_OUTER]:(story_scene&0xff00)==HQ_SCENE(0x0700)?slot_places[SAVE_PLACE_GIBSON]:(story_scene&0xff00)==HQ_SCENE(0x0000)?slot_places[SAVE_PLACE_ALTON]:(story_scene&0xff00)==HQ_SCENE(0x1800)?slot_places[SAVE_PLACE_PLATO]:story_scene==HQ_SCENE(0x2003)?UI_STORY_VEHICLE:story_scene>4 || story_scene==2?UI_STORY_HEADQUARTERS:story_scene>=3?UI_STORY_OFFICE:UI_RECEPTION_TITLE,C(8,24,27));
-        if(flashlight_available()){panel(bottom,8,1,88,22);outline(bottom,8,1,88,22);text(bottom,16,6,72,UI_FLASHLIGHT_LIGHT,C(31,31,31));}
+        if(flashlight_available()){panel(bottom,8,1,88,22);outline(bottom,8,1,88,22);text(bottom,16,6,72,UI_FLASHLIGHT_LIGHT,C(31,31,31));if(header_focus==3)rect(bottom,10,5,2,14,C(8,24,27));}
         panel(bottom,104,1,48,22);outline(bottom,104,1,48,22);text(bottom,116,6,24,UI_OPTIONS_MENU,C(31,31,31));
         if(header_focus==1)rect(bottom,106,5,2,14,C(8,24,27));
         if(header_focus==2)rect(bottom,160,5,2,14,C(8,24,27));
@@ -1407,7 +1416,7 @@ static void draw(void) {
             unsigned played;
             if(music_player_story_cd_sample(&played))for(unsigned i=0;i<SP33_CD_CAPTIONS;i++){
                 if(music_player_story_cd_track()==sp33_cd_track[i] && played>=sp33_cd_start[i] && played<sp33_cd_end[i]){
-                    panel(bottom,8,82,240,84);text(bottom,16,88,216,story_page_read(STORY_CAPTION_BASE_SP33_CD_CAPTIONS+(i)),C(31,31,31));break;
+                    panel(bottom,8,82,240,84);text(bottom,16,88,216,story_page_read(sp33_cd_page_ids[i]),C(31,31,31));break;
                 }
             }
         }
@@ -1635,7 +1644,7 @@ int main(void) {
         story_bind_flashlight(reception_background_flashlight_target);
         if(mode==STORY_MENU_UI && flashlight_aim_ui && flashlight_available()){
             int x=0,y=0;reception_background_flashlight_position(&x,&y);
-            if((down&KEY_B) || ((down&KEY_TOUCH) && p.py<24 && p.px>=160))flashlight_aim_ui=false;
+            if((down&(KEY_A|KEY_B)) || ((down&KEY_TOUCH) && p.py<24 && p.px>=160)){flashlight_aim_ui=false;header_focus=3;}
             else if((down&KEY_START) || ((down&KEY_TOUCH) && p.py<24 && p.px>=104 && p.px<152))open_system();
             else if((held&KEY_TOUCH) && p.px>=16 && p.px<240 && p.py>=60 && p.py<180){
                 x=-71+(p.px-16)*139/223;y=-39+(p.py-60)*75/119;
@@ -1792,15 +1801,16 @@ int main(void) {
             else if(mode==STORY_MENU_UI){
                 story_layout();
                 if(header_focus){
-                    if(down&KEY_RIGHT)header_focus=2;
-                    if(down&KEY_LEFT)header_focus=1;
+                    if(header_focus==3 && !flashlight_available())header_focus=1;
+                    if(down&KEY_RIGHT)header_focus=header_focus==3?1:2;
+                    if(down&KEY_LEFT)header_focus=header_focus==2?1:flashlight_available()?3:1;
                     if(down&KEY_DOWN)header_focus=0;
-                    if(down&KEY_A){if(header_focus==1)open_system();else if(header_focus==2)story_dispatch(story_cancel());}
+                    if(down&KEY_A){if(header_focus==1)open_system();else if(header_focus==2)story_dispatch(story_cancel());else if(header_focus==3)flashlight_aim_ui=true;}
                 }else{
                     if(down&KEY_RIGHT)story_selected=choice_step(&story_choices,story_selected,1,0);
                     if(down&KEY_LEFT)story_selected=choice_step(&story_choices,story_selected,-1,0);
                     if(down&KEY_DOWN)story_selected=choice_step(&story_choices,story_selected,0,1);
-                    if(down&KEY_UP){if(story_choices.cells[story_selected].y==0)header_focus=1;else story_selected=choice_step(&story_choices,story_selected,0,-1);}
+                    if(down&KEY_UP){if(story_choices.cells[story_selected].y==0)header_focus=flashlight_available() && story_choices.cells[story_selected].x<104?3:1;else story_selected=choice_step(&story_choices,story_selected,0,-1);}
                     if(down&(KEY_RIGHT|KEY_LEFT|KEY_DOWN|KEY_UP))story_focus();
                     if((down&KEY_A) && !header_focus && story_menu_enabled[story_selected])story_dispatch(story_pick(story_selected));
                 }
@@ -1936,6 +1946,11 @@ int main(void) {
 #endif
         unsigned perf_draw=system_perf_enter(PERF_DRAW);
         bool room_dirty=story_room_visible() && previous_reception!=reception_generation;
+        /* Moving the lamp changes one lower cursor, not the whole menu.
+         * Preserve all source ticks/upper publications; restore only the
+         * old/new cursor rows from the same preblended panel artwork. */
+        bool flashlight_partial=flashlight_key && flashlight_key!=previous_visual[7] && previous_visual[7]>=65536 && !counter_entry_fade;
+        for(unsigned i=0;i<32 && flashlight_partial;i++)if(i!=7 && visual[i]!=previous_visual[i])flashlight_partial=false;
         uint32_t combat_picture[15]={0};bool combat_dirty=false;
         if(mode==STORY_COMBAT_UI){
             if(story_practice_active){combat_picture[0]=reception_generation;combat_picture[11]=combat_state.damage;}
@@ -1973,7 +1988,18 @@ int main(void) {
             if(combat_picture[11]!=previous_combat[11]){combat_top_first=0;combat_top_last=192;combat_top_left=0;combat_top_width=256;}
         }
         if(dirty) {
-            if(gameover_visible() && !memcmp(visual,previous_visual,sizeof(visual))){
+            if(flashlight_partial){
+                bool copied=false;
+                if(room_dirty && !draw_room_top(&copied)){story_error=1;reception_background_end();}
+                if(!copied)upper_bytes=0;
+                int old_y=60+(((previous_visual[7]-65536)>>8)&255)*119/75;
+                int new_y=60+(((flashlight_key-65536)>>8)&255)*119/75;
+                int first=(old_y<new_y?old_y:new_y)-6,last=(old_y>new_y?old_y:new_y)+7;
+                if(first<60)first=60;if(last>180)last=180;
+                panel(bottom,16,first,224,last-first);outline(bottom,16,60,224,120);draw_flashlight_cursor();
+                lower_first=(unsigned)first;lower_bytes=(unsigned)(last-first)*256*2;
+            }
+            else if(gameover_visible() && !memcmp(visual,previous_visual,sizeof(visual))){
                 upper_only=true;if(!draw_gameover_top())story_error=1;
             }
             else if(room_dirty && !gameover_visible() && !counter_entry_fade && !memcmp(visual,previous_visual,sizeof(visual))){
@@ -1985,7 +2011,7 @@ int main(void) {
             }
             slide_draw_partial=slide_partial;
             slide_draw_old=previous_slide_offset;slide_draw_new=slide_offset;
-            if(!upper_only){
+            if(!upper_only && !flashlight_partial){
                 draw_portraits_only=return_portrait_only(visual,previous_visual,previous_opening_stage) ||
                     ((mode==STORY_VOICE_UI || mode==STORY_GAP_UI || mode==STORY_VOICE_START_UI ||
                     (mode==STORY_WAIT_UI && story_audio_running())) &&

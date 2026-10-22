@@ -255,6 +255,7 @@ bool reception_background_source(unsigned file,unsigned scene){
 bool reception_background_control(unsigned actor,unsigned command){
     return room && resource_room_control(room,actor,command);
 }
+bool reception_background_menu_return(void){return !room || resource_room_menu_return(room);}
 bool reception_background_voice(unsigned voice){return room && resource_room_voice(room,voice);}
 bool reception_background_pcm_wait(void){return room && resource_room_pcm_wait(room);}
 bool reception_background_suppress_actor_effects(void){return room && resource_room_suppress_actor_effects(room);}
@@ -380,10 +381,10 @@ static bool reception_background_update_inner(uint8_t pcm_flags){
      * Never rebase origin/ticked or discard an original task publication. */
     unsigned budget=2u,started=ticked;
     while(ticked<target && budget--){
-        if(music_player_story_cd_track()){
-            room->io.cd_status=music_player_story_cd_status();
-            resource_room_cd_clock(room,music_player_story_cd_clock());
-        }
+        /* Original SUB D5FE resets the relative clock even when no disc
+         * track is playing; never retain a completed track across scenes. */
+        room->io.cd_status=music_player_story_cd_status();
+        resource_room_cd_clock(room,music_player_story_cd_clock());
         bool good;
         if(practice_reset && !room->tasks.active && !room->queued){
             if(!practice_reset_bound){

@@ -1,6 +1,6 @@
 NAME := snatcher_nds_resources_r22
 GAME_TITLE := SNATCHER
-GAME_SUBTITLE := Korean V0.9
+GAME_SUBTITLE := Korean V0.95
 GAME_ICON := assets/launcher-icon.gif
 LIBS := -lmm9 -lnds9 -lm
 LIBDIRS := $(BLOCKSDS)/libs/maxmod
@@ -43,6 +43,7 @@ $(BUILDDIR)/source/resource_music.c.o: CFLAGS += -marm -O3
 $(BUILDDIR)/source/video_filters.c.o: CFLAGS += -marm -O3
 $(BUILDDIR)/source/native_opening.c.o: CFLAGS += -marm -O3
 ifneq ($(FLIGHT_PROFILE),)
+$(BUILDDIR)/source/music_player.c.o: CFLAGS += -DSNATCHER_AUDIO_HASH
 $(BUILDDIR)/source/main.c.o $(BUILDDIR)/source/reception_background.c.o: CFLAGS += -DSNATCHER_ENTRY_PROFILE
 $(BUILDDIR)/source/resource_music.c.o: CFLAGS += -DSNATCHER_ENTRY_PROFILE
 $(BUILDDIR)/source/native_entry.c.o $(BUILDDIR)/source/music_player.c.o: CFLAGS += -DSNATCHER_ENTRY_PROFILE -DSNATCHER_OPENING_PROFILE

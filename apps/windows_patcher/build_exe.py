@@ -11,7 +11,7 @@ import argparse
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
-WORK = ROOT/'work/exe-patcher-v09-final'
+WORK = ROOT/'work/exe-patcher-v095-final3'
 PACKAGE = ROOT/'source-kit'
 PACKAGER = ROOT/'work/exe-patcher-bootloader/pyinstaller-6.22.3'
 
@@ -88,7 +88,7 @@ def build():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--work', default='exe-patcher-v09-final')
+    parser.add_argument('--work', default='exe-patcher-v095-final3')
     parser.add_argument('--pyinstaller-source', type=Path, default=PACKAGER)
     args = parser.parse_args()
     if not args.work.replace('-', '').isalnum():

@@ -46,6 +46,8 @@ bool resource_opening_bind(resource_opening_state *state,const void *bank,size_t
 bool resource_opening_bind_scene(resource_opening_state *state,const void *resource,size_t bytes,
     const void *subcode,size_t subcode_bytes,uint32_t rng);
 bool resource_opening_publish(resource_opening_state *state);
+/* Restore the reserved original SUB13D4E opaque font/mask tile. */
+bool resource_opening_restore_shared_mask(resource_opening_state *state);
 bool resource_opening_finish_tick(resource_opening_state *state);
 bool resource_opening_tick(resource_opening_state *state,uint32_t cd_clock_bcd,uint16_t iterations);
 /* The real source/stream device supplies status100 on CD completion.

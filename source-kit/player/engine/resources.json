@@ -6149,9 +6149,9 @@
     },
     {
       "name": "story-text-r22.stp",
-      "bytes": 748212,
-      "sha256": "ea7249590b3d66d95e668f45c45a9ec0dc747613c490a54648e0e5ab888a3f60"
+      "bytes": 748344,
+      "sha256": "0818bb04e990085a9f26bd293d6b64146ad2a0203387c264698f4a074acb7061"
     }
   ],
-  "translation_version": "v0.9"
+  "translation_version": "v0.95"
 }

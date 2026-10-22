@@ -89,10 +89,15 @@ static bool render_output(resource_shared_sound *s,int16_t *out,unsigned samples
                 }
 #endif
             }else{
+#ifdef __NDS__
+                extern void shared_mix_arm(int16_t *,const int16_t *,unsigned);
+                shared_mix_arm(out+done*2,pcm,n);
+#else
                 for(unsigned i=0;i<n*2;i++){
                     int value=out[done*2+i]+pcm[i];
                     out[done*2+i]=value>32767?32767:value< -32768?-32768:value;
                 }
+#endif
             }
             done+=n;s->samples+=n;
         }

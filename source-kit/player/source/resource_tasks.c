@@ -39,7 +39,7 @@ bool resource_tasks_tick(resource_tasks_state *q,resource_scene_state *s,resourc
         switch(op){
         case 0:case 4:case 6:case 10:case 11:case 15:case 19:case 25:length=2;break;
         case 7:case 12:case 13:case 14:case 16:case 18:case 28:case 29:case 32:length=4;break;
-        case 1:case 3:case 9:case 21:length=6;break;
+        case 1:case 3:case 9:case 21:case 34:length=6;break;
         case 17:case 27:length=8;break;
         default:return error(q,2);
         }
@@ -50,6 +50,11 @@ bool resource_tasks_tick(resource_tasks_state *q,resource_scene_state *s,resourc
             memset(q->commands,0,sizeof(q->commands));q->index=0;q->active=0;
             putword(g(s,0x7862),0);return true;
         case 1:if(!spawn(s,longword(p)))return error(q,3);break;
+        case 34:
+            /* Only the original1398E menu-return callback is implemented.
+             * Execute after earlier queued actor/voice operations. */
+            if(longword(p)!=0x139d0)return error(q,3);
+            resource_scene_clear_voice_actors(s);break;
         case 3:if(!resource_graphics_enqueue(&s->graphics,resource_scene_resolve,s,longword(p)))return error(q,3);break;
         case 29:*g(s,0x7890)=(uint8_t)arg;break;
         case 4:*g(s,0x78c3)=255;break; /* Original SUB100E8 ST.B. */

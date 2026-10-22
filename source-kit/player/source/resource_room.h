@@ -72,3 +72,4 @@ bool resource_room_cd_time(resource_room *,unsigned,unsigned,unsigned);
 bool resource_room_flashlight_mode(resource_room *,unsigned);
 bool resource_room_flashlight_input(resource_room *,unsigned,unsigned);
 bool resource_room_flashlight_touch(resource_room *,int,int);
+bool resource_room_menu_return(resource_room *);

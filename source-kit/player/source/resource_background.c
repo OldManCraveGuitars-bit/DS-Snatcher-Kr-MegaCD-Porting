@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #if defined(__NDS__) && defined(SNATCHER_OPENING_PROFILE)
 #include <nds.h>
+/* Independent of voice timers 0/1: units are BUS_CLOCK/1024 ticks. */
 uint32_t resource_background_profile[6];
 #endif
 #ifdef __NDS__
@@ -626,7 +627,7 @@ static BG_FAST void code_planes(void){
 #endif
 
 #if defined(__NDS__) && defined(SNATCHER_OPENING_PROFILE)
-    uint32_t begin=cpuGetTiming();
+    uint32_t begin=TIMER3_DATA;
 #endif
     /* The renderer already has exclusive ownership of the global plane/SAT
      * caches. Reuse its bounded working arrays too: deferred presentation may
@@ -750,7 +751,7 @@ static BG_FAST void code_planes(void){
     plane_pattern_updates[0]=plane_pattern_updates[1]=false;
     pending_map_rows[0]=pending_map_rows[1]=0;
 #if defined(__NDS__) && defined(SNATCHER_OPENING_PROFILE)
-    uint32_t mapped_end=cpuGetTiming();resource_background_profile[4]=mapped_end-begin;
+    uint32_t mapped_end=TIMER3_DATA;resource_background_profile[4]=(uint16_t)(mapped_end-begin);
 #endif
     if(compose && !indexed_mode)memset(low_visible,0,sizeof(low_visible));
     if(compose && indexed_mode && (empty_planes[0] || empty_planes[1])){
@@ -792,7 +793,7 @@ static BG_FAST void code_planes(void){
       }
     }
 #if defined(__NDS__) && defined(SNATCHER_OPENING_PROFILE)
-    resource_background_profile[5]=cpuGetTiming()-mapped_end;
+    resource_background_profile[5]=(uint16_t)(TIMER3_DATA-mapped_end);
 #endif
 }
 static BG_FAST void planes(void){
@@ -822,7 +823,7 @@ BG_FAST bool resource_background_draw(uint16_t output[256*192]){
     }
     if(indexed_mode){reuse_ready[0]=reuse_ready[1]=false;indexed_mode=false;screen_dirty[0]=screen_dirty[1]=dirty=true;base_ready=false;}
 #if defined(__NDS__) && defined(SNATCHER_OPENING_PROFILE)
-    uint32_t profile_begin=cpuGetTiming();
+    uint32_t profile_begin=TIMER3_DATA;
 #endif
     if(dirty){
         planes();
@@ -830,7 +831,7 @@ BG_FAST bool resource_background_draw(uint16_t output[256*192]){
     }
     memcpy(output,plane_pixels,256*192*2);
 #if defined(__NDS__) && defined(SNATCHER_OPENING_PROFILE)
-    uint32_t profile_planes=cpuGetTiming();
+    uint32_t profile_planes=TIMER3_DATA;
 #endif
     unsigned count=live_sprites?live_count:sprite_count;
     bool direct=true;unsigned sprite_level=99;
@@ -849,7 +850,7 @@ BG_FAST bool resource_background_draw(uint16_t output[256*192]){
      * priority sprite's pixels, even where a high plane hides that owner. */
     if(!direct)memset(sprite_owned,0,sizeof(sprite_owned));
 #if defined(__NDS__) && defined(SNATCHER_OPENING_PROFILE)
-    uint32_t profile_setup=cpuGetTiming();
+    uint32_t profile_setup=TIMER3_DATA;
 #endif
     for(unsigned step=0;step<count;step++){
         unsigned i=direct?count-1-step:step;
@@ -907,15 +908,15 @@ BG_FAST bool resource_background_draw(uint16_t output[256*192]){
         }
     }
 #if defined(__NDS__) && defined(SNATCHER_OPENING_PROFILE)
-    uint32_t profile_sprites=cpuGetTiming();
+    uint32_t profile_sprites=TIMER3_DATA;
 #endif
     if(raster_visible)for(unsigned y=0;y<192;y++)if(!raster_visible[source_y[y]])
         for(unsigned x=0;x<256;x++)output[y*256+x]=colors[0];
 #if defined(__NDS__) && defined(SNATCHER_OPENING_PROFILE)
-    resource_background_profile[0]=profile_planes-profile_begin;
-    resource_background_profile[1]=profile_setup-profile_planes;
-    resource_background_profile[2]=profile_sprites-profile_setup;
-    resource_background_profile[3]=cpuGetTiming()-profile_sprites;
+    resource_background_profile[0]=(uint16_t)(profile_planes-profile_begin);
+    resource_background_profile[1]=(uint16_t)(profile_setup-profile_planes);
+    resource_background_profile[2]=(uint16_t)(profile_sprites-profile_setup);
+    resource_background_profile[3]=(uint16_t)(TIMER3_DATA-profile_sprites);
 #endif
     return true;
 }
@@ -924,6 +925,11 @@ static inline void copy_indexed_span(uint8_t *out,const uint8_t *in,unsigned n,u
     for(unsigned x=0;x<n;x+=4)*(alias_word*)(out+x)=(*(const alias_word*)(in+x)&0x3f3f3f3fu)|bias;
 }
 static bool indexed_last_changed,indexed_last_rows[192];
+static inline __attribute__((always_inline)) void overwrite_codes4(alias_word *dest,uint32_t codes){
+    uint32_t visible=(codes+0x7f7f7f7fu)&0x80808080u;
+    uint32_t mask=(visible>>7)*255,prior=*dest;
+    *dest=(prior&~mask)|(codes&mask);
+}
 bool resource_background_last_row_changed(unsigned y){return y>=192 || indexed_last_rows[y];}
 bool resource_background_last_indices_changed(void){return indexed_last_changed;}
 static __attribute__((noinline,noclone)) bool draw_indexed8(uint8_t output[256*192],unsigned first,unsigned last,unsigned rows,uint32_t bias,resource_background_picture *picture,bool packed,const uint8_t *previous){
@@ -935,14 +941,14 @@ static __attribute__((noinline,noclone)) bool draw_indexed8(uint8_t output[256*1
     if(first!=indexed_first || last!=indexed_last || rows!=indexed_rows){invalidate_indexed_sprites();reuse_ready[0]=reuse_ready[1]=false;indexed_first=first;indexed_last=last;indexed_rows=rows;screen_dirty[0]=screen_dirty[1]=dirty=true;}
     if(!indexed_mode){reuse_ready[0]=reuse_ready[1]=false;indexed_mode=true;screen_dirty[0]=screen_dirty[1]=dirty=true;}
 #if defined(__NDS__) && defined(SNATCHER_OPENING_PROFILE)
-    uint32_t begin=cpuGetTiming();
+    uint32_t begin=TIMER3_DATA;
 #endif
 #if defined(__NDS__) && defined(SNATCHER_OPENING_PROFILE)
     resource_background_profile[4]=resource_background_profile[5]=0;
 #endif
     if(dirty){code_planes();dirty=false;}
 #if defined(__NDS__) && defined(SNATCHER_OPENING_PROFILE)
-    uint32_t drawn=cpuGetTiming();
+    uint32_t drawn=TIMER3_DATA;
 #endif
     uint8_t *destination=output;output=indexed_sprites;
     if(!indexed_sprites_ready){
@@ -1000,22 +1006,23 @@ static __attribute__((noinline,noclone)) bool draw_indexed8(uint8_t output[256*1
                     if(code && (direct || !output[y*256+x]))output[y*256+x]=code;
                     x++;
                 }
-                for(;x+4<=right;x+=4){
+                if(x+4<=right){
                     const uint8_t *p=line+source_x[x]-sx;
-                    uint32_t codes;
-                    if(!((uintptr_t)p&3))codes=*(const alias_word*)p;
-                    else codes=p[0]|(uint32_t)p[1]<<8|(uint32_t)p[2]<<16|(uint32_t)p[3]<<24;
-                    uint32_t visible=(codes+0x7f7f7f7fu)&0x80808080u;
-                    unsigned pos=y*256+x;
-                    alias_word *dest=(alias_word*)(output+pos);
-                    uint32_t prior=*dest;
-                    /* A nonzero cached SAT colour is already owned by an
-                     * earlier sprite, regardless of its plane priority.
-                     * Resolve four owners at once; original transparent
-                     * pixels are exactly zero in this intermediate page. */
-                    if(!direct)visible&=~((prior+0x7f7f7f7fu)&0x80808080u);
-                    uint32_t mask=(visible>>7)*255;
-                    *dest=(prior&~mask)|(codes&mask);
+                    unsigned shift=((uintptr_t)p&3)*8;
+                    const alias_word *words=(const alias_word*)((uintptr_t)p&~(uintptr_t)3);
+                    alias_word *dest=(alias_word*)(output+y*256+x);
+                    /* Decoded rows are aligned and at most 32 dots wide.
+                     * A complete unaligned four-dot span fits in two words
+                     * inside that row. Reuse the second word on the next
+                     * span: ARM9 cannot load an unaligned word directly. */
+                    if(shift){
+                        uint32_t previous=*words++;
+                        for(;x+4<=right;x+=4){
+                            uint32_t next=*words++;
+                            overwrite_codes4(dest++,(previous>>shift)|(next<<(32-shift)));
+                            previous=next;
+                        }
+                    }else for(;x+4<=right;x+=4)overwrite_codes4(dest++,*words++);
                 }
                 for(;x<right;x++){
                     unsigned code=line[source_x[x]-sx];
@@ -1033,7 +1040,7 @@ static __attribute__((noinline,noclone)) bool draw_indexed8(uint8_t output[256*1
     indexed_sprites_ready=true;indexed_damage_full=false;
     }
 #if defined(__NDS__) && defined(SNATCHER_OPENING_PROFILE)
-    uint32_t sprites_end=cpuGetTiming();
+    uint32_t sprites_end=TIMER3_DATA;
 #endif
     output=destination;indexed_last_changed=false;memset(indexed_last_rows,0,sizeof(indexed_last_rows));
     /* Write each output word once. Resolve SAT ownership only inside its
@@ -1088,8 +1095,8 @@ static __attribute__((noinline,noclone)) bool draw_indexed8(uint8_t output[256*1
         copy_indexed_span(rowout+right-offset,composite_codes+y*256+right,last-right,bias);
     }
 #if defined(__NDS__) && defined(SNATCHER_OPENING_PROFILE)
-    resource_background_profile[0]=drawn-begin;resource_background_profile[1]=sprites_end-drawn;
-    resource_background_profile[2]=cpuGetTiming()-sprites_end;resource_background_profile[3]=0;
+    resource_background_profile[0]=(uint16_t)(drawn-begin);resource_background_profile[1]=(uint16_t)(sprites_end-drawn);
+    resource_background_profile[2]=(uint16_t)(TIMER3_DATA-sprites_end);resource_background_profile[3]=0;
 #endif
     memset(indexed_damage_rows,0,sizeof(indexed_damage_rows));
     indexed_draw_generation++;

@@ -27,6 +27,7 @@ bool resource_scene_bind(resource_scene_state *state,const void *resource,size_t
 bool resource_scene_load(resource_scene_state *state,unsigned scene);
 bool resource_scene_popup(resource_scene_state *state,unsigned picture,unsigned position);
 bool resource_scene_clear(resource_scene_state *state);
+void resource_scene_clear_voice_actors(resource_scene_state *state);
 /* Original F600..F640 restores the shared first eight colours. Room
  * contexts inherit these from boot even when their own packets omit them. */
 bool resource_scene_shared_palette(resource_scene_state *state);

@@ -334,7 +334,7 @@ static bool forecourt_fm_render_body(int16_t *out,unsigned n){
 
   filtered[0]=(int32_t)state[5];filtered[1]=(int32_t)state[6];fm_sample_hash=state[7];
 
-  /* The shared final-output hash still checks every emitted stereo sample.
+  /* The optional shared audit hashes every emitted stereo sample.
    * fm_sample_hash is diagnostic state only, retained for save compatibility. */
   position+=block;
 
@@ -352,7 +352,7 @@ static bool forecourt_fm_render_body(int16_t *out,unsigned n){
 
     int32_t v=last[ch]*2;
 
-    filtered[ch]=v-previous[ch]+(int32_t)(((int64_t)filtered[ch]*65279)/65536);
+    filtered[ch]=v-previous[ch]+(int32_t)(((int64_t)filtered[ch]*65280)/65536);
 
     previous[ch]=v;int32_t value=filtered[ch];
 

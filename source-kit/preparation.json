@@ -3806,5 +3806,35 @@
       "generated/voice_source_gain.h"
     ],
     "physical_console": false
+  },
+  "current_v095": {
+    "version": "v0.95",
+    "base": "Mega-CD Korean patch v0.95 (r57)",
+    "private_nds_sha256": "257fcb10ff5c1bf7e4e519750cc0ffe4a0ea6b7d2c3a605f8d93fa42eb5aa2c2",
+    "reference_assembled_nds_sha256": "ab119635706b15e28d7848c92d2461dc89f882272e7abff25e476d83a7ada579",
+    "changed_player_files": [
+      "source/main.c",
+      "generated/boot.h",
+      "generated/flight.h",
+      "generated/opening.h",
+      "generated/touch_background.h",
+      "generated/travel.h",
+      "Makefile",
+      "Makefile.arm7",
+      "assets/launcher-icon.gif",
+      "generated/text.h"
+    ],
+    "source_only_headers_preserved": [
+      "generated/battle_layouts_r22.h",
+      "generated/keyboard_titles.h",
+      "generated/office_branch.h",
+      "generated/original_sound_gain.h",
+      "generated/source_battle_random.h",
+      "generated/story_pc_index.h",
+      "generated/story_program.h",
+      "generated/story_search.h",
+      "generated/voice_source_gain.h"
+    ],
+    "physical_console": false
   }
 }

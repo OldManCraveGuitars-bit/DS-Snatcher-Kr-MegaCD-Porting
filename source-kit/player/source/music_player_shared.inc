@@ -90,10 +90,15 @@ static bool shared_command(unsigned command,unsigned channel){
 }
 static bool shared_render(int16_t *out,unsigned frames){
     if(!frames)return true;
+#ifdef SNATCHER_AUDIO_HASH
     uint32_t hash;
     if(!shared_played() || !resource_shared_sound_render_observed(shared_audio,out,frames,&hash))return false;
     unsigned slot=shared_game_fill_count&4095;
-    shared_game_fills[slot]=frames;shared_game_hashes[slot]=hash;shared_game_fill_count++;
+    shared_game_fills[slot]=frames;shared_game_hashes[slot]=hash;
+#else
+    if(!shared_played() || !resource_shared_sound_render(shared_audio,out,frames))return false;
+#endif
+    shared_game_fill_count++;
     /* Prefix reconstruction predates the restored DAC origin. Consume its
      * source notifications as that past advances, rather than retaining
      * hundreds of already-past VBlanks in the live look-ahead queue. This

@@ -7,18 +7,15 @@
 .section .itcm,"ax",%progbits
 .align 2
 .macro output_channel last filter previous hashed
-    ldr r0,=65279
-    smull r1,r2,\filter,r0
-    cmp r2,#0
-    bge .Lrounded\@
-    /* C signed division truncates towards zero, including negative values. */
-    adds r1,r1,#0xff00
-    adc r2,r2,#0
-    adds r1,r1,#0xff
-    adc r2,r2,#0
-.Lrounded\@:
-    mov r1,r1,lsr #16
-    orr r1,r1,r2,lsl #16
+    /* 65280/65536 = 255/256. This one-unit coefficient adjustment replaces
+     * the per-channel 64-bit multiply; the DC-block cutoff changes <0.4%.
+     * Exact truncation toward zero for every signed 32-bit filter state. */
+    mov r1,\filter,asr #8
+    sub r1,\filter,r1
+    cmp \filter,#0
+    andgt r2,\filter,#255
+    cmpgt r2,#0
+    subgt r1,r1,#1
     ldr r0,[sp]
     ldr r2,[r0,#\previous]
     mov r3,\last,lsl #1

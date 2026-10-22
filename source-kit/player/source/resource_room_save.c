@@ -162,5 +162,6 @@ bool resource_room_checkpoint_import(resource_room *r,const void *input,size_t b
            r->scene==scene && r->scene<=255 && r->queued<=510 && !(r->queued&1) &&
            r->tasks.index<=510 && !(r->tasks.index&1) && r->tasks.active<=1 && r->tasks.phase<=3 &&
            r->video.pending_sprites<=64 && r->video.front_sprites<=64 && r->video.scene.palette.cursor<12 &&
-           r->video.plane_b<=0xf000 && !(r->video.plane_b&0x7ff);
+           r->video.plane_b<=0xf000 && !(r->video.plane_b&0x7ff) &&
+           resource_opening_restore_shared_mask(&r->video);
 }

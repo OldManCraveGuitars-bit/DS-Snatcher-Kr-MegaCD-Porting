@@ -51,7 +51,10 @@ static bool shared_begin(void),shared_command(unsigned,unsigned),shared_played(v
 static bool shared_start_stream(void),shared_request(unsigned,unsigned);
 static bool shared_render(int16_t *,unsigned);
 volatile unsigned shared_game_requests,shared_game_waits,shared_game_completions,shared_game_timeouts,shared_game_status;
-volatile unsigned shared_game_epoch,shared_game_fill_count,shared_game_fills[4096],shared_game_hashes[4096];
+volatile unsigned shared_game_epoch,shared_game_fill_count;
+#ifdef SNATCHER_AUDIO_HASH
+volatile unsigned shared_game_fills[4096],shared_game_hashes[4096];
+#endif
 volatile unsigned shared_game_event_count,shared_game_events[1024][4];
 static void shared_event(unsigned kind,unsigned a,unsigned b){
     unsigned at=shared_game_event_count&1023;

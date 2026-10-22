@@ -61,7 +61,10 @@ int resource_cdda_status(const resource_cdda_stream *s,uint32_t played){
 static unsigned bcd(unsigned n){return n/10*16+n%10;}
 uint32_t resource_cdda_clock(const resource_cdda_stream *s,uint32_t played){
     unsigned position=0;
-    if(!resource_cdda_position(s,played,&position))return 0;
+    /* SUB D5FE clears787A every tick and copies BIOS relative time only
+     * for status0100. A completed track must not resume later CD-timed
+     * actors (S2 actor16 overlays the PCM expressions in the reused car). */
+    if(!resource_cdda_position(s,played,&position) || position>=s->frames)return 0;
     unsigned frames=(uint64_t)position*75/32000;
     return bcd(frames/4500)<<24|bcd(frames/75%60)<<16|bcd(frames%75)<<8;
 }

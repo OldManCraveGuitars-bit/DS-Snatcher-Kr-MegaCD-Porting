@@ -24,6 +24,7 @@ bool reception_background_presenting(unsigned code);
 unsigned reception_background_contact_music(void);
 bool reception_background_restore_source(unsigned file,unsigned scene);
 bool reception_background_control(unsigned actor,unsigned command);
+bool reception_background_menu_return(void);
 bool reception_background_voice(unsigned voice);
 bool reception_background_pcm_wait(void);
 bool reception_background_suppress_actor_effects(void);

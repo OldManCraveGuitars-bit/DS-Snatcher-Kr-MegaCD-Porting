@@ -2825,65 +2825,65 @@
     {
       "file": "engine/arm9i.zlib",
       "bytes": 106496,
-      "sha256": "9e9d65563ebcbbe5d2dd2d30bcfdf33b798cd3ccd7fcea7076489107f0428337",
+      "sha256": "fce5f8d36996a01a9ab2f8e5107f74e5afc7c94b532bf75c2bc6bf3b57f460f8",
       "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
-      "component": "DS port v0.9 update",
-      "generator": "tools/prepare_public_v09.py",
-      "prior_sha256": "99377621b2214a9ffe66f31cf88576d7b33b5240979125cf7a0c3b1dda986c16"
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "e6d4a3775fa80cc40b7c81a12f23f09fa26011955578364c386722fb7f9b3454"
     },
     {
       "file": "engine/banner.zlib",
       "bytes": 565,
-      "sha256": "5413c838af03697925e61283a2a1306b48a312c99e86028f737846fe132b5968",
+      "sha256": "485503d8fd8bcf3a86ea6984bdc60f092f6345edc4853b8af3adcdc575741e0f",
       "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
-      "component": "DS port v0.9 update",
-      "generator": "tools/prepare_public_v09.py",
-      "prior_sha256": "12bb0e2c51a6ba41bd0f6967153b1779397e0f6353554d0cda79addaa224f3e0"
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "5413c838af03697925e61283a2a1306b48a312c99e86028f737846fe132b5968"
     },
     {
       "file": "engine/resources.json",
-      "bytes": 188555,
-      "sha256": "70d56b19aec40015bc828f31346df031ee99a5ded90238024d9f91500d743562",
+      "bytes": 188556,
+      "sha256": "6b0904e84827495af64464f196784f55cab368e30a66ea1bd003650c5901e61a",
       "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
-      "component": "DS port v0.9 update",
-      "generator": "tools/prepare_public_v09.py",
-      "prior_sha256": "8cf6cb9d2015960b2380c8045a6d4829e4d6125f30ba9b56bfae437a7e4ff16a"
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "70d56b19aec40015bc828f31346df031ee99a5ded90238024d9f91500d743562"
     },
     {
       "file": "engine/runner.json",
-      "bytes": 69474,
-      "sha256": "737fcdcdc04fc0fb367a53f456d006632bb9480b1f2aebefaa4acc10ce2eba36",
+      "bytes": 69470,
+      "sha256": "236795b19c54919fb5193b24a704c5044d28f2953ca319b4fd49f407ad538d42",
       "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
-      "component": "DS port v0.9 update",
-      "generator": "tools/prepare_public_v09.py",
-      "prior_sha256": "f551ee507983ce7b486a3c08d2a9b46dd1dee8fe868ed2f58af6922be523b195"
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "8a51a9d4dcee3e71d8eb37c3a775048cadd14586281ccb18ab9b9605f9077edb"
     },
     {
       "file": "engine/runner.zlib",
-      "bytes": 531456,
-      "sha256": "56999ae27dd422215bba138a56307dda3824c02d0f698ac9344e1eca26d37ef3",
+      "bytes": 531968,
+      "sha256": "dcfb614f8c4ba3a52767eeee79b082ea46a2db67747adf40c6e01cb1b8455c41",
       "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
-      "component": "DS port v0.9 update",
-      "generator": "tools/prepare_public_v09.py",
-      "prior_sha256": "46e84b6c7f3e3ca48550d26fe700e68c8ae881a7734423683b55db285e47c6f6"
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "f42bcc3ebd7fa4d9e1d50c8bc88b8c80ec47d3e45bf1b18881abe00923c53c0b"
     },
     {
       "file": "engine/source-text-pages.json",
       "bytes": 73229,
-      "sha256": "4459784a39824942bf9f064acd7099c7dabc389f686ac4b77aae636ddb450d26",
+      "sha256": "e198e1408df7eb62d2c1e6a59aade0585d601c43b2bee6dd9f7a9549692897f3",
       "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
-      "component": "DS port v0.9 update",
-      "generator": "tools/prepare_public_v09.py",
-      "prior_sha256": "0dadc817cee8f2f4febf0e8915b6a6948e1b3c8c271e87ba951b6dfcaa333cbd"
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "4459784a39824942bf9f064acd7099c7dabc389f686ac4b77aae636ddb450d26"
     },
     {
       "file": "engine/story-translations.jsonl",
-      "bytes": 1815748,
-      "sha256": "5d26153dc4ef88c034c5e12c0e20824c33a3dfa8568b42714d9b9b2d08f0f930",
+      "bytes": 1815775,
+      "sha256": "be3a8d9a3b5e0e1e66c238be95ff5be0b754cd4e0904e1170c87a79c5a6558d8",
       "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
-      "component": "DS port v0.9 update",
-      "generator": "tools/prepare_public_v09.py",
-      "prior_sha256": "50d71df3f6105a480bbc9314cd854937e17d4399946f8d6f47dd079fb1293af4"
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "5d26153dc4ef88c034c5e12c0e20824c33a3dfa8568b42714d9b9b2d08f0f930"
     },
     {
       "file": "fonts/Galmuri11.bdf",
@@ -3601,11 +3601,11 @@
     },
     {
       "file": "patcher/patch_release.py",
-      "bytes": 5346,
-      "sha256": "6fa692879f9023df45700081baf8d0610343299484a2b09a549e70da46f3a5c6",
-      "kind": "authored release source, documentation or generated launcher art",
-      "component": "DS port v0.9",
-      "generator": "tools/finalize_public_v09_inputs.py"
+      "bytes": 5349,
+      "sha256": "ea532f3591255877f1a27b7f2b0c4e2219ae02a419553d84bb01513c50bc7c49",
+      "kind": "authored release source, translation, documentation or masked executable",
+      "component": "DS port v0.95",
+      "generator": "tools/finalize_public_v095_inputs.py"
     },
     {
       "file": "patcher/pcm_descriptor.py",
@@ -3831,12 +3831,12 @@
     },
     {
       "file": "player/engine/resources.json",
-      "bytes": 188555,
-      "sha256": "70d56b19aec40015bc828f31346df031ee99a5ded90238024d9f91500d743562",
+      "bytes": 188556,
+      "sha256": "6b0904e84827495af64464f196784f55cab368e30a66ea1bd003650c5901e61a",
       "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
-      "component": "DS port v0.9 update",
-      "generator": "tools/prepare_public_v09.py",
-      "prior_sha256": "8cf6cb9d2015960b2380c8045a6d4829e4d6125f30ba9b56bfae437a7e4ff16a"
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "70d56b19aec40015bc828f31346df031ee99a5ded90238024d9f91500d743562"
     },
     {
       "file": "player/generated/act2_apartment_input.h",
@@ -4017,15 +4017,12 @@
     },
     {
       "file": "player/generated/flashlight_touch.h",
-      "bytes": 272,
-      "sha256": "b906e528f87177c6da2f3d52de4f17b385c8f2c5e50d0b2933289a345a84dba1",
-      "kind": "exact maintained source snapshot",
-      "component": "maintained DS port source",
-      "local_source": "work/r22-resources/source-keyboard-game-v1/generated/flashlight_touch.h",
-      "source_sha256": "b906e528f87177c6da2f3d52de4f17b385c8f2c5e50d0b2933289a345a84dba1",
-      "evidence": [
-        "release-owned-source-text-source-identity-v19/result.json"
-      ]
+      "bytes": 293,
+      "sha256": "3e2564090f3d095821d574116bcf7069b7c5d727fd52acc05527c44d5dd4f5e9",
+      "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "b906e528f87177c6da2f3d52de4f17b385c8f2c5e50d0b2933289a345a84dba1"
     },
     {
       "file": "player/generated/flight_captions_r22.h",
@@ -4127,9 +4124,9 @@
       "file": "player/generated/opening.h",
       "bytes": 741,
       "sha256": "91b044c84e4be27813b925917684ba0827c6c5d6cf285ee709d0fe88cf475e51",
-      "kind": "authored release source, documentation or generated launcher art",
-      "component": "DS port v0.9",
-      "generator": "tools/finalize_public_v09_inputs.py"
+      "kind": "authored release source, translation, documentation or masked executable",
+      "component": "DS port v0.95",
+      "generator": "tools/finalize_public_v095_inputs.py"
     },
     {
       "file": "player/generated/opening_captions_r22.h",
@@ -4265,12 +4262,12 @@
     },
     {
       "file": "player/generated/story_text_archive.h",
-      "bytes": 117,
-      "sha256": "0e16740e58d6ec04f76c260a086cd98ce929413d16a06ae8cd3a1e3911d31f81",
+      "bytes": 121,
+      "sha256": "89ffb0dc72c1cdf0918988a4f5f7ae3728c1f2eb36efad3dffa74b89ec378e1d",
       "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
-      "component": "DS port v0.9 update",
-      "generator": "tools/prepare_public_v09.py",
-      "prior_sha256": "8ece1993bcb591fd1fada4e4821c556640ea5eff8e09fd73e381a0f2f7941760"
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "0e16740e58d6ec04f76c260a086cd98ce929413d16a06ae8cd3a1e3911d31f81"
     },
     {
       "file": "player/generated/story_voices.h",
@@ -4286,20 +4283,20 @@
     },
     {
       "file": "player/generated/text.h",
-      "bytes": 2892274,
-      "sha256": "a31e7721f9e3efc2abfa3ccf670336364f1e78711b7d43ff3a21ff68ac2228d8",
+      "bytes": 2892979,
+      "sha256": "d8d02d5bdf88417defa9ed96d0fd281320aebba160e0aacc228df83ec74010e4",
       "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
-      "component": "DS port v0.9 update",
-      "generator": "tools/prepare_public_v09.py",
-      "prior_sha256": "78308a194a57cdc05fe8d03e61eff14f467c53d6403b12d8e25ea217965682c9"
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "a31e7721f9e3efc2abfa3ccf670336364f1e78711b7d43ff3a21ff68ac2228d8"
     },
     {
       "file": "player/generated/travel.h",
       "bytes": 154,
       "sha256": "fcc26b01891d4e52e722b2cedfa54205a8054eaeae0d0094acdfec142e81f796",
-      "kind": "authored release source, documentation or generated launcher art",
-      "component": "DS port v0.9",
-      "generator": "tools/finalize_public_v09_inputs.py"
+      "kind": "authored release source, translation, documentation or masked executable",
+      "component": "DS port v0.95",
+      "generator": "tools/finalize_public_v095_inputs.py"
     },
     {
       "file": "player/generated/ui_theme_indexed.h",
@@ -4423,12 +4420,12 @@
     },
     {
       "file": "player/Makefile",
-      "bytes": 4950,
-      "sha256": "f63efd9390db17a09bb7e9157321104acae038ef7ce5cdcc155370baffe13783",
+      "bytes": 4933,
+      "sha256": "fdd53b0352fe34825f635bfadc6ffc76fc428edfe47c8e30d008815738f9f54a",
       "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
-      "component": "DS port v0.9 update",
-      "generator": "tools/prepare_public_v09.py",
-      "prior_sha256": "d516a36692957ac50dc6364e02ff98c85de9710f72047ebef479a8eb4a9b2ae6"
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "f63efd9390db17a09bb7e9157321104acae038ef7ce5cdcc155370baffe13783"
     },
     {
       "file": "player/Makefile.arm7",
@@ -4504,15 +4501,12 @@
     },
     {
       "file": "player/source/audio_trace.c",
-      "bytes": 1726,
-      "sha256": "beae1dbae3242ea4bc23974b684f2037bd7aed570634f77b954250cc1a251995",
-      "kind": "exact maintained source snapshot",
-      "component": "maintained DS port source",
-      "local_source": "work/r22-resources/source-keyboard-game-v1/source/audio_trace.c",
-      "source_sha256": "beae1dbae3242ea4bc23974b684f2037bd7aed570634f77b954250cc1a251995",
-      "evidence": [
-        "release-owned-source-text-source-identity-v19/result.json"
-      ]
+      "bytes": 1690,
+      "sha256": "322e2d25dd01711cd0210e03734ceda038449595ae429e2866f758e5779790b4",
+      "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "beae1dbae3242ea4bc23974b684f2037bd7aed570634f77b954250cc1a251995"
     },
     {
       "file": "player/source/battle_feedback.c",
@@ -4713,18 +4707,12 @@
     },
     {
       "file": "player/source/fm_output_filter_arm.s",
-      "bytes": 2228,
-      "sha256": "99ba389a2fbc8e0d6bb1ceb82f3b86b42f9ed8f8fecf19a8aef5af884a8c7608",
-      "kind": "exact maintained source snapshot",
-      "component": "maintained DS port source",
-      "local_source": "work/r22-resources/pcm-dsp-mono-game-v1/source/fm_output_filter_arm.s",
-      "source_sha256": "99ba389a2fbc8e0d6bb1ceb82f3b86b42f9ed8f8fecf19a8aef5af884a8c7608",
-      "evidence": [
-        "milestone-fm-quality-budget-v2.json",
-        "milestone-practice-word-expand-v1.json",
-        "milestone-pcm-dsp-v1.json"
-      ],
-      "parent_source_sha256": "b1f395bab84b2a4ddfa877e989cb31ad8c1e1f3957e7c653076478fca7739bc4"
+      "bytes": 2285,
+      "sha256": "f20ba8917adef1b6cfa252a761e31af255dc98bf1287831cd3692a5a475ef0c9",
+      "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "99ba389a2fbc8e0d6bb1ceb82f3b86b42f9ed8f8fecf19a8aef5af884a8c7608"
     },
     {
       "file": "player/source/fm_parallel.h",
@@ -4779,12 +4767,12 @@
     },
     {
       "file": "player/source/forecourt_fm.c",
-      "bytes": 10142,
-      "sha256": "06e481cb1ffaf9a124abaea43b9d874a60fc6a74bbe811691b6a21cfc02761c5",
+      "bytes": 10133,
+      "sha256": "11c894f372716b64033e85f92b6260df8e93114e638df22c07828fc37baed942",
       "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
-      "component": "DS port v0.9 update",
-      "generator": "tools/prepare_public_v09.py",
-      "prior_sha256": "3e2f278b057238a65bc19e3355eb3d2f26871f18f18000627f33764f4dfc0d78"
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "06e481cb1ffaf9a124abaea43b9d874a60fc6a74bbe811691b6a21cfc02761c5"
     },
     {
       "file": "player/source/forecourt_live_state_r22.inc",
@@ -4947,12 +4935,12 @@
     },
     {
       "file": "player/source/main.c",
-      "bytes": 132398,
-      "sha256": "5c892ffff34e65884df428f3df7942bb34e4d27436cfb48b04721efb06d41b5a",
+      "bytes": 132053,
+      "sha256": "5e62bc479b0310b8c89be5692ef6c48558d196e09f59a8a331a30e3b702aad30",
       "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
-      "component": "DS port v0.9 update",
-      "generator": "tools/prepare_public_v09.py",
-      "prior_sha256": "7a998f3cb10c19200529fb163a2bf31c668ac7992e2389b3d6efb7b342e97b13"
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "5f2fcdbe5575fb8b4cb3ee82f50499b12cace70573d0455aa792edf052feb95a"
     },
     {
       "file": "player/source/maxmod_stream.c",
@@ -4968,12 +4956,12 @@
     },
     {
       "file": "player/source/music_player.c",
-      "bytes": 38652,
-      "sha256": "6be34c6eaef5cdbc6aba3cd744c1fff9737f0337ff7682df5685da1f5ff2ebc1",
+      "bytes": 38708,
+      "sha256": "55d0e3ef6aee0fa85ffd4d20a261e9d3ff0d9783221ffff8443dff803b6c8bb0",
       "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
-      "component": "DS port v0.9 update",
-      "generator": "tools/prepare_public_v09.py",
-      "prior_sha256": "b5e3a84c21ff9634b18dc9fcb51cc4585d5ce80284cc68c8d17b376d7a625a56"
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "6be34c6eaef5cdbc6aba3cd744c1fff9737f0337ff7682df5685da1f5ff2ebc1"
     },
     {
       "file": "player/source/music_player.h",
@@ -4989,15 +4977,12 @@
     },
     {
       "file": "player/source/music_player_shared.inc",
-      "bytes": 7437,
-      "sha256": "d54de6a334b02130b1ed117476d90e635fc2d912a6c62ee54d31c8bd3cda2201",
-      "kind": "exact maintained source snapshot",
-      "component": "maintained DS port source",
-      "local_source": "work/r22-resources/source-keyboard-game-v1/source/music_player_shared.inc",
-      "source_sha256": "d54de6a334b02130b1ed117476d90e635fc2d912a6c62ee54d31c8bd3cda2201",
-      "evidence": [
-        "release-owned-source-text-source-identity-v19/result.json"
-      ]
+      "bytes": 7583,
+      "sha256": "1f12cd2985774c2ac5fc4e006ae6bcf7bdf7ddcab5cb95f6154d874d2f902761",
+      "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "d54de6a334b02130b1ed117476d90e635fc2d912a6c62ee54d31c8bd3cda2201"
     },
     {
       "file": "player/source/name_keyboard.c",
@@ -5359,24 +5344,21 @@
     },
     {
       "file": "player/source/reception_background.c",
-      "bytes": 37299,
-      "sha256": "d46528fbb8ae5ed52f01488a0a4f1d3009fbb4c341c6948b99512a2e9b539507",
+      "bytes": 37484,
+      "sha256": "01b58b4526d20f8c837afe1e27abeb1782c5f41f5494d0a8686029645fafa3bb",
       "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
-      "component": "DS port v0.9 update",
-      "generator": "tools/prepare_public_v09.py",
-      "prior_sha256": "1b1a1793abb4ff514a141518911419af5cf9461737eca09baffe794d432e4d30"
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "d46528fbb8ae5ed52f01488a0a4f1d3009fbb4c341c6948b99512a2e9b539507"
     },
     {
       "file": "player/source/reception_background.h",
-      "bytes": 4623,
-      "sha256": "0b3eedbd051bbb628de7186d22d6cd5e520f42edac7142be102bc0a92e02bba0",
-      "kind": "exact maintained source snapshot",
-      "component": "maintained DS port source",
-      "local_source": "work/r22-resources/source-keyboard-game-v1/source/reception_background.h",
-      "source_sha256": "0b3eedbd051bbb628de7186d22d6cd5e520f42edac7142be102bc0a92e02bba0",
-      "evidence": [
-        "release-owned-source-text-source-identity-v19/result.json"
-      ]
+      "bytes": 4669,
+      "sha256": "ec536b14a5a43f337f840e114a6d9ae13c83205fa0b594f00da01b27508aa4da",
+      "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "0b3eedbd051bbb628de7186d22d6cd5e520f42edac7142be102bc0a92e02bba0"
     },
     {
       "file": "player/source/resource_actor.c",
@@ -5443,16 +5425,12 @@
     },
     {
       "file": "player/source/resource_background.c",
-      "bytes": 64593,
-      "sha256": "6a06a83f711baabf39a5697996c59ab87a877e55b59ee4c3ca91569424ad0368",
-      "kind": "exact maintained source snapshot",
-      "component": "maintained DS port source",
-      "local_source": "work/r22-resources/media-word-mix-game-v1/source/resource_background.c",
-      "source_sha256": "6a06a83f711baabf39a5697996c59ab87a877e55b59ee4c3ca91569424ad0368",
-      "evidence": [
-        "media-word-mix-unit-ds-v1/result.json",
-        "media-word-mix-openings-ds-v1/result.json"
-      ]
+      "bytes": 65024,
+      "sha256": "fa9c2e3a0d48d7e80e1ad35f5d9f8d81eaab127b81066cb03e04770c05709af4",
+      "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "6a06a83f711baabf39a5697996c59ab87a877e55b59ee4c3ca91569424ad0368"
     },
     {
       "file": "player/source/resource_background.h",
@@ -5530,12 +5508,12 @@
     },
     {
       "file": "player/source/resource_cdda_stream.c",
-      "bytes": 3008,
-      "sha256": "3aa88514793556133bbe712e625ddb1eb2351705ebd5ebe3f7495bc7a398d91c",
+      "bytes": 3257,
+      "sha256": "22713bb8ca6dfebd33194e60bc9b82659f9f693a22b3e7e2c0cfa61dcd2e473e",
       "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
-      "component": "DS port v0.9 update",
-      "generator": "tools/prepare_public_v09.py",
-      "prior_sha256": "3898774039575d5c597814eb5bf46860eaf0e71db556d97f5041536a25b9a4cc"
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "3aa88514793556133bbe712e625ddb1eb2351705ebd5ebe3f7495bc7a398d91c"
     },
     {
       "file": "player/source/resource_cdda_stream.h",
@@ -5705,11 +5683,11 @@
     {
       "file": "player/source/resource_fm.c",
       "bytes": 9766,
-      "sha256": "968f3586ebc51f25d4244dfca66d013097ef7ec0add05e72babaee6d27b939a2",
+      "sha256": "7b40c2a29a49086d96a91c5a3e85c8f3efd970c6e37b2e347acae85676c5ba5e",
       "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
-      "component": "DS port v0.9 update",
-      "generator": "tools/prepare_public_v09.py",
-      "prior_sha256": "c851d22cf47bb721f5425617bd328b0349aeb3b931d3741fb694d425a628f647"
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "968f3586ebc51f25d4244dfca66d013097ef7ec0add05e72babaee6d27b939a2"
     },
     {
       "file": "player/source/resource_fm.h",
@@ -5931,27 +5909,21 @@
     },
     {
       "file": "player/source/resource_opening.c",
-      "bytes": 22579,
-      "sha256": "2578d8b29bb08e84dbfaec16fa95c0874848480a3cc54914e0ead60fe6943639",
-      "kind": "exact maintained source snapshot",
-      "component": "maintained DS port source",
-      "local_source": "work/r22-resources/source-keyboard-game-v1/source/resource_opening.c",
-      "source_sha256": "2578d8b29bb08e84dbfaec16fa95c0874848480a3cc54914e0ead60fe6943639",
-      "evidence": [
-        "release-owned-source-text-source-identity-v19/result.json"
-      ]
+      "bytes": 24255,
+      "sha256": "fe4a2c434e9a7b762fb1c3ad862afad3e8d52a049e071fdc2c7a30388a441f48",
+      "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "2578d8b29bb08e84dbfaec16fa95c0874848480a3cc54914e0ead60fe6943639"
     },
     {
       "file": "player/source/resource_opening.h",
-      "bytes": 5509,
-      "sha256": "f6868ca1f27533078d0434ec37ddef0c5649260b8a3f5c04e191baa1968e2dde",
-      "kind": "exact maintained source snapshot",
-      "component": "maintained DS port source",
-      "local_source": "work/r22-resources/source-keyboard-game-v1/source/resource_opening.h",
-      "source_sha256": "f6868ca1f27533078d0434ec37ddef0c5649260b8a3f5c04e191baa1968e2dde",
-      "evidence": [
-        "release-owned-source-text-source-identity-v19/result.json"
-      ]
+      "bytes": 5653,
+      "sha256": "775b055fbed906d89f397c198d90bb74818a93f58c0819d880ab636ef0b382a9",
+      "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "f6868ca1f27533078d0434ec37ddef0c5649260b8a3f5c04e191baa1968e2dde"
     },
     {
       "file": "player/source/resource_opening_presentation.c",
@@ -6279,27 +6251,21 @@
     },
     {
       "file": "player/source/resource_room.c",
-      "bytes": 10885,
-      "sha256": "d01a3b594d6a1da9c6a9ac463b62bd15884c35744f155681aaf85feff592e6fb",
-      "kind": "exact maintained source snapshot",
-      "component": "maintained DS port source",
-      "local_source": "work/r22-resources/source-keyboard-game-v1/source/resource_room.c",
-      "source_sha256": "d01a3b594d6a1da9c6a9ac463b62bd15884c35744f155681aaf85feff592e6fb",
-      "evidence": [
-        "release-owned-source-text-source-identity-v19/result.json"
-      ]
+      "bytes": 11306,
+      "sha256": "db437bccdca5007e7c82d04bcf747ab8f5009fca13f78c30fd67f2517e679b76",
+      "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "d01a3b594d6a1da9c6a9ac463b62bd15884c35744f155681aaf85feff592e6fb"
     },
     {
       "file": "player/source/resource_room.h",
-      "bytes": 4316,
-      "sha256": "7ea07a5d36efc08c7f36f3e5554fb73145670dd610dd7578a66d380af1754351",
-      "kind": "exact maintained source snapshot",
-      "component": "maintained DS port source",
-      "local_source": "work/r22-resources/source-keyboard-game-v1/source/resource_room.h",
-      "source_sha256": "7ea07a5d36efc08c7f36f3e5554fb73145670dd610dd7578a66d380af1754351",
-      "evidence": [
-        "release-owned-source-text-source-identity-v19/result.json"
-      ]
+      "bytes": 4366,
+      "sha256": "3814fad2de10159033f7f512d42f419260103e498ef2c19d8ae34bd3b3b4573d",
+      "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "7ea07a5d36efc08c7f36f3e5554fb73145670dd610dd7578a66d380af1754351"
     },
     {
       "file": "player/source/resource_room_audio.c",
@@ -6324,39 +6290,30 @@
     },
     {
       "file": "player/source/resource_room_save.c",
-      "bytes": 10662,
-      "sha256": "b1f929c3c4c456d8284fef84992325010379f9a197c3b617271147d744088ea0",
-      "kind": "exact maintained source snapshot",
-      "component": "maintained DS port source",
-      "local_source": "work/r22-resources/source-keyboard-game-v1/source/resource_room_save.c",
-      "source_sha256": "b1f929c3c4c456d8284fef84992325010379f9a197c3b617271147d744088ea0",
-      "evidence": [
-        "release-owned-source-text-source-identity-v19/result.json"
-      ]
+      "bytes": 10725,
+      "sha256": "cea99ccb776a4fcef362c80b8b3de600b74b0d8b26cc3858dea0770bd48a08d6",
+      "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "b1f929c3c4c456d8284fef84992325010379f9a197c3b617271147d744088ea0"
     },
     {
       "file": "player/source/resource_scene.c",
-      "bytes": 11859,
-      "sha256": "304d6a4ddee792b9d2e8b5fcddbaab778bd451a12ae6f841b67f9b664b29dc53",
-      "kind": "exact maintained source snapshot",
-      "component": "maintained DS port source",
-      "local_source": "work/r22-resources/source-keyboard-game-v1/source/resource_scene.c",
-      "source_sha256": "304d6a4ddee792b9d2e8b5fcddbaab778bd451a12ae6f841b67f9b664b29dc53",
-      "evidence": [
-        "release-owned-source-text-source-identity-v19/result.json"
-      ]
+      "bytes": 12208,
+      "sha256": "274264f64414cd1e2661705e784bb7ed7308f87a653abc4cce8e73c2cd2d9a06",
+      "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "304d6a4ddee792b9d2e8b5fcddbaab778bd451a12ae6f841b67f9b664b29dc53"
     },
     {
       "file": "player/source/resource_scene.h",
-      "bytes": 3131,
-      "sha256": "dac1da15af4013c5cb3f27a1bdab8f8c5eba8c7aa66b2453a056deeee751518c",
-      "kind": "exact maintained source snapshot",
-      "component": "maintained DS port source",
-      "local_source": "work/r22-resources/source-keyboard-game-v1/source/resource_scene.h",
-      "source_sha256": "dac1da15af4013c5cb3f27a1bdab8f8c5eba8c7aa66b2453a056deeee751518c",
-      "evidence": [
-        "release-owned-source-text-source-identity-v19/result.json"
-      ]
+      "bytes": 3201,
+      "sha256": "da0b6c30660fe375df6db0ea142f627e30b5ad61bc330982346ad2c84da1959f",
+      "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "dac1da15af4013c5cb3f27a1bdab8f8c5eba8c7aa66b2453a056deeee751518c"
     },
     {
       "file": "player/source/resource_scroll.c",
@@ -6408,12 +6365,12 @@
     },
     {
       "file": "player/source/resource_shared_sound.c",
-      "bytes": 7223,
-      "sha256": "4003ca8ee6e3e43950a990e5248d2d5764966a894ed52a06e79eba6b50324ca3",
+      "bytes": 7386,
+      "sha256": "3168581d329329ca600c6c1af48a5ea894c0c51009f67f44a250d091419a00cb",
       "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
-      "component": "DS port v0.9 update",
-      "generator": "tools/prepare_public_v09.py",
-      "prior_sha256": "c7c8c03e1cc2a8beb20a94331a9ac389ee94e7bb918f16039b2b4dd5a29e7b50"
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "4003ca8ee6e3e43950a990e5248d2d5764966a894ed52a06e79eba6b50324ca3"
     },
     {
       "file": "player/source/resource_shared_sound.h",
@@ -6480,15 +6437,12 @@
     },
     {
       "file": "player/source/resource_tasks.c",
-      "bytes": 8675,
-      "sha256": "68cdd77f0858c59cd1a4680fff2cedd02fbc3be20b25e68d067440a6d3811e23",
-      "kind": "exact maintained source snapshot",
-      "component": "maintained DS port source",
-      "local_source": "work/r22-resources/source-keyboard-game-v1/source/resource_tasks.c",
-      "source_sha256": "68cdd77f0858c59cd1a4680fff2cedd02fbc3be20b25e68d067440a6d3811e23",
-      "evidence": [
-        "release-owned-source-text-source-identity-v19/result.json"
-      ]
+      "bytes": 8962,
+      "sha256": "451d6edd89b940bbba1a73e976df2f77e51c092c663aeade6edb919f6637ebb7",
+      "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "68cdd77f0858c59cd1a4680fff2cedd02fbc3be20b25e68d067440a6d3811e23"
     },
     {
       "file": "player/source/resource_tasks.h",
@@ -6660,15 +6614,12 @@
     },
     {
       "file": "player/source/shared_mix_hash_arm.s",
-      "bytes": 965,
-      "sha256": "bc76874121aef563e763db0285836009845278222b2cf371c7c93406b37b3c73",
-      "kind": "exact maintained source snapshot",
-      "component": "maintained DS port source",
-      "local_source": "work/r22-resources/source-keyboard-game-v1/source/shared_mix_hash_arm.s",
-      "source_sha256": "bc76874121aef563e763db0285836009845278222b2cf371c7c93406b37b3c73",
-      "evidence": [
-        "release-owned-source-text-source-identity-v19/result.json"
-      ]
+      "bytes": 1396,
+      "sha256": "81f654f022e335e0364659c8590ee655f55816978cadaa3a32a792f17f3bef3a",
+      "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "bc76874121aef563e763db0285836009845278222b2cf371c7c93406b37b3c73"
     },
     {
       "file": "player/source/story_audio.c",
@@ -6789,15 +6740,12 @@
     },
     {
       "file": "player/source/system_perf_trace.c",
-      "bytes": 5076,
-      "sha256": "13ed88cc2742bd14e5919cf82f2c6710f998e9897e2ff5148fd75ad87c2b8325",
-      "kind": "exact maintained source snapshot",
-      "component": "maintained DS port source",
-      "local_source": "work/r22-resources/source-keyboard-game-v1/source/system_perf_trace.c",
-      "source_sha256": "13ed88cc2742bd14e5919cf82f2c6710f998e9897e2ff5148fd75ad87c2b8325",
-      "evidence": [
-        "release-owned-source-text-source-identity-v19/result.json"
-      ]
+      "bytes": 4977,
+      "sha256": "6ce845aeb0fdce9cb4aa702258d4ecf99ff64dc72c5b705bd40e14ac6569fab9",
+      "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "f41223e19ea2c782e008aae9ddfc83f8110f7687e5c7c3c33f01eff73e96b777"
     },
     {
       "file": "player/source/title_badge.c",
@@ -7263,20 +7211,20 @@
     },
     {
       "file": "preparation.json",
-      "bytes": 256953,
-      "sha256": "c698f39cf0626525cde9be2670b47d188f2af7fdc35a9f48ed0dc54131c29b93",
+      "bytes": 258003,
+      "sha256": "79a39f5022f326679f0ec32be5eccfca7e8d2e939ae56f05e0425f4abff4671f",
       "kind": "authored code, translation, launcher art or regenerated masked engine metadata",
-      "component": "DS port v0.9 update",
-      "generator": "tools/prepare_public_v09.py",
-      "prior_sha256": "8496b544ecda2d7b2b6145fd10ce62c17244debaa043bbf3d084b3d704640a3a"
+      "component": "DS port v0.95 update",
+      "generator": "tools/stage_public_v095.py",
+      "prior_sha256": "f56c2569005d4855d05b5f60f96090cfc3eb63d609c36402f18c425adaa3e29f"
     },
     {
       "file": "README_KO.txt",
-      "bytes": 2265,
-      "sha256": "892c29fce5dbc8a5c15003dbb5541467f9cd91b0d86ab0d94ff4d5daf5e723d4",
-      "kind": "authored release source, documentation or generated launcher art",
-      "component": "DS port v0.9",
-      "generator": "tools/finalize_public_v09_inputs.py"
+      "bytes": 2619,
+      "sha256": "74624050806f590f3660e89926d79848b6bdd781378a9d1153b01544eb08ed70",
+      "kind": "authored release source, translation, documentation or masked executable",
+      "component": "DS port v0.95",
+      "generator": "tools/finalize_public_v095_inputs.py"
     },
     {
       "file": "REBUILD-CONVERTERS_KO.txt",
@@ -7318,7 +7266,7 @@
   ],
   "kind_counts": {
     "owned generated UI artwork": 2,
-    "authored release source, documentation or generated launcher art": 7,
+    "authored release source, documentation or generated launcher art": 3,
     "authored documentation or installed toolchain identity metadata": 2,
     "erased original-dependent source placeholder": 10,
     "exact maintained converter source snapshot": 200,
@@ -7327,12 +7275,13 @@
     "exact maintained upstream fork source": 13,
     "maintained converter source": 62,
     "regenerated engine metadata/code or authored internal build documentation": 1,
-    "authored code, translation, launcher art or regenerated masked engine metadata": 36,
+    "authored code, translation, launcher art or regenerated masked engine metadata": 52,
     "unchanged licensed font source": 1,
     "fresh included-source converter build, notices retained and original table erased": 6,
     "complete component notice aggregation": 1,
     "authored documentation, launcher or identity/build metadata": 4,
-    "exact maintained source snapshot": 256,
+    "authored release source, translation, documentation or masked executable": 4,
+    "exact maintained source snapshot": 240,
     "authored verification metadata": 1
   },
   "self_metadata": {

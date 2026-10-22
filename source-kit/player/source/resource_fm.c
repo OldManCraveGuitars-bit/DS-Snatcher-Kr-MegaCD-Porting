@@ -138,7 +138,7 @@ bool probe_render(int16_t *out,unsigned n){
    }
    for(unsigned ch=0;ch<2;ch++){
     int32_t v=last[ch]*2;
-    filtered[ch]=v-previous[ch]+(int32_t)(((int64_t)filtered[ch]*65279)/65536);
+    filtered[ch]=v-previous[ch]+(int32_t)(((int64_t)filtered[ch]*65280)/65536);
     previous[ch]=v;int32_t sample=filtered[ch];
     out[i*2+ch]=sample>32767?32767:sample< -32768?-32768:sample;
     fm_sample_hash=(fm_sample_hash^(uint16_t)out[i*2+ch])*16777619u;

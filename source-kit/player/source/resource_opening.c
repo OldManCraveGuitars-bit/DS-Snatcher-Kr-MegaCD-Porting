@@ -143,6 +143,12 @@ static bool raster(resource_opening_state *s){
     bool scanline_phone=effect==22 || effect==23;
     bool contact=effect==9 || (effect>=17 && effect<=21);
     s->raster_active=(effect>=2 && effect<=6) || contact || scanline_phone;
+    /* Main VBlank FF0C14/FF0C26/FF0B60 sets EB00 before FF3CAA
+     * uploads VSRAM. Phone HBlank alone only switches the lower half at
+     * scanline72; omitting this initial B offset exposes the face above it.
+     * Keep A at zero and preserve the source's signed 16-bit B offset. */
+    if(effect==17)putlong(s->cards.hscroll,word(s->cards.main+0x68));
+    else if(effect>=18 && effect<=23)putlong(s->cards.hscroll,word(s->cards.main+0x64));
     s->visible=1;s->live_vertical[0]=word(s->cards.hscroll);s->live_vertical[1]=word(s->cards.hscroll+2);
     if(effect==9 && (word(s->cards.cached_registers+6)&3)!=3)
         for(unsigned p=0;p<2;p++)for(unsigned y=0;y<224;y++)
@@ -164,10 +170,32 @@ static bool raster(resource_opening_state *s){
     }
     return true;
 }
+bool resource_opening_restore_shared_mask(resource_opening_state *s){
+    /* SUB13D9E fills eight longs, then13DB6..13DCC transfers those32
+     * bytes to VRAM1FE0. Original maps use high-priority80FF to hide
+     * the wrapped half of a sliding plane. A zero-initialized tile made
+     * that mask transparent. Read the original fill value, not new art.
+     * Old room saves also lack this reserved tile; preserve nonblank
+     * patterns and repair only the omitted initial value. */
+    if(!s || !s->scene.subcode || s->scene.subcode_bytes<0x13dce - 0xd400)return false;
+    const uint8_t *p=s->scene.subcode+0x13d9e - 0xd400;
+    if(word(p)!=0x263c || word(p+6)!=0x343c || word(p+8)!=7 ||
+       word(p+0x20)!=0x3c3c || word(p+0x22)!=0x1fe0)return false;
+    for(unsigned bank=0;bank<2;bank++){
+        uint8_t *v=(bank?s->front_vram:s->scene.vram)+0x1fe0;
+        unsigned nonzero=0;for(unsigned i=0;i<32;i++)nonzero|=v[i];
+        if(nonzero)continue;
+        for(unsigned i=0;i<32;i++)v[i]=p[2+(i&3)];
+        if(!bank)s->scene.written_tiles[7]|=1u<<31;
+        else s->display_changed_tiles[7]|=1u<<31;
+    }
+    return true;
+}
 bool resource_opening_bind_scene(resource_opening_state *s,const void *resource,size_t bytes,const void *sub,size_t subbytes,uint32_t rng){
     if(!s || !resource)return false;
     memset(s,0,sizeof(*s));
     if(!resource_scene_bind(&s->scene,resource,bytes,sub,subbytes))return false;
+    if(!resource_opening_restore_shared_mask(s))return false;
     putlong(g(s,0x786a),rng);putword(g(s,0x78b2),1);
     putword(s->cards.cached_registers,0x8004);putword(s->cards.cached_registers+2,0x8164);putword(s->cards.cached_registers+4,0x9010);putword(s->cards.cached_registers+6,0x8b00);
     s->plane_b=0xc000;

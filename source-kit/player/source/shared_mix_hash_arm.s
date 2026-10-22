@@ -8,7 +8,7 @@
 .align 2
 .global shared_mix_hash_arm
 .type shared_mix_hash_arm,%function
-.macro mix_one
+.macro mix_sample
     ldrsh r4,[r0]
     ldrsh r5,[r1],#2
     mov r4,r4,lsl #16
@@ -16,6 +16,9 @@
     qadd r4,r4,r5
     mov r4,r4,lsr #16
     strh r4,[r0],#2
+.endm
+.macro mix_one
+    mix_sample
     eor r3,r3,r4
     mul r3,r6,r3
 .endm
@@ -35,4 +38,20 @@ shared_mix_hash_arm:
     pop {r4-r6,pc}
 .size shared_mix_hash_arm,.-shared_mix_hash_arm
 .pool
+/* Production mixing has the same samples and saturation, without the audit
+ * digest. Keep the observed entry above for explicit audio verification. */
+.global shared_mix_arm
+.type shared_mix_arm,%function
+shared_mix_arm:
+    cmp r2,#0
+    bxeq lr
+    push {r4-r5}
+2:
+    mix_sample
+    mix_sample
+    subs r2,r2,#1
+    bne 2b
+    pop {r4-r5}
+    bx lr
+.size shared_mix_arm,.-shared_mix_arm
 .section .note.GNU-stack,"",%progbits

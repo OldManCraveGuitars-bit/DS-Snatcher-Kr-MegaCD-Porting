@@ -21,6 +21,14 @@ bool resource_room_control(resource_room *r,unsigned actor,unsigned command){
     const uint8_t commands[]={0,9,0,(uint8_t)command,0,(uint8_t)actor};
     return enqueue(r,commands,sizeof(commands));
 }
+bool resource_room_menu_return(resource_room *r){
+    if(!r || r->error)return false;
+    /* SUB16850/1398E clears voice actors before and after the remaining
+     * work queue. Keep the callback in queue order, including old saves. */
+    const uint8_t command[]={0,34,0,1,0x39,0xd0};
+    if(!enqueue(r,command,sizeof(command)))return false;
+    resource_scene_clear_voice_actors(&r->video.scene);return true;
+}
 bool resource_room_file_scene(resource_room *r,unsigned current_file,unsigned file,unsigned scene){
     if(!r || r->error || current_file>255 || file>255 || scene>255)return false;
     if(current_file==file)return resource_room_scene(r,scene);

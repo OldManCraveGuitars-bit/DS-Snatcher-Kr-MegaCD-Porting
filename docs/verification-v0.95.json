@@ -1,0 +1,336 @@
+{
+  "release": "v0.95",
+  "prerelease": true,
+  "full_test_version": true,
+  "verified_at_kst": "2026-10-23T04:58:12.991900+09:00",
+  "based_on": "Mega-CD SNATCHER Korean patch V0.95 / r57",
+  "nds_sha256": "ab119635706b15e28d7848c92d2461dc89f882272e7abff25e476d83a7ada579",
+  "exe_sha256": "b064a2553fd31c4b86041bd3702e2f8ece62f1560cbdad1952e0442cc362c7b8",
+  "actual_exe_conversion_verified": true,
+  "resource_files": 1230,
+  "conversion_seconds": 447.59,
+  "exe_checks": [
+    "Actual frozen EXE loads Tcl/Tk and constructs complete GUI without Python PATH",
+    "GUI file selectors populate ROM/BIOS/destination",
+    "GUI rejects missing input before creating output",
+    "EXE rejects bad BIOS",
+    "EXE rejects existing output",
+    "EXE rejects source directory output",
+    "EXE rejects missing BIN",
+    "Existing files retained",
+    "GUI cancel terminates actual EXE worker; no final NDS; retry enabled",
+    "All 1230 assets and NDS exactly match the v0.95 release reference",
+    "GUI stays responsive; progress, success, log and folder states pass",
+    "ROM, BIOS and source kit manifest hashes unchanged"
+  ],
+  "inputs_unchanged": true,
+  "gui_callback_test": true,
+  "desktop_click_test": false,
+  "exe_evidence_sha256": "362174b76fef08326fb63f2de772e6602b0785840720013f9f57adfb51714f7b",
+  "startup_tests": [
+    {
+      "passed": true,
+      "core": {
+        "requested": "melonds",
+        "path": "tools/emulator/legacy-melonds-20261021/melonds_libretro.dll",
+        "sha256": "d3de8902d79d0afe9e3e34941cae7e5893a20e2751ccf4b0769289cd3b3925c5",
+        "name": "melonDS",
+        "version": "0.9.3 66b5d26"
+      },
+      "frames": 28609,
+      "elapsed_seconds": 99.73,
+      "main_ram_bytes": 4194304,
+      "both_openings_completed_without_skip": true,
+      "actual_frozen_exe_output": true,
+      "memory_injection": false,
+      "savestate": false,
+      "physical_console": false,
+      "report_sha256": "768133c3a6481b52cd38dd67e84f73e4eb4dd50fb44e148f0276bad90842ead6",
+      "screenshot": "docs/compatibility-v0.95/melonds-reception.png",
+      "screenshot_sha256": "483dc1522157157d776dcff2db37e2112810e29cc4dbdb6b831ecc3766232468"
+    },
+    {
+      "passed": true,
+      "core": {
+        "requested": "desmume",
+        "path": "tools/emulator/desmume_libretro.dll",
+        "sha256": "20445e10410c2723c74beec81498994ae78a071affb0735bd7f403e6a17884ea",
+        "name": "DeSmuME",
+        "version": "git 95b4d79"
+      },
+      "frames": 28629,
+      "elapsed_seconds": 192.81,
+      "main_ram_bytes": 4194304,
+      "both_openings_completed_without_skip": true,
+      "actual_frozen_exe_output": true,
+      "memory_injection": false,
+      "savestate": false,
+      "physical_console": false,
+      "report_sha256": "d976ccc23f4cb97a948addb579512f053f1080191de1eac17e688f0926d07363",
+      "screenshot": "docs/compatibility-v0.95/desmume-reception.png",
+      "screenshot_sha256": "96d0ec0cae52e48e20c51dab9258148272cf7509bd84995789e966af7990d09c"
+    }
+  ],
+  "source_and_assembly_audit": {
+    "passed": true,
+    "source_rebuild_byte_identical": true,
+    "private_nds_sha256": "257fcb10ff5c1bf7e4e519750cc0ffe4a0ea6b7d2c3a605f8d93fa42eb5aa2c2",
+    "source_rebuild_nds_sha256": "257fcb10ff5c1bf7e4e519750cc0ffe4a0ea6b7d2c3a605f8d93fa42eb5aa2c2",
+    "assembled_nds_sha256": "ab119635706b15e28d7848c92d2461dc89f882272e7abff25e476d83a7ada579",
+    "resources_identical": 1230,
+    "executable_regions": [
+      {
+        "name": "arm9",
+        "bytes": 1491200,
+        "sha256": "e535c22d212d909e026d50a602e0025f9d2c26191747fe4b82ab7df72d48c413"
+      },
+      {
+        "name": "arm7",
+        "bytes": 56668,
+        "sha256": "ad91b87946e932653a7dbc76997e915370d496ab1483bf31b4a44dec23dfc51f"
+      },
+      {
+        "name": "arm9i",
+        "bytes": 872,
+        "sha256": "7d16a8f9e9ea5ebb90b5e28bd46ab76f3cd557a85abdc877e17c78f54a37dfef"
+      },
+      {
+        "name": "arm7i",
+        "bytes": 7824,
+        "sha256": "9671907c73a180a5b60673154ab1138779574965afef22467ae589cf881000a5"
+      }
+    ],
+    "masked_source_spans": 411,
+    "erased_original_bytes": 565344,
+    "whole_template_source_correspondence": true,
+    "manifest_files": 624,
+    "manifest_sha256": "ddd3d26e7ad5cc7b69d77a3ec7fd526d5629aecb7ebe5ddd9347a17f9febcd9e",
+    "source_file_provenance_checked": true,
+    "original_game_included": false,
+    "bios_included": false,
+    "physical_console": false
+  },
+  "translation": {
+    "passed": true,
+    "rom_sha256": "7afcb58a2c497433b0046c05531d145f3739931b255a72e6309951b0a2cfd134",
+    "translation": "V0.9 + 2026-10-23 r57 최신 번역·누락 자막 수정",
+    "archive_pages": 13076,
+    "changed_pages": 81,
+    "added_pages": 1,
+    "added_entry": {
+      "id": "CD12/049",
+      "track": 12,
+      "text": "길리언, 이분은 곧...",
+      "source_text_en": "Gillian, he's about...",
+      "first_sector": 13940,
+      "end_sector": 14085,
+      "start_sample": 5947734,
+      "end_sample": 6009600
+    },
+    "packaged_resources": 1230,
+    "media_delta": [
+      "story-text-r22.stp"
+    ],
+    "fonts_existing_clocks_program_unchanged": true,
+    "original_writes": 0,
+    "physical_console": false,
+    "scope": "Private r57 archive validation; v0.95 text header and STP are byte-identical."
+  },
+  "versioned_candidate_runtime": [
+    {
+      "name": "act3-audio-v095-r3",
+      "passed": true,
+      "frames": 22809,
+      "rom_sha256": "257fcb10ff5c1bf7e4e519750cc0ffe4a0ea6b7d2c3a605f8d93fa42eb5aa2c2",
+      "report_sha256": "f2edc76b8ed3b5de6c04b08e9999f23ede1240fb25a7eaf644037e83402c90e0",
+      "checks": [
+        {
+          "name": "Ordinary DS 4 MiB",
+          "passed": true
+        },
+        {
+          "name": "Original ACT3 title and entrance reached",
+          "passed": true
+        }
+      ],
+      "physical_console": false,
+      "memory_injection": false,
+      "savestates": false,
+      "gap_delta": 0,
+      "silence_delta": 0
+    },
+    {
+      "name": "harry-caption-v095-r3",
+      "passed": true,
+      "frames": 24192,
+      "rom_sha256": "257fcb10ff5c1bf7e4e519750cc0ffe4a0ea6b7d2c3a605f8d93fa42eb5aa2c2",
+      "report_sha256": "612556b0828ef56e122e57781002d57d52a5489d0ae8c474ad642c2a8bc63e97",
+      "checks": [
+        {
+          "name": "Ordinary DS 4 MiB",
+          "passed": true
+        },
+        {
+          "name": "All 67 CD12 captions appear on the actual lower LCD",
+          "passed": true
+        },
+        {
+          "name": "New clause appears between its unchanged neighbors",
+          "passed": true
+        }
+      ],
+      "physical_console": false,
+      "memory_injection": false,
+      "savestates": false,
+      "actual_lcd_captions": 67
+    }
+  ],
+  "prior_private_r57_runtime": [
+    {
+      "name": "act3-audio-final-r57",
+      "passed": true,
+      "rom_sha256": "7afcb58a2c497433b0046c05531d145f3739931b255a72e6309951b0a2cfd134",
+      "frames": 22818,
+      "report_sha256": "6318ecb0b55dde5d1f74065d5d07f97569f6fef2b95566f22724cb1c93299983",
+      "scope": "Earlier private r57 build; gameplay source identical to v0.95, not final EXE output."
+    },
+    {
+      "name": "flashlight-fixed-final-r57",
+      "passed": true,
+      "rom_sha256": "7afcb58a2c497433b0046c05531d145f3739931b255a72e6309951b0a2cfd134",
+      "frames": 3548,
+      "report_sha256": "fa79ca2acc4966a153c23b7f855a0689050bca2f38889a8adfbcecc92a9c0daf",
+      "scope": "Earlier private r57 build; gameplay source identical to v0.95, not final EXE output."
+    },
+    {
+      "name": "harry-caption-verified-r57",
+      "passed": true,
+      "rom_sha256": "7afcb58a2c497433b0046c05531d145f3739931b255a72e6309951b0a2cfd134",
+      "frames": 24206,
+      "report_sha256": "23f002581e8f6a8b568f5159973296829f84399e119b0193ee1a46cc484da1dd",
+      "scope": "Earlier private r57 build; gameplay source identical to v0.95, not final EXE output."
+    },
+    {
+      "name": "incoming-fixed-final-r57",
+      "passed": true,
+      "rom_sha256": "7afcb58a2c497433b0046c05531d145f3739931b255a72e6309951b0a2cfd134",
+      "frames": 4844,
+      "report_sha256": "1d612a2e541d2ec29b8f34b9be6905a6911b61003828b70b9fbfbad3492699aa",
+      "scope": "Earlier private r57 build; gameplay source identical to v0.95, not final EXE output."
+    },
+    {
+      "name": "insectors-win-candidate-corridor-final-r57",
+      "passed": true,
+      "rom_sha256": "7afcb58a2c497433b0046c05531d145f3739931b255a72e6309951b0a2cfd134",
+      "frames": 12751,
+      "report_sha256": "bc7f6bb1ec5b6f20e6253cc6f59c72749bbf52f65e346e0b21acb732930ce4d5",
+      "scope": "Earlier private r57 build; gameplay source identical to v0.95, not final EXE output."
+    },
+    {
+      "name": "motorcycle-final-r57",
+      "passed": true,
+      "rom_sha256": "7afcb58a2c497433b0046c05531d145f3739931b255a72e6309951b0a2cfd134",
+      "frames": 12769,
+      "report_sha256": "fb453edf0821fb8d6b9d998f8ac3f88e1d8d907c780d521775068ba8907090e0",
+      "scope": "Earlier private r57 build; gameplay source identical to v0.95, not final EXE output."
+    },
+    {
+      "name": "outer-morgue-final-r57",
+      "passed": true,
+      "rom_sha256": "7afcb58a2c497433b0046c05531d145f3739931b255a72e6309951b0a2cfd134",
+      "frames": 4522,
+      "report_sha256": "2571b4282aa49e98999bbf859d996d05689a71e085f0751bd80561f1bdcc1049",
+      "scope": "Earlier private r57 build; gameplay source identical to v0.95, not final EXE output."
+    },
+    {
+      "name": "taxi-win-candidate-corridor-final-r57",
+      "passed": true,
+      "rom_sha256": "7afcb58a2c497433b0046c05531d145f3739931b255a72e6309951b0a2cfd134",
+      "frames": 8410,
+      "report_sha256": "238e7dff7db5f536a971f054951234de628a22ceabba53954d1b0718f67ef47a",
+      "scope": "Earlier private r57 build; gameplay source identical to v0.95, not final EXE output."
+    },
+    {
+      "name": "vehicle-final-r57",
+      "passed": true,
+      "rom_sha256": "7afcb58a2c497433b0046c05531d145f3739931b255a72e6309951b0a2cfd134",
+      "frames": 5806,
+      "report_sha256": "175ef31cccd52949592b70947f276b5f9abe350539806bdaca5e82da039427f8",
+      "scope": "Earlier private r57 build; gameplay source identical to v0.95, not final EXE output."
+    }
+  ],
+  "parent_correspondence": {
+    "passed": true,
+    "changes": [
+      "source/main.c",
+      "source/system_perf_trace.c"
+    ],
+    "nds_sha256": "257fcb10ff5c1bf7e4e519750cc0ffe4a0ea6b7d2c3a605f8d93fa42eb5aa2c2",
+    "parent_nds_sha256": "7afcb58a2c497433b0046c05531d145f3739931b255a72e6309951b0a2cfd134",
+    "translation_and_gameplay_source_identical": true,
+    "intentional_changes": [
+      "release and diagnostic version labels",
+      "remove lower title Korean heading"
+    ],
+    "audio_synthesis_identical": true,
+    "title_runtime": "tests/ds/title-label-r3/result.json"
+  },
+  "prior_private_performance": {
+    "scope": "Same genuine morgue save, 3000 display frames, emulated DS. Not physical console.",
+    "before_rom": "39beab02bf85435ed96b6a5457fd8aad300313d130bb00c95918e7ae0597396c",
+    "after_rom": "7afcb58a2c497433b0046c05531d145f3739931b255a72e6309951b0a2cfd134",
+    "before_ticks": [
+      45310,
+      36473,
+      538572,
+      130156,
+      48643,
+      147745,
+      0,
+      26760,
+      60539,
+      606907
+    ],
+    "after_ticks": [
+      45203,
+      31488,
+      528185,
+      131179,
+      48895,
+      138554,
+      0,
+      26948,
+      60490,
+      630115
+    ],
+    "busy_reduction_percent": 2.2486989918758304,
+    "fm_reduction_percent": 1.928618643375446,
+    "draw_reduction_percent": 6.220853497580292,
+    "audio_overhead_reduction_percent": 13.667644558988846
+  },
+  "physical_console_tested": false,
+  "full_game_replayed_on_final_v095": false,
+  "all_branches_tested": false,
+  "original_game_included": false,
+  "bios_included": false,
+  "outer_heaven_report": {
+    "trigger": "ASK / MEANING OF CODE",
+    "status": "unresolved physical BGM noise report",
+    "effect_switch_result_unconfirmed": true,
+    "original_command_sequence_verified": true,
+    "additional_music_overlap_observed": false,
+    "emulator_frames": 10859,
+    "rom_sha256": "257fcb10ff5c1bf7e4e519750cc0ffe4a0ea6b7d2c3a605f8d93fa42eb5aa2c2",
+    "report_sha256": "2819dc6426368c6eaea94c88cf924c119b1eb67ee9b674b6436714b4a439027b",
+    "measured_gaps": [
+      0,
+      0
+    ],
+    "scope": "Original CPU command and emulated buffer checks do not establish audible fidelity or a hardware fix."
+  },
+  "title_heading_removed": {
+    "passed": true,
+    "report_sha256": "9acdd2ba64a13c76fe27926a7a82c941e870a0e8292244199b586369d80e9e54",
+    "scope": "Normal boot title and load menu; upper logo retained."
+  }
+}

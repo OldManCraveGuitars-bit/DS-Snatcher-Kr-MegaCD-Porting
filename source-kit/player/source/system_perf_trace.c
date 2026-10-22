@@ -20,7 +20,7 @@ void system_perf_sample(const unsigned audio[17]){
 unsigned system_perf_write_errno;
 /* Diagnostic output is explicitly requested. No normal Menu/open-game write.
  * A version-specific name prevents an old log masquerading as a new sample. */
-static const char trace_header[]="Snatcher DS chapter-select v62\n";
+static const char trace_header[]="Snatcher DS v0.95\n";
 static char trace_directory[128],trace_path[176],trace_line[384];
 static int trace_error(int result){system_perf_write_errno=errno;return result;}
 int system_perf_write(void){
@@ -30,7 +30,7 @@ int system_perf_write(void){
     int length=snprintf(trace_directory,sizeof(trace_directory),"%ssnatcher_ds",drive);
     if(length<0 || (size_t)length>=sizeof(trace_directory))return trace_error(3);
     if(mkdir(trace_directory,0777) && errno!=EEXIST)return trace_error(4);
-    length=snprintf(trace_path,sizeof(trace_path),"%s/system-performance-v62.txt",trace_directory);
+    length=snprintf(trace_path,sizeof(trace_path),"%s/system-performance-v095.txt",trace_directory);
     if(length<0 || (size_t)length>=sizeof(trace_path))return trace_error(3);
     music_player_service_io();errno=0;
     FILE *f=fopen(trace_path,"wb");if(!f)return trace_error(5);
@@ -74,7 +74,7 @@ int system_perf_write(void){
     return 0;
 }
 void system_perf_summary(char *out,size_t bytes){
-    if(count<2){snprintf(out,bytes,"TEST V62\nPLAY FOR 2 SECONDS\n");return;}
+    if(count<2){snprintf(out,bytes,"TEST V095\nPLAY FOR 2 SECONDS\n");return;}
     unsigned back=count>5?5:count-1;
     const unsigned *b=rows[(count-1)&(ROWS-1)],*a=rows[(count-1-back)&(ROWS-1)];
     unsigned delta[PERF_COUNT];uint64_t total=0;
@@ -85,5 +85,5 @@ void system_perf_summary(char *out,size_t bytes){
     unsigned read=total?(uint64_t)delta[PERF_READ]*100/total:0;
     unsigned displays=b[0]-a[0],loops=displays?(uint64_t)(b[1]-a[1])*60/displays:0;
     unsigned gaps=b[5]==a[5]?b[8]-a[8]:b[8];
-    snprintf(out,bytes,"V62 SCENE %04X\nFM %u%% PCM %u%%\nDRAW %u%% READ %u%%\nLOOP %u GAP %u\n",b[3]&65535,fm,pcm,draw,read,loops>999?999:loops,gaps>9999?9999:gaps);
+    snprintf(out,bytes,"V095 SCENE %04X\nFM %u%% PCM %u%%\nDRAW %u%% READ %u%%\nLOOP %u GAP %u\n",b[3]&65535,fm,pcm,draw,read,loops>999?999:loops,gaps>9999?9999:gaps);
 }
