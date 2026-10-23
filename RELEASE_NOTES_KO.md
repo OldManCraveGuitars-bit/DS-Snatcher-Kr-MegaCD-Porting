@@ -1,3 +1,42 @@
+# SNATCHER DS 비공식 한글화·포팅 v1.0 정식 버전
+
+한글화 및 포팅: **기타 깎는 노인**
+
+**[Mega-CD판 SNATCHER 한글패치](https://github.com/OldManCraveGuitars-bit/MegaCD-Snatcher-Kr)를 기반으로 만든 Nintendo DS용 비공식 한글화·포팅의 1.0 정식 버전입니다.** ACT 1~3와 엔딩, 최종 검수 번역과 누적 수정사항을 포함합니다.
+
+## 주요 변경사항
+
+- **최종 한글 번역 반영** — 대사와 보이스 자막의 최종 검수 내용을 적용하고 누락 자막을 보완했습니다. 기존 대사 번호와 음성 재생 시각을 유지합니다.
+- **사운드 개선** — 아우터헤븐에서 ‘암호의 의미’ 선택 후 생기던 찢어지는 FM 잡음을 수정했습니다. ACT3 전투, 카메라 이동, 화면 생성·페이드의 처리 부담도 줄였습니다.
+- **전투 화면 정리** — 실제 체력이 있는 모든 전투에서 상단 길리언 초상화 아래에 LIFE, 그 아래 중앙에 체력바를 배치합니다. 하단은 조준·사격에 사용합니다.
+- **화면·자막 보완** — 비디오폰 잡음 연출, 길리언 입 표정 겹침, 불필요한 그림 노출과 엔딩 문구 표시를 수정했습니다. 엔딩 마지막에는 ‘한글화 및 포팅 / 기타 깎는 노인’ 크레딧을 표시합니다.
+- **조작과 설정** — 터치 조작과 버튼 조작을 지원하며 손전등 메뉴는 십자키와 A로도 실행할 수 있습니다. 배경음·효과음·보이스를 각각 켜고 끌 수 있고, 보이스를 꺼도 자막은 유지합니다. 설정의 사운드 체크 항목은 제거했습니다.
+- **저장과 진행** — 5개 저장 슬롯과 클리어 기록에 따른 ACT 선택을 지원합니다. ACT3 본부 저장 위치 표시와 ACT 종료 저장 표기를 정리했습니다.
+
+## 설치와 기존 세이브
+
+1. **Snatcher-DS-v1.0-Patcher.exe**를 실행합니다. Python 설치는 필요하지 않습니다.
+2. 수정되지 않은 **북미판 원본 CUE**, 연결된 **모든 BIN 트랙**, **지원 USA BIOS**를 준비합니다. ROM 선택란에는 CUE를 지정합니다.
+3. PC의 새 결과 폴더를 지정하고 **NDS 만들기**를 누릅니다. 최종 한글 번역은 자동 적용됩니다.
+4. 생성·검증이 완료되면 결과 폴더의 **snatcher_ds.nds**를 SD 카드로 복사합니다.
+5. 이전 버전을 사용했다면 **기존 snatcher_ds 저장 폴더 전체를 백업하고 보존**한 채 NDS만 교체합니다.
+
+원본 ROM·BIOS·완성 NDS는 포함하지 않습니다. Windows 10/11 x64용이며, 원본 CUE/BIN과 지원 BIOS를 직접 준비해야 합니다. ZIP에는 EXE와 설명서·라이선스·대응 소스가 함께 들어 있습니다.
+
+## 검증과 호환성
+
+패처의 실제 EXE 변환, 공개 소스 재빌드, 일반 DS 4 MiB 환경의 부팅과 변경 구간을 검사했습니다. 아우터헤븐 수정판 녹음은 제보자가 잡음 없이 정상임을 확인했습니다. ACT3 전투의 화면 전송 부담을 줄였으며, 기본 설정(TV 필터·스캔라인 Off)에서 적용됩니다.
+
+이전 버전에서 진행한 ACT 1~3 주요 경로·엔딩 검사와 최종판 변경 구간 검사를 구분합니다. 모든 선택 분기나 모든 R4·DSi/3DS·Android 환경의 최종판 실기 검증을 마친 것은 아닙니다. 게임 내부 저장에는 홈브루 SD/DLDI 읽기·쓰기가 필요합니다.
+
+[검증 범위](https://github.com/OldManCraveGuitars-bit/DS-Snatcher-Kr-MegaCD-Porting/blob/v1.0/docs/RELEASE_STATUS.md) · [사용 방법](https://github.com/OldManCraveGuitars-bit/DS-Snatcher-Kr-MegaCD-Porting/blob/v1.0/docs/PATCHING_KO.md) · [입력 ROM·BIOS 해시](https://github.com/OldManCraveGuitars-bit/DS-Snatcher-Kr-MegaCD-Porting/blob/v1.0/INPUT-SHA256-v1.0.txt) · [배포 파일 해시](https://github.com/OldManCraveGuitars-bit/DS-Snatcher-Kr-MegaCD-Porting/blob/v1.0/SHA256SUMS-v1.0.txt)
+
+KONAMI가 제작하거나 승인한 공식 제품은 아닙니다. SNATCHER 원작의 권리는 해당 권리자에게 있으며, 외부 코드와 글꼴의 라이선스·고지를 보존합니다.
+
+---
+
+## 이전 릴리스 기록
+
 # SNATCHER DS V0.95 · 전체 테스트용
 
 **완성판이 아닌 전체 테스트용 사전 릴리스입니다. ACT 1~3가 대상이며 모든 분기·실기에서 검증을 마친 버전은 아닙니다.**

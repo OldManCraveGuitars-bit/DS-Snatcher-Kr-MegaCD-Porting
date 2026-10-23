@@ -71,6 +71,7 @@ unsigned reception_background_practice_value(unsigned address);
 bool reception_background_practice_done(void);
 bool reception_background_practice_finish(uint16_t result[7]);
 bool reception_background_practice_draw(uint16_t [256*192],uint8_t [256*192]);
+bool reception_background_practice_indices(uint8_t [256*192],uint16_t [64],bool *);
 int reception_background_practice_touch(int x,int y);
 
 bool reception_background_fullframe(void);

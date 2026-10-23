@@ -3836,5 +3836,29 @@
       "generated/voice_source_gain.h"
     ],
     "physical_console": false
+  },
+  "current_v100": {
+    "version": "v1.0",
+    "base": "Mega-CD Korean final translation review r61",
+    "private_nds_sha256": "c20b9495597c93b038f7e54a618b0d6e403ac2a5dd820490bba88fb520d153bf",
+    "reference_assembled_nds_sha256": "f2990fc21a33e713651046e3d972018a519d066be34f113bd8748d7be7f77952",
+    "changed_player_files": [
+      "Makefile",
+      "Makefile.arm7",
+      "assets/launcher-icon.gif",
+      "generated/text.h"
+    ],
+    "source_only_headers_preserved": [
+      "generated/battle_layouts_r22.h",
+      "generated/keyboard_titles.h",
+      "generated/office_branch.h",
+      "generated/original_sound_gain.h",
+      "generated/source_battle_random.h",
+      "generated/story_pc_index.h",
+      "generated/story_program.h",
+      "generated/story_search.h",
+      "generated/voice_source_gain.h"
+    ],
+    "physical_console": false
   }
 }

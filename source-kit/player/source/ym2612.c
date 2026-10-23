@@ -1452,7 +1452,22 @@ unsigned probe_stable_counter(unsigned count,unsigned eg,unsigned length){
  * No register write, resampler partition, oscillator, feedback or MEM state
  * is skipped. The SSG/LFO paths keep their existing per-sample loop. */
 volatile unsigned fm_subspan_calls,fm_subspan_samples;
+#ifdef __NDS__
+extern void chan_render_loop_generic_fallback(chan_rend_context *,s32 *,unsigned short);
+/* The reduced arithmetic loops do not preserve strong-feedback voices.
+ * Slot5 / Outer Heaven exhibits clipping even with a full output buffer.
+ * Keep those channels on the canonical ARM loop, including envelope clocks;
+ * low-feedback channels retain the fast path and ARM7 remains available. */
+static INLINE int needs_exact_feedback(const chan_rend_context *ct){
+    return (ct->pack&0xf000)>=0x8000;
+}
+#endif
 static ITCM_CODE void render_envelope_spans(chan_rend_context *ct,s32 *buffer,unsigned length){
+#ifdef __NDS__
+    if(needs_exact_feedback(ct)){
+        chan_render_loop_generic_fallback(ct,buffer,length);return;
+    }
+#endif
 #ifndef __NDS__
     chan_render_loop(ct,buffer,length);return;
 #endif
@@ -1579,7 +1594,10 @@ static ITCM_CODE int chan_render(s32 *buffer, int length, int c, UINT32 flags) /
     }
 
 #ifdef __NDS__
-    prepare_stable_loop(&crct,length);
+    /* prepare_stable_loop advances EG time: bypass it together with the
+     * optimized renderer, so the canonical loop advances each tick once. */
+    if(needs_exact_feedback(&crct))crct.stable_loop=0;
+    else prepare_stable_loop(&crct,length);
 #endif
     if(c==FM_WORKER_CHANNEL && length>32){
         channel_job *job=&fm_jobs[0];

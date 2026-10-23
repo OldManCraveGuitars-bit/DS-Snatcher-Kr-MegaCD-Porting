@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "restored_header_sha256": "d31b167976a97e271ea06e90873d6057d649a08b59329313cd3cd40d6dccde24",
-  "erased_header_sha256": "d8d02d5bdf88417defa9ed96d0fd281320aebba160e0aacc228df83ec74010e4",
+  "restored_header_sha256": "f7fe1ebc21745d9715946a0b1226504a7b59cd24d978b4c8a8ffbe0bdfd7a271",
+  "erased_header_sha256": "3b8f9d775647d7b22fd6ddc945dbd2a43b843aad7af2002f6e80424c865664d0",
   "keyboard_header_sha256": "ca03d428eb60f75308909567f7f5286b7e5ca52a1fce787e93aae762b7876eb6",
   "arrays": [
     {

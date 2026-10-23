@@ -42,6 +42,7 @@ extern size_t audio_serviced_fread(void *,size_t,size_t,FILE *);
 #include "../generated/grant_audio.h"
 #include "native_startup.h"
 #include "native_credits.h"
+#include "../generated/ending_text.h"
 #include "music_player.h"
 extern bool music_player_update_slice(void);
 extern bool music_player_slice_active(void);
@@ -58,9 +59,56 @@ static inline void picture_dma_copy(const void *source,void *dest,unsigned bytes
 static uint16_t top[256*192] __attribute__((aligned(4)));
 static uint16_t bottom[256*192] __attribute__((aligned(4)));
 static uint16_t *top_vram, *bottom_vram;
+/* Native combat already supplies colour indices. DS affine hardware exactly
+ * reproduces floor(x*224/256), floor(y*128/192) on this192-row viewport:
+ * floor(y*171/256)==floor(y*2/3) for every y in0..191. */
+static bool bottom_combat_indexed,bottom_combat_rows_partial;
+static bool bottom_combat_rows[128];
+static uint16_t bottom_combat_palette[64];
+static void lower_bitmap_mode(bool indexed){
+    if(((REG_BG3CNT_SUB&BIT(2))!=0)!=!indexed){
+        int bg=bgInitSub(3,indexed?BgType_Bmp8:BgType_Bmp16,
+            indexed?BgSize_B8_256x256:BgSize_B16_256x256,0,0);
+        bgSetPriority(bg,0);bgWrapOff(bg);
+        bgSetScale(bg,indexed?224:256,indexed?171:256);
+        bgSetScrollf(bg,indexed?16*256:0,0);bgUpdate();
+    }
+    if(indexed)for(unsigned i=0;i<64;i++)BG_PALETTE_SUB[128+i]=bottom_combat_palette[i]&32767;
+}
+static void lower_combat_transfer(bool flush){
+    const uint8_t *pixels=(const uint8_t*)bottom;
+    if(!flush)lower_bitmap_mode(true);
+    for(unsigned y=0;y<128;){
+        if(bottom_combat_rows_partial && !bottom_combat_rows[y]){y++;continue;}
+        unsigned first=y++;
+        while(y<128 && (!bottom_combat_rows_partial || bottom_combat_rows[y]))y++;
+        unsigned at=first*256,bytes=(y-first)*256;
+        if(flush)DC_FlushRange(pixels+at,bytes);
+        else picture_dma_copy(pixels+at,(uint8_t*)bottom_vram+at,bytes);
+    }
+}
 /* True only when top contains original colour numbers, not RGB pixels. */
 static bool top_room_indexed;
 static uint16_t top_room_palette[64];
+static bool top_room_palette_pending;
+static bool top_room_rows_partial;
+static bool top_room_rows[192];
+/* A row lease is valid only for this retained destination and publication.
+ * New scenes, dimensions, non-room draws and external owners take full DMA. */
+static void top_room_transfer(bool flush){
+    const uint8_t *pixels=(const uint8_t*)top;
+    if(!top_room_rows_partial){
+        if(flush)DC_FlushRange(pixels,256*192);
+        else picture_dma_copy(pixels,top_vram,256*192);
+        return;
+    }
+    for(unsigned y=0;y<192;){
+        if(!top_room_rows[y]){y++;continue;}
+        unsigned first=y;while(y<192 && top_room_rows[y])y++;
+        if(flush)DC_FlushRange(pixels+first*256,(y-first)*256);
+        else picture_dma_copy(pixels+first*256,(uint8_t*)top_vram+first*256,(y-first)*256);
+    }
+}
 static unsigned top_room_fade=256;
 static void top_room_expand(void){
     if(!top_room_indexed)return;
@@ -70,6 +118,7 @@ static void top_room_expand(void){
     top_room_indexed=false;reception_background_invalidate_picture();
 }
 static void upper_bitmap_mode(bool indexed){
+    top_room_palette_pending=false;
     if(((REG_BG3CNT&BIT(2))!=0)!=!indexed){
         int bg=bgInitHidden(3,indexed?BgType_Bmp8:BgType_Bmp16,
             indexed?BgSize_B8_256x256:BgSize_B16_256x256,0,0);
@@ -486,7 +535,6 @@ static void system_action(int choice){
     if(choice==0)open_slots(true,SYSTEM);
     else if(choice==1)open_slots(false,SYSTEM);
     else if(choice==2){settings_selected=0;settings_general=false;mode=SETTINGS_UI;}
-    else if(choice==3)show_audio_diagnostics();
     else resume_game();
 }
 extern void audio_trace_sample(unsigned,unsigned,unsigned);
@@ -494,12 +542,11 @@ extern void audio_trace_write(void);
 extern volatile int audio_trace_write_result;
 static uint16_t diagnostic_text[256];
 static char diagnostic_message[256];
-static const uint16_t diagnostic_label[]={39,37,41,36,26,0,25,30,27,25,33,0,42,16,20,65535};
 static void show_audio_diagnostics(void){
     system_perf_summary(diagnostic_message,sizeof(diagnostic_message));
     audio_trace_write();
     size_t used=strlen(diagnostic_message);
-    if(!audio_trace_write_result)snprintf(diagnostic_message+used,sizeof(diagnostic_message)-used,"LOG SAVED V095\nSEND THIS SCREEN");
+    if(!audio_trace_write_result)snprintf(diagnostic_message+used,sizeof(diagnostic_message)-used,"LOG SAVED V100\nSEND THIS SCREEN");
     else snprintf(diagnostic_message+used,sizeof(diagnostic_message)-used,"LOG FAIL %d\nERRNO %u",audio_trace_write_result,system_perf_write_errno);
     unsigned i=0;
     for(;i+1<sizeof(diagnostic_text)/sizeof(*diagnostic_text) && diagnostic_message[i];i++){
@@ -1077,9 +1124,11 @@ static bool story_room_visible(void){
         (scene==HQ_SCENE(0x1900) && (reception_background_presenting(0x1900) || reception_background_presenting(0x1901))) ||
         (scene>4 && scene<0x8000 && reception_background_presenting(scene&0x3fff)));
 }
-static bool combat_repaint_top=true,combat_repaint_bottom=true,combat_draw_partial;
+#include "combat_indicator.h"
+static bool combat_repaint_top=true,combat_repaint_bottom=true,combat_draw_partial,combat_indicator_only;
 static CombatDamageRow combat_rows[192];
 static void combat_transfer_rows(bool flush){
+    if(bottom_combat_indexed){lower_combat_transfer(flush);return;}
     /* Group consecutive changed rows into one cache/DMA operation. A
      * stationary training fixture need not compete with sound for the bus. */
     if(story_practice_active){
@@ -1107,19 +1156,23 @@ static void combat_present_vblank(void){
     if(REG_VCOUNT<192)combat_present_late++;
     unsigned transfer_begin=REG_VCOUNT;
     bool full_more=false;
-    if(audio_present_slide)slide_transfer(audio_present_first,audio_present_last,false);
+    if(audio_present_slide){lower_bitmap_mode(false);slide_transfer(audio_present_first,audio_present_last,false);}
     else if(audio_present_full){
+        if(top_room_indexed && top_room_palette_pending)upper_bitmap_mode(true);
         /* At most the existing one-page DMA budget in one VBlank. */
         bool together=audio_present_upper_bytes+audio_present_lower_bytes<=sizeof(top);
         if(audio_present_upper_bytes){
             upper_bitmap_mode(top_room_indexed);fit_upper_picture();
-            picture_dma_copy(audio_present_pixels,top_vram,audio_present_upper_bytes);
+            if(top_room_indexed && audio_present_pixels==top)top_room_transfer(false);
+            else picture_dma_copy(audio_present_pixels,top_vram,audio_present_upper_bytes);
             audio_present_upper_bytes=0;
             if(!together)goto picture_transfer_done;
         }
         if(audio_present_lower){
             unsigned offset=audio_present_lower_first*256;
-            picture_dma_copy(bottom+offset,bottom_vram+offset,audio_present_lower_bytes);audio_present_lower=0;
+            if(bottom_combat_indexed)lower_combat_transfer(false);
+            else {lower_bitmap_mode(false);picture_dma_copy(bottom+offset,bottom_vram+offset,audio_present_lower_bytes);}
+            audio_present_lower=0;
         }
 picture_transfer_done:
         full_more=audio_present_upper_bytes || audio_present_lower;
@@ -1158,9 +1211,14 @@ static bool draw_room_top(bool *copied){
     bool indexed=!counter_entry_fade;
     if(indexed!=top_room_indexed)reception_background_invalidate_picture();
     top_room_indexed=indexed;
+    uint16_t prior_palette[64];
+    if(indexed)memcpy(prior_palette,top_room_palette,sizeof(prior_palette));
     bool good=indexed?reception_background_draw_indices((uint8_t*)top,top_room_palette,copied):
         reception_background_draw_cached(top,copied);
     if(!good)top_room_indexed=false;
+    else if(indexed && memcmp(prior_palette,top_room_palette,sizeof(prior_palette)))top_room_palette_pending=true;
+    const bool *rows=good && indexed && copied && *copied?resource_background_last_changed_rows():NULL;
+    if(rows){memcpy(top_room_rows,rows,sizeof(top_room_rows));top_room_rows_partial=true;}
     return good;
 }
 static bool draw_gameover_top(void){
@@ -1173,19 +1231,24 @@ static bool draw_gameover_top(void){
  * the complete touch shooting field. Stages 0/11 are scored practice; stage14
  * is the final shoot/no-shoot decision, with no player damage controller. */
 static void combat_status_draw(void){
-    theme(top);rect(top,5,24+(frame/8)%12,2,2,C(12,7,2));
+    if(combat_indicator_only){combat_indicator_draw(top,(frame/8)%12,false);return;}
+    theme(top);combat_indicator_draw(top,(frame/8)%12,true);
     battle_feedback_draw(top,combat_faces,combat_state.damage);
     if(story_native_battle_stage==0 || story_native_battle_stage==11 || story_native_battle_stage==14)return;
     unsigned life=combat_state.damage<6?6-combat_state.damage:0;
     /* Draw after the crack overlay so every remaining/empty cell is legible. */
-    panel(top,24,144,208,24);
-    text(top,26,150,48,UI_COMBAT_LIFE,C(31,31,31));
+    /* Face (96,64,64,64), label and 140px meter share the screen centre. */
+    panel(top,50,132,156,40);
+    text(top,104,136,48,UI_COMBAT_LIFE,C(31,31,31));
     for(unsigned i=0;i<6;i++){
-        rect(top,78+24*i,151,20,10,i<life?C(5,12,24):C(7,4,4));
-        if(i<life)rect(top,78+24*i,151,20,2,C(12,23,31));
+        rect(top,58+24*i,156,20,10,i<life?C(5,12,24):C(7,4,4));
+        if(i<life)rect(top,58+24*i,156,20,2,C(12,23,31));
     }
 }
 static void draw(void) {
+    bool indexed=mode==STORY_COMBAT_UI && story_practice_active && !settings_tv_filter && !settings_scanlines;
+    if(indexed!=bottom_combat_indexed)reception_background_invalidate_picture();
+    bottom_combat_indexed=indexed;
     top_room_fade=256;
     /* General UI/render transitions may reuse top for any artwork. Only
      * the room-only path below owns a retained, unmodified native picture. */
@@ -1209,9 +1272,19 @@ static void draw(void) {
     if(mode==STORY_COMBAT_UI && story_practice_active){
         if(combat_repaint_top)combat_status_draw();
         if(combat_repaint_bottom){
-            if(!combat_draw_partial)theme(bottom);
             bool changed=false;
-            if(!reception_background_practice_draw_filtered(bottom,(uint8_t*)hq_pixels,settings_tv_filter,!combat_draw_partial,&changed)){story_error=1;return;}
+            if(bottom_combat_indexed){
+                uint16_t prior[64];memcpy(prior,bottom_combat_palette,sizeof(prior));
+                if(!reception_background_practice_indices((uint8_t*)bottom,bottom_combat_palette,&changed)){story_error=1;return;}
+                const bool *rows=changed && combat_draw_partial?resource_background_last_changed_rows():NULL;
+                bottom_combat_rows_partial=combat_draw_partial && (!changed || rows);
+                if(rows)memcpy(bottom_combat_rows,rows,sizeof(bottom_combat_rows));
+                else memset(bottom_combat_rows,changed,sizeof(bottom_combat_rows));
+                changed=changed || !combat_draw_partial || memcmp(prior,bottom_combat_palette,sizeof(prior));
+            }else{
+                if(!combat_draw_partial)theme(bottom);
+                if(!reception_background_practice_draw_filtered(bottom,(uint8_t*)hq_pixels,settings_tv_filter,!combat_draw_partial,&changed)){story_error=1;return;}
+            }
             combat_repaint_bottom=changed;
         }
         return;
@@ -1300,7 +1373,13 @@ static void draw(void) {
             if(i==(unsigned)title_selected)rect(bottom,10,y+5,2,20,C(8,24,27));
         }
     }else if(mode==CREDITS_UI){
-        if(opening_caption>=0){
+        if(opening_caption<=-10){
+            unsigned mask=(unsigned)(-10-opening_caption);
+            for(unsigned i=0;i<5;i++)if(mask&(1u<<i))text(bottom,16,48+20*i,216,ending_quote_lines[i],C(31,31,31));
+        }else if(opening_caption==-3){
+            text(bottom,(256-ending_credit_widths[0])/2,80,ending_credit_widths[0],ending_line_5,C(31,31,31));
+            text(bottom,(256-ending_credit_widths[1])/2,104,ending_credit_widths[1],ending_line_6,C(31,31,31));
+        }else if(opening_caption>=0){
             panel(bottom,8,82,240,84);
             text(bottom,16,88,216,story_page_read(STORY_CAPTION_BASE_ACT3_CD_CAPTIONS+opening_caption),C(31,31,31));
         }
@@ -1311,8 +1390,8 @@ static void draw(void) {
     }else if(mode==SYSTEM){
         text(bottom,8,5,216,UI_SYS_TITLE_SYSTEM,C(8,24,27));
         text(bottom,164,5,84,UI_OFFICE_BACK,C(8,24,27));
-        const uint16_t *labels[4]={UI_SYS_SAVE,UI_SYS_LOAD,UI_OPTIONS_SETTINGS,diagnostic_label};
-        for(unsigned i=0;i<4;i++){button(30+32*i,labels[i]);if(i==system_selected)rect(bottom,10,35+32*i,2,14,C(8,24,27));}
+        const uint16_t *labels[3]={UI_SYS_SAVE,UI_SYS_LOAD,UI_OPTIONS_SETTINGS};
+        for(unsigned i=0;i<3;i++){button(30+32*i,labels[i]);if(i==system_selected)rect(bottom,10,35+32*i,2,14,C(8,24,27));}
         if(resume_mode==OPENING)text(bottom,16,160,216,UI_TRAVEL_RESTART,C(8,24,27));
     }else if(mode==SETTINGS_UI){
         text(bottom,8,5,144,settings_general?UI_AUDIO_GENERAL_TITLE:UI_AUDIO_TITLE,C(8,24,27));text(bottom,164,5,84,UI_OFFICE_BACK,C(8,24,27));
@@ -1362,7 +1441,7 @@ static void draw(void) {
         if(story_error){
             extern volatile unsigned shared_played_fault,stream_recovery_fault;
             char diagnostic[32];
-            snprintf(diagnostic,sizeof(diagnostic),"V095 A%02X S%X R%X",music_error,shared_played_fault,stream_recovery_fault);
+            snprintf(diagnostic,sizeof(diagnostic),"V100 A%02X S%X R%X",music_error,shared_played_fault,stream_recovery_fault);
             keyboard_text(16,64,diagnostic);
             snprintf(diagnostic,sizeof(diagnostic),"PC%04X OP%02X",story_event_pc,story_event_op);
             keyboard_text(16,82,diagnostic);
@@ -1424,7 +1503,7 @@ static void draw(void) {
             unsigned played;
             if(music_player_story_cd_sample(&played))for(unsigned i=0;i<RECONSTRUCT_CD_CAPTIONS;i++){
                 if(played>=reconstruct_cd_start[i] && played<reconstruct_cd_end[i]){
-                    panel(bottom,8,82,240,84);text(bottom,16,88,216,story_page_read(STORY_CAPTION_BASE_RECONSTRUCT_CD_CAPTIONS+(i)),C(31,31,31));break;
+                    panel(bottom,8,82,240,84);text(bottom,16,88,216,story_page_read(reconstruct_cd_page_ids[i]),C(31,31,31));break;
                 }
             }
         }
@@ -1715,11 +1794,14 @@ int main(void) {
         else if(mode==CREDITS_UI && !start_screen_fade){
             native_credits_input((down&(KEY_A|KEY_START)) || ((down&KEY_TOUCH) && p.py>=166));
             int result=opening_update(top);
-            opening_caption=native_credits_waiting()?-2:-1;
+            opening_caption=native_credits_waiting()?-3:-1;
             unsigned played=native_credits_position(opening_sample),track=native_credits_track();
             for(unsigned i=0;i<ACT3_CD_CAPTIONS;i++)if(track==act3_cd_track[i] && played>=act3_cd_start[i] && played<act3_cd_end[i]){
                 opening_caption=(int)i;break;
             }
+            unsigned quote=native_credits_quote_lines();
+            if(quote)opening_caption=-10-(int)quote;
+            else if(native_credits_waiting())opening_caption=-3;
             if(result<0){opening_end();story_dispatch(STORY_ERROR);}
             else if(result>0){chapter_clear_pending=!chapter_progress_clear();begin_screen_transition(1,CREDITS_UI);}
         }
@@ -1816,7 +1898,7 @@ int main(void) {
                 }
             }
             else if(mode==NOTICE && (down&KEY_A))mode=notice_return;
-            else if(mode==SYSTEM){if(down&KEY_DOWN)system_selected=(system_selected+1)%4;if(down&KEY_UP)system_selected=(system_selected+3)%4;if(down&KEY_A)system_action(system_selected);}
+            else if(mode==SYSTEM){if(down&KEY_DOWN)system_selected=(system_selected+1)%3;if(down&KEY_UP)system_selected=(system_selected+2)%3;if(down&KEY_A)system_action(system_selected);}
             else if(mode==SETTINGS_UI){if(down&KEY_DOWN)settings_selected=(settings_selected+1)%5;if(down&KEY_UP)settings_selected=(settings_selected+4)%5;if(down&KEY_A)settings_action(settings_selected);}
             else if(mode==SLOT_SAVE_UI || mode==SLOT_LOAD_UI){if(down&KEY_DOWN)slot_selected=(slot_selected+1)%SAVE_SLOT_COUNT;if(down&KEY_UP)slot_selected=(slot_selected+SAVE_SLOT_COUNT-1)%SAVE_SLOT_COUNT;if(down&KEY_A)slot_action(slot_selected);}
             else if(mode==CONFIRM){if(down&(KEY_DOWN|KEY_UP))system_selected=!system_selected;if(down&KEY_A)confirm_choice(!system_selected);}
@@ -1848,7 +1930,7 @@ int main(void) {
             }
             else if(mode==RECEPTION_DIALOG){if(p.py>=166)mode=RECEPTION_ROOT;}
             else if(mode==RECEPTION_ROOT){if(p.px>=8 && p.px<248 && p.py>=30 && p.py<56){office_line=1;mode=RECEPTION_DIALOG;}}
-            else if(mode==SYSTEM){if(p.py<24 && p.px>=164)resume_game();else if(p.px>=8 && p.px<248 && p.py>=30 && p.py<150 && (p.py-30)%32<24)system_action((p.py-30)/32);}
+            else if(mode==SYSTEM){if(p.py<24 && p.px>=164)resume_game();else if(p.px>=8 && p.px<248 && p.py>=30 && p.py<118 && (p.py-30)%32<24)system_action((p.py-30)/32);}
             else if(mode==SETTINGS_UI){if(p.py<24 && p.px>=164)settings_back();else if(p.px>=8 && p.px<248 && p.py>=30 && p.py<182 && (p.py-30)%32<24)settings_action((p.py-30)/32);}
             else if(mode==SLOT_SAVE_UI || mode==SLOT_LOAD_UI){if(p.py<24 && p.px>=164)mode=slot_back;else if(p.px>=8 && p.px<248 && p.py>=28 && p.py<181 && (p.py-28)%31<29)slot_action((p.py-28)/31);}
             else if(mode==NOTICE){if(p.py>=166)mode=notice_return;}
@@ -1968,6 +2050,7 @@ int main(void) {
         combat_repaint_top=!combat_partial || combat_picture[14]!=previous_combat[14] || combat_picture[11]!=previous_combat[11];
         combat_repaint_bottom=!combat_partial || memcmp(combat_picture,previous_combat,14*sizeof(uint32_t));
         combat_draw_partial=combat_partial;
+        combat_indicator_only=combat_partial && combat_picture[11]==previous_combat[11];
         if(combat_partial){
             if(story_practice_active)for(unsigned y=0;y<192;y++){
                 combat_rows[y].left=0;combat_rows[y].right=256;
@@ -1987,6 +2070,7 @@ int main(void) {
             combat_top_first=a<b?a:b;combat_top_last=(a>b?a:b)+2;
             if(combat_picture[11]!=previous_combat[11]){combat_top_first=0;combat_top_last=192;combat_top_left=0;combat_top_width=256;}
         }
+        top_room_rows_partial=false;
         if(dirty) {
             if(flashlight_partial){
                 bool copied=false;
@@ -2034,14 +2118,18 @@ int main(void) {
                 upper_bytes=256*reception_background_picture_rows()*2;
             if(top_room_indexed && upper_bytes)upper_bytes=256*192;
             if(slide_partial)slide_transfer(slide_first,slide_last,true);
-            else if(upper_bytes && (opening_palette_display() || top_room_indexed))DC_FlushRange(top,256*192);
+            else if(upper_bytes && top_room_indexed)top_room_transfer(true);
+            else if(upper_bytes && opening_palette_display())DC_FlushRange(top,256*192);
             else if(upper_bytes && !opening_native_display()){
                 if(settings_tv_filter && upper_game_picture()){video_filters_copy(top,battle_pixels,256*192);display=battle_pixels;}
                 if(counter_entry_fade){fade_counter_picture(display,battle_pixels);display=battle_pixels;}
                 DC_FlushRange(display,upper_bytes);
             }
             if(combat_partial){if(combat_repaint_bottom)combat_transfer_rows(true);}
-            else if(!upper_only && !slide_partial)DC_FlushRange(bottom+lower_first*256,lower_bytes);
+            else if(!upper_only && !slide_partial){
+                if(bottom_combat_indexed){lower_combat_transfer(true);lower_bytes=256*128;}
+                else DC_FlushRange(bottom+lower_first*256,lower_bytes);
+            }
             previous_slide_offset=slide_offset;
             memcpy(previous_visual,visual,sizeof(visual));
             memcpy(previous_combat,combat_picture,sizeof(combat_picture));
@@ -2058,7 +2146,7 @@ int main(void) {
 #endif
         /* A crossed VBlank already paced an unchanged picture. */
         system_perf_leave(perf_draw);
-        bool upload=dirty && ((upper_bytes && !opening_native_display()) || !upper_only);
+        bool upload=dirty && ((upper_bytes && !opening_native_display()) || !upper_only || (top_room_indexed && top_room_palette_pending));
         bool native_lower=opening_native_display();
         bool audio_full=upload && music_player_slice_active() &&
             (native_lower || (!opening_native_display() && !opening_palette_display()));
@@ -2097,8 +2185,10 @@ int main(void) {
 #ifdef SNATCHER_OPENING_PROFILE
         uint32_t profile_wait=profile_opening?cpuGetTiming():0;
 #endif
-        if(dirty && !combat_deferred && slide_partial){upper_bitmap_mode(false);fit_upper_picture();slide_transfer(slide_first,slide_last,false);}
-        else if(dirty && !combat_deferred){if(upper_bytes && !opening_native_display()){
+        if(dirty && !combat_deferred && slide_partial){upper_bitmap_mode(false);lower_bitmap_mode(false);fit_upper_picture();slide_transfer(slide_first,slide_last,false);}
+        else if(dirty && !combat_deferred){
+            if(top_room_indexed && top_room_palette_pending)upper_bitmap_mode(true);
+            if(upper_bytes && !opening_native_display()){
                 if(!opening_palette_display())upper_bitmap_mode(top_room_indexed);
                 fit_upper_picture();
                 if(opening_palette_display())opening_present_palette((const uint8_t*)top);
@@ -2109,10 +2199,14 @@ int main(void) {
                 if(counter_entry_fade==1)video_filters_vblank(true,false);
                 if(combat_partial){
                     for(unsigned y=combat_top_first;y<combat_top_last;y++)picture_dma_copy(display+y*256+combat_top_left,top_vram+y*256+combat_top_left,combat_top_width*2);
-                }else picture_dma_copy(display,top_vram,upper_bytes);
+                }else if(top_room_indexed && display==top)top_room_transfer(false);
+                else picture_dma_copy(display,top_vram,upper_bytes);
                 }
             }if(combat_partial){if(combat_repaint_bottom)combat_transfer_rows(false);}
-            else if(!upper_only)picture_dma_copy(bottom+lower_first*256,bottom_vram+lower_first*256,lower_bytes);}
+            else if(!upper_only){
+                if(bottom_combat_indexed)lower_combat_transfer(false);
+                else {lower_bitmap_mode(false);picture_dma_copy(bottom+lower_first*256,bottom_vram+lower_first*256,lower_bytes);}
+            }}
         if(media_present_now)leaveCriticalSection(media_present_lock);
 #ifdef SNATCHER_OPENING_PROFILE
         if(profile_opening && mode==OPENING && opening_palette_display()){

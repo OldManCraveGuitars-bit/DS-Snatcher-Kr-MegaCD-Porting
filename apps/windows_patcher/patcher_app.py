@@ -1,4 +1,4 @@
-"""Offline Windows GUI for the v0.95 NitroFS compatibility patcher."""
+"""Offline Windows GUI for the v1.0 NitroFS compatibility patcher."""
 from pathlib import Path
 from contextlib import redirect_stdout, redirect_stderr
 from datetime import datetime
@@ -18,9 +18,9 @@ import time
 import traceback
 
 sys.dont_write_bytecode = True
-APP_VERSION = '0.95 / 한국어 0.95'
-MANIFEST_SHA = 'ddd3d26e7ad5cc7b69d77a3ec7fd526d5629aecb7ebe5ddd9347a17f9febcd9e'
-NDS_SHA = 'ab119635706b15e28d7848c92d2461dc89f882272e7abff25e476d83a7ada579'
+APP_VERSION = '1.0 / 최종 한글화'
+MANIFEST_SHA = '5ca2e662fd10b6f8bfec9403bccef78835239c3d1675539e8f4f90d10961a906'
+NDS_SHA = 'f2990fc21a33e713651046e3d972018a519d066be34f113bd8748d7be7f77952'
 BIOS_SHA = 'b1c2036b79467514eaaa69c76e5ba83801621e821059caa53cb921a0b21e3af4'
 
 
@@ -206,7 +206,7 @@ class PatcherApp:
         self.process = self.job = self.output = None
         self.closing = False
         self.offset = 0
-        root.title('SNATCHER DS 패처 v0.95 · 한국어 0.95')
+        root.title('SNATCHER DS 비공식 한글화·포팅 v1.0 패처')
         root.geometry('800x650')
         root.minsize(740, 620)
         root.option_add('*Font', ('맑은 고딕', 10))
@@ -221,7 +221,7 @@ class PatcherApp:
         base.columnconfigure(0, weight=1)
         base.rowconfigure(8, weight=1)
         ttk.Label(base, text='SNATCHER DS', style='Title.TLabel').grid(row=0, column=0, sticky='w')
-        ttk.Label(base, text='원본 ROM + BIOS → 한국어 NDS  |  EXE 패처 v0.95',
+        ttk.Label(base, text='원본 ROM + BIOS → 한국어 NDS  |  EXE 패처 v1.0',
                   style='Sub.TLabel').grid(row=1, column=0, sticky='w', pady=(2, 18))
         form = ttk.Frame(base)
         form.grid(row=2, column=0, sticky='ew')
@@ -235,7 +235,7 @@ class PatcherApp:
             button = ttk.Button(form, text='찾아보기…', command=lambda i=i: self.browse(i))
             button.grid(row=i, column=2, pady=7)
             self.controls.extend((entry, button))
-        ttk.Label(base, text='북미판 원본 CUE와 모든 BIN 트랙이 필요합니다. 한글 0.95은 자동 적용됩니다.\n'
+        ttk.Label(base, text='북미판 원본 CUE와 모든 BIN 트랙이 필요합니다. 최종 한글 번역이 자동 적용됩니다.\n'
                   '선택한 저장 위치에 새 결과 폴더를 만듭니다. Python 설치는 필요 없습니다.',
                   style='Sub.TLabel').grid(row=3, column=0, sticky='w', pady=(9, 16))
         actions = ttk.Frame(base)

@@ -1,4 +1,5 @@
 #include "resource_background.h"
+#include "resource_row_copy.h"
 #include <string.h>
 #include <stdlib.h>
 #if defined(__NDS__) && defined(SNATCHER_OPENING_PROFILE)
@@ -719,7 +720,7 @@ static BG_FAST void code_planes(void){
                 unsigned left=delta<0?start_x-delta:start_x,right=delta>0?end_x-delta:end_x;
                 const uint8_t *before=(previous_saved[(unsigned)old>>5]&(1u<<(old&31)))?
                     previous_codes:screen_codes[plane];
-                memcpy(screen_codes[plane]+y*256+left,before+old*256+left+delta,right-left);
+                resource_row_copy(screen_codes[plane]+y*256+left,before+old*256+left+delta,right-left);
                 for(unsigned edge=0;edge<2;edge++)for(unsigned x=edge?right:start_x;x<(edge?end_x:left);x++){
                     unsigned native=(source_x[x]-current)&(width*8-1);
                     unsigned cell=(sy/8)*width+(native>>3);
@@ -1152,7 +1153,6 @@ BG_FAST bool resource_background_draw_indexed_rgb555_cached(uint16_t output[256*
 
 
 static unsigned opaque_first,opaque_last,opaque_rows;
-static uint32_t opaque_palette;
 static uint64_t opaque_revision;
 /* Row damage describes the immediately preceding owned picture only. A
  * missed/external draw or a new destination must use full source comparison. */
@@ -1183,10 +1183,17 @@ BG_FAST bool resource_background_draw_indexed8_area_cached(uint8_t output[256*19
         opaque_first=first;opaque_last=last;opaque_rows=rows;
         opaque_relative_rows=owned;
     }
-    bool palette_changed=fresh || opaque_palette!=palette_generation;
-    if(changed || palette_changed){opaque_revision++;opaque_palette=palette_generation;}
+    /* This token owns colour numbers only. The presenter publishes the
+     * palette independently; a fade does not dirty 49152 identical indices. */
+    if(changed && (bounds || indexed_last_changed))opaque_revision++;
     if(picture && picture->destination==(const uint16_t*)output && picture->revision==opaque_revision)return true;
-    memcpy(output,opaque_index->pixels,256*192);
+    if(owned && opaque_relative_rows){
+        for(unsigned y=0;y<rows;){
+            if(!indexed_last_rows[y]){y++;continue;}
+            unsigned first_row=y;while(y<rows && indexed_last_rows[y])y++;
+            memcpy(output+first_row*256,opaque_index->pixels+first_row*256,(y-first_row)*256);
+        }
+    }else memcpy(output,opaque_index->pixels,256*192);
     if(picture){picture->destination=(const uint16_t*)output;picture->revision=opaque_revision;}
     if(copied)*copied=true;
     return true;

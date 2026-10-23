@@ -554,6 +554,15 @@ bool reception_background_practice_finish(uint16_t result[7]){
  * supporting fixtures remain connected throughout every native frame. */
 static uint16_t *practice_output;
 static bool practice_output_valid,practice_output_warm;
+bool reception_background_practice_indices(uint8_t output[256*192],uint16_t palette[64],bool *copied){
+    if(!room || !practice_prepared || !output || !palette)return false;
+    memcpy(palette,room->presentation.colors,128);
+    bool good=resource_opening_draw_practice_indices(&room->video,output,palette,&retained_picture,copied);
+    if(good)reception_draw_frame=room->video.frames;
+    /* RGB consumers (slides and optional filters) must refresh their page
+     * after an indexed owner has borrowed the compositor lease. */
+    practice_output_valid=false;return good;
+}
 static bool reception_background_practice_draw_inner(uint16_t output[256*192],uint8_t scratch[256*192],
     bool warm,bool force,bool *changed){
     bool copied=false;

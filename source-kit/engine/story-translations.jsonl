@@ -4,9 +4,9 @@
 {"record_type": "entry", "entry_id": "SP02.BIN/0003", "translation_ko": "아...흠흠... 수사관{raw:F2}시드입니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0004", "translation_ko": "수사관이라고요?!", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0005", "translation_ko": "아버님 일입니다.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP02.BIN/0006", "translation_ko": null, "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP02.BIN/0006", "translation_ko": "............", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0007", "translation_ko": "아버님은 집에 가고 싶어 하세요.{raw:F2}그대로 두면 아마{raw:F2}오래 버티지{raw:F2}못할 겁니다.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP02.BIN/0008", "translation_ko": null, "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP02.BIN/0008", "translation_ko": "............", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0009", "translation_ko": "제 말{raw:F2}듣고 있습니까?!", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0010", "translation_ko": "예..예........", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0011", "translation_ko": "지금 당신 친아버지{raw:F2}얘기를 하는 겁니다!", "status": "draft_needs_review"}
@@ -14,11 +14,11 @@
 {"record_type": "entry", "entry_id": "SP02.BIN/0013", "translation_ko": "아니요. 사실{raw:F2}병색이 짙습니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0014", "translation_ko": "...그게... 정말인가요?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0015", "translation_ko": "두 분 사이에{raw:F2}문제가 있었겠지만, 그래도{raw:F2}당신 아버지잖아요?", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP02.BIN/0016", "translation_ko": null, "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP02.BIN/0016", "translation_ko": "..............", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0017", "translation_ko": "상황을 알려 주시느라{raw:F2}수고하셨습니다,{raw:F2}수사관님.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0018", "translation_ko": "당신이 그렇게 냉대했는데도{raw:F2}아버지는 아직도 매일{raw:F2}당신 이름을 부르세요.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0019", "translation_ko": "정말요?!... 아버지가요?", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP02.BIN/0020", "translation_ko": null, "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP02.BIN/0020", "translation_ko": "...........", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0021", "translation_ko": "용서해 주세요... 아버지.{raw:F2}제발 용서해 주세요!", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0022", "translation_ko": "어디죠?! 어디 계세요?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0023", "translation_ko": "에스엔 지구 남부 이타야도에{raw:F2}계십니다. 가서{raw:F2}모셔 오세요.", "status": "draft_needs_review"}
@@ -132,7 +132,7 @@
 {"record_type": "entry", "entry_id": "SP02.BIN/0131", "translation_ko": "그 녀석, 결혼한 뒤부터는{raw:F2}도무지 밖에{raw:F2}나오질 않아.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0132", "translation_ko": "외출 중인가... 같이{raw:F2}마작이나 하려 했는데...!", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0133", "translation_ko": "길리언, 마작할{raw:F2}시간이 어디 있습니까? 지금{raw:F2}사건을 수사 중입니다.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP02.BIN/0134", "translation_ko": "아이고, 정말 죄송합니다!", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP02.BIN/0134", "translation_ko": "아이고, 참 미안하게 됐네!", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0135", "translation_ko": "그 사람은 거의{raw:F2}세븐일레븐에서 살다시피 해!", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0136", "translation_ko": "조금이라도 시간이 나면{raw:F2}늘 세븐일레븐이나{raw:F2}서점에 가 있습니다!", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0137", "translation_ko": "여보세요, 나카무라입니다... 뭐?{raw:F2}나한테 '정커 러시'를{raw:F2}사겠냐고 묻는 거야?", "status": "draft_needs_review"}
@@ -145,7 +145,7 @@
 {"record_type": "entry", "entry_id": "SP02.BIN/0144", "translation_ko": "길리언, 정신 좀{raw:F2}차리고 똑바로 행동하세요!", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0145", "translation_ko": "그런 걸 내게{raw:F2}팔려고 하다니 믿을 수가 없군!{raw:F2}당장 전화를 끊어!", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0146", "translation_ko": "여보세요, 나카무라입니다. 뭐?!{raw:F2}또 너야?! 다시는 전화하지 마!", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP02.BIN/0147", "translation_ko": null, "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP02.BIN/0147", "translation_ko": "........", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0148", "translation_ko": "리썰 인포서스를 구입해 주신{raw:F2}모든 분께 드리는 메시지입니다.{raw:F6}사랑해요!!! 이 게임은{raw:F2}저스티파이어도 지원하니{raw:F2}즐겁게 플레이하세요!", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0149", "translation_ko": "앞으로도 여러분께 감동과{raw:F2}놀라움, 기쁨과 전율을 주는{raw:F2}소프트웨어를 만들기 위해{raw:F2}계속 노력하겠습니다!", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0150", "translation_ko": "우리 집에 수상한 놈이{raw:F2}숨어든 냄새가 나, 그 녀석은{raw:F2}다리가 둘뿐인 것 같아, 예!", "status": "draft_needs_review"}
@@ -256,7 +256,7 @@
 {"record_type": "entry", "entry_id": "SP02.BIN/0255", "translation_ko": "이 지역에는 높은 건물이{raw:F2}너무 많아.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0256", "translation_ko": "전기적 간섭이 너무 심합니다.{raw:F2}여기서는{raw:F2}전화할 수 없습니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP02.BIN/0257", "translation_ko": "네오 고베에서는 전파조차{raw:F2}안전하지 않군...!", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP02.BIN/0258", "translation_ko": "전파 보안이 아직{raw:F2}확보되지 않았습니다.{raw:F2}여기서는 전화할 수 없습니다.", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP02.BIN/0258", "translation_ko": "전파 상태가 아직{raw:F2}안정되지 않았습니다.{raw:F2}여기서는 전화할 수 없습니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP03.BIN/0000", "translation_ko": "아파트 건물", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP03.BIN/0001", "translation_ko": "지역", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP03.BIN/0002", "translation_ko": "방 주변", "status": "draft_needs_review"}
@@ -309,7 +309,7 @@
 {"record_type": "entry", "entry_id": "SP03.BIN/0049", "translation_ko": "카트리나는{raw:F2}지금쯤 집에 갔겠지.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP03.BIN/0050", "translation_ko": "분명 그랬겠죠.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP03.BIN/0051", "translation_ko": "그럼 내 아파트엔 아무도 없겠군.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP03.BIN/0052", "translation_ko": "그랬다면{raw:F2}꽤 놀랐을 겁니다.", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP03.BIN/0052", "translation_ko": "누군가 있다면{raw:F2}꽤 놀라울 겁니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP03.BIN/0053", "translation_ko": "...너 정말 냉정하구나.{raw:F2}알고 있어?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP03.BIN/0054", "translation_ko": "가엾고 외로운 길리언...", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP03.BIN/0055", "translation_ko": "제이미만 여기에 있었다면...", "status": "draft_needs_review"}
@@ -3193,7 +3193,7 @@
 {"record_type": "entry", "entry_id": "SP09.BIN/0369", "translation_ko": "지금은 아무도{raw:F2}절 괴롭히지 않았으면 해요...", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP09.BIN/0370", "translation_ko": "들소요? 우리 집에서는 먹어 본 적 없어요.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP09.BIN/0371", "translation_ko": "웩! 들소요? 그런 건{raw:F2}절대 안 먹어요...", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP09.BIN/0372", "translation_ko": "맞아요, 하지만 거의{raw:F2}멸종한 거 아니에요?", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP09.BIN/0372", "translation_ko": "이런! 가여운 들소!{raw:F2}거의 멸종하지 않았나요?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP09.BIN/0373", "translation_ko": "아버지가 그런 곳에{raw:F2}갔다는 말은{raw:F2}처음 들어 봐요.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP09.BIN/0374", "translation_ko": "분명 그럴 만한{raw:F2}이유가 있었겠죠.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP09.BIN/0375", "translation_ko": "들소 같은 고기를{raw:F2}내놓는 곳이{raw:F2}있다니 믿기지 않아요.", "status": "draft_needs_review"}
@@ -4197,7 +4197,7 @@
 {"record_type": "entry", "entry_id": "SP12.BIN/0088", "translation_ko": "내 가면과는{raw:F2}차원이 다르군, 그렇지?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP12.BIN/0089", "translation_ko": "전문가 솜씨군요.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP12.BIN/0090", "translation_ko": "이사벨라 벨벳의{raw:F2}200도 홀로그램 포스터군요.{raw:F2}저도 하나 갖고 싶습니다.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP12.BIN/0091", "translation_ko": "어머! 포스터 위쪽에서{raw:F2}내려다보면{raw:F2}전부 보이겠어요!", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP12.BIN/0091", "translation_ko": "이런! 포스터 위쪽에서{raw:F2}내려다보면{raw:F2}전부 보이겠어요!", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP12.BIN/0092", "translation_ko": "이런... 정말 보이잖아!{raw:F2}저 봉우리 크기 좀 봐!", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP12.BIN/0093", "translation_ko": "안내문에는 \"가면 무도회{raw:F2}시간에는 손님들께서{raw:F2}가면이나 분장으로{raw:F2}신분을 감춰 주시기{raw:F2}바랍니다. 협조에 감사드립니다\"라고 적혀 있습니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP12.BIN/0094", "translation_ko": "\"궁금한 점은{raw:F2}직원에게 문의하십시오...\"", "status": "draft_needs_review"}
@@ -6203,7 +6203,7 @@
 {"record_type": "entry", "entry_id": "SP18.BIN/0425", "translation_ko": "그래. 안에는 스내처에{raw:F2}관한 중요한{raw:F2}정보도 있었어.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP18.BIN/0426", "translation_ko": "그런 디스크를 읽을 수 있는{raw:F2}컴퓨터가 아직{raw:F2}남아 있었다니 믿기지 않아.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP18.BIN/0427", "translation_ko": "플로피 디스크? 그 사람은{raw:F2}정말 골동품에 관심이 많았나 보네.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP18.BIN/0428", "translation_ko": "플로피 디스크? 이런 건{raw:F2}정말 오랜만에 보는군.", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP18.BIN/0428", "translation_ko": "플로피 디스크? 이런 건{raw:F2}정말 오랜만에 보네.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP18.BIN/0429", "translation_ko": "그 자외선 차단제는 뭐야?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP18.BIN/0430", "translation_ko": "스내처는{raw:F2}피부암을 막으려고 쓰는 것 같아.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP18.BIN/0431", "translation_ko": "뭐라고? 스내처가{raw:F2}자외선 차단제를 쓴다고? 그런 얘기는{raw:F2}처음 들어.", "status": "draft_needs_review"}
@@ -6333,7 +6333,7 @@
 {"record_type": "entry", "entry_id": "SP19.BIN/0083", "translation_ko": "길리언, 당신은{raw:F2}정커라는 걸 명심하세요.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP19.BIN/0084", "translation_ko": "민간인을 맞히지 않으면서{raw:F2}명중률을 높여야 합니다.{raw:F2}그러지 않으면 당신은{raw:F2}흔한{raw:F2}살인자와 다를 게 없어요.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP19.BIN/0085", "translation_ko": "아직 연습이 많이 필요합니다.{raw:F2}명중률도 낮지만,{raw:F2}더 큰 문제는 민간인을{raw:F2}너무 많이 맞힌다는 겁니다.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP19.BIN/0086", "translation_ko": "탄을 너무 많이 낭비합니다.{raw:F2}이대로라면 당신도 나도{raw:F2}오래 살아남지 못합니다.", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP19.BIN/0086", "translation_ko": "탄을 너무 많이 낭비합니다.{raw:F2}이대로라면 당신도 저도{raw:F2}오래 살아남지 못합니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP19.BIN/0087", "translation_ko": "빗나간 탄은 없지만{raw:F2}아직 연습이 더 필요합니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP19.BIN/0088", "translation_ko": "헛방은 없지만,{raw:F2}민간인을{raw:F2}맞히고 있습니다. 실전이라면{raw:F2}직장을 잃을 수 있습니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP19.BIN/0089", "translation_ko": "흠. 표적을{raw:F2}아주 잘 골랐군요.{raw:F2}민간인은 맞히지 않았습니다.", "status": "draft_needs_review"}
@@ -8254,7 +8254,7 @@
 {"record_type": "entry", "entry_id": "SP26.BIN/0250", "translation_ko": "어쩌면 그 꽃병은 일종의{raw:F2}스위치일까?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP26.BIN/0251", "translation_ko": "어딘가에{raw:F2}스위치가 있을 거야.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP26.BIN/0252", "translation_ko": "...모니터입니다.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP26.BIN/0253", "translation_ko": "개인용{raw:F2}컴퓨터용처럼 보여.", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP26.BIN/0253", "translation_ko": "개인용 컴퓨터에{raw:F2}쓰는 모니터 같아.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP26.BIN/0254", "translation_ko": "화이트보드입니다.{raw:F2}아무것도 적혀 있지 않습니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP26.BIN/0255", "translation_ko": "메모나 강의 등에{raw:F2}쓰는{raw:F2}화이트보드입니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP26.BIN/0256", "translation_ko": "아주 오래된 사진입니다.{raw:F2}잉크와{raw:F2}종이 상태로 보아{raw:F2}적어도{raw:F2}50년은 된 듯합니다.", "status": "draft_needs_review"}
@@ -8264,7 +8264,7 @@
 {"record_type": "entry", "entry_id": "SP26.BIN/0260", "translation_ko": "성 바실리 대성당?{raw:F2}들어 본 적이 있나?{raw:F2}기억이 안 나는군.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP26.BIN/0261", "translation_ko": "그러고 보니 프레디 닐슨의{raw:F2}아파트 벽에{raw:F2}모스크바 지도가{raw:F2}있었지요?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP26.BIN/0262", "translation_ko": "모스크바라? 스내처와{raw:F2}모스크바는{raw:F2}무슨 관계지?", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP26.BIN/0263", "translation_ko": "성냥이 있던 곳도 그곳이었군요.", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP26.BIN/0263", "translation_ko": "성냥이 있던 곳입니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP26.BIN/0264", "translation_ko": "책상 위에{raw:F2}성냥갑이 있습니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP26.BIN/0265", "translation_ko": "세상에! 이건 아우터 헤븐{raw:F2}성냥이잖습니까!", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP26.BIN/0266", "translation_ko": "아우터 헤븐은 우리{raw:F2}스내처 친구들에게 꽤{raw:F2}인기 있는 곳인가 봅니다.{raw:F2}아마 그곳에서 희생자를{raw:F2}고르는 것 같습니다.", "status": "draft_needs_review"}
@@ -9277,7 +9277,7 @@
 {"record_type": "entry", "entry_id": "SP30.BIN/0238", "translation_ko": "모의{raw:F2}복원을 해 보자, 길리언.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP30.BIN/0239", "translation_ko": "빌어먹을 스내처들.{raw:F2}신원이{raw:F2}새지 않게 철저했어.{raw:F2}이빨만 있었어도{raw:F2}신원을 확인할 수도 있었을 텐데.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP30.BIN/0240", "translation_ko": "여기 있는 이빨은?", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP30.BIN/0241", "translation_ko": "신원을 알아볼 수 없게{raw:F2}치열을 일부러{raw:F2}흐트러 놓았습니다.", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP30.BIN/0241", "translation_ko": "신원을 알아볼 수 없게{raw:F2}치열을 일부러{raw:F2}흐트러트려 놓았습니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP30.BIN/0242", "translation_ko": "그렇다면 이제는{raw:F2}신원을 확인할 수 없겠군...", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP30.BIN/0243", "translation_ko": "방법이 있습니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP30.BIN/0244", "translation_ko": "뭐? 어떻게?", "status": "draft_needs_review"}
@@ -9879,13 +9879,13 @@
 {"record_type": "entry", "entry_id": "SP35.BIN/0013", "translation_ko": "응답하지 않기", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0014", "translation_ko": "전화하지 않기", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0015", "translation_ko": "꿈", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP35.BIN/0016", "translation_ko": null, "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP35.BIN/0016", "translation_ko": "ENDED", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0017", "translation_ko": "전화 끊기", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0018", "translation_ko": "모르겠어요", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0019", "translation_ko": null, "status": "untranslated"}
-{"record_type": "entry", "entry_id": "SP35.BIN/0020", "translation_ko": null, "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP35.BIN/0021", "translation_ko": null, "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP35.BIN/0022", "translation_ko": null, "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP35.BIN/0020", "translation_ko": "IS HERE", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP35.BIN/0021", "translation_ko": "IS NOW", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP35.BIN/0022", "translation_ko": "IS OVER", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0023", "translation_ko": "이사벨라", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0024", "translation_ko": "제이미", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0025", "translation_ko": "알톤 플라자에 있는 제이미", "status": "draft_needs_review"}
@@ -10033,7 +10033,7 @@
 {"record_type": "entry", "entry_id": "SP35.BIN/0167", "translation_ko": "지금 연구실에 있습니다.{raw:F2}그쪽으로 연락해 보죠.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0168", "translation_ko": "순간 정말 속았어!{raw:F2}언제부터{raw:F2}이런 짓궂은 장난을 했대?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0169", "translation_ko": "지난번에 그녀에게{raw:F2}그 가면을 보여 줬잖습니까.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP35.BIN/0170", "translation_ko": "뭐, 아우터 헤븐에{raw:F2}들어갈 때 쓰는 거? 그래도 지난{raw:F2}농담은 별로 재미없었어.", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP35.BIN/0170", "translation_ko": "뭐, 아우터 헤븐에{raw:F2}들어갈 때 쓰는 거? 그래도 방금{raw:F2}장난은 별로 재미없었어.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0171", "translation_ko": "그 메시지는 길리언의{raw:F2}성가신 전화를 피하려는{raw:F2}그녀의 전략이 분명합니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0172", "translation_ko": "그게 무슨 뜻이야,{raw:F2}메탈?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0173", "translation_ko": "부끄러워할 것 없습니다,{raw:F2}길리언. 제이미가{raw:F2}길리언의 마음을 \"스내치\"했다는 건{raw:F2}저도 잘 압니다.", "status": "draft_needs_review"}
@@ -10168,10 +10168,10 @@
 {"record_type": "entry", "entry_id": "SP35.BIN/0302", "translation_ko": "아직 그대로야.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0303", "translation_ko": "...아.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0304", "translation_ko": "애쓰지 않을 때는{raw:F2}아주 희미한 장면들이{raw:F2}떠오르기도 해. 하지만 더{raw:F2}기억하려 하면 사라져.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP35.BIN/0305", "translation_ko": "시간이{raw:F2}해결해 주길 기다리는 수밖에 없겠군.", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP35.BIN/0305", "translation_ko": "시간이{raw:F2}해결해 주길 기다리는 수밖에 없겠네.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0306", "translation_ko": "스내처에겐{raw:F2}자외선 노출을 치료할{raw:F2}시설이 있는 병원이 필요해.{raw:F2}혹시 짐작 가는{raw:F2}곳이 있어?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0307", "translation_ko": "자외선 노출 치료 시설은{raw:F2}그리 드물지 않아.{raw:F2}하지만 이곳에는{raw:F2}섬 안 병원들의 기록이{raw:F2}보관돼 있으니,{raw:F2}한번 찾아볼게.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP35.BIN/0308", "translation_ko": "하지만 기대 마.{raw:F2}독자적으로 운영되는{raw:F2}불법 병원이라면 자료가{raw:F2}아마 전혀 없을 거야.", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP35.BIN/0308", "translation_ko": "하지만 너무 기대하지는 마.{raw:F2}독자적으로 운영되는{raw:F2}불법 병원이라면 자료가{raw:F2}아마 전혀 없을 거야.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0309", "translation_ko": "뭔가 알아내면{raw:F2}전화할게.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0310", "translation_ko": "걱정 마.{raw:F2}뭔가 알아내면 전화할게.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0311", "translation_ko": "이제 나중에 다시{raw:F2}너랑 얘기할 핑계가 생겼군.", "status": "draft_needs_review"}
@@ -10191,7 +10191,7 @@
 {"record_type": "entry", "entry_id": "SP35.BIN/0325", "translation_ko": "처음 듣는 이름이야.{raw:F2}여기에도 그 사람 자료가{raw:F2}전혀 없어. 무면허로{raw:F2}몰래 진료하는{raw:F2}의사일지도 몰라.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0326", "translation_ko": "정커 자료는 어때?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0327", "translation_ko": "그래, 조사해 봤어.{raw:F2}경력이 꽤 화려한 사람이더군.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP35.BIN/0328", "translation_ko": "그 사람은 면허 정지됐지?{raw:F2}이 도시에는 그런{raw:F2}무면허 의사가{raw:F2}많아.", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP35.BIN/0328", "translation_ko": "그 사람은 면허가 정지됐지?{raw:F2}이 도시에는 그런{raw:F2}무면허 의사가{raw:F2}많아.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0329", "translation_ko": "정커{raw:F2}기록도 확인해 봐. 그 사람에 관한{raw:F2}자료가 있을지도 몰라.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0330", "translation_ko": "우리 쪽 자료도{raw:F2}찾아볼게.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP35.BIN/0331", "translation_ko": "고마워. 큰 도움이 될 거야.", "status": "draft_needs_review"}
@@ -10290,21 +10290,21 @@
 {"record_type": "entry", "entry_id": "SP36.BIN/0020", "translation_ko": "우선{raw:F2}스내처의 약점은 뭘까요?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0021", "translation_ko": "맞습니다. 약점은{raw:F2}결함 있는 인공 피부입니다.{raw:F2}자외선에{raw:F2}오랫동안 노출되면{raw:F2}피부 기저층의{raw:F2}멜라닌 세포가 변이해{raw:F2}암세포가 됩니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0022", "translation_ko": "구체적으로 250~350{raw:F2}나노미터 영역의{raw:F2}장파 자외선이 암을{raw:F2}일으키는 원인입니다.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP36.BIN/0023", "translation_ko": "맞습니다. 그래서 활동할 수{raw:F2}있는 시간이 크게{raw:F2}제한되는 겁니다.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP36.BIN/0024", "translation_ko": "한겨울에도 밤에만 나오고,{raw:F2}그때조차{raw:F2}선크림을 바릅니다.", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP36.BIN/0023", "translation_ko": "맞아. 그래서 활동할 수{raw:F2}있는 시간이 크게{raw:F2}제한되는 거야.", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP36.BIN/0024", "translation_ko": "한겨울에도 밤에만 나오고,{raw:F2}그때조차{raw:F2}선크림을 발라.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0025", "translation_ko": "장이 바로 이 방법으로{raw:F2}스내처들이 무엇을{raw:F2}꾸미는지 알아냈어요.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0026", "translation_ko": "아이러니하네요. 결국{raw:F2}오존층의{raw:F2}파괴가 우리{raw:F2}인류에게 도움이 됐어요.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0027", "translation_ko": "맞습니다. 그들이 자외선과{raw:F2}햇빛을 피하면서{raw:F2}이동한 방법은{raw:F2}무엇이었습니까?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0028", "translation_ko": "맞습니다. 놈들은 버려진{raw:F2}옛 튜브 라이너{raw:F2}터널을 이용해{raw:F2}이동하고 있었습니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0029", "translation_ko": "그래서 눈에 띄지 않고{raw:F2}이곳저곳을{raw:F2}다닐 수 있었습니다.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP36.BIN/0030", "translation_ko": "...닐슨의 아파트...오래된{raw:F2}공장...퀸즈 병원...{raw:F2}놈들의 은신처는 모두{raw:F2}튜브 라이너로 연결돼 있었습니다.", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP36.BIN/0030", "translation_ko": "...닐슨의 아파트...오래된{raw:F2}공장...퀸즈 병원...{raw:F2}놈들의 은신처는 모두{raw:F2}튜브 라이너로 연결돼 있었어.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0031", "translation_ko": "그럼 놈들의 본거지{raw:F2}아래에도 터널이 있을까요?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0032", "translation_ko": "그럴 가능성이 높습니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0033", "translation_ko": "...다음. 지하{raw:F2}터널을 포함해 스내처가{raw:F2}나타난 곳마다 언제나{raw:F2}관찰된 현상은{raw:F2}무엇이었습니까?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0034", "translation_ko": "맞습니다. 그리고{raw:F2}재채기의 원인은 무엇이었습니까?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0035", "translation_ko": "맞습니다. 재채기는{raw:F2}알레르기 유발 물질인{raw:F2}스노우-9 때문이었습니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0036", "translation_ko": "스노우-9는 군이 개발한{raw:F2}인공 꽃가루로,{raw:F2}특정 지역에만{raw:F2}존재합니다.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP36.BIN/0037", "translation_ko": "놈들은 이를 이용해{raw:F2}무선 통신을 방해하고{raw:F2}사람들의 접근을 막았습니다.{raw:F2}아마 일부러{raw:F2}직접 생산했을 겁니다.", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP36.BIN/0037", "translation_ko": "놈들은 이를 이용해{raw:F2}무선 통신을 방해하고{raw:F2}사람들의 접근을 막았어.{raw:F2}아마 일부러{raw:F2}직접 생산했을 거야.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0038", "translation_ko": "도시에서{raw:F2}스노우-9가 남은 곳은{raw:F2}이나강 주변뿐입니다.{raw:F2}위험 물질이라 다른{raw:F2}지역에서는 모두{raw:F2}제거됐거든요.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0039", "translation_ko": "그럼 놈들의 기지는{raw:F2}이나강{raw:F2}근처에 있겠군요?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0040", "translation_ko": "타당한 결론입니다.{raw:F2}놈들은 아마{raw:F2}스노우-9의 보호를 받으며{raw:F2}이나강 근처에 있을 겁니다.", "status": "draft_needs_review"}
@@ -10318,16 +10318,16 @@
 {"record_type": "entry", "entry_id": "SP36.BIN/0048", "translation_ko": "고향이 그립다고요? 진지하게 생각해 봐요,{raw:F2}미카. 놈들은 로봇이잖아요.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0049", "translation_ko": "좀 더 자세히 분석해 보죠.{raw:F2}이 세 사진과 모두 관련된{raw:F2}도시는 어디일까요?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0050", "translation_ko": "맞습니다. 모스크바입니다.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP36.BIN/0051", "translation_ko": "모스크바가 놈들의{raw:F2}근원지일 겁니다. 그곳이{raw:F2}프로그래밍의 기반이겠죠.", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP36.BIN/0051", "translation_ko": "모스크바가 놈들의{raw:F2}근원지일 거야. 그곳이{raw:F2}프로그래밍의 기반이겠지.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0052", "translation_ko": "그럴 수도 있겠네요. 사람에게{raw:F2}소중한 고향이 있듯이{raw:F2}창조자들이 그들의{raw:F2}프로그램에도 \"고향\"을{raw:F2}넣었을 수 있어요. 매우{raw:F2}발달한 인공 지능을{raw:F2}쓰니 감정 균형을 위해{raw:F2}그런 무언가가{raw:F2}필요했을지도 몰라요.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0053", "translation_ko": "그래요... 무에서 태어난 그들에게{raw:F2}창조자들은{raw:F2}정서적 기반이 될{raw:F2}이미지를 심어 줘야 했던 거예요.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0054", "translation_ko": "그럼 모스크바는 놈들에게{raw:F2}창조주이자 고향인 셈이군요.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0055", "translation_ko": "...그리고 제이미와 제가{raw:F2}발견된 곳이기도 하죠.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP36.BIN/0056", "translation_ko": "이게 스내처의 약점이라고요?", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP36.BIN/0057", "translation_ko": "이것이 스내처들이{raw:F2}사용하던{raw:F2}이동 방법입니까?", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP36.BIN/0058", "translation_ko": "말씀하신 현상이{raw:F2}이것입니까?", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP36.BIN/0059", "translation_ko": "이것이{raw:F2}재채기의 원인입니다.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP36.BIN/0060", "translation_ko": "세 사진에{raw:F2}공통으로 등장하는 도시입니다.", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP36.BIN/0056", "translation_ko": "이게 스내처의 약점이라고?", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP36.BIN/0057", "translation_ko": "이것이 스내처들이{raw:F2}사용하던{raw:F2}이동 방법이야?", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP36.BIN/0058", "translation_ko": "네가 말한 현상이{raw:F2}이거야?", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP36.BIN/0059", "translation_ko": "이것이{raw:F2}재채기의 원인이야.", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP36.BIN/0060", "translation_ko": "세 사진에{raw:F2}공통으로 등장하는 도시야.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0061", "translation_ko": "확실합니까?{raw:F2}신중히 생각해 보십시오.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0062", "translation_ko": "길리언, 대답하기 전에{raw:F2}잘 생각해 보십시오.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP36.BIN/0063", "translation_ko": "그게 아닙니다!{raw:F2}잘 생각해 보십시오...", "status": "draft_needs_review"}
@@ -10518,10 +10518,10 @@
 {"record_type": "entry", "entry_id": "SP37.BIN/0180", "translation_ko": "이곳의 스노우-9 농도가{raw:F2}매우 높습니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP37.BIN/0181", "translation_ko": "그럼 지원군은{raw:F2}부를 수 없다는 거군?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP37.BIN/0182", "translation_ko": "유감스럽지만{raw:F2}그렇습니다.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP37.BIN/0183", "translation_ko": "하지만 제이미가 걸어온{raw:F2}비디오폰는 어떻게 된 거지?", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP37.BIN/0183", "translation_ko": "하지만 제이미가 걸어온{raw:F2}비디오폰은 어떻게 된 거지?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP37.BIN/0184", "translation_ko": "그 통화에는 분명{raw:F2}초고출력 송신기 같은 게{raw:F2}쓰였을 겁니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP37.BIN/0185", "translation_ko": "이 구역에서는{raw:F2}어떤 송신도 할 수 없습니다.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP37.BIN/0186", "translation_ko": "이 지역의 높은{raw:F2}스노우-9 농도 때문에{raw:F2}비디오폰를 쓸 수 없습니다.", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP37.BIN/0186", "translation_ko": "이 지역의 높은{raw:F2}스노우-9 농도 때문에{raw:F2}비디오폰을 쓸 수 없습니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP37.BIN/0187", "translation_ko": "이 파일에는 이전에 저장한{raw:F2}데이터가 들어 있습니다.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP37.BIN/0188", "translation_ko": "새 데이터로 {raw:FB}덮어써도{raw:F9}{raw:F2}괜찮습니까?", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP37.BIN/0189", "translation_ko": "그렇다면 이 파일에는{raw:F2}새 데이터를 저장하지 않겠습니다.", "status": "draft_needs_review"}
@@ -10557,7 +10557,7 @@
 {"record_type": "entry", "entry_id": "SP38.BIN/0020", "translation_ko": "우리 사이는 이제{raw:F2}그저 친구 이상이에요.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP38.BIN/0021", "translation_ko": "친구 이상이라고요? 흠.{raw:F2}듣기 좋은데요.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP38.BIN/0022", "translation_ko": "바보 같은 소리 마세요, 길리언.{raw:F2}가끔 생각이 정말{raw:F2}음흉하다니까요.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP38.BIN/0023", "translation_ko": "늘 집에 혼자 있으니{raw:F2}얼마나 외로운지 미카에게{raw:F2}말했더니 제이미가 항상{raw:F2}날 걱정한다고 하더군요.{raw:F2}그래서 제이미에게{raw:F2}비디오폰로 연락했어요.", "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP38.BIN/0023", "translation_ko": "늘 집에 혼자 있으니{raw:F2}얼마나 외로운지 미카에게{raw:F2}말했더니 제이미가 항상{raw:F2}날 걱정한다고 하더군요.{raw:F2}그래서 제이미에게{raw:F2}비디오폰으로 연락했어요.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP38.BIN/0024", "translation_ko": "앨리스마저 떠나고...{raw:F2}정말 외로웠어요.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP38.BIN/0025", "translation_ko": "카트리나...", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP38.BIN/0026", "translation_ko": "둘 다 정말 편하게 얘기할 수 있어요.{raw:F2}이제 진짜 언니가{raw:F2}둘이나 생긴 기분이에요!", "status": "draft_needs_review"}
@@ -10576,7 +10576,7 @@
 {"record_type": "entry", "entry_id": "SP38.BIN/0039", "translation_ko": "이 아이는 정말{raw:F2}힘든 일을 겪었어요. 하룻밤 사이에{raw:F2}거의 모든 걸 잃었죠...", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP38.BIN/0040", "translation_ko": "그렇게 귀여운 아이를{raw:F2}혼자 두고 갈 수 없었어요.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP38.BIN/0041", "translation_ko": "카트리나의 사랑스러운 얼굴을{raw:F2}구석구석 전부 기억해서{raw:F2}절대 잊지 않을 거야.", "status": "draft_needs_review"}
-{"record_type": "entry", "entry_id": "SP38.BIN/0042", "translation_ko": null, "status": "draft_needs_review"}
+{"record_type": "entry", "entry_id": "SP38.BIN/0042", "translation_ko": "..........", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP38.BIN/0043", "translation_ko": "길리언, 그만하세요.{raw:F2}당신 눈길에 옷이 벗겨지는{raw:F2}기분이에요.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP38.BIN/0044", "translation_ko": "미카는 정말 잘해 줬어.{raw:F2}고마운 일이 많아.", "status": "draft_needs_review"}
 {"record_type": "entry", "entry_id": "SP38.BIN/0045", "translation_ko": "걱정 마세요, 미카.{raw:F2}이번 일만큼은 실수하지 않을게요.", "status": "draft_needs_review"}

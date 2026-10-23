@@ -1,0 +1,254 @@
+{
+  "release": "v1.0",
+  "prerelease": false,
+  "release_kind": "stable unofficial Korean localization and Nintendo DS port",
+  "verified_at_kst": "2026-10-24T07:47:14.187882+09:00",
+  "based_on": "Mega-CD SNATCHER Korean patch final-review-r2/r61",
+  "nds_sha256": "f2990fc21a33e713651046e3d972018a519d066be34f113bd8748d7be7f77952",
+  "exe_sha256": "a8319672692dacb4c69e37c21a85d91994500da7dd5edb2d220fab3204cdfed0",
+  "actual_exe_conversion_verified": true,
+  "resource_files": 1230,
+  "conversion_seconds": 492.31,
+  "exe_checks": [
+    "Actual frozen EXE loads Tcl/Tk and constructs complete GUI without Python PATH",
+    "GUI file selectors populate ROM/BIOS/destination",
+    "GUI rejects missing input before creating output",
+    "EXE rejects bad BIOS",
+    "EXE rejects existing output",
+    "EXE rejects source directory output",
+    "EXE rejects missing BIN",
+    "Existing files retained",
+    "GUI cancel terminates actual EXE worker; no final NDS; retry enabled",
+    "All 1230 assets and NDS exactly match the v1.0 release reference",
+    "GUI stays responsive; progress, success, log and folder states pass",
+    "ROM, BIOS and source kit manifest hashes unchanged"
+  ],
+  "inputs_unchanged": true,
+  "gui_callback_test": true,
+  "desktop_click_test": false,
+  "exe_evidence_sha256": "7bd2c84b301413021e83709346539142879a3dadcfa47e75c13f0480780e9805",
+  "startup_tests": [
+    {
+      "passed": true,
+      "core": {
+        "requested": "melonds",
+        "path": "tools/emulator/legacy-melonds-20261021/melonds_libretro.dll",
+        "sha256": "d3de8902d79d0afe9e3e34941cae7e5893a20e2751ccf4b0769289cd3b3925c5",
+        "name": "melonDS",
+        "version": "0.9.3 66b5d26"
+      },
+      "frames": 28611,
+      "elapsed_seconds": 119.67,
+      "main_ram_bytes": 4194304,
+      "both_openings_completed_without_skip": true,
+      "actual_frozen_exe_output": true,
+      "memory_injection": false,
+      "savestate": false,
+      "physical_console": false,
+      "report_sha256": "fa715c0dfc072cb8d3b2fa503bd705c99208096f48474ee972a4c7b347a0534c",
+      "screenshot": "docs/compatibility-v1.0/melonds-reception.png",
+      "screenshot_sha256": "483dc1522157157d776dcff2db37e2112810e29cc4dbdb6b831ecc3766232468"
+    },
+    {
+      "passed": true,
+      "core": {
+        "requested": "desmume",
+        "path": "tools/emulator/desmume_libretro.dll",
+        "sha256": "20445e10410c2723c74beec81498994ae78a071affb0735bd7f403e6a17884ea",
+        "name": "DeSmuME",
+        "version": "git 95b4d79"
+      },
+      "frames": 28633,
+      "elapsed_seconds": 211.91,
+      "main_ram_bytes": 4194304,
+      "both_openings_completed_without_skip": true,
+      "actual_frozen_exe_output": true,
+      "memory_injection": false,
+      "savestate": false,
+      "physical_console": false,
+      "report_sha256": "a64145ca0683ecff02f8b06f90e1d5e841e8440e148023444409eacb40397b11",
+      "screenshot": "docs/compatibility-v1.0/desmume-reception.png",
+      "screenshot_sha256": "96d0ec0cae52e48e20c51dab9258148272cf7509bd84995789e966af7990d09c"
+    }
+  ],
+  "source_and_assembly_audit": {
+    "passed": true,
+    "source_rebuild_byte_identical": true,
+    "private_nds_sha256": "c20b9495597c93b038f7e54a618b0d6e403ac2a5dd820490bba88fb520d153bf",
+    "source_rebuild_nds_sha256": "c20b9495597c93b038f7e54a618b0d6e403ac2a5dd820490bba88fb520d153bf",
+    "assembled_nds_sha256": "f2990fc21a33e713651046e3d972018a519d066be34f113bd8748d7be7f77952",
+    "resources_identical": 1230,
+    "executable_regions": [
+      {
+        "name": "arm9",
+        "bytes": 1491308,
+        "sha256": "21b7da11448218b0604fc0da9fac6bcc2de2cbc3a13b0b1b37721b94046165f6"
+      },
+      {
+        "name": "arm7",
+        "bytes": 56668,
+        "sha256": "ad91b87946e932653a7dbc76997e915370d496ab1483bf31b4a44dec23dfc51f"
+      },
+      {
+        "name": "arm9i",
+        "bytes": 872,
+        "sha256": "bc1cc41c44f2159c9c0e5bdf05e9caad0eb67fb59eddcdc6701e808fd243114d"
+      },
+      {
+        "name": "arm7i",
+        "bytes": 7824,
+        "sha256": "9671907c73a180a5b60673154ab1138779574965afef22467ae589cf881000a5"
+      }
+    ],
+    "masked_source_spans": 411,
+    "erased_original_bytes": 565344,
+    "whole_template_source_correspondence": true,
+    "manifest_files": 627,
+    "manifest_sha256": "5ca2e662fd10b6f8bfec9403bccef78835239c3d1675539e8f4f90d10961a906",
+    "source_file_provenance_checked": true,
+    "original_game_included": false,
+    "bios_included": false,
+    "physical_console": false
+  },
+  "translation": {
+    "passed": true,
+    "rom_sha256": "c20b9495597c93b038f7e54a618b0d6e403ac2a5dd820490bba88fb520d153bf",
+    "ordinary_runtime_entries": 16,
+    "ordinary_catalog_entries": 17,
+    "unused_catalog_entry": "SP02.BIN/0258",
+    "voice_pages": 3,
+    "added_cd_pages": 1,
+    "archive_pages": 13077,
+    "resources_verified": 1230,
+    "resource_delta": [
+      "story-text-r22.stp"
+    ],
+    "existing_ids_clocks_font_program_preserved": true,
+    "source_writes": 0,
+    "physical_console": false
+  },
+  "parent_correspondence": {
+    "passed": true,
+    "changes": [
+      "source/main.c",
+      "source/system_perf_trace.c"
+    ],
+    "nds_sha256": "c20b9495597c93b038f7e54a618b0d6e403ac2a5dd820490bba88fb520d153bf",
+    "parent_nds_sha256": "cf389ff5005005168de5c8be2eed14257bcf1ca4e2ce1db59e4d44cfa07db04a",
+    "translation_and_gameplay_source_identical": true
+  },
+  "palace_combat": {
+    "passed": true,
+    "rom_sha256": "c20b9495597c93b038f7e54a618b0d6e403ac2a5dd820490bba88fb520d153bf",
+    "report_sha256": "bfe988f66315c2baeb2f06d3c8c7e550f3835124327f51e17369cf4cfa285dbd",
+    "frames": 23937,
+    "checks": [
+      {
+        "name": "Ordinary DS 4 MiB",
+        "passed": true
+      },
+      {
+        "name": "Requested battle reached",
+        "passed": true
+      },
+      {
+        "name": "Every requested stage observed",
+        "passed": true
+      },
+      {
+        "name": "Visible LCD health stage 12",
+        "passed": true
+      },
+      {
+        "name": "Visible LCD health stage 13",
+        "passed": true
+      },
+      {
+        "name": "Original controller completed alive stage 12",
+        "passed": true
+      },
+      {
+        "name": "Original controller completed alive stage 13",
+        "passed": true
+      },
+      {
+        "name": "Original controller completed alive stage 14",
+        "passed": true
+      },
+      {
+        "name": "Original no-shot decision retained",
+        "passed": true
+      },
+      {
+        "name": "Battle returns through its normal transition",
+        "passed": true
+      },
+      {
+        "name": "Normal lower display restored after battle",
+        "passed": true
+      }
+    ],
+    "indexed_lcd_samples": 69,
+    "gap_delta": 0,
+    "silence_delta": 0,
+    "memory_injection": false,
+    "savestate": false,
+    "physical_console": false
+  },
+  "outer_heaven": {
+    "passed": true,
+    "rom_sha256": "c20b9495597c93b038f7e54a618b0d6e403ac2a5dd820490bba88fb520d153bf",
+    "report_sha256": "a99735a7898178923e542b303d92edd69faa2cdb5d2bb7dcd2fadfa0876d7688",
+    "frames": 3697,
+    "checks": [
+      {
+        "name": "Ordinary DS 4 MiB",
+        "passed": true
+      },
+      {
+        "name": "Removed diagnostic row is inert",
+        "passed": true
+      }
+    ],
+    "trigger": "MEANING OF CODE",
+    "recordings": [
+      {
+        "name": "before-choice.wav",
+        "audio_sha256": "c5323a9982f9a64841684e2d4471b2859d0b5e58d774d0cb654876fa83b3cc0a",
+        "gap_delta": 0,
+        "silence_delta": 0
+      },
+      {
+        "name": "second-choice.wav",
+        "audio_sha256": "cb6bb75d0306dfc690f4b682c47858d15015ed34d911aeed67c6bbdd8500e1fa",
+        "gap_delta": 0,
+        "silence_delta": 0
+      },
+      {
+        "name": "after-dialogue.wav",
+        "audio_sha256": "d84ce9b2a6bce169f40cbce3e8ba80e9c084ba739cd50a58cfde6275b2a0f765",
+        "gap_delta": 0,
+        "silence_delta": 0
+      }
+    ],
+    "genuine_save": true,
+    "memory_injection": false,
+    "savestate": false,
+    "physical_console": false
+  },
+  "prior_recording_listening_confirmation": {
+    "recorded_at_kst": "2026-10-24T06:44:18.891431+09:00",
+    "confirmed_by": "user",
+    "user_response": "잡음 없이 정상으로 들림",
+    "question": "이 수정판 녹음에서도 이전의 ‘쩌저적’ 잡음이 들리나요?",
+    "audio": "tests/user-slot5-final/after-dialogue.wav",
+    "audio_sha256": "18b08ee01b969655a70d5d9461a7e7ea8b2eea0175196a4b47fa8f1be53f329c",
+    "rom_sha256": "535b8f003a7add94b91bc69077c2efbd72803da279f84590518b2b6519832fc0",
+    "scope": "User listening confirmation of emulator recording; not a new physical-console test."
+  },
+  "physical_console_tested": false,
+  "full_game_replayed_on_final_v100": false,
+  "all_branches_tested": false,
+  "original_game_included": false,
+  "bios_included": false
+}

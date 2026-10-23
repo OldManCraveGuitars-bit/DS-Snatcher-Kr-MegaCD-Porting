@@ -44,5 +44,10 @@ SaveSummary save_summary(const GameCheckpoint *s){
         if(scene==HQ_SCENE(0x1506))result.place=SAVE_PLACE_HALL;
         if(scene==HQ_SCENE(0x0a02) || scene==HQ_SCENE(0x0a03))result.place=SAVE_PLACE_CHIEF;
     }
+    /* ACT3 SP36 uses DATA_Y00 (2500..2509) for the headquarters
+     * conversation, instead of the earlier H-series room IDs. Summaries
+     * are derived when previewing, including checkpoints from older builds. */
+    if(module==0x5d && scene>=HQ_SCENE(0x2500) && scene<=HQ_SCENE(0x2509))
+        result.place=SAVE_PLACE_HEADQUARTERS;
     return result;
 }

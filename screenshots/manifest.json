@@ -88,34 +88,6 @@
     "physical_console": false
   },
   {
-    "file": "title.png",
-    "caption": "V0.95 실제 EXE 출력 · SNATCHER DS 로고",
-    "sha256": "5cd299b1c4e757b8c52aabcf6e011e4a10d2e4a759341d0180f2f03a81fe4551",
-    "rom_sha256": "ab119635706b15e28d7848c92d2461dc89f882272e7abff25e476d83a7ada579",
-    "resolution": [
-      256,
-      384
-    ],
-    "edited": false,
-    "emulator": "melonDS",
-    "physical_console": false,
-    "evidence_sha256": "768133c3a6481b52cd38dd67e84f73e4eb4dd50fb44e148f0276bad90842ead6"
-  },
-  {
-    "file": "reception.png",
-    "caption": "V0.95 실제 EXE 출력 · 오프닝 1·2 후 접수처",
-    "sha256": "483dc1522157157d776dcff2db37e2112810e29cc4dbdb6b831ecc3766232468",
-    "rom_sha256": "ab119635706b15e28d7848c92d2461dc89f882272e7abff25e476d83a7ada579",
-    "resolution": [
-      256,
-      384
-    ],
-    "edited": false,
-    "emulator": "melonDS",
-    "physical_console": false,
-    "evidence_sha256": "768133c3a6481b52cd38dd67e84f73e4eb4dd50fb44e148f0276bad90842ead6"
-  },
-  {
     "file": "act3-v095.png",
     "caption": "V0.95 · ACT3 도입부 이후 첫 질문",
     "sha256": "a79541db010070e6843bdd14db471a10e8bf335f51c6fdfcdb98576816bf0eea",
@@ -142,5 +114,75 @@
     "emulator": "melonDS DS",
     "physical_console": false,
     "evidence_sha256": "612556b0828ef56e122e57781002d57d52a5489d0ae8c474ad642c2a8bc63e97"
+  },
+  {
+    "file": "title.png",
+    "caption": "v1.0 실제 EXE 출력 · SNATCHER DS 로고",
+    "sha256": "5cd299b1c4e757b8c52aabcf6e011e4a10d2e4a759341d0180f2f03a81fe4551",
+    "rom_sha256": "f2990fc21a33e713651046e3d972018a519d066be34f113bd8748d7be7f77952",
+    "resolution": [
+      256,
+      384
+    ],
+    "edited": false,
+    "emulator": "melonDS",
+    "physical_console": false,
+    "evidence_sha256": "fa715c0dfc072cb8d3b2fa503bd705c99208096f48474ee972a4c7b347a0534c"
+  },
+  {
+    "file": "reception.png",
+    "caption": "v1.0 실제 EXE 출력 · 오프닝 후 접수처",
+    "sha256": "483dc1522157157d776dcff2db37e2112810e29cc4dbdb6b831ecc3766232468",
+    "rom_sha256": "f2990fc21a33e713651046e3d972018a519d066be34f113bd8748d7be7f77952",
+    "resolution": [
+      256,
+      384
+    ],
+    "edited": false,
+    "emulator": "melonDS",
+    "physical_console": false,
+    "evidence_sha256": "fa715c0dfc072cb8d3b2fa503bd705c99208096f48474ee972a4c7b347a0534c"
+  },
+  {
+    "file": "combat-v100.png",
+    "caption": "v1.0 · ACT3 전투 LIFE와 체력바",
+    "sha256": "cec468b971c3154c91c56360ac062c961291ec1a294fbdef777af429c32e00ee",
+    "rom_sha256": "c20b9495597c93b038f7e54a618b0d6e403ac2a5dd820490bba88fb520d153bf",
+    "resolution": [
+      256,
+      384
+    ],
+    "edited": false,
+    "emulator": "melonDS DS",
+    "physical_console": false,
+    "evidence_sha256": "bfe988f66315c2baeb2f06d3c8c7e550f3835124327f51e17369cf4cfa285dbd"
+  },
+  {
+    "file": "dialogue-v100.png",
+    "caption": "v1.0 · ACT3 전투 후 정상 대화 복귀",
+    "sha256": "be481922571155db16806f58553f1a3280438abbff8ac45ce01e8015b94ebe22",
+    "rom_sha256": "c20b9495597c93b038f7e54a618b0d6e403ac2a5dd820490bba88fb520d153bf",
+    "resolution": [
+      256,
+      384
+    ],
+    "edited": false,
+    "emulator": "melonDS DS",
+    "physical_console": false,
+    "evidence_sha256": "bfe988f66315c2baeb2f06d3c8c7e550f3835124327f51e17369cf4cfa285dbd"
+  },
+  {
+    "file": "outer-v100.png",
+    "caption": "v1.0 · 아우터헤븐 암호 선택 후",
+    "sha256": "f78985f83dec4e423e65260409aa7d38ae14f8fcd3de8c67049298c387bc9a5c",
+    "rom_sha256": "c20b9495597c93b038f7e54a618b0d6e403ac2a5dd820490bba88fb520d153bf",
+    "resolution": [
+      256,
+      384
+    ],
+    "edited": false,
+    "emulator": "melonDS DS",
+    "physical_console": false,
+    "evidence_sha256": "a99735a7898178923e542b303d92edd69faa2cdb5d2bb7dcd2fadfa0876d7688"
   }
 ]
