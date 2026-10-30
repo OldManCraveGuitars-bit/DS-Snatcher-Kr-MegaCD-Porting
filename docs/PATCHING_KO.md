@@ -1,6 +1,6 @@
-# v1.0 패치 방법
+# v1.01 패치 방법
 
-**SNATCHER DS 비공식 한글화·포팅 v1.0 정식 버전**입니다. [Mega-CD 한글패치](https://github.com/OldManCraveGuitars-bit/MegaCD-Snatcher-Kr)의 최종 번역을 자동 적용합니다.
+**SNATCHER DS 비공식 한글화·포팅 v1.01 정식 버전**입니다. [Mega-CD 한글패치](https://github.com/OldManCraveGuitars-bit/MegaCD-Snatcher-Kr)의 최종 번역을 자동 적용합니다.
 
 ## 준비
 
@@ -9,11 +9,11 @@
 - 지원 USA BIOS: `us_scd2_9306.bin`, 131,072바이트.
 - Windows 임시 드라이브 약 300MB, 결과 저장 드라이브 2GB 이상 여유 공간.
 
-[원본 ROM·BIOS SHA-256](../INPUT-SHA256-v1.0.txt)을 확인하세요. BIOS는 기재된 해시와 일치해야 합니다. 이미 패치한 ROM, NDS, CHD, ZIP, BIN 단독 입력은 지원하지 않습니다.
+[원본 ROM·BIOS SHA-256](../INPUT-SHA256-v1.01.txt)을 확인하세요. BIOS는 기재된 해시와 일치해야 합니다. 이미 패치한 ROM, NDS, CHD, ZIP, BIN 단독 입력은 지원하지 않습니다.
 
 ## 만들기
 
-1. **Snatcher-DS-v1.0-Patcher.exe**를 실행합니다. Python 설치는 필요하지 않습니다.
+1. **Snatcher-DS-v1.01-Patcher.exe**를 실행합니다. Python 설치는 필요하지 않습니다.
 2. 수정되지 않은 **북미판 원본 CUE**, 연결된 **모든 BIN 트랙**, **지원 USA BIOS**를 준비합니다. ROM 선택란에는 CUE를 지정합니다.
 3. PC의 새 결과 폴더를 지정하고 **NDS 만들기**를 누릅니다. 최종 한글 번역은 자동 적용됩니다.
 4. 생성·검증이 완료되면 결과 폴더의 **snatcher_ds.nds**를 SD 카드로 복사합니다.

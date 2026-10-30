@@ -1,8 +1,8 @@
-# SNATCHER DS 비공식 한글화·포팅 v1.0
+# SNATCHER DS 비공식 한글화·포팅 v1.01
 
 <p align="center"><img src="screenshots/title.png" alt="SNATCHER DS 로고" width="256" height="384"></p>
 
-**비공식 한글화·포팅 1.0 정식 버전** · 한글화 및 포팅: **기타 깎는 노인**
+**비공식 한글화·포팅 1.01 정식 버전** · 한글화 및 포팅: **기타 깎는 노인**
 
 **[Mega-CD판 SNATCHER 한글패치](https://github.com/OldManCraveGuitars-bit/MegaCD-Snatcher-Kr)를 기반으로 제작한 Nintendo DS용 비공식 이식입니다.** 원본 한글패치의 최종 검수 번역을 반영해 ACT 1~3와 엔딩을 한국어로 즐길 수 있도록 구성했습니다.
 
@@ -10,13 +10,21 @@
 
 ## 다운로드
 
-- **[Windows EXE 패처](https://github.com/OldManCraveGuitars-bit/DS-Snatcher-Kr-MegaCD-Porting/releases/download/v1.0/Snatcher-DS-v1.0-Patcher.exe)** — 일반 사용자용, 설치 없이 실행
-- **[패처·설명서·라이선스·대응 소스 ZIP](https://github.com/OldManCraveGuitars-bit/DS-Snatcher-Kr-MegaCD-Porting/releases/download/v1.0/DS-Snatcher-Kr-MegaCD-Porting-v1.0-Patcher.zip)**
-- [v1.0 릴리스](https://github.com/OldManCraveGuitars-bit/DS-Snatcher-Kr-MegaCD-Porting/releases/tag/v1.0) · [배포 파일 SHA-256](SHA256SUMS-v1.0.txt) · [입력 ROM·BIOS SHA-256](INPUT-SHA256-v1.0.txt)
+- **[Windows EXE 패처](https://github.com/OldManCraveGuitars-bit/DS-Snatcher-Kr-MegaCD-Porting/releases/download/v1.01/Snatcher-DS-v1.01-Patcher.exe)** — 일반 사용자용, 설치 없이 실행
+- **[패처·설명서·라이선스·대응 소스 ZIP](https://github.com/OldManCraveGuitars-bit/DS-Snatcher-Kr-MegaCD-Porting/releases/download/v1.01/DS-Snatcher-Kr-MegaCD-Porting-v1.01-Patcher.zip)**
+- [v1.01 릴리스](https://github.com/OldManCraveGuitars-bit/DS-Snatcher-Kr-MegaCD-Porting/releases/tag/v1.01) · [배포 파일 SHA-256](SHA256SUMS-v1.01.txt) · [입력 ROM·BIOS SHA-256](INPUT-SHA256-v1.01.txt)
 
 패처는 사용자가 보유한 원본으로 NDS를 생성합니다. **원본 ROM·BIOS·완성 NDS는 배포에 포함하지 않습니다.**
 
-## v1.0 주요 내용
+## v1.01 수정
+
+초반 **폐공장 → 소지품 → 보기 → 정커 신분증**에서 `PC16AC OP42`로 진행이 멈추는 오류를 수정했습니다. 신분증 표시·닫기와 해당 화면의 저장·불러오기를 보완했습니다. 기존 저장 형식과 v1.0 최종 번역은 그대로 유지합니다.
+
+| v1.01 · 신분증 표시 | v1.01 · 재실행 후 불러오기 |
+| --- | --- |
+| ![신분증](screenshots/factory-id-v101.png) | ![불러오기](screenshots/factory-id-load-v101.png) |
+
+## v1.0에서 이어지는 주요 내용
 
 - **최종 한글 번역 반영** — 대사와 보이스 자막의 최종 검수 내용을 적용하고 누락 자막을 보완했습니다. 기존 대사 번호와 음성 재생 시각을 유지합니다.
 - **사운드 개선** — 아우터헤븐에서 ‘암호의 의미’ 선택 후 생기던 찢어지는 FM 잡음을 수정했습니다. ACT3 전투, 카메라 이동, 화면 생성·페이드의 처리 부담도 줄였습니다.
@@ -27,7 +35,7 @@
 
 ## 패치 방법
 
-1. **Snatcher-DS-v1.0-Patcher.exe**를 실행합니다. Python 설치는 필요하지 않습니다.
+1. **Snatcher-DS-v1.01-Patcher.exe**를 실행합니다. Python 설치는 필요하지 않습니다.
 2. 수정되지 않은 **북미판 원본 CUE**, 연결된 **모든 BIN 트랙**, **지원 USA BIOS**를 준비합니다. ROM 선택란에는 CUE를 지정합니다.
 3. PC의 새 결과 폴더를 지정하고 **NDS 만들기**를 누릅니다. 최종 한글 번역은 자동 적용됩니다.
 4. 생성·검증이 완료되면 결과 폴더의 **snatcher_ds.nds**를 SD 카드로 복사합니다.

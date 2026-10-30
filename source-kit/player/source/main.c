@@ -439,12 +439,15 @@ static void load_checkpoint(int back){
            (music_player_room_pcm_load(5)!=1 || (!native_restored && !reception_background_control(28,0)))){
             notice(UI_SYS_LOAD_ERROR,back);return;
         }
-        if(story_scene==HQ_SCENE(0x1905) && !opening_forecourt_restore()){
+        if(story_under_scene==HQ_SCENE(0x1905) && !opening_forecourt_restore()){
             notice(UI_SYS_LOAD_ERROR,back);return;
         }
         if(!native_restored && (story_scene==4 || story_scene>=0x8000)){
             unsigned popup=story_scene==4?0x0905:story_scene&0x3fff;
-            if(!reception_background_restore_popup(popup>>8,popup&255)){notice(UI_SYS_LOAD_ERROR,back);return;}
+            bool restored=opening_native_display()?
+                native_entry_forecourt_popup(popup>>8,popup&255):
+                reception_background_restore_popup(popup>>8,popup&255);
+            if(!restored){notice(UI_SYS_LOAD_ERROR,back);return;}
         }
         /* A cold process has no previous portrait owner. Restoring the
          * native room must also select its original lower-portrait path. */
@@ -546,7 +549,7 @@ static void show_audio_diagnostics(void){
     system_perf_summary(diagnostic_message,sizeof(diagnostic_message));
     audio_trace_write();
     size_t used=strlen(diagnostic_message);
-    if(!audio_trace_write_result)snprintf(diagnostic_message+used,sizeof(diagnostic_message)-used,"LOG SAVED V100\nSEND THIS SCREEN");
+    if(!audio_trace_write_result)snprintf(diagnostic_message+used,sizeof(diagnostic_message)-used,"LOG SAVED V101\nSEND THIS SCREEN");
     else snprintf(diagnostic_message+used,sizeof(diagnostic_message)-used,"LOG FAIL %d\nERRNO %u",audio_trace_write_result,system_perf_write_errno);
     unsigned i=0;
     for(;i+1<sizeof(diagnostic_text)/sizeof(*diagnostic_text) && diagnostic_message[i];i++){
@@ -854,15 +857,19 @@ static void story_dispatch(int event){
                 if(!(story_event_op==0x47?music_player_music_wait_begin():music_player_effect_wait_begin()))break;
                 story_sound_wait=true;mode=STORY_WAIT_UI;return;
             }else if(story_event_op==0x42 && story_event_arg==8){
+                /* K1/5 keeps its continuous entry renderer and sound owner.
+                 * There is deliberately no reception room at this point. */
+                bool native_popup=opening_native_display();
+                bool was_popup=native_popup?story_scene>=0x8000:reception_background_popup_active();
                 if(story_event_arg2){
-                    if(!reception_background_popup_active())story_under_scene=story_scene;
+                    if(!was_popup)story_under_scene=story_scene;
                     story_scene=story_event_arg3==0x0905?4:HQ_OVERLAY(story_event_arg3);
                     if(!hq_scene_valid(story_scene))break;
                     story_set_display_under(story_under_scene);
-                    if(!reception_background_popup(story_event_arg3>>8,story_event_arg3&255))break;
+                    if(!(native_popup?native_entry_forecourt_popup(story_event_arg3>>8,story_event_arg3&255):
+                         reception_background_popup(story_event_arg3>>8,story_event_arg3&255)))break;
                 }else{
-                    bool was_popup=reception_background_popup_active();
-                    if(!reception_background_popup_end())break;
+                    if(!(native_popup?native_entry_forecourt_popup_end():reception_background_popup_end()))break;
                     if(was_popup){story_scene=story_under_scene;story_set_display_under(0xffff);}
                 }
             }
@@ -1441,7 +1448,7 @@ static void draw(void) {
         if(story_error){
             extern volatile unsigned shared_played_fault,stream_recovery_fault;
             char diagnostic[32];
-            snprintf(diagnostic,sizeof(diagnostic),"V100 A%02X S%X R%X",music_error,shared_played_fault,stream_recovery_fault);
+            snprintf(diagnostic,sizeof(diagnostic),"V101 A%02X S%X R%X",music_error,shared_played_fault,stream_recovery_fault);
             keyboard_text(16,64,diagnostic);
             snprintf(diagnostic,sizeof(diagnostic),"PC%04X OP%02X",story_event_pc,story_event_op);
             keyboard_text(16,82,diagnostic);

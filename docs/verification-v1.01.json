@@ -1,0 +1,237 @@
+{
+  "release": "v1.01",
+  "prerelease": false,
+  "verified_at_kst": "2026-10-30T12:07:22.666385+09:00",
+  "based_on": "Mega-CD Korean patch final review r61, unchanged from v1.0",
+  "nds_sha256": "54956f12a8be71b8b0d24d4caad4286ab9cb508039de5d8b570123bbc9d946f7",
+  "exe_sha256": "59860f4801d2a6c090666bfbd323820c5038d4a70829eda57a9a1ba38ffe0aa6",
+  "actual_exe_conversion_verified": true,
+  "conversion_seconds": 457.29,
+  "exe_checks": [
+    "Actual frozen EXE loads Tcl/Tk and constructs complete GUI without Python PATH",
+    "GUI file selectors populate ROM/BIOS/destination",
+    "GUI rejects missing input before creating output",
+    "EXE rejects bad BIOS",
+    "EXE rejects existing output",
+    "EXE rejects source directory output",
+    "EXE rejects missing BIN",
+    "Existing files retained",
+    "GUI cancel terminates actual EXE worker; no final NDS; retry enabled",
+    "All 1230 assets and NDS exactly match the v1.01 release reference",
+    "GUI stays responsive; progress, success, log and folder states pass",
+    "ROM, BIOS and source kit manifest hashes unchanged"
+  ],
+  "source_and_assembly_audit": {
+    "passed": true,
+    "source_rebuild_byte_identical": true,
+    "private_nds_sha256": "99e84d3563e3318131caa40a149d4397cc3b1e1bc2d2162c49fcab565a12534b",
+    "source_rebuild_nds_sha256": "99e84d3563e3318131caa40a149d4397cc3b1e1bc2d2162c49fcab565a12534b",
+    "assembled_nds_sha256": "54956f12a8be71b8b0d24d4caad4286ab9cb508039de5d8b570123bbc9d946f7",
+    "resources_identical": 1230,
+    "executable_regions": [
+      {
+        "name": "arm9",
+        "bytes": 1491988,
+        "sha256": "f61d7e28919bbaeca324f5809c64f6bae73ef29c6bb446f7e8811020b9b9fc01"
+      },
+      {
+        "name": "arm7",
+        "bytes": 56668,
+        "sha256": "ad91b87946e932653a7dbc76997e915370d496ab1483bf31b4a44dec23dfc51f"
+      },
+      {
+        "name": "arm9i",
+        "bytes": 872,
+        "sha256": "d8689e04f45f1679253067fa08e91ccaf14efc468c0788c52ef29ba55580dcbd"
+      },
+      {
+        "name": "arm7i",
+        "bytes": 7824,
+        "sha256": "9671907c73a180a5b60673154ab1138779574965afef22467ae589cf881000a5"
+      }
+    ],
+    "masked_source_spans": 411,
+    "erased_original_bytes": 565344,
+    "whole_template_source_correspondence": true,
+    "manifest_files": 627,
+    "manifest_sha256": "a39b732161c84dff9990c6e7a979d70ffca90efd7b160657be1ffce90a36e5f8",
+    "source_file_provenance_checked": true,
+    "original_game_included": false,
+    "bios_included": false,
+    "physical_console": false
+  },
+  "startup_tests": [
+    {
+      "passed": true,
+      "core": {
+        "requested": "melondsds",
+        "path": "tools/emulator/melondsds_libretro.dll",
+        "sha256": "a10c64727fac36d867adb7b4cb774199166a686bf8626d79f62fc1aa35e27d67",
+        "name": "melonDS DS",
+        "version": "1.4.0"
+      },
+      "frames": 1410,
+      "rom_sha256": "54956f12a8be71b8b0d24d4caad4286ab9cb508039de5d8b570123bbc9d946f7",
+      "scope": "Fresh v1.01 frozen EXE output, full normal startup and both openings to reception; no physical console or Android claim. This invocation stops at the title after startup logos.",
+      "main_ram_bytes": 4194304
+    },
+    {
+      "passed": true,
+      "core": {
+        "requested": "desmume",
+        "path": "tools/emulator/desmume_libretro.dll",
+        "sha256": "20445e10410c2723c74beec81498994ae78a071affb0735bd7f403e6a17884ea",
+        "name": "DeSmuME",
+        "version": "git 95b4d79"
+      },
+      "frames": 1406,
+      "rom_sha256": "54956f12a8be71b8b0d24d4caad4286ab9cb508039de5d8b570123bbc9d946f7",
+      "scope": "Fresh v1.01 frozen EXE output, full normal startup and both openings to reception; no physical console or Android claim. This invocation stops at the title after startup logos.",
+      "main_ram_bytes": 4194304
+    }
+  ],
+  "regressions": {
+    "popup": {
+      "passed": true,
+      "frames": 2572,
+      "rom_sha256": "99e84d3563e3318131caa40a149d4397cc3b1e1bc2d2162c49fcab565a12534b",
+      "report_sha256": "4efeb99d40322b4024ebdfdb2e05894879bcf3c0759411bca510ebe1158ff7e1",
+      "memory_injection": false,
+      "savestate": false,
+      "physical_console": false
+    },
+    "cold_popup": {
+      "passed": true,
+      "frames": 3139,
+      "rom_sha256": "99e84d3563e3318131caa40a149d4397cc3b1e1bc2d2162c49fcab565a12534b",
+      "report_sha256": "d2654b15de691589cb8e77718d7ee5dbda1471bc17c774dadef1384e26c9eb1a",
+      "memory_injection": false,
+      "savestate": false,
+      "physical_console": false
+    },
+    "fresh_arrival": {
+      "passed": true,
+      "frames": 52629,
+      "rom_sha256": "99e84d3563e3318131caa40a149d4397cc3b1e1bc2d2162c49fcab565a12534b",
+      "report_sha256": "be439b6083975eed38f76b677f8b448f6d0af083ddadcf88c082539c3a178e06",
+      "memory_injection": false,
+      "savestate": false,
+      "physical_console": false
+    },
+    "actual_exe_popup": {
+      "passed": true,
+      "frames": 2571,
+      "rom_sha256": "54956f12a8be71b8b0d24d4caad4286ab9cb508039de5d8b570123bbc9d946f7",
+      "report_sha256": "17fcbfad17843fb10f9f3184d22c26805014997172efbbe9f5a2905219d4f901",
+      "memory_injection": false,
+      "savestate": false,
+      "physical_console": false
+    },
+    "factory_entry": {
+      "passed": true,
+      "frames": 7527,
+      "checks": [
+        {
+          "name": "Cold boot reaches touch to start",
+          "passed": true
+        },
+        {
+          "name": "Initialized title has no story or audio error",
+          "passed": true
+        },
+        {
+          "name": "Real slot5 restores all five original forecourt choices",
+          "passed": true
+        },
+        {
+          "name": "Factory LOOK preserves all three original targets 1",
+          "passed": true
+        },
+        {
+          "name": "Factory LOOK preserves all three original targets 2",
+          "passed": true
+        },
+        {
+          "name": "Factory LOOK preserves all three original targets 3",
+          "passed": true
+        },
+        {
+          "name": "Factory LOOK preserves all three original targets 4",
+          "passed": true
+        },
+        {
+          "name": "Factory LOOK preserves all three original targets 5",
+          "passed": true
+        },
+        {
+          "name": "Factory LOOK preserves all three original targets 6",
+          "passed": true
+        },
+        {
+          "name": "Factory LOOK preserves all three original targets 7",
+          "passed": true
+        },
+        {
+          "name": "Seven looks preserve original warning gate",
+          "passed": true
+        },
+        {
+          "name": "Factory LOOK preserves all three original targets 8",
+          "passed": true
+        },
+        {
+          "name": "Eighth look plays original warning130 through136",
+          "passed": true
+        },
+        {
+          "name": "Original warning score61 plays for its automatic dialogue",
+          "passed": true
+        },
+        {
+          "name": "INVESTIGATE exposes original motion detector",
+          "passed": true
+        },
+        {
+          "name": "Detector interaction returns to original ENTER choice",
+          "passed": true
+        },
+        {
+          "name": "Factory interior opens without missing-scene error",
+          "passed": true
+        },
+        {
+          "name": "Original source63 score and live percussion start inside factory",
+          "passed": true
+        },
+        {
+          "name": "Interior LOOK preserves original four targets",
+          "passed": true
+        },
+        {
+          "name": "Looking at wall adds original fifth target",
+          "passed": true
+        },
+        {
+          "name": "No audio underrun in arrival and warning",
+          "passed": true
+        }
+      ],
+      "rom_sha256": "99e84d3563e3318131caa40a149d4397cc3b1e1bc2d2162c49fcab565a12534b",
+      "physical_console": false
+    }
+  },
+  "reproduction": {
+    "version": "v1.0",
+    "trigger": "폐공장 → 소지품 → 보기 → 정커 신분증",
+    "pc": "16AC",
+    "opcode": "42",
+    "native_scene_active": true,
+    "ordinary_room_missing": true
+  },
+  "translation_and_media_unchanged": true,
+  "save_format_unchanged": true,
+  "physical_console_tested": false,
+  "full_game_replayed": false,
+  "original_game_included": false,
+  "bios_included": false
+}

@@ -71,6 +71,7 @@ bool resource_entry_continue(resource_entry_state *state,uint16_t pc);
  * It never resets the source actors, sound devices or shared sample clock. */
 bool resource_entry_pcm(resource_entry_state *state,unsigned voice);
 bool resource_entry_control(resource_entry_state *state,unsigned actor,unsigned command);
+bool resource_entry_popup(resource_entry_state *state,unsigned picture,unsigned position);
 /* Switch a completed original module without resetting actors, palettes,
  * PCM, RNG or the shared source/audio clock. Script ownership stays external. */
 bool resource_entry_switch_program(resource_entry_state *state,const void *script,size_t bytes,uint16_t pc);

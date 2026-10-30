@@ -690,6 +690,14 @@ void native_entry_story_voice_release(void){external_voice=prepared_voice=0;}
 bool native_entry_pcm_effects_blocked(bool blocked){
  return engine && state==1 && resource_entry_pcm_effects_blocked(engine,blocked);
 }
+bool native_entry_forecourt_popup(unsigned picture,unsigned position){
+    return engine && flight && arriving && !returning && state==1 && engine->file==25 &&
+        resource_entry_popup(engine,picture,position);
+}
+bool native_entry_forecourt_popup_end(void){
+    return engine && flight && arriving && !returning && state==1 && engine->file==25 &&
+        resource_entry_control(engine,1,2);
+}
 
 volatile unsigned native_return_fault;
 bool native_entry_return_begin(resource_room *room,uint8_t fields[128],const volatile unsigned *stream_sample,

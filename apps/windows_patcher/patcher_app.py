@@ -1,4 +1,4 @@
-"""Offline Windows GUI for the v1.0 NitroFS compatibility patcher."""
+"""Offline Windows GUI for the v1.01 NitroFS compatibility patcher."""
 from pathlib import Path
 from contextlib import redirect_stdout, redirect_stderr
 from datetime import datetime
@@ -18,9 +18,9 @@ import time
 import traceback
 
 sys.dont_write_bytecode = True
-APP_VERSION = '1.0 / 최종 한글화'
-MANIFEST_SHA = '5ca2e662fd10b6f8bfec9403bccef78835239c3d1675539e8f4f90d10961a906'
-NDS_SHA = 'f2990fc21a33e713651046e3d972018a519d066be34f113bd8748d7be7f77952'
+APP_VERSION = '1.01 / 최종 한글화'
+MANIFEST_SHA = 'a39b732161c84dff9990c6e7a979d70ffca90efd7b160657be1ffce90a36e5f8'
+NDS_SHA = '54956f12a8be71b8b0d24d4caad4286ab9cb508039de5d8b570123bbc9d946f7'
 BIOS_SHA = 'b1c2036b79467514eaaa69c76e5ba83801621e821059caa53cb921a0b21e3af4'
 
 
@@ -206,7 +206,7 @@ class PatcherApp:
         self.process = self.job = self.output = None
         self.closing = False
         self.offset = 0
-        root.title('SNATCHER DS 비공식 한글화·포팅 v1.0 패처')
+        root.title('SNATCHER DS 비공식 한글화·포팅 v1.01 패처')
         root.geometry('800x650')
         root.minsize(740, 620)
         root.option_add('*Font', ('맑은 고딕', 10))
@@ -221,7 +221,7 @@ class PatcherApp:
         base.columnconfigure(0, weight=1)
         base.rowconfigure(8, weight=1)
         ttk.Label(base, text='SNATCHER DS', style='Title.TLabel').grid(row=0, column=0, sticky='w')
-        ttk.Label(base, text='원본 ROM + BIOS → 한국어 NDS  |  EXE 패처 v1.0',
+        ttk.Label(base, text='원본 ROM + BIOS → 한국어 NDS  |  EXE 패처 v1.01',
                   style='Sub.TLabel').grid(row=1, column=0, sticky='w', pady=(2, 18))
         form = ttk.Frame(base)
         form.grid(row=2, column=0, sticky='ew')

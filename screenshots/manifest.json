@@ -184,5 +184,31 @@
     "emulator": "melonDS DS",
     "physical_console": false,
     "evidence_sha256": "a99735a7898178923e542b303d92edd69faa2cdb5d2bb7dcd2fadfa0876d7688"
+  },
+  {
+    "file": "factory-id-v101.png",
+    "caption": "v1.01 · 폐공장 앞 정커 신분증",
+    "sha256": "57d5c6d44d21d530666e512795859b6c20dc5f47c440cb078bed57aed8411218",
+    "rom_sha256": "99e84d3563e3318131caa40a149d4397cc3b1e1bc2d2162c49fcab565a12534b",
+    "resolution": [
+      256,
+      384
+    ],
+    "edited": false,
+    "emulator": "melonDS DS",
+    "physical_console": false
+  },
+  {
+    "file": "factory-id-load-v101.png",
+    "caption": "v1.01 · 재실행 후 신분증 화면 불러오기",
+    "sha256": "85120cfdfe56356124e26242e76044e460dd186aa096319d41f5a872997f2788",
+    "rom_sha256": "99e84d3563e3318131caa40a149d4397cc3b1e1bc2d2162c49fcab565a12534b",
+    "resolution": [
+      256,
+      384
+    ],
+    "edited": false,
+    "emulator": "melonDS DS",
+    "physical_console": false
   }
 ]

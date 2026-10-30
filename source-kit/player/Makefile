@@ -1,6 +1,6 @@
 NAME := snatcher_nds_resources_r22
 GAME_TITLE := SNATCHER
-GAME_SUBTITLE := Korean V1.0
+GAME_SUBTITLE := Korean V1.01
 GAME_ICON := assets/launcher-icon.gif
 LIBS := -lmm9 -lnds9 -lm
 LIBDIRS := $(BLOCKSDS)/libs/maxmod

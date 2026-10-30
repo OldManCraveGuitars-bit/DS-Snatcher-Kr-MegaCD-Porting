@@ -15,7 +15,7 @@ from tkinter import filedialog, messagebox
 import patcher_app as app
 
 ROOT = Path(__file__).resolve().parents[2]
-WORK = ROOT/'work/exe-patcher-v100'
+WORK = ROOT/'work/exe-patcher-v101'
 TEST = WORK/'검증 한글 공백 경로'
 SOURCE = Path('C:/CODEX/roms/Snatcher_USA/Snatcher (USA).cue')
 BIOS = Path('C:/CODEX/bios/us_scd2_9306.bin')
@@ -141,7 +141,7 @@ def run():
             assert str(ui.start_button['state']) == 'normal'
             assert (ui.output/'patcher.log').is_file()
             assert not ui_errors, ui_errors
-            checks.append('All 1230 assets and NDS exactly match the v1.0 release reference')
+            checks.append('All 1230 assets and NDS exactly match the v1.01 release reference')
             checks.append('GUI stays responsive; progress, success, log and folder states pass')
             result.update(passed=True, conversion=final, gui_updates=updates,
                           output=str(ui.output), job=str(ui.job), ui_errors=ui_errors)
@@ -157,7 +157,7 @@ def run():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--work', default='exe-patcher-v100')
+    parser.add_argument('--work', default='exe-patcher-v101')
     args = parser.parse_args()
     assert args.work.replace('-', '').isalnum()
     WORK = ROOT/'work'/args.work

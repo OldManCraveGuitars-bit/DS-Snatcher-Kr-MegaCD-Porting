@@ -87,6 +87,13 @@ bool resource_entry_control(resource_entry_state *s,unsigned actor,unsigned comm
     const uint8_t commands[]={0,9,0,(uint8_t)command,0,(uint8_t)actor,0,0};
     return external_task(s,commands,sizeof(commands));
 }
+bool resource_entry_popup(resource_entry_state *s,unsigned picture,unsigned position){
+    if(picture>255 || position>=18)return false;
+    /* Same original task21 as resource_room_popup; forecourt actors and
+     * shared sound remain owned by this entry until the player enters K1. */
+    const uint8_t commands[]={0,21,0,(uint8_t)picture,0,(uint8_t)position,0,0};
+    return external_task(s,commands,sizeof(commands));
+}
 bool resource_entry_continue(resource_entry_state *s,uint16_t pc){
     return s && resource_entry_switch_program(s,s->program.script,s->program.bytes,pc);
 }

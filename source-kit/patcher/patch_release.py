@@ -1,4 +1,4 @@
-"""v1.0 full-resource patcher: user originals -> Korean NDS.
+"""v1.01 full-resource patcher: user originals -> Korean NDS.
 
 Paths are relative to this package, never to a developer checkout. The frozen
 public v0.1Demo entry point is separate and is not changed by this program.
@@ -46,8 +46,8 @@ def select_inputs():
     ui = tk.Tk()
     ui.withdraw()
     try:
-        messagebox.showinfo('SNATCHER DS V1.0 비공식 한글화·포팅 패처',
-            'V1.0 비공식 한글화·포팅 패처입니다. 버그와 미검증 구간이 남아 있습니다.\n'
+        messagebox.showinfo('SNATCHER DS V1.01 비공식 한글화·포팅 패처',
+            'V1.01 비공식 한글화·포팅 패처입니다. 버그와 미검증 구간이 남아 있습니다.\n'
             'Mega-CD판 최종 한글 번역을 자동 적용합니다.\n\n'
             '깨끗한 미국판 원본 CUE와 USA BIOS를 선택해 주세요.')
         source = filedialog.askopenfilename(title='미국판 SNATCHER 원본 CUE', filetypes=[('CUE', '*.cue')])
@@ -59,7 +59,7 @@ def select_inputs():
         parent = filedialog.askdirectory(title='새 결과 폴더를 만들 위치')
         if not parent:
             return None
-        return source, bios, str(Path(parent) / 'Snatcher-DS-v1.0-output')
+        return source, bios, str(Path(parent) / 'Snatcher-DS-v1.01-output')
     finally:
         ui.destroy()
 
@@ -105,7 +105,7 @@ def run(argv=None):
         engine_bundle=str(root / 'engine'), verify_only=True))
     if not report['all_resource_identities_match'] or not report['complete_nds_assembly']:
         raise ValueError('Conversion incomplete. See conversion.json; no final NDS was published.')
-    final = dict(report['assembly'], label=manifest['label'], translation='final-review-r2/r61', release='v1.0',
+    final = dict(report['assembly'], label=manifest['label'], translation='final-review-r2/r61', release='v1.01',
                  known_bugs=True, full_game_verified=False, public_release=True)
     (out / 'patch-result.json').write_text(json.dumps(final, ensure_ascii=False, indent=2), encoding='utf8')
     print('SUCCESS:', out / 'snatcher_ds.nds', flush=True)

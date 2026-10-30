@@ -74,6 +74,8 @@ void native_entry_story_voice_release(void);
 #endif
 
 bool native_entry_pcm_effects_blocked(bool);
+bool native_entry_forecourt_popup(unsigned picture,unsigned position);
+bool native_entry_forecourt_popup_end(void);
 
 /* On success, takes the room storage and its bank/subcode allocations.
  * On failure they remain owned by the caller, unchanged. */
